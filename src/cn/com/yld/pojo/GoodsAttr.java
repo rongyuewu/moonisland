@@ -8,15 +8,15 @@ import java.io.Serializable;
 
 
 public class GoodsAttr implements Serializable{
-	private int attrId;
-	private String goodsId;
-	private String material;
-	private String border;
-	private String size;
-	private String function;
-	private String brandId;
-	private String color;
-	private String price;
+	private int attrId;//属性编号
+	private String goodsId;//商品id
+	private String material;//材质
+	private String border;//边框
+	private String size;//大小
+	private String function;//功能
+	private String brandId;//品牌
+	private String color;//颜色
+	private String price;//价格（和商品价格一致，筛选条件）
 
 	public void setAttrId(int attrId){
 		this.attrId=attrId;

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.yld.AboutMapper">
+  <resultMap type="About" id="abtrestltMap">
+  	<id column="about_id" property="aboutId"/>
+  	<result column="about_style" property="aboutStyle"/>
+  	<result column="about_content" property="aboutContent"/>
+  	<result column="about_time" property="aboutTime"/>
+  </resultMap>
+</mapper>

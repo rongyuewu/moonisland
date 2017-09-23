@@ -8,16 +8,16 @@ import java.io.Serializable;
 
 
 public class Glass implements Serializable{
-	private int glassId;
-	private String glassStyle;
-	private String glassName;
-	private String glassPrice;
-	private String sphPrice;
-	private String cylPrice;
-	private String glassImg;
+	private int glassId;//镜片id
+	private String glassStyle;//镜片类型(1 标准镜片，2 防蓝光，3 偏光太阳镜片，4 变色镜片)
+	private String glassName;// 镜片名称
+	private String glassPrice;// 镜片价格
+	private String sphPrice;// 球镜超出范围价格增幅
+	private String cylPrice;// 柱镜超出范围价格增幅
+	private String glassImg;//镜片图片路径
 	private String glassImgthumb;
-	private String glassTime;
-	private String color1;
+	private String glassTime;//镜片时间
+	private String color1;//镜片颜色
 	private String color2;
 	private String color3;
 	private String color4;
@@ -26,7 +26,7 @@ public class Glass implements Serializable{
 	private String color7;
 	private String color8;
 	private String color9;
-	private String isActive;
+	private String isActive;//是否被选中
 
 	public void setGlassId(int glassId){
 		this.glassId=glassId;

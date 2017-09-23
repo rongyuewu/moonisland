@@ -8,11 +8,11 @@ import java.io.Serializable;
 
 
 public class Admin implements Serializable{
-	private int id;
-	private String name;
-	private String pwd;
-	private String status;
-	private String addTime;
+	private int id;//用户id
+	private String name;//登陆账户
+	private String pwd;//登录密码
+	private String status;//管理员权限
+	private String addTime;//添加时间
 
 	public void setId(int id){
 		this.id=id;

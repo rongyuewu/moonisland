@@ -8,16 +8,16 @@ import java.io.Serializable;
 
 
 public class Optometry implements Serializable{
-	private int optometryId;
-	private String userId;
-	private String rSph;
-	private String rCyl;
-	private String rAxis;
-	private String lSph;
-	private String lCyl;
-	private String lAxis;
-	private String pd;
-	private String optometryTime;
+	private int optometryId;// 验光单id
+	private String userId;// 用户id
+	private String rSph;// 右眼球镜
+	private String rCyl;// 右眼柱镜
+	private String rAxis;// 右眼轴线
+	private String lSph; // 左眼球镜
+	private String lCyl;// 左眼柱镜
+	private String lAxis; // 左眼轴线
+	private String pd;// 瞳距
+	private String optometryTime; // 验光单添加时间
 
 	public void setOptometryId(int optometryId){
 		this.optometryId=optometryId;

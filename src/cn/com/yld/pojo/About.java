@@ -9,10 +9,10 @@ import java.io.Serializable;
 
 
 public class About implements Serializable{
-	private int aboutId;
-	private String aboutStyle;
-	private String aboutContent;
-	private String aboutTime;
+	private int aboutId; //关于我们id
+	private String aboutStyle; //关于我们类型(0 关于我们，1 新手指南，2 购物流程，3 退换货品，4 特权会员，5 镜片知识，6 其他优惠，7 联系我们 )
+	private String aboutContent;// 具体内容
+	private String aboutTime;//时间
 
 	public void setAboutId(int aboutId){
 		this.aboutId=aboutId;

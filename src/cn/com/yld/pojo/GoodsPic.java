@@ -8,13 +8,13 @@ import java.io.Serializable;
 
 
 public class GoodsPic implements Serializable{
-	private int picId;
-	private String goodsId;
-	private String pic1;
+	private int picId;//图片编号
+	private String goodsId;//商品编号
+	private String pic1;//图片1
 	private String pic2;
 	private String pic3;
 	private String pic4;
-	private String pic1Thumb;
+	private String pic1Thumb;//缩略图1
 	private String pic2Thumb;
 	private String pic3Thumb;
 	private String pic4Thumb;

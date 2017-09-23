@@ -8,10 +8,10 @@ import java.io.Serializable;
 
 
 public class Save implements Serializable{
-	private int saveId;
-	private String goodsId;
-	private String userId;
-	private String saveTime;
+	private int saveId; // 收藏id
+	private String goodsId; // 商品id
+	private String userId; // 用户id
+	private String saveTime; // 收藏时间
 
 	public void setSaveId(int saveId){
 		this.saveId=saveId;

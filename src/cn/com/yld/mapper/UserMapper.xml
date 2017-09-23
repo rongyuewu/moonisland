@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.yld.UserMapper">
+  <resultMap type="User" id="userestltMap">
+  	<id column="user_id" property="userId"/>
+  	<result column="points" property="points"/>
+  	<result column="user_level" property="userLevel"/>
+  	<result column="is_privilege" property="isPrivilege"/>
+  	<result column="privilege_num" property="privilegeNum"/>
+  	<result column="phone" property="phone"/>
+  	<result column="nick_name" property="nickName"/>
+  	<result column="header_pic" property="headerPic"/>
+  	<result column="password" property="password"/>
+  	<result column="sex" property="sex"/>
+  	<result column="birthday" property="birthday"/>
+  	<result column="zipcode" property="zipcode"/>
+  	<result column="mobile" property="mobile"/>
+  	<result column="mail" property="mail"/>
+  	<result column="user_time" property="userTime"/>
+  	<result column="user_status" property="userStatus"/>
+  </resultMap>
+</mapper>

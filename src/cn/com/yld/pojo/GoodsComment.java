@@ -8,17 +8,17 @@ import java.io.Serializable;
 
 
 public class GoodsComment implements Serializable{
-	private int commentId;
-	private String goodsId;
-	private String userId;
-	private String orderId;
-	private String commentContentword;
-	private String commentContentimg;
-	private String guarantee;
-	private String server;
-	private String logistics;
-	private String commentStatus;
-	private String commentTime;
+	private int commentId;//评论编号
+	private String goodsId;//商品id
+	private String userId;//用户id
+	private String orderId;//订单编号
+	private String commentContentword;//商品评论文字
+	private String commentContentimg;//商品评论图片(存储所有图片路径，以|分割)，最多3张，单张不大于2M
+	private String guarantee;//商品质量星级（以1--5表示）
+	private String server;//服务态度星级(以1--5表示)，可以为null
+	private String logistics;//物流态度星级(以1--5表示)，可以为null
+	private String commentStatus;//评论状态
+	private String commentTime;//评论时间
 
 	public void setCommentId(int commentId){
 		this.commentId=commentId;

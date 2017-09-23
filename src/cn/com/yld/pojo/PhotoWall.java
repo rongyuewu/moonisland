@@ -8,10 +8,10 @@ import java.io.Serializable;
 
 
 public class PhotoWall implements Serializable{
-	private int photoId;
-	private String photoUrl;
-	private String photoWord;
-	private String photoTime;
+	private int photoId; // 照片墙id
+	private String photoUrl; // 照片墙地址
+	private String photoWord; // 照片描述
+	private String photoTime;// 添加时间
 
 	public void setPhotoId(int photoId){
 		this.photoId=photoId;

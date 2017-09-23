@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						http://www.springframework.org/schema/beans/spring-beans-4.3.xsd 
+						http://www.springframework.org/schema/aop 
+						http://www.springframework.org/schema/aop/spring-aop-4.3.xsd 
+						http://www.springframework.org/schema/tx 
+						http://www.springframework.org/schema/tx/spring-tx-4.3.xsd ">
+	<!-- 数据源dataSource -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="com.mysql.jdbc.Driver"></property>
+		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/moon"></property>
+		<property name="user" value="root"></property>
+		<property name="password" value="123"></property>
+	</bean>
+	<!-- sqlSessionFactory 管理 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+		<!-- 找到mybatis-config.cml配置文件 -->
+		<property name="configLocation" value="classpath:mybatis-config.xml"></property>
+	</bean>
+	<!-- 声明式事务 -->
+	<!-- 1.事务管理器 mybatis中使用jdbc通用事务管理器 -->
+	<bean id="dtManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	<!-- 2.配置通知，也就是要对哪些方法做事务 -->
+	<tx:advice id="txAdvice" transaction-manager="dtManager">
+		<tx:attributes>
+			<!-- REQUIRED的含义，支持已经存在的事务，如果没有事务，就创建事务 -->
+			<tx:method name="find*" propagation="REQUIRED" read-only="true" />
+			<tx:method name="*" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
+		</tx:attributes>
+	</tx:advice>
+	<!-- 配置切面Aspetj -->
+	<aop:config>
+		<aop:advisor advice-ref="txAdvice" pointcut="execution(public * cn.com.dao.impl.*.*(..))" />
+	</aop:config>
+	
+	<!-- 配置dao层 -->
+	<!-- <bean id="emptblDao" class="cn.com.dao.impl.EmptblDaoImpl">
+		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+	</bean> -->
+	<!-- service -->
+	<!-- <bean id="empService" class="cn.com.service.impl.EmpServiceImpl">
+		<property name="dao" ref="emptblDao"></property>
+	</bean> -->
+</beans>

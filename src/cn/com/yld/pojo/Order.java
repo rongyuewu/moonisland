@@ -8,29 +8,29 @@ import java.io.Serializable;
 
 
 public class Order implements Serializable{
-	private int orderId;
-	private String orderNumber;
-	private String goodsId;
-	private String glassId;
-	private String userId;
-	private String optometryId;
-	private String orderStatus;
-	private String shippingStatus;
-	private String payStatus;
-	private String consignee;
-	private String provinceid;
-	private String cityid;
-	private String districtid;
-	private String address;
-	private String zipcode;
-	private String phone;
-	private String payNum;
-	private String orderMoney;
-	private String postscript;
-	private String shippingId;
-	private String shippingName;
-	private String shippingNum;
-	private String orderTime;
+	private int orderId; // 订单id
+	private String orderNumber; //订单号 (YLD1504083859) 生成策略YLD+时间戳
+	private String goodsId;// 商品id
+	private String glassId; // 镜片id
+	private String userId; // 用户id
+	private String optometryId; // 验光单id
+	private String orderStatus; // 订单状态（0 待付款，用户购物车点击结算但是未支付，1 待发货，客服确认订单，2 已完成，后台管理确认，到付完成，回款，3 已取消，4 已退款）
+	private String shippingStatus; // 配送情况（0 未发货，1 已发货，2 已收货，4退货）
+	private String payStatus;// 支付状态（0 未付款，1 付款中，2已付款）
+	private String consignee;// 收货人姓名
+	private String provinceid;// 收货人省份id
+	private String cityid;// 收货人城市id
+	private String districtid;// 收货人地区 id
+	private String address;// 收货人详细地址
+	private String zipcode;// 邮编
+	private String phone;//联系方式
+	private String payNum;// 购买数量
+	private String orderMoney; // 订单金额
+	private String postscript;// 留言
+	private String shippingId;// 配送方式id
+	private String shippingName;// 配送方式名称
+	private String shippingNum;// 快递单号
+	private String orderTime;// 订单生成时间
 
 	public void setOrderId(int orderId){
 		this.orderId=orderId;

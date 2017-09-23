@@ -8,10 +8,10 @@ import java.io.Serializable;
 
 
 public class Area implements Serializable{
-	private String areaId;
-	private String title;
-	private String pid;
-	private int sort;
+	private String areaId;//地区id
+	private String title;//地区名称
+	private String pid;//父级地区ID
+	private int sort;//排序值
 
 	public void setAreaId(String areaId){
 		this.areaId=areaId;

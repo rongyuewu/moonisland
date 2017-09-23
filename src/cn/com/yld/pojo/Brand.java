@@ -8,11 +8,11 @@ import java.io.Serializable;
 
 
 public class Brand implements Serializable{
-	private int brandId;
-	private String brandName;
-	private String brandLogo;
-	private String brandCon;
-	private String brandAddtime;
+	private int brandId;// 品牌id
+	private String brandName;// 品牌名称
+	private String brandLogo;// logo路径
+	private String brandCon;// 品牌描述
+	private String brandAddtime;// 添加时间
 
 	public void setBrandId(int brandId){
 		this.brandId=brandId;

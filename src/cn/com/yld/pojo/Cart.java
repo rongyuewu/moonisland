@@ -8,20 +8,20 @@ import java.io.Serializable;
 
 
 public class Cart implements Serializable{
-	private int carId;
-	private String userId;
-	private String optometryId;
-	private String isFrameonly;
-	private String goodsId;
-	private String minusPrice;
-	private String privilege;
-	private String points;
-	private String bothNum;
-	private String glassId;
-	private String catTime;
-	private String cartStatus;
-	private String goodsAttrid;
-	private String picId;
+	private int carId;// 购物车id
+	private String userId;// 用户id
+	private String optometryId;// 验光单id
+	private String isFrameonly;// 是否只有镜框(0 表示不仅有镜架还有镜框，1 只有镜架)，默认为0
+	private String goodsId;// 商品id
+	private String minusPrice;// 立减价格(填写减去的数字)
+	private String privilege;// 特权改价（填写可改价最高价格,普通会员无此项）
+	private String points;// 积分(设置0或者1,0为不参与积分活动，1参与)
+	private String bothNum;// 商品数量
+	private String glassId;// 镜片id
+	private String catTime;// 购物车时间
+	private String cartStatus;// 购物车状态
+	private String goodsAttrid;// 商品属性id
+	private String picId;// 图片id
 
 	public void setCarId(int carId){
 		this.carId=carId;

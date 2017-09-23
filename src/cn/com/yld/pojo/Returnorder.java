@@ -8,13 +8,13 @@ import java.io.Serializable;
 
 
 public class Returnorder implements Serializable{
-	private int returnId;
-	private String orderId;
-	private String userId;
-	private String goodsId;
-	private String reason;
-	private String returnStatus;
-	private String returnTime;
+	private int returnId; //退货id
+	private String orderId;// 退货订单id
+	private String userId; // 用户id
+	private String goodsId; // 退货商品id
+	private String reason; // 退货理由
+	private String returnStatus; // 退货状态(0 等待处理，1 处理完成)
+	private String returnTime; // 退货时间
 
 	public void setReturnId(int returnId){
 		this.returnId=returnId;

@@ -8,31 +8,31 @@ import java.io.Serializable;
 
 
 public class Goods implements Serializable{
-	private int goodsId;
-	private String brandId;
-	private String goodsName;
-	private String category;
-	private String originalPrice;
-	private String salesPrice;
-	private String goodsColor;
-	private String goodsContent;
-	private String browseNum;
-	private String saveNum;
-	private String salesNum;
-	private String isSale;
-	private String goodsKeywords;
-	private String isOnsale;
-	private String stockNum;
-	private String minusPrice;
-	private String privilege;
-	private String points;
-	private String style;
-	private String styleA;
+	private int goodsId;//商品id
+	private String brandId;//品牌id
+	private String goodsName;//商品名称
+	private String category;//分类（1太阳镜2男士 3女士4功能眼镜5透明隐形眼镜6护理液7框架眼镜8隐形眼镜护理）
+	private String originalPrice;//原始价格
+	private String salesPrice;//销售价格
+	private String goodsColor;//商品颜色
+	private String goodsContent;//商品描述
+	private String browseNum;//浏览次数
+	private String saveNum;//收藏次数（在用户收藏的时候一并添加）
+	private String salesNum;//销售数量
+	private String isSale;//是否促销(1促销 0 为促销)
+	private String goodsKeywords;//商品关键词
+	private String isOnsale;//是否在售
+	private String stockNum;//库存数量
+	private String minusPrice;//立减价格(填写减去的数字)
+	private String privilege;//特权改价（填写可改价最高价格,普通会员无此项）
+	private String points;//积分(设置0或者1,0为不参与积分活动，1参与)
+	private String style;//款式 (1为男款 和2为女款，3为通用)
+	private String styleA;// 尺码A
 	private String styleB;
 	private String styleC;
 	private String styleD;
 	private String styleE;
-	private String addTime;
+	private String addTime;//时间
 
 	public void setGoodsId(int goodsId){
 		this.goodsId=goodsId;

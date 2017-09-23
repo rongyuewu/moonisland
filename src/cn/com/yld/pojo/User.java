@@ -8,22 +8,22 @@ import java.io.Serializable;
 
 
 public class User implements Serializable{
-	private int userId;
-	private String points;
-	private String userLevel;
-	private String isPrivilege;
-	private String privilegeNum;
-	private String phone;
-	private String nickName;
-	private String headerPic;
-	private String password;
-	private String sex;
-	private String birthday;
-	private String zipcode;
-	private String mobile;
-	private String mail;
-	private String userTime;
-	private String userStatus;
+	private int userId; // 用户id
+	private String points; // 积分
+	private String userLevel; // 会员等级（500 普通会员，5000 普通会员，10000白金会员），随积分变动
+	private String isPrivilege; // 是否为特权会员(0 不是，1是),默认为0
+	private String privilegeNum;// 特权改价次数(默认10次，使用一次减少一次)
+	private String phone; // 注册手机号(手机验证默认为已验证)
+	private String nickName; // 昵称
+	private String headerPic; // 头像
+	private String password; // 密码
+	private String sex; // 性别
+	private String birthday; // 生日
+	private String zipcode; // 邮编
+	private String mobile; // 联系电话(默认是注册手机，除非再次指定)
+	private String mail;// 邮箱
+	private String userTime; // 注册时间
+	private String userStatus;// 用户状态(0已删除，1可用)
 
 	public void setUserId(int userId){
 		this.userId=userId;

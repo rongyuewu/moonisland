@@ -8,16 +8,25 @@ import java.io.Serializable;
 
 
 public class Address implements Serializable{
-	private int addressId;
-	private String provinceid;
-	private String cityid;
-	private String districtid;
-	private String address;
-	private String zipcode;
-	private String phone;
-	private String userId;
-	private String userName;
-	private String addressState;
+	private int addressId;//收货地址id
+	private String provinceid;//省份id
+	private String cityid;//城市ID
+	private String districtid;//地区ID
+	private String address;//详细地址
+	private String zipcode;//邮编
+	private String phone;//电话
+	private String userId;//用户id
+	private String userName;//收货人姓名
+	private String addressState;//收货地址状态
+	private User user;//关联类
+	
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
 
 	public void setAddressId(int addressId){
 		this.addressId=addressId;
