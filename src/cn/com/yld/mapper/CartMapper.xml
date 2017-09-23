@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.yld.CartMapper">
+  <resultMap type="Cart" id="cartrestltMap">
+  	<id column="car_id" property="carId"/>
+  	<result column="user_id" property="userId"/>
+  	<result column="optometry_id" property="optometryId"/>
+  	<result column="is_frame_only" property="isFrameonly"/>
+  	<result column="goods_id" property="goodsId"/>
+  	<result column="minus_price" property="minusPrice"/>
+  	<result column="privilege" property="privilege"/>
+  	<result column="points" property="points"/>
+  	<result column="both_num" property="bothNum"/>
+  	<result column="glass_id" property="glassId"/>
+  	<result column="cat_time" property="catTime"/>
+  	<result column="cart_status" property="cartStatus"/>
+  	<result column="goods_attr_id" property="goodsAttrid"/>
+  	<result column="pic_id" property="picId"/>
+  </resultMap>
+</mapper>
