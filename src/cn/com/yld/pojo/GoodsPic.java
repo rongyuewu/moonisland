@@ -1,12 +1,13 @@
 package cn.com.yld.pojo;
+import java.io.Serializable;
 
    /**
     * GoodsPic 实体类
-    * Sat Sep 23 08:56:04 CST 2017 anmin
+    * Sat Sep 23 10:24:17 CST 2017 anmin
     */ 
 
 
-public class GoodsPic{
+public class GoodsPic implements Serializable{
 	private int picId;
 	private String goodsId;
 	private String pic1;

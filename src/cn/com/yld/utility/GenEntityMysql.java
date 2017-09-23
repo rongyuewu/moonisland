@@ -3,7 +3,8 @@ package cn.com.yld.utility;
 import java.io.File;  
 import java.io.FileWriter;  
 import java.io.IOException;  
-import java.io.PrintWriter;  
+import java.io.PrintWriter;
+import java.io.Serializable;
 import java.sql.Connection;  
 import java.sql.DriverManager;  
 import java.sql.ResultSet;  
@@ -13,7 +14,7 @@ import java.sql.Statement;
 import java.util.Date; 
 
 public class GenEntityMysql{
-	private String packageOutPath = "com.yld.pojo";//指定实体生成所在包的路径  
+	private String packageOutPath = "cn.com.yld.pojo";//指定实体生成所在包的路径  
 	 private String authorName = "anmin";//作者名字  
 	 private static String tablename;//表名  
 	 private String classname = replaceUnderlineAndfirstToUpper(tablename.substring(tablename.indexOf("_")+1,tablename.length()),"_","");
@@ -21,7 +22,8 @@ public class GenEntityMysql{
 	 private String[] colTypes; //列名类型数组  
 	 private int[] colSizes; //列名大小数组  
 	 private boolean f_util = false; // 是否需要导入包java.util.*  
-	 private boolean f_sql = false; // 是否需要导入包java.sql.*  
+	 private boolean f_sql = false; // 是否需要导入包java.sql.* 
+	 private boolean f_Serializable=true;
 	      
 	    //数据库连接  
 	  private static final String URL ="jdbc:mysql://localhost:3306/moon";  
@@ -113,6 +115,9 @@ public class GenEntityMysql{
 	    
 	  sb.append("package " + this.packageOutPath + ";\r\n");  
 	  //判断是否导入工具包  
+	  if(f_Serializable){  
+		   sb.append("import java.io.Serializable;\r\n");  
+		  }  
 	  if(f_util){  
 	   sb.append("import java.util.Date;\r\n");  
 	  }  
@@ -126,7 +131,7 @@ public class GenEntityMysql{
 	  sb.append("    * "+new Date()+" "+this.authorName+"\r\n");  
 	  sb.append("    */ \r\n");  
 	  //实体部分  
-	  sb.append("\r\n\r\npublic class " + firstCharacterToUpper(classname) + "{\r\n");  
+	  sb.append("\r\n\r\npublic class " + firstCharacterToUpper(classname)+" implements Serializable" + "{\r\n");  
 	  processAllAttrs(sb);//属性  
 	  processAllMethod(sb);//get set方法  
 	  sb.append("}\r\n");  

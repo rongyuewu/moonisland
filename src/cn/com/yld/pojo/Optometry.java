@@ -1,12 +1,13 @@
 package cn.com.yld.pojo;
+import java.io.Serializable;
 
    /**
     * Optometry 实体类
-    * Sat Sep 23 08:56:04 CST 2017 anmin
+    * Sat Sep 23 10:24:17 CST 2017 anmin
     */ 
 
 
-public class Optometry{
+public class Optometry implements Serializable{
 	private int optometryId;
 	private String userId;
 	private String rSph;

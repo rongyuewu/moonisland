@@ -1,12 +1,13 @@
 package cn.com.yld.pojo;
+import java.io.Serializable;
 
    /**
     * PhotoWall 实体类
-    * Sat Sep 23 08:56:04 CST 2017 anmin
+    * Sat Sep 23 10:24:17 CST 2017 anmin
     */ 
 
 
-public class PhotoWall{
+public class PhotoWall implements Serializable{
 	private int photoId;
 	private String photoUrl;
 	private String photoWord;
