@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.mapper.EmpMapper">
+	<resultMap type="Emp" id="empres">
+		<id column="empid" property="empid"/>
+		<result column="empname" property="empname" />
+		<result column="empage" property="empage" />
+		<association property="dept" javaType="Dept">
+			<id column="dept_id" property="deptId"/>
+			<result column="dept_name" property="deptname" />
+		</association> 
+	</resultMap>
+	<insert id="insert" parameterType="Emp">
+		insert into emp(empname,empage,did) values(#{empname},#{empage},#{dept.deptId})
+	</insert>
+	<select id="findall" resultMap="empres">
+		select e.*,d.dept_name from emp e,dept d where e.did=d.dept_id
+	</select>
+</mapper>
