@@ -12,4 +12,6 @@ public interface GlassMapper {
 	public void insert(Glass glass);
 	//更新
 	public void update(Glass glass);
+	//分页
+	public List<Glass> findbylike();
 }

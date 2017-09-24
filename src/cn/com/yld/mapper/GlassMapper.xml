@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.yld.mapper.GlassMapper">
+  <resultMap type="Glass" id="glass">
+  	<id column="glass_id" property="glassId"/>
+  	<result column="glass_style" property="glassStyle"/>
+  	<result column="glass_name" property="glassName"/>
+  	<result column="glass_price" property="glassPrice"/>
+  	<result column="sph_price" property="sphPrice"/>
+  	<result column="cyl_price" property="cylPrice"/>
+  	<result column="glass_img" property="glassImg"/>
+  	<result column="glass_imgthumb" property="glassImgthumb"/>
+  	<result column="glass_time" property="glassTime"/>
+  	<result column="color1" property="color1"/>
+  	<result column="color2" property="color2"/>
+  	<result column="color3" property="color3"/>
+  	<result column="color4" property="color4"/>
+  	<result column="color5" property="color5"/>
+  	<result column="color6" property="color6"/>
+  	<result column="color7" property="color8"/>
+  	<result column="color8" property="color8"/>
+  	<result column="color9" property="color9"/>
+  	<result column="is_active" property="isActive"/>
+  </resultMap>
+ 
+</mapper>
