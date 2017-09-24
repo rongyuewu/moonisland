@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.com.yld.mapper.UserMapper">
-  <resultMap type="User" id="userestltMap">
+  <resultMap type="User" id="user">
   	<id column="user_id" property="userId"/>
   	<result column="points" property="points"/>
   	<result column="user_level" property="userLevel"/>
@@ -19,4 +19,180 @@
   	<result column="user_time" property="userTime"/>
   	<result column="user_status" property="userStatus"/>
   </resultMap>
+  <select id="findall" resultMap="user">
+  		select * from moon_user
+  </select>
+  <select id="finduser" resultType="user"  parameterType="user">
+       select * from moon_user 
+       <trim prefix="WHERE" prefixOverrides="and">
+       	 	<if test="userId>0">
+          		user_id=#{userId}
+           	</if>
+           	<if test="phone != null">
+          		and phone=#{phone}
+           	</if>
+           	<if test="mail != null">
+           		and mail=#{mail}
+           	</if>
+           	<if test="passsword != null">
+           		and password=#{password}
+           	</if>
+       </trim>
+  </select>
+  <insert id="insert" parameterType="user">
+  		insert into moon_user (
+  			<trim prefixOverrides=",">
+  			<if test="points != null">
+  				#{points}
+  			</if>
+  			<if test="userLevel != null">
+  				,#{user_level}
+  			</if>
+  			<if test="isPrivilege != null">
+  				,#{is_privilege}
+  			</if>
+  			<if test="privilegeNum != null">
+  				,#{privilege_num}
+  			</if>
+  			<if test="phone != null">
+  				,#{phone}
+  			</if>
+  			<if test="nickName != null">
+  				,#{nick_name}
+  			</if>
+  			<if test="headerPic != null">
+  				,#{header_pic}
+  			</if>
+  			<if test="password != null">
+  				,#{password}
+  			</if>
+  			<if test="sex != null">
+  				,#{sex}
+  			</if>
+  			<if test="birthday != null">
+  				,#{birthday}
+  			</if>
+  			<if test="zipcode != null">
+  				,#{zipcode}
+  			</if>
+  			<if test="mobile != null">
+  				,#{mobile}
+  			</if>
+  			<if test="mail != null">
+  				,#{mail}
+  			</if>
+  			<if test="userTime != null">
+  				,#{user_time}
+  			</if>
+  			<if test="userStatus != null">
+  				,#{user_status}
+  			</if>	
+  		</trim>
+  		) values(
+  		<trim prefixOverrides=",">
+  			<if test="points != null">
+  				points=#{points}
+  			</if>
+  			<if test="userLevel != null">
+  				,user_level=#{userLevel}
+  			</if>
+  			<if test="isPrivilege != null">
+  				,is_privilege=#{isPrivilege}
+  			</if>
+  			<if test="privilegeNum != null">
+  				,privilege_num=#{privilegeNum}
+  			</if>
+  			<if test="phone != null">
+  				,#{phone}
+  			</if>
+  			<if test="nickName != null">
+  				,nick_name=#{nickName}
+  			</if>
+  			<if test="headerPic != null">
+  				,header_pic#{headerPic}
+  			</if>
+  			<if test="password != null">
+  				,#{password}
+  			</if>
+  			<if test="sex != null">
+  				,#{sex}
+  			</if>
+  			<if test="birthday != null">
+  				,#{birthday}
+  			</if>
+  			<if test="zipcode != null">
+  				,#{zipcode}
+  			</if>
+  			<if test="mobile != null">
+  				,#{mobile}
+  			</if>
+  			<if test="mail != null">
+  				,#{mail}
+  			</if>
+  			<if test="userTime != null">
+  				,user_time=#{userTime}
+  			</if>
+  			<if test="userStatus != null">
+  				,user_status=#{userStatus}
+  			</if>	
+  		</trim>
+  		)
+  </insert>
+  <update id="update" parameterType="user">
+  		update moon_user set 
+  		<trim prefixOverrides=",">
+  			<if test="points != null">
+  				#{points}
+  			</if>
+  			<if test="userLevel != null">
+  				,#{userLevel}
+  			</if>
+  			<if test="isPrivilege != null">
+  				,#{isPrivilege}
+  			</if>
+  			<if test="privilegeNum != null">
+  				,#{privilegeNum}
+  			</if>
+  			<if test="phone != null">
+  				,#{phone}
+  			</if>
+  			<if test="nickName != null">
+  				,#{nickName}
+  			</if>
+  			<if test="headerPic != null">
+  				,#{headerPic}
+  			</if>
+  			<if test="password != null">
+  				,#{password}
+  			</if>
+  			<if test="sex != null">
+  				,#{sex}
+  			</if>
+  			<if test="birthday != null">
+  				,#{birthday}
+  			</if>
+  			<if test="zipcode != null">
+  				,#{zipcode}
+  			</if>
+  			<if test="mobile != null">
+  				,#{mobile}
+  			</if>
+  			<if test="mail != null">
+  				,#{mail}
+  			</if>
+  			<if test="userTime != null">
+  				,#{userTime}
+  			</if>
+  			<if test="userStatus != null">
+  				,#{userStatus}
+  			</if>	
+  		</trim>
+  		where user_id=#{userId}
+  </update>
+  <update id="delete" parameterType="user">
+  		update moon_user set user_status='0' where user_id=#{userid}
+  </update>
+  <update id="cleandelete" parameterType="user">
+  		update moon_user set user_status='1' where user_id=#{userid}
+  </update>
 </mapper>
