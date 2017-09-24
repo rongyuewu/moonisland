@@ -4,14 +4,6 @@ import cn.com.yld.pojo.Admin;
 
 public interface AdminMapper {
 	// 查询全部
-	public List<Admin> findall();
+	public Admin find(Admin admin);
 
-	// 查询全部
-	public List<Admin> findbyid();
-
-	// 插入
-	public void insert(Admin admin);
-
-	// 更新
-	public void update(Admin admin);
 }
