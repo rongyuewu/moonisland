@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.yld.BrandMapper">
+  <resultMap type="Brand" id="brandrestltMap">
+  	<id column="brand_id" property="brandId"/>
+  	<result column="brand_name" property="brandName"/>
+  	<result column="brand_logo" property="brandLogo"/>
+  	<result column="brand_con" property="brandCon"/>
+  	<result column="brand_addtime" property="brandAddtime"/>
+  </resultMap>
+</mapper>
