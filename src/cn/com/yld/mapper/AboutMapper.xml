@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
-<mapper namespace="cn.com.yld.AboutMapper">
-  <resultMap type="About" id="abtrestltMap">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.yld.mapper.AboutMapper">
+  <resultMap type="About" id="about">
   	<id column="about_id" property="aboutId"/>
   	<result column="about_style" property="aboutStyle"/>
   	<result column="about_content" property="aboutContent"/>
   	<result column="about_time" property="aboutTime"/>
   </resultMap>
-  
+  <select id="findall" resultMap="about">
+  	SELECT * FROM moon_about
+  </select>
+  <insert id="insert" parameterType="about">
+  	INSERT INTO moon_about (about_style,about_content,about_time)VALUES(#{aboutStyle},#{aboutContent},sysdate())
+  </insert>
+  <update id="update" parameterType="about">
+  	UPDATE moon_about SET about_style=#{aboutStyle},about_content=#{aboutContent} WHERE about_id=#{aboutId}
+  </update>
+  <delete id="delete" parameterType="about">
+  	delete FROM moon_about where about_id=#{aboutId}
+  </delete>
 </mapper>

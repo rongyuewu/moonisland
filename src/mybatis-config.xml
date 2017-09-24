@@ -12,11 +12,7 @@
 	</typeAliases>
 	<!-- 映射文件 -->
 	<mappers>
-		<!-- 单个文件映射
-		<mapper resource="cn/com/pojo/UsertblMapper.xml"/> 
-		<mapper resource="cn/com/pojo/DepttblMapper.xml"/>
-		<mapper resource="cn/com/pojo/EmptblMapper.xml"/> 
-		<mapper resource="cn/com/pojo/StudenttblMapper.xml"/>-->
+		
 		<!-- 目录映射 如果要起效，那么mapper接口类文件和映射文件放到同一目录下
 			1.mapper接口对的全限定名称要和mapper映射文件的namespace一致
 			2.mapper接口的方法名称，参数类型parameterType，返回值类型resultType 要与mapper映射文件中一致
@@ -24,5 +20,6 @@
 			3.mapper接口名要与映射文件名一致
 		-->
 		<package name="cn/com/yld/mapper"/>
+		
 	</mappers>
 </configuration>
