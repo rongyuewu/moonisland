@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
-<mapper namespace="cn.com.yld.mapper.BrandMapper">
-  <resultMap type="Brand" id="brandrestltMap">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+  <mapper namespace="cn.com.yld.mapper.BrandMapper">
+  <resultMap type="Brand" id="brand">
   	<id column="brand_id" property="brandId"/>
   	<result column="brand_name" property="brandName"/>
   	<result column="brand_logo" property="brandLogo"/>
   	<result column="brand_con" property="brandCon"/>
   	<result column="brand_addtime" property="brandAddtime"/>
   </resultMap>
+  <select id="findall" resultMap="brand">
+  		select * from moon_brand
+  </select>
+  <select id="findbrand" resultMap="brand" parameterType="band">
+  		select * from moon_brand where brand_id=#{brandId}
+  </select>
 </mapper>
+
