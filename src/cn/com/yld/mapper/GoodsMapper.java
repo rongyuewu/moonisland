@@ -6,7 +6,7 @@ import cn.com.yld.pojo.Goods;
 public interface GoodsMapper {
 	//查询全部
 	public List<Goods> findall();
-	//查询全部
+	//id查询
 	public List<Goods> findbyid();
 	//插入
 	public void insert(Goods goods);
