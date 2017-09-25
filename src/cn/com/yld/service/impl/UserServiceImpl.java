@@ -46,4 +46,9 @@ public class UserServiceImpl implements UserService {
 		dao.cleandelete(user);
 	}
 
+	@Override
+	public User findlogin(User user) {
+		return dao.findlogin(user);
+	}
+
 }

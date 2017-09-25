@@ -1,40 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>登录</title>
-    <style type="text/css">
-        #head{
-            width:100%;
-            height:100px;
-            background:#fc0;
-        }
-        #mid{
-            width:100%;
-            height:600px;
-            background: #ccc;
-        }
-        #foot{
-            width:100%;
-            height:100px;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 默认情况下，UI布局的宽度和移动设备的宽度一致，缩放大小为原始大小 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>首页</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+
 </head>
 <body>
-    <div id="">
-        <div id="head">
-            Mood Is Land
+        <div class="container navbar-header div">
+            <div class="col-xs-3 div qp text-center">
+                <div class="col-xs-12 div qp">
+                <img src="images/coordinates_fill.png"  width="30px" id="img">
+            </div>
+                <div class="col-xs-12 div qp" >
+                    <p>线下验光</p>
+                </div ></div>
+            <div class="col-xs-8 div">
+               MOON ISLAND
+            </div>
         </div>
-        <div id="mid">
-            <form action="">
-                <p>账号:<input type="text" name="name"></p>
-                <p>密码:<input type="password" name="pwd"></p>
-                <p><input type="submit" value="登录" /></p>
-            </form>
-        </div>
-        <div id="foot">
-            <p>© YLDSHOP ALL RIGHTS RESERVED. DESIGNED BY ELIER.  粤ICP备16037632号</p>
-        </div>
+    <div class="container " id="tp">
+        <img src="images/sy_02.png" class="img-responsive" alt="">
     </div>
+    <!--今日秒杀-->
+    <div class="container-fluid" id="ms">
+        <div id="tpx" class="col-xs-1 qp "></div>
+        <div class="col-xs-3 qp" style="padding-top: 5px;padding-left: 5px">今日秒杀 <img src="images/sy1.png" width="23" height="23px" alt=""></div>
+        <div id="JL" class="text-right" style="padding-top: 5px">距离秒杀结束还有 <span>12&nbsp;</span>小时 <span>&nbsp;2&nbsp;</span>分钟 <span>12&nbsp;</span>秒</div>
+    </div>
+    <!--图片-->
+        <div class="container-fluid" style="padding-top: 13px">
+            <div class="col-xs-6">
+                <img src="images/sy_05.png" class="img-responsive" style="height: 171px">
+            </div>
+            <div class="col-xs-6">
+                <img src="images/sy_05.png" class="img-responsive" style="height: 171px">
+            </div>
+        </div>
+        <div id="tp_h"></div>
+    <!--新品-->
+        <div class="container-fluid" id="xp" style="padding-top: 5px">
+            <div  class="col-xs-1 qp" id="xp1" style="padding-top: 10px"></div>
+            <div class="col-xs-4 qp " style="padding-top: 7px;padding-left: 5px">新品特惠<span style="background-color:#ee6a44; color: white">NEW</span></div>
+            <div class="col-xs-7 text-right" style="padding-top: 11px">更多 <img src="images/right.png" width="20px" height="20px" alt=""></div>
+        </div>
+    <!--图片-->
+        <div class="container-fluid" style="padding-top: 24px">
+            <div class="col-xs-6">
+                <img src="images/sy_05.png" class="img-responsive" style="height: 171px">
+            </div>
+            <div class="col-xs-6">
+                <img src="images/sy_05.png" class="img-responsive" style="height: 171px">
+            </div>
+        </div>
+    <!--底部-->
+        <div class="container navbar-fixed-bottom qp" id="bot" style="font-size: 11px">
+            <div class="col-xs-2 atyg_h" style="padding-top: 4px">
+                <div><img src="images/main.png" width="23px" height="20px" class="img-responsive center-block" alt=""></div>
+                <div class="text-center" id="sy">首页</div>
+            </div>
+            <div class="col-xs-2 atyg_h" style="padding-top: 4px">
+                <div><img src="images/class.png" width="23px" height="20px" class="img-responsive center-block" alt=""></div>
+                <div class="text-center">分类</div>
+            </div>
+            <div class="col-xs-2 atyg_h">
+                <div style="position: absolute;top: -10px;left: 30%" class="circle"><img src="images/customer.png" width="33px" height="20px" class="img-responsive center-block" alt=""></div>
+                <div class="text-center" style="padding-top: 27px">客户服务</div>
+            </div>
+            <div class="col-xs-2 atyg_h" style="padding-top: 4px">
+                <div><img src="images/car.png" width="23px" height="20px" class="img-responsive center-block" alt=""></div>
+                <div class="text-center">购物车</div>
+                <div class="text-center" id="df">1</div>
+            </div>
+            <div class="col-xs-2 atyg_h" style="padding-top: 4px">
+                <div><img src="images/my-fill.png" width="23px" height="20px" class="img-responsive center-block" alt=""></div>
+                <div class="text-center" style="color:#f1312e ">我的</div>
+            </div>
+        </div>
 </body>
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=k7Idb4Ci5W9R3ohTi6WvQSxwuSn8vWRb"></script>
+<script>
+    $("#img").click(function () {
+        if(navigator.geolocation){
+            var geo = navigator.geolocation;
+            geo.getCurrentPosition(
+                function(data){//data是返回的位置对象
+                    var lg = data.coords.longitude;
+                    var lt = data.coords.latitude;
+                    // 百度地图API功能
+                    var map = new BMap.Map("allmap");  //创建Map实例
+                    map.centerAndZoom(new BMap.Point(lg, lt), 11);  // 初始化地图,设置中心点坐标和地图级别
+                    map.addControl(new BMap.MapTypeControl());   //添加地图类型控件
+                    map.setCurrentCity("北京");          // 设置地图显示的城市 此项是必须设置的
+                    map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+                },
+                function(error){//error是异常对象
+                    alert(error.code);
+                },
+                {setTimeout:5000}
+            );
+        }else{
+            alert("浏览器不支持地理定位！")
+        }
+    });
+</script>
 </html>

@@ -22,22 +22,20 @@
   <select id="findall" resultMap="user">
   		select * from moon_user
   </select>
-  <select id="finduser" resultType="user"  parameterType="user">
-       select * from moon_user 
+  <select id="findlogin" resultType="user"  parameterType="user">
+  		select * from moon_user 
        <trim prefix="WHERE" prefixOverrides="and">
-       	 	<if test="userId>0">
-          		user_id=#{userId}
-           	</if>
            	<if test="phone != null">
-          		and phone=#{phone}
+          		phone=#{phone}
            	</if>
            	<if test="mail != null">
            		and mail=#{mail}
-           	</if>
-           	<if test="passsword != null">
-           		and password=#{password}
-           	</if>
+           	</if> 	
        </trim>
+       and password=#{password}
+  </select>
+  <select id="finduser" resultType="user"  parameterType="user">
+       select * from moon_user where user_id=#{userId}
   </select>
   <insert id="insert" parameterType="user">
   		insert into moon_user (

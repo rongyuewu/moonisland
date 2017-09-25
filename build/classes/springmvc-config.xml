@@ -54,9 +54,15 @@
 	 	<bean id="aboutDao" class="cn.com.yld.dao.impl.AboutDaoImpl">
 	 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
 	 	</bean>
+	 	<bean id="userDao" class="cn.com.yld.dao.impl.UserDaoImpl">
+	 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+	 	</bean>
 	 	<!-- 业务层 -->
 	 	<bean id="aboutService" class="cn.com.yld.service.impl.AboutServiceImpl">
 	 		<property name="dao" ref="aboutDao"></property>
+	 	</bean>
+	 	<bean id="userService" class="cn.com.yld.service.impl.UserServiceImpl">
+	 		<property name="dao" ref="userDao"></property>
 	 	</bean>
 	 	
 	 	

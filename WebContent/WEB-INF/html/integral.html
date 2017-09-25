@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--默认情况下，UI布局的宽度和移动设备的宽度一致，缩放大小为原始大小-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>我的积分</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+        body{
+            width: 100%;
+            height: 100%;
+            background: #ffffff;
+            font-family: 微软雅黑;
+        }
+        .top{
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            height: 64px;
+        }
+        .top div{
+            margin-top: 30px;
+        }
+        .radio{
+            border-radius: 50%;
+            background: #ff0000;
+            width: 5px;
+            height: 5px;
+            position: absolute;
+            left: 35px;
+            top:-5px;
+        }
+        .container{
+            background-color: red;
+            color: #ffffff;
+        }
+        .container p{
+            margin: 20px;
+        }
+        .bottom{
+            margin-top: 20px;
+            text-align: center;
+            font-size: 16px
+        }
+        a{
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+    <div class="top">
+        <div class="col-xs-2">
+            <a href="#"><img src="icon/arrow-left.png" width="20" height="20"/></a>
+        </div>
+        <div class="col-xs-8">
+            我的积分
+        </div>
+        <div class="col-xs-2" >
+            <span class="radio"></span>
+            <a href="#"><img src="icon/more.png" height="20" width="20"/></a>
+        </div>
+    </div>
+
+    <div class="container">
+            <p style="font-size: 50px; margin-top: 41px">2584</p>
+            <p>小积分，大用途</p>
+    </div>
+    <div class="bottom">
+        <p><a href="#">使用帮助</a></p>
+    </div>
+</body>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-1.11.0.min.js"></script>
+</html>

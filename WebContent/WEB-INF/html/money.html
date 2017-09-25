@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--默认情况下，UI布局的宽度和移动设备的宽度一致，缩放大小为原始大小-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>我的订单</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+        body{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: 微软雅黑;
+            font-weight: bold;
+            background: #f8f8f8;
+        }
+        .container .col-xs-2{
+            width: 20%;
+            float: left;
+            padding: 0;
+            text-align: center;
+        }
+        .center{
+            background: #ffffff;
+        }
+        .top{
+            text-align: center;
+            padding: 1px;
+            height: 63px;
+        }
+        .top div{
+            margin-top: 30px;
+            background: #ffffff;
+        }
+        .container{
+            width: 100%;
+            padding: 0;
+            margin-top: 10px;
+        }
+        .exe{
+            color: #ff0000;
+            border-bottom: solid 2px #ff0000;
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+        .foot .pic img{
+            margin: 20px 5px;
+            width: 60px;
+            height: 60px;
+        }
+        .foot .foot1{
+            background: #ffffff;
+            overflow: hidden;
+        }
+        .foot .foot1 .foot2 div{
+            float: left;
+            padding-bottom: 10px;
+        }
+        .delete{
+            margin-left: 5%;
+        }
+        .pay{
+            color: #ff0000;
+            border: solid 1px #ff0000;
+            width: 80px;
+            height: 25px;
+            line-height: 25px;
+            margin-left: 60%;
+            text-align: center;
+        }
+        .foot .pic .col-xs-9 p{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+        .text_button{
+            cursor: pointer;
+        }
+        a{
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <div class="top">
+            <div class="col-xs-2">
+                <a href="#"><img src="icon/arrow-left.png" height="20" width="20"/></a>
+            </div>
+            <div class="col-xs-8" style="font-size: 18px; font-weight: bold">我的订单</div>
+            <div class="col-xs-2"></div>
+        </div>
+        <div>
+            <h5 class="page-header" style="margin: 0"></h5>
+        </div>
+        <div class="container">
+            <div>
+                <div class="col-xs-2 text_button"><span>全部</span></div>
+                <div class="col-xs-2 text_button"><span class="exe">待付款</span></div>
+                <div class="col-xs-2 text_button"><span>待收货</span></div>
+                <div class="col-xs-2 text_button"><span>已完成</span></div>
+                <div class="col-xs-2 text_button"><span>已取消</span></div>
+            </div>
+            <img src="images/myorder/wddd_02.png" class="img-responsive" style="padding-top: 2px"/>
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="foot">
+            <div style="padding: 10px;background: #ffffff;height: 40px">
+                <a href="#"><div class="col-xs-6"><img src="icon/shop.png" height="15" width="15" style="margin-right: 5px"/>威古氏眼镜</div></a>
+                <div class="col-xs-6" style="color: #ff0000; text-align: right">等待付款</div>
+            </div>
+            <div class="pic">
+                <img src="images/myorder/wddd_05.png"/>
+                <img src="images/myorder/wddd_07.png"/>
+                <img src="images/myorder/wddd_09.png"/>
+            </div>
+            <div class="foot1">
+                <div style="text-align: right; margin-right: 10px;padding-top: 10px">共3件商品 需付款：<span>￥298.</span><span style="font-size: 12px">00</span></div>
+                <h5 class="page-header" style="margin-top: 10px;padding: 0"></h5>
+                <div class="foot2">
+                    <div class="delete"><img src="icon/delete.png" height="20" width="20"/></div>
+                    <a class="text_button" href="#"><div class="pay">去支付</div></a>
+                </div>
+            </div>
+        </div>
+        <div class="foot" style="margin-top: 10px">
+            <div style="padding: 10px;background: #ffffff;height: 40px">
+                <a href="#"><div class="col-xs-6"><img src="icon/shop.png" height="15" width="15" style="margin-right: 5px"/>帕森眼镜</div></a>
+                <div class="col-xs-6" style="color: #ff0000; text-align: right">等待付款</div>
+            </div>
+            <div class="pic">
+                <div class="col-xs-3">
+                    <img src="images/myorder/wddd_15.png"/>
+                </div>
+                <div class="col-xs-9">
+                    <p style="margin-top: 20px">帕森（PARZIN）男士太阳镜铝镁偏光太阳镜男款眼镜驾驶墨镜8003 黑框黑灰片</p>
+                </div>
+            </div>
+            <div class="foot1" style="margin-top: 100px">
+                <div style="text-align: right; margin-right: 10px;padding-top: 10px">共1件商品 需付款：<span>￥139.</span><span style="font-size: 12px">00</span></div>
+                <h5 class="page-header" style="margin-top: 10px;padding: 0"></h5>
+                <div class="foot2">
+                    <div class="delete"><img src="icon/delete.png" height="20" width="20"/></div>
+                    <a class="text_button" href="#"><div class="pay">去支付</div></a>
+                </div>
+            </div>
+        </div>
+        <div class="foot" style="margin-top: 10px">
+            <div style="padding: 10px;background: #ffffff;height: 40px">
+                <a href="#"><div class="col-xs-6"><img src="icon/shop.png" height="15" width="15" style="margin-right: 5px"/>威古氏眼镜</div></a>
+                <div class="col-xs-6" style="color: #ff0000; text-align: right">等待付款</div>
+            </div>
+            <div class="pic">
+                <img src="images/myorder/wddd_05.png"/>
+                <img src="images/myorder/wddd_07.png"/>
+                <img src="images/myorder/wddd_09.png"/>
+            </div>
+            <div class="foot1">
+                <div style="text-align: right; margin-right: 10px;padding-top: 10px">共3件商品 需付款：<span>￥298.</span><span style="font-size: 12px">00</span></div>
+                <h5 class="page-header" style="margin-top: 10px;padding: 0"></h5>
+                <div class="foot2">
+                    <div class="delete"><img src="icon/delete.png" height="20" width="20"/></div>
+                    <a class="text_button" href="#"><div class="pay">去支付</div></a>
+                </div>
+            </div>
+        </div>
+        <div class="foot" style="margin-top: 10px">
+            <div style="padding: 10px;background: #ffffff;height: 40px">
+                <a href="#"><div class="col-xs-6"><img src="icon/shop.png" height="15" width="15" style="margin-right: 5px"/>帕森眼镜</div></a>
+                <div class="col-xs-6" style="color: #ff0000; text-align: right">等待付款</div>
+            </div>
+            <div class="pic">
+                <div class="col-xs-3">
+                    <img src="images/myorder/wddd_15.png"/>
+                </div>
+                <div class="col-xs-9">
+                    <p style="margin-top: 20px">帕森（PARZIN）男士太阳镜铝镁偏光太阳镜男款眼镜驾驶墨镜8003 黑框黑灰片</p>
+                </div>
+            </div>
+            <div class="foot1" style="margin-top: 100px">
+                <div style="text-align: right; margin-right: 10px;padding-top: 10px">共1件商品 需付款：<span>￥139.</span><span style="font-size: 12px">00</span></div>
+                <h5 class="page-header" style="margin-top: 10px;padding: 0"></h5>
+                <div class="foot2">
+                    <div class="delete"><img src="icon/delete.png" height="20" width="20"/></div>
+                    <a class="text_button" href="#"><div class="pay">去支付</div></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-1.11.0.min.js"></script>
+<script>
+    $('.container div div span').each(function () {
+        $(this).click(function () {
+            $(this).addClass('exe');
+            $(this).parent().siblings().children().removeClass('exe');
+        });
+    });
+    $('.delete').click(function () {
+        $(this).parent().parent().parent().remove();
+    });
+</script>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>忘记密码</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        @media screen and (max-width: 320px) {html{font-size:14px;}}
+        @media screen and (min-width: 320px) and (max-width:414px) {html{font-size:16px;}}
+        @media screen and (min-width: 414px) {html{font-size:18px;}}
+        body {
+            font-size: 1rem;
+            font-family:"微软雅黑";
+            background-color: rgb(241,241,241);
+        }
+        .check_icon img{
+            width: 1.1rem;
+        }
+        .header{
+            height: 64px;
+            background-color: rgb(255,255,255);
+            padding-top: 32px;
+        }
+        .form {
+            font-size: 0.9rem;
+            margin-top: 96px;
+        }
+        .bg_style{
+            background-color: rgb(255,255,255);
+            border-radius: 2px;
+            margin-bottom: 15px;
+            padding: 12px;
+        }
+        .bg_red{
+            background-color: rgb(242,48,48);
+            border-radius: 2px;
+            padding: 13px;
+            color: rgb(231,231,231);
+        }
+        .input1_style{
+            border: 0px;
+            margin-left: 27px;
+        }
+        .input2_style{
+            border: 0px;
+            width:70%;
+            border-right: 1px solid rgb(189,189,189);
+        }
+        #ip_zh{
+            display: inline-block;
+        }
+        input{
+            outline:none;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<div class="container header navbar-fixed-top">
+    <div class="row">
+        <div class="col-xs-1 check_icon"><a href="#"><img src="icon/arrow-left.png"></a></div>
+        <div class="col-xs-10 text-center">忘记密码</div>
+        <div class="col-xs-1"></div>
+    </div>
+</div>
+<div class="form">
+    <div class="container">
+        <div class="col-xs-12 bg_style s1">
+            <span>账号</span>
+            <input type="text" id="ip_zh" class="input1_style" style="width: 70%;" value="15633033195">
+        </div>
+        <div class="col-xs-12 bg_style s2">
+            <input type="text" value="FVKN" id="ip_yz" class="input2_style">
+            <img src="">
+        </div>
+        <div id="retrieve" class="col-xs-12 text-center bg_red">
+            <span>下一步</span>
+        </div>
+    </div>
+</div>
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    $(".s1").click(function(){$("#ip_zh").focus()});
+    $(".s2").click(function(){$("#ip_yz").focus()});
+    $('#retrieve').click(function () {
+        location.href="retrieve.html";
+    })
+</script>
+</body>
+</html>

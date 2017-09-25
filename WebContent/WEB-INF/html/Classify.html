@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>分类</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/classIfyStyle.css">
+</head>
+<body>
+<!--搜索框-->
+<div class="warps">
+    <div class="container header navbar-fixed-top" style="">
+        <div class="mass" style="margin-top: 25px;">
+            <div class="col-xs-1" ><img src="images/arrow-left.png" alt=""></div>
+            <div class="col-xs-10">
+                <img src="images/fangdajing.png" alt="">
+                <input type="text" style="">
+            </div>
+        </div>
+    </div>
+    <!--点击-->
+    <div class="btn-block" style="margin-top: 70px;padding-top: 10px;z-index: 10000">
+        <div class="btn-group btt" role="group" style="float: left;width: 100%;">
+            <button id="btnn1" style="font:15px 微软雅黑;width: 25%;border:none;outline: none" type="button" class="btn btn-default " data-toggle="dropdown">综合 <span class="caret"></span></button>
+            <ul id="ul1" class="dropdown-menu" style="z-index: 9999">
+                <li><a href="#">综合</a></li>
+                <li><a href="#">销量</a></li>
+                <li><a href="#">评价</a></li>
+            </ul>
+            <button id="btnn2" style="font:15px 微软雅黑;width: 25%;border:none;outline: none;" type="button" class="btn btn-default">销量</button>
+            <button id="btnn3" style="font:15px 微软雅黑;width: 25%;border:none;outline: none;" type="button" class="btn btn-default">价格
+                <img src="images/jiantou.png" alt="" style="width: 20px;"></button>
+            <button id="btnn4" style="font:15px 微软雅黑;width: 25%;border:none;outline: none;" type="button" class="btn btn-default">筛选
+                <img src="images/screening.png" alt="" style="width: 15px;"></button>
+        </div>
+    </div>
+   <!-- <div id="zhezhao" class="col-xs-12" style="opacity: 0.3;z-index: 998;background: black;position: fixed;width: 100%;height: 100%;"></div>-->
+   <!-- 遮罩层-->
+        <div id="zhezhao" class="col-xs-12" style="background-color: rgba(0,0,0,0.5);z-index: 1000;position: absolute;left: 0;top: 115px;display: none"></div>
+<!--图片-->
+    <div class="bantouming" style="z-index: 0" >
+        <div class="midd">
+            <img style="padding-top: 6px;" src="images/fenlei.png" class="img-responsive" alt="Responsive image">
+        </div>
+        <!--内容-->
+        <div class="mains">
+            <div class="warp" id="detail">
+                <div class="col-xs-4">
+                    <img src="images/fllb_04.png" class="img-responsive" alt="">
+                </div>
+                <div class="col-xs-8">
+                    <p class="" style="font: 16px 微软雅黑;">威古氏（VEGOOS）太阳镜女款墨镜偏光驾驶眼睛大框圆脸蛤蟆镜</p>
+                    <div class="money"><span>￥</span>139.00 </div>
+                    <div class="text_text">8349条评价&nbsp;&nbsp;&nbsp;&nbsp;96%好评</div>
+                    <h5 class="page-header"></h5>
+                </div>
+            </div>
+            <div class="warp">
+                <div class="col-xs-4">
+                    <img src="images/fllb_06.png" class="img-responsive" alt="">
+                </div>
+                <div class="col-xs-8">
+                    <p class="" style="font: 16px 微软雅黑;">罗丹洛宾 偏光太阳墨镜男女士款可变色驾驶专用眼镜 黑色</p>
+                    <div class="money"><span>￥</span>128.00<img src="images/new1.png" alt=""></div>
+                    <div class="text_text">6条评价&nbsp;&nbsp;&nbsp;&nbsp;100%好评</div>
+                    <h5 class="page-header"></h5>
+                </div>
+            </div>
+            <div class="warp">
+                <div class="col-xs-4">
+                    <img src="images/fllb_07.png" class="img-responsive" alt="">
+                </div>
+                <div class="col-xs-8">
+                    <p class="" style="font: 16px 微软雅黑;">音米（inmix）AAYATF311新款2017儿童墨镜男女防紫外线宝宝用</p>
+                    <div class="money"><span>￥</span>178.00<img src="images/new1.png" alt=""></div>
+                    <div class="text_text">暂无评价</div>
+                    <h5 class="page-header"></h5>
+                </div>
+            </div>
+            <div class="warp">
+                <div class="col-xs-4">
+                    <img src="images/fllb_08.png" class="img-responsive" alt="">
+                </div>
+                <div class="col-xs-8">
+                    <p class="" style="font: 16px 微软雅黑;">音米（inmix）1364  新款2017时尚复古潮流墨镜炫彩眼睛圆脸大墨镜</p>
+                    <div class="money"><span>￥</span>148.00<img src="images/new1.png" alt=""></div>
+                    <div class="text_text">1条评价&nbsp;&nbsp;&nbsp;&nbsp;100%好评</div>
+                    <h5 class="page-header"></h5>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/IfyJS.js"></script>
+<script>
+    $('#detail').click(function () {
+        location.href="detail.html";
+    })
+    var h=window.screen.height;
+    $('#zhezhao').css('height',h-115);
+    $('#btnn1').click(function () {
+        var e=$('#zhezhao').css('display')
+        if(e=='none'){
+            $('#zhezhao').css('display','block');
+        }
+        else{
+            $('#zhezhao').css('display','none');
+        }
+
+    })
+    $('#ul1').click(function () {
+        $('#zhezhao').css('display','none');
+    })
+</script>
+
+</html>

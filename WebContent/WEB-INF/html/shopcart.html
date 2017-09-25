@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>购物车</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        @media screen and (max-width: 320px) {html{font-size:14px;}}
+        @media screen and (min-width: 320px) and (max-width:414px) {html{font-size:16px;}}
+        @media screen and (min-width: 414px) {html{font-size:18px;}}
+        body {
+            font-size: 1.0rem;
+            font-family:"微软雅黑";
+            background-color: rgb(241,241,241);
+        }
+        a:hover, a:visited, a:link, a:active {
+            text-decoration: none;
+            color: black;
+        }
+        .col-xs-1,.col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7,.col-xs-8,.col-xs-9,.col-xs-10,.col-xs-11,.col-xs-12{
+             padding-left: 0px;
+             padding-right: 0px;
+         }
+        .header{
+            height: 64px;
+            background-color: rgb(255,255,255);
+            padding-top: 32px;
+        }
+        .list {
+            background-color: rgb(255, 255, 255);
+            font-size: 0.94rem;
+            margin-top: 74px;
+        }
+        .list .list_top{
+            line-height: 45px;
+            background-color: rgb(250,250,250);
+            overflow: hidden;
+            font-weight: bold;
+        }
+        .check_icon img{
+            width: 1.1rem;
+        }
+        .h_center{
+            margin-top: 35px;
+        }
+        .list .list_main{
+            font-size: 0.8rem;
+        }
+        .list .list_main .info_top{
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        .list .list_main .info_top .info_del{
+            margin-top: 15px;
+        }
+        .list .list_main .info_bottom{
+            margin-top: 70px;
+        }
+        .red{
+            color: red;
+        }
+        .row{
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        .bt_border{
+            border-bottom: 1px solid rgb(242,242,242);
+            padding: 10px;
+        }
+        .list_foot{
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .table_ft{
+            width:70%;
+            font-size: 10px;
+        }
+        .footer{
+            overflow: hidden;
+            height: 50px;
+            line-height: 50px;
+            width:100%;
+            position: fixed;
+            bottom: 0px;
+        }
+        .footer .footer_left{
+            float: left;
+            width:68%;
+            background-color: rgb(250,250,250);
+            padding-left: 15px;
+        }
+        .footer .footer_right{
+            float: left;
+            width:32%;
+            background-color: rgb(242,48,48);
+            color: rgb(240,240,240);
+            text-align: center;
+            font-weight: lighter;
+        }
+        #number{
+            font-size: 1.1rem;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container header navbar-fixed-top">
+        <div class="row">
+            <div class="col-xs-1 check_icon"><a href="#"><img src="icon/arrow-left.png"></a></div>
+            <div class="col-xs-10 text-center">购物车</div>
+            <div class="col-xs-1"></div>
+        </div>
+    </div>
+    <div class="container-fluid list">
+        <div class="list_top row">
+            <div class="col-xs-1 check_icon" onclick="checkall(this)"><img src="icon/check-fill.png"></div>
+            <div class="col-xs-3">全选</div>
+            <div class="col-xs-8 text-right"><a href="javascript:delall()">全部清空</a></div>
+        </div>
+        <div class="list_main">
+            <div class="row row_1 bt_border">
+                <div class="col-xs-1 check_icon h_center check" onclick="check(this)"><img src="icon/check-fill.png"></div>
+                <div class="col-xs-3"><img class="img-thumbnail" src="images/gwc_01.png" ></div>
+                <div class="col-xs-8 ">
+                    <div class="info_top">
+                        <div class="col-xs-11 ">
+                             <span>
+                                帕森(PARZIN)男士太阳镜铝镁偏光太阳镜男款眼睛驾驶墨镜。
+                             </span>
+                        </div>
+                        <div class="col-xs-1 info_del" onclick="del(this)">
+                            <img class="img-responsive" src="icon/delete1.png">
+                        </div>
+                        <div class="col-xs-12">
+                            <span class="text-muted">
+                            重量：0.03kg颜色：黑框黑灰片
+                            </span>
+                        </div>
+
+                    </div>
+                    <div class="info_bottom text-left">
+                        <div class="col-xs-6 red" style="padding-left: 10px">
+                            <span>￥</span>
+                            <span class="price">139.00</span>
+                        </div>
+                        <div class="col-xs-6 text-right">
+                            <div class="btn-group btn-group-xs ">
+                                <button type="button" class="btn btn-default" onclick="numsul(this)">-</button>
+                                <button type="button" class="btn btn-default shop_num" style="padding-left: 10px;padding-right: 10px">1</button>
+                                <button type="button" class="btn btn-default" onclick="numadd(this)">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row row_2 bt_border">
+                <div class="col-xs-1 check_icon h_center check" onclick="check(this)"><img src="icon/check-fill.png"></div>
+                <div class="col-xs-3"><img class="img-thumbnail" src="images/gwc_02.png" ></div>
+                <div class="col-xs-8 ">
+                    <div class="info_top">
+                        <div class="col-xs-11 ">
+                             <span>
+                                帕森(PARZIN)男士太阳镜铝镁偏光太阳镜男款眼睛驾驶墨镜。
+                             </span>
+                        </div>
+                        <div class="col-xs-1 info_del" onclick="del(this)">
+                            <img class="img-responsive" src="icon/delete1.png">
+                        </div>
+                        <div class="col-xs-12">
+                            <span class="text-muted">
+                            重量：0.03kg颜色：黑框黑灰片
+                            </span>
+                        </div>
+
+                    </div>
+                    <div class="info_bottom text-left">
+                        <div class="col-xs-6 red" style="padding-left: 10px">
+                            <span>￥</span>
+                            <span class="price">139.00</span>
+                        </div>
+                        <div class="col-xs-6 text-right">
+                            <div class="btn-group btn-group-xs ">
+                                <button type="button" class="btn btn-default" onclick="numsul(this)">-</button>
+                                <button type="button" class="btn btn-default shop_num" style="padding-left: 10px;padding-right: 10px">1</button>
+                                <button type="button" class="btn btn-default" onclick="numadd(this)">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="list_foot">
+            <table class="table_ft">
+               <tr>
+                   <td></td>
+                   <td>光度</td>
+                   <td>散光</td>
+                   <td>轴位</td>
+               </tr>
+                <tr>
+                    <td>左眼</td>
+                    <td>3.0</td>
+                    <td>1.0</td>
+                    <td>100</td>
+                    <td rowspan="2">瞳孔</td>
+                    <td rowspan="2">100</td>
+                </tr>
+                <tr>
+                    <td>右眼</td>
+                    <td>3.0</td>
+                    <td>1.0</td>
+                    <td>100</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer_left check_icon">
+            <img src="icon/check-fill.png">
+            <span ><small>全选</small></span>
+            <strong >合计:￥</strong>
+            <span id="price_total">278</span>
+        </div>
+        <div class="footer_right">
+            去结算(<span id="number">2</span>)
+        </div>
+    </div>
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        function check(obj){
+           if($(obj).hasClass("check")){
+               $(obj).removeClass("check");
+               $(obj).find("img").attr("src","icon/check.png");
+           }else{
+               $(obj).addClass("check");
+               $(obj).find("img").attr("src","icon/check-fill.png");
+           }
+            accounts();
+        }
+        function checkall(obj){
+            if($(".bt_border .check_icon").hasClass("check")){
+                $(obj).removeClass("check");
+                $(obj).find("img").attr("src","icon/check.png");
+                $(".bt_border .check_icon").removeClass("check");
+                $(".bt_border .check_icon").find("img").attr("src","icon/check.png");
+            }else{
+                $(obj).addClass("check");
+                $(obj).find("img").attr("src","icon/check-fill.png");
+                $(".bt_border .check_icon").addClass("check");
+                $(".bt_border .check_icon").find("img").attr("src","icon/check-fill.png");
+            }
+            accounts();
+        }
+        function accounts(){
+            var num=0;
+            var price_total=0;
+            $(".price").each(function(index,obj){
+                if($(".row_"+(index+1)+" .col-xs-1").hasClass("check")){
+                    var numnood=$(obj).parent().next().find(".shop_num").html();
+                    price_total+=parseFloat($(obj).html())*numnood;
+                }
+            })
+            $(".shop_num").each(function(index,obj){
+                num+=parseInt($(obj).html());
+            })
+            $("#number").html(num);
+            $("#price_total").html(price_total);
+        }
+        function del(obj){
+            $(obj).parents(".row").remove();
+            accounts();
+        }
+        function delall(){
+            $(".bt_border").remove();
+            accounts();
+        }
+        function numadd(obj){
+            var num=$(obj).prev().html();
+            $(obj).prev().html(++num);
+            accounts();
+        }
+        function numsul(obj){
+            if($(".bt_border .check_icon").hasClass("check")){
+            var num=$(obj).next().html();
+            $(obj).next().html(--num);
+                if(num<1){
+                    del(obj);
+                }
+            }
+            accounts();
+        }
+    </script>
+</body>
+</html>

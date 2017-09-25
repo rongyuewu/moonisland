@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--默认情况下，UI布局的宽度和移动设备的宽度一致，缩放大小为原始大小-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>评价中心</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+        body{
+            width: 100%;
+            height: 100%;
+            font-weight: bold;
+        }
+        .top{
+            font-size: 18px;
+            text-align: center;
+            padding: 1px;
+            height: 64px;
+        }
+        .top div{
+            margin-top: 30px;
+        }
+        .container{
+            margin: 0;
+            padding: 0;
+        }
+        .container table{
+            margin-top: 10px;
+            text-align: center;
+            width: 100%;
+        }
+        .bottom h5{
+            margin: 0;
+        }
+        .bottom .first{
+            margin-top: 10px;
+        }
+        .bottom .first div{
+            float: left;
+        }
+        .bottom .first .col-xs-8 p{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+        .first .col-xs-8 .p{
+            border: solid 1px #8c8c8c;
+            text-align: center;
+            width: 90px;
+            height: 30px;
+            line-height: 30px;
+            margin-top: 28px;
+            margin-left: 32px;
+        }
+        .red{
+            color: #ff0000;
+        }
+        .text_button{
+            cursor: pointer;
+        }
+        a{
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+    <div class="top">
+        <div class="col-xs-1">
+            <a href="#"><img src="icon/arrow-left.png" height="20" width="20"/></a>
+        </div>
+        <div class="col-xs-10">评价中心</div>
+        <div class="col-xs-1"></div>
+    </div>
+
+    <div class="container">
+        <img src="images/appraise/pj_02.png" class="img-responsive"/>
+        <table>
+            <tr>
+                <td class="col-xs-6 text_button" id="red">待评价</td>
+                <td class="col-xs-6 text_button red" id="red1">已评价</td>
+            </tr>
+            <tr>
+                <td class="col-xs-6 text_button" id="red2">0</td>
+                <td class="col-xs-6 text_button" style="color:#ff0000;" id="red3">16</td>
+            </tr>
+        </table>
+    </div>
+    <div class="bottom">
+        <h5 class="page-header"></h5>
+        <div class="first">
+            <div class="col-xs-4">
+                <img src="images/appraise/pj_05.png" height="100" width="100"/>
+            </div>
+            <div class="col-xs-8">
+                <p style="font-size: 15px">威古氏（VEGOOS）太阳镜女款墨镜偏光驾驶眼镜大框圆脸蛤蟆镜…</p>
+                <a href="#"><p class="p"><img src="icon/search1.png" height="12" width="12" style="margin-right: 5px"/>查看评价</p></a>
+            </div>
+        </div>
+        <h5 class="page-header" style="margin-top: 120px"></h5>
+        <div class="first">
+            <div class="col-xs-4">
+                <img src="images/appraise/pj_08.png" height="100" width="100"/>
+            </div>
+            <div class="col-xs-8">
+                <p style="font-size: 15px">罗丹落宾 偏光太阳镜墨镜男女士：套款可变色驾驶专用眼镜 黑色</p>
+                <a href="#"><p class="p"><img src="icon/search1.png" height="12" width="12" style="margin-right: 5px"/>查看评价</p></a>
+            </div>
+        </div>
+        <h5 class="page-header" style="margin-top: 120px"></h5>
+        <div class="first">
+            <div class="col-xs-4">
+                <img src="images/appraise/pj_05.png" height="100" width="100"/>
+            </div>
+            <div class="col-xs-8">
+                <p style="font-size: 15px">威古氏（VEGOOS）太阳镜女款墨镜偏光驾驶眼镜大框圆脸蛤蟆镜…</p>
+                <a href="#"><p class="p"><img src="icon/search1.png" height="12" width="12" style="margin-right: 5px"/>查看评价</p></a>
+            </div>
+        </div>
+        <h5 class="page-header" style="margin-top: 120px"></h5>
+        <div class="first">
+            <div class="col-xs-4">
+                <img src="images/appraise/pj_12.png" height="100" width="100"/>
+            </div>
+            <div class="col-xs-8">
+                <p style="font-size: 15px">罗丹落宾 偏光太阳镜墨镜男女士：套款可变色驾驶专用眼镜 黑色</p>
+                <a href="#"><p class="p"><img src="icon/search1.png" height="12" width="12" style="margin-right: 5px"/>查看评价</p></a>
+            </div>
+        </div>
+        <h5 class="page-header" style="margin-top: 120px"></h5>
+    </div>
+</body>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-1.11.0.min.js"></script>
+<script>
+    $('#red').click(function () {
+        $('#red').css('color','red');
+        $('#red2').css('color','red');
+        $('#red1').css('color','black');
+        $('#red3').css('color','black');
+    });
+    $('#red1').click(function () {
+        $('#red1').css('color','red');
+        $('#red3').css('color','red');
+        $('#red').css('color','black');
+        $('#red2').css('color','black');
+    });
+</script>
+</html>

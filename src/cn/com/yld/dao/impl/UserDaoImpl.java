@@ -46,4 +46,10 @@ public class UserDaoImpl extends SqlSessionDaoSupport implements UserDao {
 		mapper.cleandelete(user);
 	}
 
+	@Override
+	public User findlogin(User user) {
+		UserMapper mapper=this.getSqlSession().getMapper(UserMapper.class);
+		return mapper.findlogin(user);
+	}
+
 }
