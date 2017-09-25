@@ -1,2 +1,4 @@
 /cn/
+/log4j.properties
+/mybatis-config.xml
 /springmvc-config.xml
