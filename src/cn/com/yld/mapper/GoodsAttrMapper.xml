@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.yld.mapper.GoodsMapper">
+  <resultMap type="GoodsAttr" id="goodAttr">
+  	<id column="attr_id" property="attrId"/>
+  	<result column="goods_id" property="goodsId"/>
+  	<result column="material" property="material"/>
+  	<result column="border" property="border"/>
+  	<result column="size" property="size"/>
+  	<result column="function" property="function"/>
+  	<result column="brand_id" property="brandId"/>
+  	<result column="color" property="color"/>
+  	<result column="price" property="price"/>
+  	<!-- 表达多对一关联 -->
+	<association property="goods" javaType="Goods">
+		<id column="goods_id" property="goodsId"/>
+		<result column="brand_id" property="brandId"/>
+		<result column="goods_name" property="goodsName"/>
+		<result column="category" property="category"/>
+		<result column="original_price" property="originalPrice"/>
+		<result column="sales_price" property="salesPrice"/>
+		<result column="goods_color" property="goodsColor"/>
+		<result column="goods_content" property="goodsContent"/>
+		<result column="browse_num" property="browseNum"/>
+		<result column="save_num" property="saveNum"/>
+		<result column="sales_num" property="salesNum"/>
+		<result column="is_sale" property="isSale"/>
+		<result column="goods_keywords" property="goodsKeywords"/>
+		<result column="is_on_sale" property="isOnsale"/>
+		<result column="stock_num" property="stockNum"/>
+		<result column="minus_price" property="minusPrice"/>
+		<result column="privilege" property="privilege"/>
+		<result column="points" property="points"/>
+		<result column="style" property="style"/>
+		<result column="style_A" property="styleA"/>
+		<result column="style_B" property="styleB"/>
+		<result column="style_C" property="styleC"/>
+		<result column="style_D" property="styleD"/>
+		<result column="style_E" property="styleE"/>
+		<result column="add_time" property="addTime"/>
+	</association>
+	<association property="brand" javaType="Brand">
+		<id column="brand_id" property="brandId"/>
+		<result column="brand_name" property="brandName"/>
+		<result column="brand_logo" property="brandLogo"/>
+		<result column="brand_con" property="brandCon"/>
+		<result column="brand_addtime" property="brandAddtime"/>
+	</association>
+  </resultMap>
+ 
+</mapper>
