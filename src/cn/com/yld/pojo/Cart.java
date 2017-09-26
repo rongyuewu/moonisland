@@ -193,5 +193,39 @@ public class Cart implements Serializable{
 	public String getPicId(){
 		return picId;
 	}
+
+	public Cart() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Cart(String userId, String optometryId, String isFrameonly, String goodsId, String minusPrice,
+			String privilege, String points, String bothNum, String glassId, String catTime, String cartStatus,
+			String goodsAttrid, String picId) {
+		super();
+		this.userId = userId;
+		this.optometryId = optometryId;
+		this.isFrameonly = isFrameonly;
+		this.goodsId = goodsId;
+		this.minusPrice = minusPrice;
+		this.privilege = privilege;
+		this.points = points;
+		this.bothNum = bothNum;
+		this.glassId = glassId;
+		this.catTime = catTime;
+		this.cartStatus = cartStatus;
+		this.goodsAttrid = goodsAttrid;
+		
+	}
+
+	@Override
+	public String toString() {
+		return "Cart [carId=" + carId + ", userId=" + userId + ", optometryId=" + optometryId + ", isFrameonly="
+				+ isFrameonly + ", goodsId=" + goodsId + ", minusPrice=" + minusPrice + ", privilege=" + privilege
+				+ ", points=" + points + ", bothNum=" + bothNum + ", glassId=" + glassId + ", catTime=" + catTime
+				+ ", cartStatus=" + cartStatus + ", goodsAttrid=" + goodsAttrid + ", picId=" + picId + "]";
+	}
+	
+	
 }
 

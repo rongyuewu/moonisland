@@ -98,10 +98,21 @@
 			<result column="optometry_id" property="optometryId"/>
 		</association>
 		<association property="goodsAttr" javaType="GoodsAttr">
-			<result column="goods_attr_id" property="goodsAttrid"/>
+			<result column="attr_id" property="attrId"/>
+			<result column="goods_id" property="goodsId"/>
+		  	<result column="material" property="material"/>
+		  	<result column="border" property="border"/>
+		  	<result column="size" property="size"/>
+		  	<result column="function" property="function"/>
+		  	<result column="brand_id" property="brandId"/>
+		  	<result column="color" property="color"/>
+		  	<result column="price" property="price"/>
 		</association>
 		<association property="goodsPic" javaType="GoodsPic">
 			<result column="pic_id" property="picId"/>
 		</association>
   </resultMap>
+  <select id="findorderstatus" resultMap="order">
+  	select * from moon_order where order_status=1
+  </select>
 </mapper>
