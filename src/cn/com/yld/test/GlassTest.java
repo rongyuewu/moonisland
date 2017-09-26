@@ -20,7 +20,7 @@ public class GlassTest {
 	}
 	@Test
 	public void test1(){
-		GlassDao dao = (GlassDao) this.context.getBean("glassDa o");
+		GlassDao dao = (GlassDao) this.context.getBean("glassDao");
 		List<Glass> ls = dao.findall();
 		for (Glass glass : ls) {
 			System.out.println(glass.getGlassName());
