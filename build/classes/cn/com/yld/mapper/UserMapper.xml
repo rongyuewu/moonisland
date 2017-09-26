@@ -37,7 +37,7 @@
   <select id="finduser" resultType="user"  parameterType="User">
        select * from moon_user where user_id=#{userId}
   </select>
-  <insert id="insert" parameterType="user">
+  <insert id="insert" parameterType="User">
   		insert into moon_user (
   			<trim prefixOverrides=",">
   			<if test="points != null">

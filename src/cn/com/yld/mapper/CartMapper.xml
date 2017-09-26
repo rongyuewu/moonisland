@@ -96,10 +96,96 @@
 		
   </resultMap>
   <!-- 根据cart里封装的user对象，查询用户购物车 -->
-  <select id="find" parameterType="cart" resultMap="cart">
-  	select c.* ,g.* ,a.* ,p.* ,u.* from moon_cart c,moon_goods g,moon_goods_attr a,moon_goods_pic p,moon_user u where c.goods_id=g.goods_id and c.goods_attr_id=a.attr_id and c.pic_id=p.pic_id and c.user_id=u.user_id and c.user_id=#{user.userId}
+  <select id="findall" parameterType="User" resultMap="cart">
+  	select c.* ,g.* ,a.* ,p.* ,u.* from moon_cart c,moon_goods g,moon_goods_attr a,moon_goods_pic p,moon_user u where c.goods_id=g.goods_id and c.goods_attr_id=a.attr_id and c.pic_id=p.pic_id and c.user_id=u.user_id and c.user_id=#{userId}
   </select>
-  <insert id="insert" parameterType="cart">
-  	
+ <insert id="insert" parameterType="Cart">
+  	insert into moon_cart (
+  			<trim prefixOverrides=",">
+  			<if test="userId != null">
+  				user_id
+  			</if>
+  			<if test="optometryId != null">
+  				,optometry_id
+  			</if>
+  			<if test="isFrameonly != null">
+  				,is_frameonly
+  			</if>
+  			<if test="goodsId != null">
+  				,goods_id
+  			</if>
+  			<if test="minusPrice != null">
+  				,minus_price
+  			</if>
+  			<if test="privilege != null">
+  				,privilege
+  			</if>
+  			<if test="points != null">
+  				,points
+  			</if>
+  			<if test="bothNum != null">
+  				,both_num
+  			</if>
+  			<if test="glassId != null">
+  				,glass_id
+  			</if>
+  			<if test="catTime != null">
+  				,cat_time
+  			</if>
+  			<if test="cartStatus != null">
+  				,cart_status
+  			</if>
+  			<if test="goodsAttrid != null">
+  				,goods_attrid
+  			</if>
+  			<if test="picId != null">
+  				,pic_id
+  			</if>
+  			
+  		</trim>
+  		) values(
+  		<trim prefixOverrides=",">
+  			<if test="userId != null">
+  				#{}
+  			</if>
+  			<if test="optometryId != null">
+  				,#{}
+  			</if>
+  			<if test="isFrameonly != null">
+  				,#{}
+  			</if>
+  			<if test="goodsId != null">
+  				,#{}
+  			</if>
+  			<if test="minusPrice != null">
+  				,#{}
+  			</if>
+  			<if test="privilege != null">
+  				,#{}
+  			</if>
+  			<if test="points != null">
+  				,#{}
+  			</if>
+  			<if test="bothNum != null">
+  				,#{}
+  			</if>
+  			<if test="glassId != null">
+  				,#{}
+  			</if>
+  			<if test="catTime != null">
+  				,#{}
+  			</if>
+  			<if test="cartStatus != null">
+  				,#{}
+  			</if>
+  			<if test="goodsAttrid != null">
+  				,#{}
+  			</if>
+  			<if test="picId != null">
+  				,#{}
+  			</if>
+  			
+  		</trim>
+  		)
   </insert>
 </mapper>
