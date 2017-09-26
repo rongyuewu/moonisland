@@ -99,4 +99,7 @@
   <select id="find" parameterType="cart" resultMap="cart">
   	select c.* ,g.* ,a.* ,p.* ,u.* from moon_cart c,moon_goods g,moon_goods_attr a,moon_goods_pic p,moon_user u where c.goods_id=g.goods_id and c.goods_attr_id=a.attr_id and c.pic_id=p.pic_id and c.user_id=u.user_id and c.user_id=#{user.userId}
   </select>
+  <insert id="insert" parameterType="cart">
+  	
+  </insert>
 </mapper>

@@ -16,7 +16,7 @@
 	<!-- 配置数据源datasource -->
 	 <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
 	 	<property name="driverClass" value="com.mysql.jdbc.Driver"></property>
-	 	<property name="jdbcUrl" value="jdbc:mysql://qdm17561358.my3w.com:3306/moon"></property>
+	 	<property name="jdbcUrl" value="jdbc:mysql://qdm17561358.my3w.com:3306/qdm17561358_db"></property>
 	 	<property name="user" value="qdm17561358"></property>
 	 	<property name="password" value="sql15226508923"></property>
 	 </bean>
