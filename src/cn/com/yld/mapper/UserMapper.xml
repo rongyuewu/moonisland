@@ -22,7 +22,7 @@
   <select id="findall" resultMap="user">
   		select * from moon_user
   </select>
-  <select id="findlogin" resultType="user"  parameterType="user">
+  <select id="findlogin" resultType="user"  parameterType="User">
   		select * from moon_user 
        <trim prefix="WHERE" prefixOverrides="and">
            	<if test="phone != null">
@@ -34,7 +34,7 @@
        </trim>
        and password=#{password}
   </select>
-  <select id="finduser" resultType="user"  parameterType="user">
+  <select id="finduser" resultType="user"  parameterType="User">
        select * from moon_user where user_id=#{userId}
   </select>
   <insert id="insert" parameterType="user">
@@ -136,7 +136,7 @@
   		</trim>
   		)
   </insert>
-  <update id="update" parameterType="user">
+  <update id="update" parameterType="User">
   		update moon_user set 
   		<trim prefixOverrides=",">
   			<if test="points != null">
@@ -187,10 +187,10 @@
   		</trim>
   		where user_id=#{userId}
   </update>
-  <update id="delete" parameterType="user">
+  <update id="delete" parameterType="User">
   		update moon_user set user_status='0' where user_id=#{userid}
   </update>
-  <update id="cleandelete" parameterType="user">
+  <update id="cleandelete" parameterType="User">
   		update moon_user set user_status='1' where user_id=#{userid}
   </update>
 </mapper>
