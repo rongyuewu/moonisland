@@ -6,7 +6,7 @@ import cn.com.yld.pojo.Glass;
 public interface GlassMapper {
 	//查询全部
 	public List<Glass> findall();
-	//查询id
+	//查询全部
 	public List<Glass> findbyid();
 	//插入
 	public void insert(Glass glass);
