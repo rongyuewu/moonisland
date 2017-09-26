@@ -22,6 +22,65 @@ public class Cart implements Serializable{
 	private String cartStatus;// 购物车状态
 	private String goodsAttrid;// 商品属性id
 	private String picId;// 图片id
+	
+	
+	//引入外部对象
+	private Goods goods;
+	private Glass glass;
+	private User user;
+	private Optometry optometry;
+	private GoodsAttr goodsAttr;
+	private GoodsPic goodsPic;
+	
+	
+
+	public Goods getGoods() {
+		return goods;
+	}
+
+	public void setGoods(Goods goods) {
+		this.goods = goods;
+	}
+
+	public Glass getGlass() {
+		return glass;
+	}
+
+	public void setGlass(Glass glass) {
+		this.glass = glass;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Optometry getOptometry() {
+		return optometry;
+	}
+
+	public void setOptometry(Optometry optometry) {
+		this.optometry = optometry;
+	}
+
+	public GoodsAttr getGoodsAttr() {
+		return goodsAttr;
+	}
+
+	public void setGoodsAttr(GoodsAttr goodsAttr) {
+		this.goodsAttr = goodsAttr;
+	}
+
+	public GoodsPic getGoodsPic() {
+		return goodsPic;
+	}
+
+	public void setGoodsPic(GoodsPic goodsPic) {
+		this.goodsPic = goodsPic;
+	}
 
 	public void setCarId(int carId){
 		this.carId=carId;

@@ -39,6 +39,8 @@ public class Order implements Serializable{
 	private Glass glass;
 	private User user;
 	private Optometry optometry;
+	private GoodsAttr goodsAttr;
+	private GoodsPic goodsPic;
 	
 
 	public Goods getGoods() {
