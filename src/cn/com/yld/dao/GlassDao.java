@@ -1,12 +1,13 @@
-package cn.com.yld.mapper;
+package cn.com.yld.dao;
 
 import java.util.List;
+
 import cn.com.yld.pojo.Glass;
 
-public interface GlassMapper {
+public interface GlassDao {
 	//查询全部
 	public List<Glass> findall();
-	//查询全部
+	//查询id
 	public List<Glass> findbyid();
 	//插入
 	public void insert(Glass glass);

@@ -22,5 +22,7 @@
   	<result column="color9" property="color9"/>
   	<result column="is_active" property="isActive"/>
   </resultMap>
- 
+   <select id="findall" resultMap="glass">
+  		select * from moon_glass
+  </select>
 </mapper>

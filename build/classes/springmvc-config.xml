@@ -57,12 +57,24 @@
 	 	<bean id="userDao" class="cn.com.yld.dao.impl.UserDaoImpl">
 	 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
 	 	</bean>
+	 	<bean id="brandDao" class="cn.com.yld.dao.impl.BrandDaoImpl">
+	 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+	 	</bean>
+	 	<bean id="glassDao" class="cn.com.yld.dao.impl.GlassDaoImpl">
+	 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+	 	</bean>
 	 	<!-- 业务层 -->
 	 	<bean id="aboutService" class="cn.com.yld.service.impl.AboutServiceImpl">
 	 		<property name="dao" ref="aboutDao"></property>
 	 	</bean>
 	 	<bean id="userService" class="cn.com.yld.service.impl.UserServiceImpl">
 	 		<property name="dao" ref="userDao"></property>
+	 	</bean>
+	 	<bean id="brandService" class="cn.com.yld.service.impl.BrandServiceImpl">
+	 		<property name="dao" ref="brandDao"></property>
+	 	</bean>
+	 	<bean id="glassService" class="cn.com.yld.service.impl.GlassServiceImpl">
+	 		<property name="dao" ref="glassDao"></property>
 	 	</bean>
 	 	
 	 	
