@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
 <mapper namespace="cn.com.yld.mapper.CartMapper">
-  <resultMap type="Cart" id="cartrestltMap">
+  <resultMap type="Cart" id="cart">
   	<id column="car_id" property="carId"/>
   	<result column="user_id" property="userId"/>
   	<result column="optometry_id" property="optometryId"/>
@@ -93,5 +93,10 @@
 		<association property="goodsPic" javaType="GoodsPic">
 			<result column="pic_id" property="picId"/>
 		</association>
+		
   </resultMap>
+  <!-- 根据cart里封装的user对象，查询用户购物车 -->
+  <select id="find" parameterType="cart" resultMap="cart">
+  	select c.* ,g.* ,a.* ,p.* ,u.* from moon_cart c,moon_goods g,moon_goods_attr a,moon_goods_pic p,moon_user u where c.goods_id=g.goods_id and c.goods_attr_id=a.attr_id and c.pic_id=p.pic_id and c.user_id=u.user_id and c.user_id=#{user.userId}
+  </select>
 </mapper>
