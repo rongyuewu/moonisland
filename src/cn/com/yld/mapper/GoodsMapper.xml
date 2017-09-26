@@ -6,7 +6,7 @@
   	<result column="brand_id" property="brandId"/>
   	<result column="goods_name" property="goodsName"/>
   	<result column="category" property="category"/>
-  		<result column="original_price" property="originalPrice"/>
+  	<result column="original_price" property="originalPrice"/>
   	<result column="sales_price" property="salesPrice"/>
   	<result column="goods_color" property="goodsColor"/>
   	<result column="goods_content" property="goodsContent"/>

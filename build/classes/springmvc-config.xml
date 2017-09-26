@@ -16,9 +16,9 @@
 	<!-- 配置数据源datasource -->
 	 <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
 	 	<property name="driverClass" value="com.mysql.jdbc.Driver"></property>
-	 	<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/moon"></property>
-	 	<property name="user" value="root"></property>
-	 	<property name="password" value="123"></property>
+	 	<property name="jdbcUrl" value="jdbc:mysql://qdm17561358.my3w.com:3306/moon"></property>
+	 	<property name="user" value="qdm17561358"></property>
+	 	<property name="password" value="sql15226508923"></property>
 	 </bean>
 	 <!-- sqlSessionFactory管理 -->
 	 <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
