@@ -27,6 +27,14 @@
   	<result column="style_D" property="styleD"/>
   	<result column="style_E" property="styleE"/>
   	<result column="add_time" property="addTime"/>
+  	<!-- 表达多对一关联 -->
+	<association property="brand" javaType="Brand">
+		<id column="brand_id" property="brandId"/>
+		<result column="brand_name" property="brandName"/>
+		<result column="brand_logo" property="brandLogo"/>
+		<result column="brand_con" property="brandCon"/>
+		<result column="brand_addtime" property="brandAddtime"/>
+	</association>
   </resultMap>
  
 </mapper>

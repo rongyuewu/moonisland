@@ -33,6 +33,15 @@ public class Goods implements Serializable{
 	private String styleD;
 	private String styleE;
 	private String addTime;//时间
+	private Brand brand;//关联映射
+	
+	public Brand getBrand() {
+		return brand;
+	}
+
+	public void setBrand(Brand brand) {
+		this.brand = brand;
+	}
 
 	public void setGoodsId(int goodsId){
 		this.goodsId=goodsId;

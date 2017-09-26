@@ -19,6 +19,33 @@ public class GoodsComment implements Serializable{
 	private String logistics;//物流态度星级(以1--5表示)，可以为null
 	private String commentStatus;//评论状态
 	private String commentTime;//评论时间
+	private User user;//关联用户
+	private Goods goods;//关联商品
+	private Order order;//关联订单
+	
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Goods getGoods() {
+		return goods;
+	}
+
+	public void setGoods(Goods goods) {
+		this.goods = goods;
+	}
+
+	public Order getOrder() {
+		return order;
+	}
+
+	public void setOrder(Order order) {
+		this.order = order;
+	}
 
 	public void setCommentId(int commentId){
 		this.commentId=commentId;
