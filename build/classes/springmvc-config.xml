@@ -66,6 +66,7 @@
 	 	<bean id="cartDao" class="cn.com.yld.dao.impl.CartDaoImpl">
 	 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
 	 	</bean>
+
 	 	<bean id="goodsDao" class="cn.com.yld.dao.impl.GoodsDaoImpl">
 	 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
 	 	</bean>
