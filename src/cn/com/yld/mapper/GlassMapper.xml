@@ -21,6 +21,7 @@
   	<result column="color8" property="color8"/>
   	<result column="color9" property="color9"/>
   	<result column="is_active" property="isActive"/>
+  	<result column="glass_status" property="glassStatus"/>
   </resultMap>
    <select id="findall" resultMap="glass">
   		select * from moon_glass
@@ -85,6 +86,9 @@
   			<if test="isActive != null">
   				,is_active
   			</if>	
+  			<if test="glassStatus != null">
+  				,glsaa_status
+  			</if>
   		</trim>
   		) values(
   		<trim prefixOverrides=",">
@@ -110,7 +114,7 @@
   				,#{glassImgthumb}
   			</if>
   			<if test="glassTime != null">
-  				,#{glassTime}
+  				,sysdata()
   			</if>
   			<if test="color1 != null">
   				,#{color1}
@@ -142,6 +146,9 @@
   			<if test="isActive != null">
   				,#{isActive}
   			</if>	
+  			<if test="glassStatus != null">
+  				,#{glassStatus}
+  			</if>	
   		</trim>
   		)
   </insert>
@@ -166,7 +173,7 @@
   			<if test="glassImg != null">
   				,glass_img=#{glassImg}
   			</if>
-  			<if test="glass_imgthumb != null">
+  			<if test="glassImgthumb != null">
   				,glass_imgthumb=#{glassImgthumb}
   			</if>
   			<if test="glassTime != null">
@@ -202,13 +209,16 @@
   			<if test="isActive != null">
   				,is_active=#{isActive}
   			</if>	
+  			<if test="glassStatus != null">
+  				,glass_status=#{glassStatus}
+  			</if>
   		</trim>
-  		where user_id=#{userId}
+  		where glass_id=#{glassId}
   </update>
   <update id="delete" parameterType="glass">
-  	update moon_glass set is_active = "0" where glass_id = #{glassId}
+  	update moon_glass set glass_status = "0" where glass_id = #{glassId}
   </update>
   <update id="cleandelete" parameterType="glass">
-  	update moon_glass set is_active = "1" where glass_id = #{glassId}
+  	update moon_glass set glass_status = "1" where glass_id = #{glassId}
   </update>
 </mapper>

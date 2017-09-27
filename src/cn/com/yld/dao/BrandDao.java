@@ -16,4 +16,6 @@ public interface BrandDao {
 	public void update(Brand brand);
 	//删除
 	public void delete(Brand brand);
+	//清除删除
+	public void cleandelete(Brand brand);
 }
