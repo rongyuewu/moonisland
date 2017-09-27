@@ -15,10 +15,96 @@
   	<!-- 多对一 -->
   	<association property="user" javaType="User">
   		<id column="user_id" property="userId"/>
-  		
+  		<result column="points" property="points"/>
+	  	<result column="user_level" property="userLevel"/>
+	  	<result column="is_privilege" property="isPrivilege"/>
+	  	<result column="privilege_num" property="privilegeNum"/>
+	  	<result column="phone" property="phone"/>
+	  	<result column="nick_name" property="nickName"/>
+	  	<result column="header_pic" property="headerPic"/>
+	  	<result column="password" property="password"/>
+	  	<result column="sex" property="sex"/>
+	  	<result column="birthday" property="birthday"/>
+	  	<result column="zipcode" property="zipcode"/>
+	  	<result column="mobile" property="mobile"/>
+	  	<result column="mail" property="mail"/>
+	  	<result column="user_time" property="userTime"/>
+	  	<result column="user_status" property="userStatus"/>
   	</association>
   </resultMap>
   <select id="findall" resultMap="adsrestltMap">
-  	select * from moon_address
+  	select * from moon_address a,moon_user u where  u.user_id=a.user_id
   </select>
+  <insert id="insert" parameterType="Address">
+  	insert into moon_address(
+  	<trim prefixOverrides=",">
+  		<if test="provinceid !=null ">
+  			provinceid
+  		</if>
+  		<if test="cityid !=null ">
+  			,cityid
+  		</if>
+  		<if test="districtid !=null ">
+  			,districtid
+  		</if>
+  		<if test="address !=null ">
+  			,address
+  		</if>
+  		<if test="zipcode !=null ">
+  			,zipcode
+  		</if>
+  		<if test="phone !=null ">
+  			,phone
+  		</if>
+  		<if test="userId !=null ">
+  			,user_id
+  		</if>
+  		<if test="userName !=null ">
+  			,user_name
+  		</if>
+  		<if test="addressState !=null ">
+  			,address_state
+  		</if>
+  	</trim>
+  	) values(
+	  	<trim prefixOverrides=",">
+	  	<if test="provinceid !=null ">
+  			#{provinceid}
+  		</if>
+  		<if test="cityid !=null ">
+  			,#{cityid}
+  		</if>
+  		<if test="districtid !=null ">
+  			,#{districtid}
+  		</if>
+  		<if test="address !=null ">
+  			,#{address}
+  		</if>
+  		<if test="zipcode !=null ">
+  			,#{zipcode}
+  		</if>
+  		<if test="phone !=null ">
+  			,#{phone}
+  		</if>
+  		<if test="userId !=null ">
+  			,#{userId}
+  		</if>
+  		<if test="userName !=null ">
+  			,#{userName}
+  		</if>
+  		<if test="addressState !=null ">
+  			,#{addressState}
+  		</if>
+	  	</trim>
+  		)
+  </insert>
+  <update id="update" parameterType="Address">
+  	update moon_address set address_state ='1' where address_id =#{addressId}
+  </update>
+  <update id="updatezero" parameterType="Address">
+  	update moon_address set address_state ='0' where address_id =#{addressId}
+  </update>
+  <delete id="delect" parameterType="Address">
+  	delete * from moon_address where address_id=#{addressId}
+  </delete>
 </mapper>
