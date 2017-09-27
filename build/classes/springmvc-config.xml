@@ -66,6 +66,8 @@
 	 	<bean id="cartDao" class="cn.com.yld.dao.impl.CartDaoImpl">
 	 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
 	 	</bean>
+	 	
+	 	
 	 	<!-- 业务层 -->
 	 	<bean id="aboutService" class="cn.com.yld.service.impl.AboutServiceImpl">
 	 		<property name="dao" ref="aboutDao"></property>
