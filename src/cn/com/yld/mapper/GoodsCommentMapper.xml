@@ -87,5 +87,172 @@
 		<result column="pic_id" property="picId"/>
 	</association>
   </resultMap>
- 
+ <select id="findall" resultMap="goodsComment">
+	<![CDATA[
+	select * from moon_goods_comment c,moon_user u,moon_goods g,moon_order o where c.goods_id=g.goods_id and c.user_id=u.user_id and c.order_id=o.order_id;
+	]]>
+ </select>
+ <select id="findbyid" parameterType="GoodsComment" resultMap="goodsComment">
+ 	<![CDATA[
+ 	select * from moon_goods_comment c,moon_user u,moon_goods g,moon_order o where c.goods_id=g.goods_id and c.user_id=u.user_id and c.order_id=o.order_id and c.comment_id=#{commentId};
+	]]>	
+ </select>
+ <!-- 分页查询 -->
+ <select id="findbylimit" parameterType="map" resultMap="goodsComment">
+ 	<![CDATA[
+ 	select * from moon_goods_comment c,moon_user u,moon_goods g,moon_order o where c.goods_id=g.goods_id and c.user_id=u.user_id and c.order_id=o.order_id limit #{num1},#{num2};
+	]]>	
+ </select>
+ <select id="findbyattr" parameterType="GoodsComment" resultMap="goodsComment">
+ select * from moon_goods_comment c,moon_user u,moon_goods g,moon_order o where c.goods_id=g.goods_id and c.user_id=u.user_id and c.order_id=o.order_id
+ 	<if test="commentId != null">
+			and c.comment_id=#{commentId}
+		</if>
+		<if test="goods != null">
+			and c.goods_id=#{goods.goodsId}
+		</if>
+		<if test="user != null">
+			and c.user_id=#{user.userId}
+		</if>
+		<if test="order != null">
+			and c.order_id=#{order.orderId}
+		</if>
+		<if test="commentContentword != null">
+			and c.comment_content_word=#{commentContentword}
+		</if>
+		<if test="commentContentimg != null">
+			and c.comment_content_img=#{commentContentimg}
+		</if>
+		<if test="guarantee != null">
+			and c.guarantee=#{guarantee}
+		</if>
+		<if test="server != null">
+			and c.server=#{server}
+		</if>
+		<if test="logistics != null">
+			and c.logistics=#{logistics}
+		</if>
+		<if test="commentStatus != null">
+			and c.comment_status=#{commentStatus}
+		</if>
+		<if test="commentTime != null">
+			and c.comment_time=#{commentTime}
+		</if>
+ </select>
+ <insert id="insert" parameterType="GoodsComment">
+ 	insert into moon_goods_comment(
+ 	<trim prefixOverrides=",">
+		<if test="commentId != null">
+			comment_id
+		</if>
+		<if test="goods != null">
+			,goods_id
+		</if>
+		<if test="user != null">
+			,user_id
+		</if>
+		<if test="order != null">
+			,order_id
+		</if>
+		<if test="commentContentword != null">
+			,comment_content_word
+		</if>
+		<if test="commentContentimg != null">
+			,comment_content_img
+		</if>
+		<if test="guarantee != null">
+			,guarantee
+		</if>
+		<if test="server != null">
+			,server
+		</if>
+		<if test="logistics != null">
+			,logistics
+		</if>
+		<if test="commentStatus != null">
+			,comment_status
+		</if>
+		<if test="commentTime != null">
+			,comment_time
+		</if>
+	</trim>
+ 	) values(
+ 	<trim prefixOverrides=",">
+		<if test="commentId != null">
+			#{commentId}
+		</if>
+		<if test="goods != null">
+			,#{goods.goodsId}
+		</if>
+		<if test="user != null">
+			,#{user.userId}
+		</if>
+		<if test="order != null">
+			,#{order.orderId}
+		</if>
+		<if test="commentContentword != null">
+			,#{commentContentword}
+		</if>
+		<if test="commentContentimg != null">
+			,#{commentContentimg}
+		</if>
+		<if test="guarantee != null">
+			,#{guarantee}
+		</if>
+		<if test="server != null">
+			,#{server}
+		</if>
+		<if test="logistics != null">
+			,#{logistics}
+		</if>
+		<if test="commentStatus != null">
+			,#{commentStatus}
+		</if>
+		<if test="commentTime != null">
+			,#{commentTime}
+		</if>
+	</trim>
+ 	);
+ </insert>
+ <update id="update" parameterType="GoodsComment">
+ UPDATE moon_goods_comment SET 
+ <trim prefixOverrides=",">
+		<if test="goods != null">
+			goods_id=#{goods.goodsId}
+		</if>
+		<if test="user != null">
+			,user_id=#{user.userId}
+		</if>
+		<if test="order != null">
+			,order_id=#{order.orderId}
+		</if>
+		<if test="commentContentword != null">
+			,comment_content_word=#{commentContentword}
+		</if>
+		<if test="commentContentimg != null">
+			,comment_content_img=#{commentContentimg}
+		</if>
+		<if test="guarantee != null">
+			,guarantee=#{guarantee}
+		</if>
+		<if test="server != null">
+			,server=#{server}
+		</if>
+		<if test="logistics != null">
+			,logistics=#{logistics}
+		</if>
+		<if test="commentStatus != null">
+			,comment_status=#{commentStatus}
+		</if>
+		<if test="commentTime != null">
+			,comment_time=#{commentTime}
+		</if>
+	</trim>
+  WHERE comment_id=#{commentId}; 
+ </update>
+ <delete id="delete" parameterType="GoodsComment">
+ 	<![CDATA[
+			delete from moon_goods_comment where comment_id=#{commentId};
+		]]>
+ </delete>
 </mapper>
