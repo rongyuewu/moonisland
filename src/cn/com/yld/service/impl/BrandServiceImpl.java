@@ -43,4 +43,9 @@ public class BrandServiceImpl implements BrandService {
 		this.dao.delete(brand);
 	}
 
+	@Override
+	public void cleandelete(Brand brand) {
+		this.dao.cleandelete(brand);
+	}
+
 }

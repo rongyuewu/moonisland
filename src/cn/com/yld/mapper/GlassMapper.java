@@ -14,6 +14,8 @@ public interface GlassMapper {
 	public void update(Glass glass);
 	//删除
 	public void delete(Glass glass);
+	//清除删除
+	public void cleandelete(Glass glass);
 	//分页
 	public List<Glass> findbylike();
 }

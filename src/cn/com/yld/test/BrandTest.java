@@ -36,6 +36,28 @@ public class BrandTest {
 		dao.insert(brand);
 		
 	}
+	@Test
+	public void test3(){
+		BrandDao dao = (BrandDao) this.context.getBean("brandDao");
+		Brand brand = new Brand();
+		brand.setBrandId(10);
+		brand.setBrandName("hehe");
+		dao.update(brand);
+	}
+	@Test
+	public void test4(){
+		BrandDao dao = (BrandDao) this.context.getBean("brandDao");
+		Brand brand = new Brand();
+		brand.setBrandId(11);
+		dao.delete(brand);
+	}
+	@Test
+	public void test5(){
+		BrandDao dao = (BrandDao) this.context.getBean("brandDao");
+		Brand brand = new Brand();
+		brand.setBrandId(11);
+		dao.cleandelete(brand);
+	}
 }
 
 

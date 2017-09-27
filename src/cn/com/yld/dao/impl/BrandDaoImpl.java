@@ -41,4 +41,10 @@ public class BrandDaoImpl extends SqlSessionDaoSupport implements BrandDao {
 		return mapper.findbyid();
 	}
 
+	@Override
+	public void cleandelete(Brand brand) {
+		BrandMapper mapper = this.getSqlSession().getMapper(BrandMapper.class);
+		mapper.cleandelete(brand);
+	}
+
 }

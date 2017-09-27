@@ -27,6 +27,15 @@ public class Glass implements Serializable{
 	private String color8;
 	private String color9;
 	private String isActive;//是否被选中
+	private String glassStatus;
+
+	public String getGlassStatus() {
+		return glassStatus;
+	}
+
+	public void setGlassStatus(String glassStatus) {
+		this.glassStatus = glassStatus;
+	}
 
 	public void setGlassId(int glassId){
 		this.glassId=glassId;
