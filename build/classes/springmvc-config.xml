@@ -50,7 +50,7 @@
 	 		<aop:advisor advice-ref="txAdivce" pointcut="execution(public * cn.com.yld.dao.impl.*.*(..))"/>
 	 	</aop:config>
 	 	
-	 	<!-- dao -->
+	 	<!-- dao层 -->
 	 	<bean id="aboutDao" class="cn.com.yld.dao.impl.AboutDaoImpl">
 	 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
 	 	</bean>
@@ -69,6 +69,11 @@
 	 	<bean id="goodsDao" class="cn.com.yld.dao.impl.GoodsDaoImpl">
 	 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
 	 	</bean>
+	 	
+	 	<bean id="returnorderdao" class="cn.com.yld.dao.impl.ReturnorderDaoImpl">
+	 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+	 	</bean>
+	 	
 	 	<!-- 业务层 -->
 	 	<bean id="aboutService" class="cn.com.yld.service.impl.AboutServiceImpl">
 	 		<property name="dao" ref="aboutDao"></property>
@@ -84,6 +89,9 @@
 	 	</bean>
 	 	<bean id="cartService" class="cn.com.yld.service.impl.CartServiceImpl">
 	 		<property name="dao" ref="cartDao"></property>
+	 	</bean>
+	 	<bean id="returnorderService" class="cn.com.yld.service.impl.ReturnorderServiceImpl">
+	 		<property name="dao" ref="returnorderdao"></property>
 	 	</bean>
 	 	
 	 	

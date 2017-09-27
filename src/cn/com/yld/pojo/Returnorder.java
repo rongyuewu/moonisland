@@ -15,6 +15,26 @@ public class Returnorder implements Serializable{
 	private String reason; // 退货理由
 	private String returnStatus; // 退货状态(0 等待处理，1 处理完成)
 	private String returnTime; // 退货时间
+	
+	private User user;
+	private Order order;
+	
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Order getOrder() {
+		return order;
+	}
+
+	public void setOrder(Order order) {
+		this.order = order;
+	}
 
 	public void setReturnId(int returnId){
 		this.returnId=returnId;

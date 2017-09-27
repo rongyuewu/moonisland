@@ -10,6 +10,4 @@ public interface AreaMapper {
 	public List<Area> findbyid();
 	//插入
 	public void insert(Area area);
-	//更新
-	public void update(Area area);
 }
