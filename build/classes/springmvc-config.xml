@@ -79,7 +79,9 @@
 	 	<bean id="goodsCommentDao" class="cn.com.yld.dao.impl.GoodsCommentDaoImpl">
 	 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
 	 	</bean>
-
+		<bean id="orderDao" class="cn.com.yld.dao.impl.OrderDaoImpl">
+	 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+	 	</bean>
 	 	<!-- 业务层 -->
 	 	<bean id="aboutService" class="cn.com.yld.service.impl.AboutServiceImpl">
 	 		<property name="dao" ref="aboutDao"></property>
@@ -101,6 +103,9 @@
 	 	</bean>
 	 	<bean id="areaService" class="cn.com.yld.service.impl.AreaServiceImpl">
 	 		<property name="dao" ref="areadao"></property>
+	 	</bean>
+	 	<bean id="orderService" class="cn.com.yld.service.impl.OrderServiceImpl">
+	 		<property name="dao" ref="orderDao"></property>
 	 	</bean>
 	 	
 	
