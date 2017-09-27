@@ -2,7 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
 <mapper namespace="cn.com.yld.mapper.AddressMapper">
   <resultMap type="Address" id="adsrestltMap">
-  
   	<id column="address_id" property="addressId"/>
   	<result column="provinceid" property="provinceid"/>
   	<result column="cityid" property="cityid"/>
@@ -15,7 +14,11 @@
   	<result column="address_state" property="addressState"/>
   	<!-- 多对一 -->
   	<association property="user" javaType="User">
-  		<result column="user_id" property="userId"/>
+  		<id column="user_id" property="userId"/>
+  		
   	</association>
   </resultMap>
+  <select id="findall" resultMap="adsrestltMap">
+  	select * from moon_address
+  </select>
 </mapper>

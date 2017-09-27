@@ -66,7 +66,6 @@
 	 	<bean id="cartDao" class="cn.com.yld.dao.impl.CartDaoImpl">
 	 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
 	 	</bean>
-
 	 	<bean id="goodsDao" class="cn.com.yld.dao.impl.GoodsDaoImpl">
 	 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
 	 	</bean>
@@ -82,6 +81,13 @@
 		<bean id="orderDao" class="cn.com.yld.dao.impl.OrderDaoImpl">
 	 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
 	 	</bean>
+	 	<bean id="goodsPicDao" class="cn.com.yld.dao.impl.GoodsPicDaoImpl">
+	 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+	 	</bean>
+	 	<bean id="optometryDao" class="cn.com.yld.dao.impl.OptometryDaoImpl">
+	 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+	 	</bean>
+	 	
 	 	<!-- 业务层 -->
 	 	<bean id="aboutService" class="cn.com.yld.service.impl.AboutServiceImpl">
 	 		<property name="dao" ref="aboutDao"></property>
@@ -107,6 +113,13 @@
 	 	<bean id="orderService" class="cn.com.yld.service.impl.OrderServiceImpl">
 	 		<property name="dao" ref="orderDao"></property>
 	 	</bean>
+	 	<!-- <bean id="goodsPicService" class="cn.com.yld.service.impl.GoodsPicServiceImpl">
+	 		<property name="dao" ref="goodsPicDao"></property>
+	 	</bean>
+		<bean id="optometryService" class="cn.com.yld.service.impl.OptometryServiceImpl">
+	 		<property name="dao" ref="optometryDao"></property>
+	 	</bean> -->
+	 	
 	 	
 	
 	<!-- springMVC======================================================================================================================= -->					
