@@ -13,6 +13,15 @@ public class Brand implements Serializable{
 	private String brandLogo;// logo路径
 	private String brandCon;// 品牌描述
 	private String brandAddtime;// 添加时间
+	private String brandStatus;
+
+	public String getBrandStatus() {
+		return brandStatus;
+	}
+
+	public void setBrandStatus(String brandStatus) {
+		this.brandStatus = brandStatus;
+	}
 
 	public void setBrandId(int brandId){
 		this.brandId=brandId;

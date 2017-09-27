@@ -8,6 +8,7 @@
   	<result column="brand_logo" property="brandLogo"/>
   	<result column="brand_con" property="brandCon"/>
   	<result column="brand_addtime" property="brandAddtime"/>
+  	<result column="brand_status" property="brandStatus"/>
   </resultMap>
   <select id="findall" resultMap="brand">
   		select * from moon_brand
@@ -30,6 +31,9 @@
   			<if test="brandAddtime != null">
   				,brand_addtime
   			</if>
+  			<if test="brandStatus != null">
+  				,brand_status
+  			</if>
   		</trim>
   		) values(
   		<trim prefixOverrides=",">
@@ -44,6 +48,9 @@
   			</if>
   			<if test="brandAddtime != null">
   				,sysdate()
+  			</if>
+  			<if test="brandStatus != null">
+  				,#{brandStatus}
   			</if>
   		</trim>
   		)
@@ -62,6 +69,9 @@
   			</if>
   			<if test="brandAddtime != null">
   				,brand_addtime = #{brandAddtime}
+  			</if>
+  			<if test="brandStatus != null">
+  				,brand_status = #{brandStatus}
   			</if>
   		</trim>
   		where brand_id = #{brandId}

@@ -22,8 +22,19 @@ public class BrandTest {
 		BrandDao dao = (BrandDao) this.context.getBean("brandDao");
 		List<Brand> ls = dao.findall();
 		for (Brand brand : ls) {
-			System.out.println(brand.getBrandName());
+			System.out.println(brand.getBrandStatus());
 		}
+	}
+	@Test
+	public void test2(){
+		BrandDao dao = (BrandDao) this.context.getBean("brandDao");
+		Brand brand = new Brand();
+		brand.setBrandName("lala");
+		brand.setBrandCon("lala");
+		brand.setBrandLogo("lala");
+		brand.setBrandStatus("1");
+		dao.insert(brand);
+		
 	}
 }
 
