@@ -7,21 +7,24 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import cn.com.yld.dao.UserDao;
-import cn.com.yld.pojo.User;
+import cn.com.yld.dao.BrandDao;
+import cn.com.yld.pojo.Brand;
 
-public class UserTest {
+public class BrandTest {
+
 	private ApplicationContext context;
 	@Before
 	public void setup(){
 		context=new ClassPathXmlApplicationContext("springmvc-config.xml");
 	}
 	@Test
-	public void test01(){
-		UserDao dao=(UserDao) this.context.getBean("userDao");
-		List<User> ls=dao.findall();
-		for (User user : ls) {
-			System.out.println(user.getNickName());
+	public void test1(){
+		BrandDao dao = (BrandDao) this.context.getBean("brandDao");
+		List<Brand> ls = dao.findall();
+		for (Brand brand : ls) {
+			System.out.println(brand.getBrandName());
 		}
 	}
 }
+
+

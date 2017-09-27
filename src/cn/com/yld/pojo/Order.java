@@ -31,6 +31,49 @@ public class Order implements Serializable{
 	private String shippingName;// 配送方式名称
 	private String shippingNum;// 快递单号
 	private String orderTime;// 订单生成时间
+	private String goodsAttrid;// 商品属性id
+	private String picId;// 图片id
+	
+	//引入外部对象
+	private Goods goods;
+	private Glass glass;
+	private User user;
+	private Optometry optometry;
+	private GoodsAttr goodsAttr;
+	private GoodsPic goodsPic;
+	
+
+	public Goods getGoods() {
+		return goods;
+	}
+
+	public void setGoods(Goods goods) {
+		this.goods = goods;
+	}
+
+	public Glass getGlass() {
+		return glass;
+	}
+
+	public void setGlass(Glass glass) {
+		this.glass = glass;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Optometry getOptometry() {
+		return optometry;
+	}
+
+	public void setOptometry(Optometry optometry) {
+		this.optometry = optometry;
+	}
 
 	public void setOrderId(int orderId){
 		this.orderId=orderId;
@@ -215,5 +258,22 @@ public class Order implements Serializable{
 	public String getOrderTime(){
 		return orderTime;
 	}
+
+	public String getGoodsAttrid() {
+		return goodsAttrid;
+	}
+
+	public void setGoodsAttrid(String goodsAttrid) {
+		this.goodsAttrid = goodsAttrid;
+	}
+
+	public String getPicId() {
+		return picId;
+	}
+
+	public void setPicId(String picId) {
+		this.picId = picId;
+	}
+	
 }
 

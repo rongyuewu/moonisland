@@ -1,9 +1,11 @@
-package cn.com.yld.mapper;
+package cn.com.yld.dao;
 
 import java.util.List;
+
 import cn.com.yld.pojo.Brand;
 
-public interface BrandMapper {
+
+public interface BrandDao {
 	//查询全部
 	public List<Brand> findall();
 	//查询id

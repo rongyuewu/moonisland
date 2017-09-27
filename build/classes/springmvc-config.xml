@@ -16,9 +16,9 @@
 	<!-- 配置数据源datasource -->
 	 <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
 	 	<property name="driverClass" value="com.mysql.jdbc.Driver"></property>
-	 	<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/moon"></property>
-	 	<property name="user" value="root"></property>
-	 	<property name="password" value="123"></property>
+	 	<property name="jdbcUrl" value="jdbc:mysql://qdm17561358.my3w.com:3306/qdm17561358_db"></property>
+	 	<property name="user" value="qdm17561358"></property>
+	 	<property name="password" value="sql15226508923"></property>
 	 </bean>
 	 <!-- sqlSessionFactory管理 -->
 	 <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
@@ -57,12 +57,32 @@
 	 	<bean id="userDao" class="cn.com.yld.dao.impl.UserDaoImpl">
 	 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
 	 	</bean>
+	 	<bean id="brandDao" class="cn.com.yld.dao.impl.BrandDaoImpl">
+	 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+	 	</bean>
+	 	<bean id="glassDao" class="cn.com.yld.dao.impl.GlassDaoImpl">
+	 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+	 	</bean>
+	 	<bean id="cartDao" class="cn.com.yld.dao.impl.CartDaoImpl">
+	 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+	 	</bean>
+	 	
+	 	
 	 	<!-- 业务层 -->
 	 	<bean id="aboutService" class="cn.com.yld.service.impl.AboutServiceImpl">
 	 		<property name="dao" ref="aboutDao"></property>
 	 	</bean>
 	 	<bean id="userService" class="cn.com.yld.service.impl.UserServiceImpl">
 	 		<property name="dao" ref="userDao"></property>
+	 	</bean>
+	 	<bean id="brandService" class="cn.com.yld.service.impl.BrandServiceImpl">
+	 		<property name="dao" ref="brandDao"></property>
+	 	</bean>
+	 	<bean id="glassService" class="cn.com.yld.service.impl.GlassServiceImpl">
+	 		<property name="dao" ref="glassDao"></property>
+	 	</bean>
+	 	<bean id="cartService" class="cn.com.yld.service.impl.CartServiceImpl">
+	 		<property name="dao" ref="cartDao"></property>
 	 	</bean>
 	 	
 	 	

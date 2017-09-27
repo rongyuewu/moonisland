@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.com.yld.mapper.GoodsMapper">
-  <resultMap type="Goods" id="goods">
+  <resultMap type="Goods" id="goodsMap">
   	<id column="goods_id" property="goodsId"/>
   	<result column="brand_id" property="brandId"/>
   	<result column="goods_name" property="goodsName"/>
   	<result column="category" property="category"/>
-  		<result column="original_price" property="originalPrice"/>
+  	<result column="original_price" property="originalPrice"/>
   	<result column="sales_price" property="salesPrice"/>
   	<result column="goods_color" property="goodsColor"/>
   	<result column="goods_content" property="goodsContent"/>
@@ -27,6 +27,282 @@
   	<result column="style_D" property="styleD"/>
   	<result column="style_E" property="styleE"/>
   	<result column="add_time" property="addTime"/>
+  	<!-- 表达多对一关联 -->
+	<association property="brand" javaType="Brand">
+		<id column="brand_id" property="brandId"/>
+		<result column="brand_name" property="brandName"/>
+		<result column="brand_logo" property="brandLogo"/>
+		<result column="brand_con" property="brandCon"/>
+		<result column="brand_addtime" property="brandAddtime"/>
+	</association>
   </resultMap>
- 
+  <insert id="insert" parameterType="Goods">
+			INSERT INTO moon_goods(
+  			<trim prefixOverrides=",">
+  			<if test="brandId != null">
+  				brand_id
+  			</if>
+  			<if test="goodsName != null">
+  				,goods_name
+  			</if>
+  			<if test="category != null">
+  				,category
+  			</if>
+  			<if test="originalPrice != null">
+  				,original_price
+  			</if>
+  			<if test="salesPrice != null">
+  				,sales_price
+  			</if>
+  			<if test="goodsColor != null">
+  				,goods_color
+  			</if>
+  			<if test="goodsContent != null">
+  				,goods_content
+  			</if>
+  			<if test="browseNum != null">
+  				,browse_num
+  			</if>
+  			<if test="saveNum != null">
+  				,save_num
+  			</if>
+  			<if test="salesNum != null">
+  				,sales_num
+  			</if>
+  			<if test="isSale != null">
+  				,is_sale
+  			</if>
+  			<if test="goodsKeywords != null">
+  				,goods_keywords
+  			</if>
+  			<if test="isOnsale != null">
+  				,is_on_sale
+  			</if>
+  			<if test="stockNum != null">
+  				,stock_num
+  			</if>
+  			<if test="minusPrice != null">
+  				,minus_price
+  			</if>	
+  			<if test="privilege != null">
+  				,privilege
+  			</if>
+  			<if test="points != null">
+  				,points
+  			</if>
+  			<if test="style != null">
+  				,style
+  			</if>
+  			<if test="styleA != null">
+  				,style_A
+  			</if>
+  			<if test="styleB != null">
+  				,style_B
+  			</if>
+  			<if test="styleC != null">
+  				,style_C
+  			</if>
+  			<if test="styleD != null">
+  				,style_D
+  			</if>
+  			<if test="styleE != null">
+  				,style_E
+  			</if>
+  			<if test="addTime != null">
+  				,add_time
+  			</if>
+  		</trim>)values(
+  		<trim prefixOverrides=",">
+  			<if test="brandId != null">
+  				#{brandId}
+  			</if>
+  			<if test="goodsName != null">
+  				,#{goodsName}
+  			</if>
+  			<if test="category != null">
+  				,#{category}
+  			</if>
+  			<if test="originalPrice != null">
+  				,#{originalPrice}
+  			</if>
+  			<if test="salesPrice != null">
+  				,#{salesPrice}
+  			</if>
+  			<if test="goodsColor != null">
+  				,#{goodsColor}
+  			</if>
+  			<if test="goodsContent != null">
+  				,#{goodsContent}
+  			</if>
+  			<if test="browseNum != null">
+  				,#{browseNum}
+  			</if>
+  			<if test="saveNum != null">
+  				,#{saveNum}
+  			</if>
+  			<if test="salesNum != null">
+  				,#{salesNum}
+  			</if>
+  			<if test="isSale != null">
+  				,#{isSale}
+  			</if>
+  			<if test="goodsKeywords != null">
+  				,#{goodsKeywords}
+  			</if>
+  			<if test="isOnsale != null">
+  				,#{isOnsale}
+  			</if>
+  			<if test="stockNum != null">
+  				,#{stockNum}
+  			</if>
+  			<if test="minusPrice != null">
+  				,#{minusPrice}
+  			</if>	
+  			<if test="privilege != null">
+  				,#{privilege}
+  			</if>
+  			<if test="points != null">
+  				,#{points}
+  			</if>
+  			<if test="style != null">
+  				,#{style}
+  			</if>
+  			<if test="styleA != null">
+  				,#{styleA}
+  			</if>
+  			<if test="styleB != null">
+  				,#{styleB}
+  			</if>
+  			<if test="styleC != null">
+  				,#{styleC}
+  			</if>
+  			<if test="styleD != null">
+  				,#{styleD}
+  			</if>
+  			<if test="styleE != null">
+  				,#{styleE}
+  			</if>
+  			<if test="addTime != null">
+  				,sysdate()
+  			</if>
+  		</trim>
+  		)
+  </insert>
+  <select id="findall" resultMap="goodsMap">
+  <![CDATA[
+  	SELECT g.*,b.* FROM moon_goods g,moon_brand b where g.brand_id=b.brand_id;
+  	]]>
+  </select>
+  <select id="findbyid" parameterType="Goods" resultMap="goodsMap">
+  <![CDATA[
+			SELECT g.*,b.* FROM moon_goods g,moon_brand b where g.brand_id=b.brand_id && g.goods_id=#{goodsId};
+		]]>
+  	
+  </select>
+  <select id="findbyAvailable" resultMap="goodsMap">
+  <![CDATA[
+			SELECT g.*,b.* FROM moon_goods g,moon_brand b where g.brand_id=b.brand_id && g.is_on_sale=1;
+		]]>
+  </select>
+	<select id="findbylike" parameterType="map" resultMap="goodsMap">
+  <![CDATA[
+			SELECT g.*,b.* FROM moon_goods g,moon_brand b where g.brand_id=b.brand_id and goods_name like '${str}%';
+		]]>
+  </select>
+  <select id="findlimit" parameterType="map" resultMap="goodsMap">
+  <![CDATA[
+  	SELECT g.*,b.* FROM moon_goods g,moon_brand b where g.brand_id=b.brand_id limit #{num1},#{num2};
+  	]]>
+  </select>
+  <!-- num3 0为升序1为降续 -->
+  <select id="findlimitpri" parameterType="map" resultMap="goodsMap">
+  	SELECT g.*,b.* FROM moon_goods g,moon_brand b where g.brand_id=b.brand_id ORDER BY original_price  
+  	<if test="num3=0">
+  	  asc
+  	</if>
+  	limit #{num1},#{num2};
+  </select>
+  <update id="update" parameterType="Goods">
+  	UPDATE moon_goods SET 
+  	<trim prefixOverrides=",">
+  			<if test="brandId != null">
+  				brand_id=#{brandId}
+  			</if>
+  			<if test="goodsName != null">
+  				,goods_name=#{goodsName}
+  			</if>
+  			<if test="category != null">
+  				,category=#{category}
+  			</if>
+  			<if test="originalPrice != null">
+  				,original_price=#{originalPrice}
+  			</if>
+  			<if test="salesPrice != null">
+  				,sales_price=#{salesPrice}
+  			</if>
+  			<if test="goodsColor != null">
+  				,goods_color=#{goodsColor}
+  			</if>
+  			<if test="goodsContent != null">
+  				,goods_content=#{goodsContent}
+  			</if>
+  			<if test="browseNum != null">
+  				,browse_num=#{browseNum}
+  			</if>
+  			<if test="saveNum != null">
+  				,save_num=#{saveNum}
+  			</if>
+  			<if test="salesNum != null">
+  				,sales_num=#{salesNum}
+  			</if>
+  			<if test="isSale != null">
+  				,is_sale=#{isSale}
+  			</if>
+  			<if test="goodsKeywords != null">
+  				,goods_keywords=#{goodsKeywords}
+  			</if>
+  			<if test="isOnsale != null">
+  				,is_on_sale=#{isOnsale}
+  			</if>
+  			<if test="stockNum != null">
+  				,stock_num=#{stockNum}
+  			</if>
+  			<if test="minusPrice != null">
+  				,minus_price=#{minusPrice}
+  			</if>
+  			
+  			<if test="privilege != null">
+  				,privilege=#{privilege}
+  			</if>
+  			<if test="points != null">
+  				,points=#{points}
+  			</if>
+  			<if test="style != null">
+  				,style=#{style}
+  			</if>
+  			<if test="styleA != null">
+  				,style_A=#{styleA}
+  			</if>
+  			<if test="styleB != null">
+  				,style_B=#{styleB}
+  			</if>
+  			<if test="styleC != null">
+  				,style_C=#{styleC}
+  			</if>
+  			
+  			<if test="styleD != null">
+  				,style_D=#{styleD}
+  			</if>
+  			<if test="styleE != null">
+  				,style_E=#{styleE}
+  			</if>
+  			<if test="addTime != null">
+  				,add_time=#{addTime}
+  			</if>		
+  		</trim>
+  		where goods_id=#{goodsId};
+  </update>
+  <delete id="delete" parameterType="Goods">
+  delete from moon_goods where goods_id=#{goodsId}
+  </delete>
 </mapper>

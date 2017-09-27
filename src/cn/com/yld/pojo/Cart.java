@@ -22,6 +22,65 @@ public class Cart implements Serializable{
 	private String cartStatus;// 购物车状态
 	private String goodsAttrid;// 商品属性id
 	private String picId;// 图片id
+	
+	
+	//引入外部对象
+	private Goods goods;
+	private Glass glass;
+	private User user;
+	private Optometry optometry;
+	private GoodsAttr goodsAttr;
+	private GoodsPic goodsPic;
+	
+	
+
+	public Goods getGoods() {
+		return goods;
+	}
+
+	public void setGoods(Goods goods) {
+		this.goods = goods;
+	}
+
+	public Glass getGlass() {
+		return glass;
+	}
+
+	public void setGlass(Glass glass) {
+		this.glass = glass;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Optometry getOptometry() {
+		return optometry;
+	}
+
+	public void setOptometry(Optometry optometry) {
+		this.optometry = optometry;
+	}
+
+	public GoodsAttr getGoodsAttr() {
+		return goodsAttr;
+	}
+
+	public void setGoodsAttr(GoodsAttr goodsAttr) {
+		this.goodsAttr = goodsAttr;
+	}
+
+	public GoodsPic getGoodsPic() {
+		return goodsPic;
+	}
+
+	public void setGoodsPic(GoodsPic goodsPic) {
+		this.goodsPic = goodsPic;
+	}
 
 	public void setCarId(int carId){
 		this.carId=carId;
@@ -134,5 +193,39 @@ public class Cart implements Serializable{
 	public String getPicId(){
 		return picId;
 	}
+
+	public Cart() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Cart(String userId, String optometryId, String isFrameonly, String goodsId, String minusPrice,
+			String privilege, String points, String bothNum, String glassId, String catTime, String cartStatus,
+			String goodsAttrid, String picId) {
+		super();
+		this.userId = userId;
+		this.optometryId = optometryId;
+		this.isFrameonly = isFrameonly;
+		this.goodsId = goodsId;
+		this.minusPrice = minusPrice;
+		this.privilege = privilege;
+		this.points = points;
+		this.bothNum = bothNum;
+		this.glassId = glassId;
+		this.catTime = catTime;
+		this.cartStatus = cartStatus;
+		this.goodsAttrid = goodsAttrid;
+		
+	}
+
+	@Override
+	public String toString() {
+		return "Cart [carId=" + carId + ", userId=" + userId + ", optometryId=" + optometryId + ", isFrameonly="
+				+ isFrameonly + ", goodsId=" + goodsId + ", minusPrice=" + minusPrice + ", privilege=" + privilege
+				+ ", points=" + points + ", bothNum=" + bothNum + ", glassId=" + glassId + ", catTime=" + catTime
+				+ ", cartStatus=" + cartStatus + ", goodsAttrid=" + goodsAttrid + ", picId=" + picId + "]";
+	}
+	
+	
 }
 

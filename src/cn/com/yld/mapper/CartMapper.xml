@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
 <mapper namespace="cn.com.yld.mapper.CartMapper">
-  <resultMap type="Cart" id="cartrestltMap">
+  <resultMap type="Cart" id="cart">
   	<id column="car_id" property="carId"/>
   	<result column="user_id" property="userId"/>
   	<result column="optometry_id" property="optometryId"/>
@@ -16,5 +16,197 @@
   	<result column="cart_status" property="cartStatus"/>
   	<result column="goods_attr_id" property="goodsAttrid"/>
   	<result column="pic_id" property="picId"/>
+  	
+  	<!-- 表达多对一关联 -->
+		<association property="goods" javaType="Goods">
+			<result column="goods_id" property="goodsId"/>
+			<result column="brand_id" property="brandId"/>
+		  	<result column="goods_name" property="goodsName"/>
+		  	<result column="category" property="category"/>
+		  	<result column="original_price" property="originalPrice"/>
+		  	<result column="sales_price" property="salesPrice"/>
+		  	<result column="goods_color" property="goodsColor"/>
+		  	<result column="goods_content" property="goodsContent"/>
+		  	<result column="browse_num" property="browseNum"/>
+		  	<result column="save_num" property="saveNum"/>
+		  	<result column="sales_num" property="salesNum"/>
+		  	<result column="is_sale" property="isSale"/>
+		  	<result column="goods_keywords" property="goodsKeywords"/>
+		  	<result column="is_on_sale" property="isOnsale"/>
+		  	<result column="stock_num" property="stockNum"/>
+		  	<result column="minus_price" property="minusPrice"/>
+		  	<result column="privilege" property="privilege"/>
+		  	<result column="points" property="points"/>
+		  	<result column="style" property="style"/>
+		  	<result column="style_A" property="styleA"/>
+		  	<result column="style_B" property="styleB"/>
+		  	<result column="style_C" property="styleC"/>
+		  	<result column="style_D" property="styleD"/>
+		  	<result column="style_E" property="styleE"/>
+		  	<result column="add_time" property="addTime"/>
+		</association>
+		<association property="glass" javaType="Glass">
+			<result column="glass_id" property="glassId"/>
+			<result column="glass_style" property="glassStyle"/>
+		  	<result column="glass_name" property="glassName"/>
+		  	<result column="glass_price" property="glassPrice"/>
+		  	<result column="sph_price" property="sphPrice"/>
+		  	<result column="cyl_price" property="cylPrice"/>
+		  	<result column="glass_img" property="glassImg"/>
+		  	<result column="glass_imgthumb" property="glassImgthumb"/>
+		  	<result column="glass_time" property="glassTime"/>
+		  	<result column="color1" property="color1"/>
+		  	<result column="color2" property="color2"/>
+		  	<result column="color3" property="color3"/>
+		  	<result column="color4" property="color4"/>
+		  	<result column="color5" property="color5"/>
+		  	<result column="color6" property="color6"/>
+		  	<result column="color7" property="color8"/>
+		  	<result column="color8" property="color8"/>
+		  	<result column="color9" property="color9"/>
+		  	<result column="is_active" property="isActive"/>
+		</association>
+		<association property="user" javaType="User">
+			<result column="user_id" property="userId"/>
+			<result column="points" property="points"/>
+		  	<result column="user_level" property="userLevel"/>
+		  	<result column="is_privilege" property="isPrivilege"/>
+		  	<result column="privilege_num" property="privilegeNum"/>
+		  	<result column="phone" property="phone"/>
+		  	<result column="nick_name" property="nickName"/>
+		  	<result column="header_pic" property="headerPic"/>
+		  	<result column="password" property="password"/>
+		  	<result column="sex" property="sex"/>
+		  	<result column="birthday" property="birthday"/>
+		  	<result column="zipcode" property="zipcode"/>
+		  	<result column="mobile" property="mobile"/>
+		  	<result column="mail" property="mail"/>
+		  	<result column="user_time" property="userTime"/>
+		  	<result column="user_status" property="userStatus"/>
+		</association>
+		<association property="optometry" javaType="Optometry">
+			<result column="optometry_id" property="optometryId"/>
+		</association>
+		<association property="goodsAttr" javaType="GoodsAttr">
+			<result column="attr_id" property="attrId"/>
+			<result column="goods_id" property="goodsId"/>
+		  	<result column="material" property="material"/>
+		  	<result column="border" property="border"/>
+		  	<result column="size" property="size"/>
+		  	<result column="function" property="function"/>
+		  	<result column="brand_id" property="brandId"/>
+		  	<result column="color" property="color"/>
+		  	<result column="price" property="price"/>
+		</association>
+		<association property="goodsPic" javaType="GoodsPic">
+			<result column="pic_id" property="picId"/>
+		</association>
+		
   </resultMap>
+  <!-- 根据cart里封装的user对象，查询用户购物车 -->
+  <select id="findall" parameterType="User" resultMap="cart">
+  	select c.* ,g.goods_id gid ,a.attr_id aid ,p.pic_id pid ,u.user_id uid from moon_cart c,moon_goods g,moon_goods_attr a,moon_goods_pic p,moon_user u where c.goods_id=g.goods_id and c.goods_attr_id=a.attr_id and c.pic_id=p.pic_id and c.user_id=u.user_id and cart_status=1 and c.user_id=#{userId}
+  </select>
+ <insert id="insert" parameterType="Cart">
+  	insert into moon_cart (
+  			<trim prefixOverrides=",">
+  			<if test="userId != null">
+  				user_id
+  			</if>
+  			<if test="optometryId != null">
+  				,optometry_id
+  			</if>
+  			<if test="isFrameonly != null">
+  				,is_frame_only
+  			</if>
+  			<if test="goodsId != null">
+  				,goods_id
+  			</if>
+  			<if test="minusPrice != null">
+  				,minus_price
+  			</if>
+  			<if test="privilege != null">
+  				,privilege
+  			</if>
+  			<if test="points != null">
+  				,points
+  			</if>
+  			<if test="bothNum != null">
+  				,both_num
+  			</if>
+  			<if test="glassId != null">
+  				,glass_id
+  			</if>
+  			<if test="catTime != null">
+  				,cat_time
+  			</if>
+  			<if test="cartStatus != null">
+  				,cart_status
+  			</if>
+  			<if test="goodsAttrid != null">
+  				,goods_attr_id
+  			</if>
+  			<if test="picId != null">
+  				,pic_id
+  			</if>
+  			
+  		</trim>
+  		) values(
+  		<trim prefixOverrides=",">
+  			<if test="userId != null">
+  				#{userId}
+  			</if>
+  			<if test="optometryId != null">
+  				,#{optometryId}
+  			</if>
+  			<if test="isFrameonly != null">
+  				,#{isFrameonly}
+  			</if>
+  			<if test="goodsId != null">
+  				,#{goodsId}
+  			</if>
+  			<if test="minusPrice != null">
+  				,#{minusPrice}
+  			</if>
+  			<if test="privilege != null">
+  				,#{privilege}
+  			</if>
+  			<if test="points != null">
+  				,#{points}
+  			</if>
+  			<if test="bothNum != null">
+  				,#{bothNum}
+  			</if>
+  			<if test="glassId != null">
+  				,#{glassId}
+  			</if>
+  			<if test="catTime != null">
+  				,sysdate()
+  			</if>
+  			<if test="cartStatus != null">
+  				,#{cartStatus}
+  			</if>
+  			<if test="goodsAttrid != null">
+  				,#{goodsAttrid}
+  			</if>
+  			<if test="picId != null">
+  				,#{picId}
+  			</if>
+  			
+  		</trim>
+  		)
+  </insert>
+  <!-- 更改商品数量，而且商品属性一模一样的 -->
+  <update id="update" parameterType="Cart">
+  	update moon_cart set both_num=#{bothNum} where car_id=#{carId}
+  </update>
+  <!-- 删除购物车，其实是更改属性为弃用， cart_status='0'-->
+  <update id="delete" parameterType="Cart">
+  	update moon_cart set cart_status='0' where car_id=#{carId}
+  </update>
+  <!-- 启用购物车，其实是更改属性为启用，cart_status='1'-->
+  <update id="candelect" parameterType="Cart">
+  	update moon_cart set cart_status='1' where car_id=#{carId}
+  </update>
+  
 </mapper>

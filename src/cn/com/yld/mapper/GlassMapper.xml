@@ -22,5 +22,193 @@
   	<result column="color9" property="color9"/>
   	<result column="is_active" property="isActive"/>
   </resultMap>
- 
+   <select id="findall" resultMap="glass">
+  		select * from moon_glass
+  </select>
+  <select id="findbyid" resultMap="glass">
+  	select * from moon_glass where glass_id = #{glassId}
+  </select>
+  <insert id="insert" parameterType="glass">
+  	insert into moon_glass (
+  			<trim prefixOverrides=",">
+  			<if test="glassStyle != null">
+  				glass_style
+  			</if>
+  			<if test="glassName != null">
+  				,glass_name
+  			</if>
+  			<if test="glassPrice != null">
+  				,glass_price
+  			</if>
+  			<if test="sphPrice != null">
+  				,sph_price
+  			</if>
+  			<if test="cylPrice != null">
+  				,cyl_price
+  			</if>
+  			<if test="glassImg != null">
+  				,glass_img
+  			</if>
+  			<if test="glassImgthumb != null">
+  				,glass_imgthumb
+  			</if>
+  			<if test="glassTime != null">
+  				,glass_time
+  			</if>
+  			<if test="color1 != null">
+  				,color1
+  			</if>
+  			<if test="color2 != null">
+  				,color2
+  			</if>
+  			<if test="color3 != null">
+  				,color3
+  			</if>
+  			<if test="color4 != null">
+  				,color4
+  			</if>
+  			<if test="color5 != null">
+  				,color5
+  			</if>
+  			<if test="color6 != null">
+  				,color6
+  			</if>
+  			<if test="color7 != null">
+  				,color7
+  			</if>
+  			<if test="color8 != null">
+  				,color8
+  			</if>
+  			<if test="color9 != null">
+  				,color9
+  			</if>
+  			<if test="isActive != null">
+  				,is_active
+  			</if>	
+  		</trim>
+  		) values(
+  		<trim prefixOverrides=",">
+  			<if test="glassStyle != null">
+  				#{glassStyle}
+  			</if>
+  			<if test="glassName != null">
+  				,#{glassName}
+  			</if>
+  			<if test="glassPrice != null">
+  				,#{glassPrice}
+  			</if>
+  			<if test="sphPrice != null">
+  				,#{sphPrice}
+  			</if>
+  			<if test="cylPrice != null">
+  				,#{cylPrice}
+  			</if>
+  			<if test="glassImg != null">
+  				,#{glassImg}
+  			</if>
+  			<if test="glassImgthumb != null">
+  				,#{glassImgthumb}
+  			</if>
+  			<if test="glassTime != null">
+  				,#{glassTime}
+  			</if>
+  			<if test="color1 != null">
+  				,#{color1}
+  			</if>
+  			<if test="color2 != null">
+  				,#{color2}
+  			</if>
+  			<if test="color3 != null">
+  				,#{color3}
+  			</if>
+  			<if test="color4 != null">
+  				,#{color4}
+  			</if>
+  			<if test="color5 != null">
+  				,#{color5}
+  			</if>
+  			<if test="color6 != null">
+  				,#{color6}
+  			</if>
+  			<if test="color7 != null">
+  				,#{color7}
+  			</if>
+  			<if test="color8 != null">
+  				,#{color8}
+  			</if>
+  			<if test="color9 != null">
+  				,#{color9}
+  			</if>
+  			<if test="isActive != null">
+  				,#{isActive}
+  			</if>	
+  		</trim>
+  		)
+  </insert>
+  <update id="update" parameterType="glass">
+  	update moon_glass set 
+  		<trim prefixOverrides=",">
+  			<if test="glassStyle != null">
+  				glass_style=#{glassStyle}
+  			</if>
+  			<if test="glassName != null">
+  				,glass_name=#{glassName}
+  			</if>
+  			<if test="glassPrice != null">
+  				,glass_price=#{glassPrice}
+  			</if>
+  			<if test="sphPrice != null">
+  				,sph_price=#{sphPrice}
+  			</if>
+  			<if test="cylPrice != null">
+  				,cyl_price=#{cylPrice}
+  			</if>
+  			<if test="glassImg != null">
+  				,glass_img=#{glassImg}
+  			</if>
+  			<if test="glass_imgthumb != null">
+  				,glass_imgthumb=#{glassImgthumb}
+  			</if>
+  			<if test="glassTime != null">
+  				,glass_time=#{glassTime}
+  			</if>
+  			<if test="color1 != null">
+  				,color1=#{color1}
+  			</if>
+  			<if test="color2 != null">
+  				,color2=#{color2}
+  			</if>
+  			<if test="color3 != null">
+  				,color3=#{color3}
+  			</if>
+  			<if test="color4 != null">
+  				,color4=#{color4}
+  			</if>
+  			<if test="color5 != null">
+  				,color5=#{color5}
+  			</if>
+  			<if test="color6 != null">
+  				,color6=#{color6}
+  			</if>
+  			<if test="color7 != null">
+  				,color7=#{color7}
+  			</if>
+  			<if test="color8 != null">
+  				,color8=#{color8}
+  			</if>
+  			<if test="color9 != null">
+  				,color9=#{color9}
+  			</if>
+  			<if test="isActive != null">
+  				,is_active=#{isActive}
+  			</if>	
+  		</trim>
+  		where user_id=#{userId}
+  </update>
+  <update id="delete" parameterType="glass">
+  	update moon_glass set is_active = "0" where glass_id = #{glassId}
+  </update>
+  <update id="cleandelete" parameterType="glass">
+  	update moon_glass set is_active = "1" where glass_id = #{glassId}
+  </update>
 </mapper>

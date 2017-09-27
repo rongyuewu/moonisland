@@ -1,9 +1,10 @@
-package cn.com.yld.mapper;
+package cn.com.yld.service;
 
 import java.util.List;
+
 import cn.com.yld.pojo.Glass;
 
-public interface GlassMapper {
+public interface GlassService {
 	//查询全部
 	public List<Glass> findall();
 	//查询id

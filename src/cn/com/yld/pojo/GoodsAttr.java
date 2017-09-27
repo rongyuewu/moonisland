@@ -17,6 +17,25 @@ public class GoodsAttr implements Serializable{
 	private String brandId;//品牌
 	private String color;//颜色
 	private String price;//价格（和商品价格一致，筛选条件）
+	private Goods goods;//关联商品
+	private Brand brand;//关联品牌
+	
+	
+	public Goods getGoods() {
+		return goods;
+	}
+
+	public void setGoods(Goods goods) {
+		this.goods = goods;
+	}
+
+	public Brand getBrand() {
+		return brand;
+	}
+
+	public void setBrand(Brand brand) {
+		this.brand = brand;
+	}
 
 	public void setAttrId(int attrId){
 		this.attrId=attrId;

@@ -1,5 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper>
-  <cache-ref namespace=""/>
+<mapper namespace="cn.com.yld.mapper.OrderMapper">
+  <resultMap type="Order" id="order">
+  	<id column="order_id" property="orderId"/>
+  	<result column="order_number" property="orderNumber"/>
+  	<result column="goods_id" property="goodsId"/>
+  	<result column="glass_id" property="glassId"/>
+  	<result column="user_id" property="userId"/>
+  	<result column="optometry_id" property="optometryId"/>
+  	<result column="order_status" property="orderStatus"/>
+  	<result column="shipping_status" property="shippingStatus"/>
+  	<result column="pay_status" property="payStatus"/>
+  	<result column="consignee" property="consignee"/>
+  	<result column="provinceid" property="provinceid"/>
+  	<result column="cityid" property="cityid"/>
+  	<result column="districtid" property="districtid"/>
+  	<result column="address" property="address"/>
+  	<result column="zipcode" property="zipcode"/>
+  	<result column="phone" property="phone"/>
+  	<result column="pay_num" property="payNum"/>
+  	<result column="order_money" property="orderMoney"/>
+  	<result column="postscript" property="postscript"/>
+  	<result column="shipping_id" property="shippingId"/>
+  	<result column="shipping_name" property="shippingName"/>
+  	<result column="shipping_num" property="shippingNum"/>
+  	<result column="order_time" property="orderTime"/>
+  	<result column="goods_attr_id" property="goodsAttrid"/>
+  	<result column="pic_id" property="picId"/>
+  	<!-- 表达多对一关联 -->
+		<association property="goods" javaType="Goods">
+			<result column="goods_id" property="goodsId"/>
+			<result column="brand_id" property="brandId"/>
+		  	<result column="goods_name" property="goodsName"/>
+		  	<result column="category" property="category"/>
+		  	<result column="original_price" property="originalPrice"/>
+		  	<result column="sales_price" property="salesPrice"/>
+		  	<result column="goods_color" property="goodsColor"/>
+		  	<result column="goods_content" property="goodsContent"/>
+		  	<result column="browse_num" property="browseNum"/>
+		  	<result column="save_num" property="saveNum"/>
+		  	<result column="sales_num" property="salesNum"/>
+		  	<result column="is_sale" property="isSale"/>
+		  	<result column="goods_keywords" property="goodsKeywords"/>
+		  	<result column="is_on_sale" property="isOnsale"/>
+		  	<result column="stock_num" property="stockNum"/>
+		  	<result column="minus_price" property="minusPrice"/>
+		  	<result column="privilege" property="privilege"/>
+		  	<result column="points" property="points"/>
+		  	<result column="style" property="style"/>
+		  	<result column="style_A" property="styleA"/>
+		  	<result column="style_B" property="styleB"/>
+		  	<result column="style_C" property="styleC"/>
+		  	<result column="style_D" property="styleD"/>
+		  	<result column="style_E" property="styleE"/>
+		  	<result column="add_time" property="addTime"/>
+		</association>
+		<association property="glass" javaType="Glass">
+			<result column="glass_id" property="glassId"/>
+			<result column="glass_style" property="glassStyle"/>
+		  	<result column="glass_name" property="glassName"/>
+		  	<result column="glass_price" property="glassPrice"/>
+		  	<result column="sph_price" property="sphPrice"/>
+		  	<result column="cyl_price" property="cylPrice"/>
+		  	<result column="glass_img" property="glassImg"/>
+		  	<result column="glass_imgthumb" property="glassImgthumb"/>
+		  	<result column="glass_time" property="glassTime"/>
+		  	<result column="color1" property="color1"/>
+		  	<result column="color2" property="color2"/>
+		  	<result column="color3" property="color3"/>
+		  	<result column="color4" property="color4"/>
+		  	<result column="color5" property="color5"/>
+		  	<result column="color6" property="color6"/>
+		  	<result column="color7" property="color8"/>
+		  	<result column="color8" property="color8"/>
+		  	<result column="color9" property="color9"/>
+		  	<result column="is_active" property="isActive"/>
+		</association>
+		<association property="user" javaType="User">
+			<result column="user_id" property="userId"/>
+			<result column="points" property="points"/>
+		  	<result column="user_level" property="userLevel"/>
+		  	<result column="is_privilege" property="isPrivilege"/>
+		  	<result column="privilege_num" property="privilegeNum"/>
+		  	<result column="phone" property="phone"/>
+		  	<result column="nick_name" property="nickName"/>
+		  	<result column="header_pic" property="headerPic"/>
+		  	<result column="password" property="password"/>
+		  	<result column="sex" property="sex"/>
+		  	<result column="birthday" property="birthday"/>
+		  	<result column="zipcode" property="zipcode"/>
+		  	<result column="mobile" property="mobile"/>
+		  	<result column="mail" property="mail"/>
+		  	<result column="user_time" property="userTime"/>
+		  	<result column="user_status" property="userStatus"/>
+		</association>
+		<association property="optometry" javaType="Optometry">
+			<result column="optometry_id" property="optometryId"/>
+		</association>
+		<association property="goodsAttr" javaType="GoodsAttr">
+			<result column="attr_id" property="attrId"/>
+			<result column="goods_id" property="goodsId"/>
+		  	<result column="material" property="material"/>
+		  	<result column="border" property="border"/>
+		  	<result column="size" property="size"/>
+		  	<result column="function" property="function"/>
+		  	<result column="brand_id" property="brandId"/>
+		  	<result column="color" property="color"/>
+		  	<result column="price" property="price"/>
+		</association>
+		<association property="goodsPic" javaType="GoodsPic">
+			<result column="pic_id" property="picId"/>
+		</association>
+  </resultMap>
+  <select id="findorderstatus" resultMap="order">
+  	select * from moon_order where order_status=1
+  </select>
 </mapper>

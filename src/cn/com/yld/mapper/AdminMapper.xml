@@ -8,7 +8,7 @@
   	<result column="status" property="status"/>
   	<result column="add_time" property="addTime"/>
   </resultMap>
-  <select id="find" parameterType="admin">
+  <select id="find" parameterType="Admin">
   	SELECT * FROM moon_admin WHERE name=#{name} AND pwd=#{ped}
   </select>
 </mapper>

@@ -22,7 +22,7 @@
   <select id="findall" resultMap="user">
   		select * from moon_user
   </select>
-  <select id="findlogin" resultType="user"  parameterType="user">
+  <select id="findlogin" resultType="user"  parameterType="User">
   		select * from moon_user 
        <trim prefix="WHERE" prefixOverrides="and">
            	<if test="phone != null">
@@ -34,32 +34,80 @@
        </trim>
        and password=#{password}
   </select>
-  <select id="finduser" resultType="user"  parameterType="user">
+  <select id="finduser" resultType="user"  parameterType="User">
        select * from moon_user where user_id=#{userId}
   </select>
-  <insert id="insert" parameterType="user">
+  <insert id="insert" parameterType="User">
   		insert into moon_user (
   			<trim prefixOverrides=",">
+  			<if test="points != null">
+  				points
+  			</if>
+  			<if test="userLevel != null">
+  				,user_level
+  			</if>
+  			<if test="isPrivilege != null">
+  				,is_privilege
+  			</if>
+  			<if test="privilegeNum != null">
+  				,privilege_num
+  			</if>
+  			<if test="phone != null">
+  				,phone
+  			</if>
+  			<if test="nickName != null">
+  				,nick_name
+  			</if>
+  			<if test="headerPic != null">
+  				,header_pic
+  			</if>
+  			<if test="password != null">
+  				,password
+  			</if>
+  			<if test="sex != null">
+  				,sex
+  			</if>
+  			<if test="birthday != null">
+  				,birthday
+  			</if>
+  			<if test="zipcode != null">
+  				,zipcode
+  			</if>
+  			<if test="mobile != null">
+  				,mobile
+  			</if>
+  			<if test="mail != null">
+  				,mail
+  			</if>
+  			<if test="userTime != null">
+  				,user_time
+  			</if>
+  			<if test="userStatus != null">
+  				,user_status
+  			</if>	
+  		</trim>
+  		) values(
+  		<trim prefixOverrides=",">
   			<if test="points != null">
   				#{points}
   			</if>
   			<if test="userLevel != null">
-  				,#{user_level}
+  				,#{userLevel}
   			</if>
   			<if test="isPrivilege != null">
-  				,#{is_privilege}
+  				,#{isPrivilege}
   			</if>
   			<if test="privilegeNum != null">
-  				,#{privilege_num}
+  				,#{privilegeNum}
   			</if>
   			<if test="phone != null">
   				,#{phone}
   			</if>
   			<if test="nickName != null">
-  				,#{nick_name}
+  				,#{nickName}
   			</if>
   			<if test="headerPic != null">
-  				,#{header_pic}
+  				,#{headerPic}
   			</if>
   			<if test="password != null">
   				,#{password}
@@ -80,13 +128,16 @@
   				,#{mail}
   			</if>
   			<if test="userTime != null">
-  				,#{user_time}
+  				,sysdate()
   			</if>
   			<if test="userStatus != null">
-  				,#{user_status}
+  				,#{userStatus}
   			</if>	
   		</trim>
-  		) values(
+  		)
+  </insert>
+  <update id="update" parameterType="User">
+  		update moon_user set 
   		<trim prefixOverrides=",">
   			<if test="points != null">
   				points=#{points}
@@ -134,63 +185,12 @@
   				,user_status=#{userStatus}
   			</if>	
   		</trim>
-  		)
-  </insert>
-  <update id="update" parameterType="user">
-  		update moon_user set 
-  		<trim prefixOverrides=",">
-  			<if test="points != null">
-  				#{points}
-  			</if>
-  			<if test="userLevel != null">
-  				,#{userLevel}
-  			</if>
-  			<if test="isPrivilege != null">
-  				,#{isPrivilege}
-  			</if>
-  			<if test="privilegeNum != null">
-  				,#{privilegeNum}
-  			</if>
-  			<if test="phone != null">
-  				,#{phone}
-  			</if>
-  			<if test="nickName != null">
-  				,#{nickName}
-  			</if>
-  			<if test="headerPic != null">
-  				,#{headerPic}
-  			</if>
-  			<if test="password != null">
-  				,#{password}
-  			</if>
-  			<if test="sex != null">
-  				,#{sex}
-  			</if>
-  			<if test="birthday != null">
-  				,#{birthday}
-  			</if>
-  			<if test="zipcode != null">
-  				,#{zipcode}
-  			</if>
-  			<if test="mobile != null">
-  				,#{mobile}
-  			</if>
-  			<if test="mail != null">
-  				,#{mail}
-  			</if>
-  			<if test="userTime != null">
-  				,#{userTime}
-  			</if>
-  			<if test="userStatus != null">
-  				,#{userStatus}
-  			</if>	
-  		</trim>
   		where user_id=#{userId}
   </update>
-  <update id="delete" parameterType="user">
+  <update id="delete" parameterType="User">
   		update moon_user set user_status='0' where user_id=#{userid}
   </update>
-  <update id="cleandelete" parameterType="user">
+  <update id="cleandelete" parameterType="User">
   		update moon_user set user_status='1' where user_id=#{userid}
   </update>
 </mapper>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.yld.mapper.GoodsCommentMapper">
+  <resultMap type="GoodsComment" id="goodsComment">
+  	<id column="comment_id" property="commentId"/>
+  	<result column="goods_id" property="goodsId"/>
+  	<result column="user_id" property="userId"/>
+  	<result column="order_id" property="orderId"/>
+  	<result column="comment_content_word" property="commentContentword"/>
+  	<result column="comment_content_img" property="commentContentimg"/>
+  	<result column="guarantee" property="guarantee"/>
+  	<result column="server" property="server"/>
+  	<result column="logistics" property="logistics"/>
+  	<result column="comment_status" property="commentStatus"/>
+  	<result column="comment_time" property="commentTime"/>
+  	<!-- 表达多对一关联 -->
+	<association property="user" javaType="User">
+		<id column="user_id" property="userId"/>
+		<result column="points" property="points"/>
+		<result column="user_level" property="userLevel"/>
+		<result column="is_privilege" property="isPrivilege"/>
+		<result column="privilege_num" property="privilegeNum"/>
+		<result column="phone" property="phone"/>
+		<result column="nick_name" property="nickName"/>
+		<result column="header_pic" property="headerPic"/>
+		<result column="password" property="password"/>
+		<result column="sex" property="sex"/>
+		<result column="birthday" property="birthday"/>
+		<result column="zipcode" property="zipcode"/>
+		<result column="mobile" property="mobile"/>
+		<result column="mail" property="mail"/>
+		<result column="user_time" property="userTime"/>
+		<result column="user_status" property="userStatus"/>
+	</association>
+	<association property="goods" javaType="Goods">
+		<id column="goods_id" property="goodsId"/>
+		<result column="brand_id" property="brandId"/>
+		<result column="goods_name" property="goodsName"/>
+		<result column="category" property="category"/>
+		<result column="original_price" property="originalPrice"/>
+		<result column="sales_price" property="salesPrice"/>
+		<result column="goods_color" property="goodsColor"/>
+		<result column="goods_content" property="goodsContent"/>
+		<result column="browse_num" property="browseNum"/>
+		<result column="save_num" property="saveNum"/>
+		<result column="sales_num" property="salesNum"/>
+		<result column="is_sale" property="isSale"/>
+		<result column="goods_keywords" property="goodsKeywords"/>
+		<result column="is_on_sale" property="isOnsale"/>
+		<result column="stock_num" property="stockNum"/>
+		<result column="minus_price" property="minusPrice"/>
+		<result column="privilege" property="privilege"/>
+		<result column="points" property="points"/>
+		<result column="style" property="style"/>
+		<result column="style_A" property="styleA"/>
+		<result column="style_B" property="styleB"/>
+		<result column="style_C" property="styleC"/>
+		<result column="style_D" property="styleD"/>
+		<result column="style_E" property="styleE"/>
+		<result column="add_time" property="addTime"/>
+	</association>
+	<association property="order" javaType="Order">
+		<id column="order_id" property="orderId"/>
+		<result column="order_number" property="orderNumber"/>
+		<result column="goods_id" property="goodsId"/>
+		<result column="glass_id" property="glassId"/>
+		<result column="user_id" property="userId"/>
+		<result column="optometry_id" property="optometryId"/>
+		<result column="order_status" property="orderStatus"/>
+		<result column="shipping_status" property="shippingStatus"/>
+		<result column="pay_status" property="payStatus"/>
+		<result column="consignee" property="consignee"/>
+		<result column="provinceid" property="provinceid"/>
+		<result column="cityid" property="cityid"/>
+		<result column="districtid" property="districtid"/>
+		<result column="address" property="address"/>
+		<result column="zipcode" property="zipcode"/>
+		<result column="phone" property="phone"/>
+		<result column="pay_num" property="payNum"/>
+		<result column="order_money" property="orderMoney"/>
+		<result column="postscript" property="postscript"/>
+		<result column="shipping_id" property="shippingId"/>
+		<result column="shipping_name" property="shippingName"/>
+		<result column="shipping_num" property="shippingNum"/>
+		<result column="order_time" property="orderTime"/>
+		<result column="goods_attr_id" property="goodsAttrid"/>
+		<result column="pic_id" property="picId"/>
+	</association>
+  </resultMap>
+ 
+</mapper>

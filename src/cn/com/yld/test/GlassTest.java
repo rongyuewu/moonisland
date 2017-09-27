@@ -7,21 +7,25 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import cn.com.yld.dao.UserDao;
-import cn.com.yld.pojo.User;
+import cn.com.yld.dao.GlassDao;
+import cn.com.yld.pojo.Glass;
 
-public class UserTest {
+
+public class GlassTest {
+	
 	private ApplicationContext context;
 	@Before
 	public void setup(){
 		context=new ClassPathXmlApplicationContext("springmvc-config.xml");
 	}
 	@Test
-	public void test01(){
-		UserDao dao=(UserDao) this.context.getBean("userDao");
-		List<User> ls=dao.findall();
-		for (User user : ls) {
-			System.out.println(user.getNickName());
+	public void test1(){
+		GlassDao dao = (GlassDao) this.context.getBean("glassDao");
+		List<Glass> ls = dao.findall();
+		for (Glass glass : ls) {
+			System.out.println(glass.getGlassName());
 		}
 	}
 }
+
+

@@ -12,8 +12,65 @@
   <select id="findall" resultMap="brand">
   		select * from moon_brand
   </select>
-  <select id="findbrand" resultMap="brand" parameterType="brand">
+  <select id="findbyid" resultMap="brand" parameterType="brand">
   		select * from moon_brand where brand_id=#{brandId}
   </select>
+  <insert id="insert" parameterType="brand">
+  	insert into moon_brand (
+  		<trim prefixOverrides=",">
+  			<if test="brandName != null">
+  				brand_name
+  			</if>
+  			<if test="brandLogo != null">
+  				,brand_logo
+  			</if>
+  			<if test="brandCon != null">
+  				,brand_con
+  			</if>
+  			<if test="brandAddtime != null">
+  				,brand_addtime
+  			</if>
+  		</trim>
+  		) values(
+  		<trim prefixOverrides=",">
+  			<if test="brandName != null">
+  				#{brandName}
+  			</if>
+  			<if test="brandLogo != null">
+  				,#{brandLogo}
+  			</if>
+  			<if test="brandCon != null">
+  				,#{brandCon}
+  			</if>
+  			<if test="brandAddtime != null">
+  				,sysdate()
+  			</if>
+  		</trim>
+  		)
+  </insert>
+  <update id="update" parameterType="brand">
+  	update moon_brand set (
+  		<trim prefixOverrides=",">
+  			<if test="brandName != null">
+  				brand_name = #{brandName}
+  			</if>
+  			<if test="brandLogo != null">
+  				,brand_logo = #{brandLogo}
+  			</if>
+  			<if test="brandCon != null">
+  				,brand_con = #{brandCon}
+  			</if>
+  			<if test="brandAddtime != null">
+  				,brand_addtime = #{brandAddtime}
+  			</if>
+  		</trim>
+  		where brand_id = #{brandId}
+  </update>
+  <update id="delete" parameterType="brand">
+  	update moon_brand set brand_status = "0" where brand_id = #{brandId}
+  </update>
+  <update id="cleandelete" parameterType="brand">
+  	update moon_brand set brand_status = "1" where brand_id = #{brandId}
+  </update>
 </mapper>
 

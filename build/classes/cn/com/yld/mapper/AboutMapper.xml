@@ -10,13 +10,13 @@
   <select id="findall" resultMap="about">
   	SELECT * FROM moon_about
   </select>
-  <insert id="insert" parameterType="about">
+  <insert id="insert" parameterType="About">
   	INSERT INTO moon_about (about_style,about_content,about_time)VALUES(#{aboutStyle},#{aboutContent},sysdate())
   </insert>
-  <update id="update" parameterType="about">
+  <update id="update" parameterType="About">
   	UPDATE moon_about SET about_style=#{aboutStyle},about_content=#{aboutContent} WHERE about_id=#{aboutId}
   </update>
-  <delete id="delete" parameterType="about">
+  <delete id="delete" parameterType="About">
   	delete FROM moon_about where about_id=#{aboutId}
   </delete>
 </mapper>
