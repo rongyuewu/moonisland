@@ -18,10 +18,10 @@ public class ReturnorderTest {
 	}
 	@Test
 	public void test01(){
-		ReturnorderDao dao = (ReturnorderDao) this.context.getBean("returnorderdao");
+		ReturnorderDao dao = (ReturnorderDao) this.context.getBean("returnorderDao");
 		List<Returnorder> ls = dao.findall();
 		for (Returnorder returnorder : ls) {
-			System.out.println("======"+returnorder.getReturnTime());
+			System.out.println("======"+returnorder.getUserId());
 		}
 	}
 }
