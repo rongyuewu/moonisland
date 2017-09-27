@@ -1,22 +1,148 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd\mybatis-3-mapper.dtd" >
-<mapper namespace="cn.com.yld.mapper.GoodsPicMapper">
-  	<resultMap type="GoodsPic" id="goodsPic">
-  		<id column="pic_id" property="picId"/>
-  		<result column="goods_id" property="goodsId"/>
-  		<result column="pic1" property="pic1"/>
-  		<result column="pic2" property="pic2"/>
-  		<result column="pic3" property="pic3"/>
-  		<result column="pic4" property="pic4"/>
-  		<result column="pic1_thumb" property="pic1Thumb"/>
-  		<result column="pic2_thumb" property="pic2Thumb"/>
-  		<result column="pic3_thumb" property="pic3Thumb"/>
-  		<result column="pic4_thumb" property="pic4Thumb"/>
-  		<association property="goods" javaType="Goods">
-  			<result column="goods_id" property="goodsId"/>
-  		</association>
-  	</resultMap>
-  	<select id="findall" resultMap="goodsPic">
-  		select * from moon_goods_pic
-  	</select>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+						"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+  <mapper namespace="cn.com.yld.mapper.GoodsPicMapper">
+  <resultMap type="GoodsPic" id="goodspic">
+  	<id column="pic_id" property="picId"/>
+  	<result column="goods_id" property="goodsId"/>
+  	<result column="pic1" property="pic1"/>
+  	<result column="pic2" property="pic2"/>
+  	<result column="pic3" property="pic3"/>
+  	<result column="pic4" property="pic4"/>
+  	<result column="pic1_thumb" property="pic1Thumb"/>
+  	<result column="pic2_thumb" property="pic2Thumb"/>
+  	<result column="pic3_thumb" property="pic3Thumb"/>
+  	<result column="pic4_thumb" property="pic4Thumb"/>
+	<!-- 多对一 -->
+	<association property="goods" javaType="Goods">
+		<id column="goods_id" property="goodsId"/>
+	  	<result column="goods_name" property="goodsName"/>
+	  	<result column="category" property="category"/>
+	  	<result column="original_price" property="originalPrice"/>
+	  	<result column="sales_price" property="salesPrice"/>
+	  	<result column="goods_color" property="goodsColor"/>
+	  	<result column="goods_content" property="goodsContent"/>
+	  	<result column="browse_num" property="browseNum"/>
+	  	<result column="save_num" property="saveNum"/>
+	  	<result column="sales_num" property="salesNum"/>
+	  	<result column="is_sale" property="isSale"/>
+	  	<result column="goods_keywords" property="goodsKeywords"/>
+	  	<result column="is_on_sale" property="isOnsale"/>
+	  	<result column="stock_num" property="stockNum"/>
+	  	<result column="minus_price" property="minusPrice"/>
+	  	<result column="privilege" property="privilege"/>
+	  	<result column="points" property="points"/>
+	  	<result column="style" property="style"/>
+	  	<result column="style_A" property="styleA"/>
+	  	<result column="style_B" property="styleB"/>
+	  	<result column="style_C" property="styleC"/>
+	  	<result column="style_D" property="styleD"/>
+	  	<result column="style_E" property="styleE"/>
+	  	<result column="add_time" property="addTime"/>
+	</association>
+  </resultMap>
+  <select id="findall" resultMap="goodspic">
+  	select * from moon_goods_pic p,moon_goods g where p.goods_id=g.goods_id
+  </select>
+  <select id="findbyid" resultMap="goodspic" parameterType="goodsPic">
+  	select * from moon_goods_pic p,moon_goods g where p.goods_id=g.goods_id and g.goods_id=#{goodsId}
+  </select>
+
+  <select id="findlinmit" resultMap="goodspic" >
+  	select * from moon_goods_pic limit #{num1},#{num2}
+  </select>
+  <insert id="insert" parameterType="goodsPic">
+  	insert into moon_goods_pic(
+  	<trim prefixOverrides=",">
+  	<if test="goods!=null">
+  		goods_id
+  	</if>
+  	<if test="pic1!=null">
+  		,pic1
+  	</if>
+  	<if test="pic2!=null">
+  		,pic2
+  	</if>
+  	<if test="pic3!=null">
+  		,pic3
+  	</if>
+  	<if test="pic4!=null">
+  		,pic4
+  	</if>
+  	<if test="pic1Thumb!=null">
+  		,pic1_thumb
+  	</if>
+  	<if test="pic2Thumb!=null">
+  		,pic2_thumb
+  	</if>
+  	<if test="pic3Thumb!=null">
+  		,pic3_thumb
+  	</if>
+  	<if test="pic4Thumb!=null">
+  		,pic4_thumb
+  	</if>
+  	</trim>)values(
+  	<trim prefixOverrides=",">
+  	<if test="goods!=null">
+  		#{goods.goodsId}
+  	</if>
+  	<if test="pic1!=null">
+  		,#{pic1}
+  	</if>
+  	<if test="pic2!=null">
+  		,#{pic2}
+  	</if>
+  	<if test="pic3!=null">
+  		,#{pic3}
+  	</if>
+  	<if test="pic4!=null">
+  		,#{pic4}
+  	</if>
+  	<if test="pic1Thumb!=null">
+  		,#{pic1Thumb}
+  	</if>
+  	<if test="pic2Thumb!=null">
+  		,#{pic2Thumb}
+  	</if>
+  	<if test="pic3Thumb!=null">
+  		,#{pic3Thumb}
+  	</if>
+  	<if test="pic4Thumb!=null">
+  		,#{pic4Thumb}
+  	</if>
+  	</trim>)
+  </insert>
+  <update id="">
+  	update moon_goods_pic set
+  	<trim prefixOverrides=",">
+  	<if test="goods!=null">
+  		goods_id=#{goods.goodsId}
+  	</if>
+  	<if test="pic1!=null">
+  		,pic1=#{pic1}
+  	</if>
+  	<if test="pic2!=null">
+  		,pic2=#{pic2}
+  	</if>
+  	<if test="pic3!=null">
+  		,pic3=#{pic3}
+  	</if>
+  	<if test="pic4!=null">
+  		,pic4=#{pic4}
+  	</if>
+  	<if test="pic1Thumb!=null">
+  		,pic1_thumb=#{pic1Thumb}
+  	</if>
+  	<if test="pic2Thumb!=null">
+  		,pic2_thumb=#{pic2Thumb}
+  	</if>
+  	<if test="pic3Thumb!=null">
+  		,pic3_thumb=#{pic3Thumb}
+  	</if>
+  	<if test="pic4Thumb!=null">
+  		,pic4_thumb=#{pic4Thumb}
+  	</if>
+  	</trim>
+  	where pic_id=#{picId}
+  </update>
 </mapper>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.yld.mapper.OptometryMapper">
+  <resultMap type="Optometry" id="optometry">
+  	<id column="optometry_id" property="optometryId"/>
+  	<result column="user_id" property="userId"/>
+  	<result column="R_SPH" property="RSPH"/>
+  	<result column="R_CYL" property="RCYL"/>
+  	<result column="R_AXIS" property="RAXIS"/>
+  	<result column="L_SPH" property="LSPH"/>
+  	<result column="L_CYL" property="LCYL"/>
+  	<result column="L_AXIS" property="LAXIS"/>
+  	<result column="PD" property="PD"/>
+  	<result column="optometry_time" property="optometryTime"/>
+  </resultMap>
+ 	<select id="findall" resultMap="optometry">
+ 		select * from moon_optometry;
+ 	</select>
+</mapper>
