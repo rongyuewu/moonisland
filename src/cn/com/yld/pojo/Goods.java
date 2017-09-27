@@ -33,7 +33,7 @@ public class Goods implements Serializable{
 	private String styleD;
 	private String styleE;
 	private String addTime;//时间
-	private Brand brand;//关联映射
+	private Brand brand;//关联品牌
 	
 	public Brand getBrand() {
 		return brand;

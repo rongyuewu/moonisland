@@ -88,7 +88,15 @@
 			<result column="optometry_id" property="optometryId"/>
 		</association>
 		<association property="goodsAttr" javaType="GoodsAttr">
-			<result column="goods_attr_id" property="goodsAttrid"/>
+			<result column="attr_id" property="attrId"/>
+			<result column="goods_id" property="goodsId"/>
+		  	<result column="material" property="material"/>
+		  	<result column="border" property="border"/>
+		  	<result column="size" property="size"/>
+		  	<result column="function" property="function"/>
+		  	<result column="brand_id" property="brandId"/>
+		  	<result column="color" property="color"/>
+		  	<result column="price" property="price"/>
 		</association>
 		<association property="goodsPic" javaType="GoodsPic">
 			<result column="pic_id" property="picId"/>
@@ -97,7 +105,7 @@
   </resultMap>
   <!-- 根据cart里封装的user对象，查询用户购物车 -->
   <select id="findall" parameterType="User" resultMap="cart">
-  	select c.* ,g.* ,a.* ,p.* ,u.* from moon_cart c,moon_goods g,moon_goods_attr a,moon_goods_pic p,moon_user u where c.goods_id=g.goods_id and c.goods_attr_id=a.attr_id and c.pic_id=p.pic_id and c.user_id=u.user_id and c.user_id=#{userId}
+  	select c.* ,g.goods_id gid ,a.attr_id aid ,p.pic_id pid ,u.user_id uid from moon_cart c,moon_goods g,moon_goods_attr a,moon_goods_pic p,moon_user u where c.goods_id=g.goods_id and c.goods_attr_id=a.attr_id and c.pic_id=p.pic_id and c.user_id=u.user_id and cart_status=1 and c.user_id=#{userId}
   </select>
  <insert id="insert" parameterType="Cart">
   	insert into moon_cart (
@@ -109,7 +117,7 @@
   				,optometry_id
   			</if>
   			<if test="isFrameonly != null">
-  				,is_frameonly
+  				,is_frame_only
   			</if>
   			<if test="goodsId != null">
   				,goods_id
@@ -136,7 +144,7 @@
   				,cart_status
   			</if>
   			<if test="goodsAttrid != null">
-  				,goods_attrid
+  				,goods_attr_id
   			</if>
   			<if test="picId != null">
   				,pic_id
@@ -146,46 +154,59 @@
   		) values(
   		<trim prefixOverrides=",">
   			<if test="userId != null">
-  				#{}
+  				#{userId}
   			</if>
   			<if test="optometryId != null">
-  				,#{}
+  				,#{optometryId}
   			</if>
   			<if test="isFrameonly != null">
-  				,#{}
+  				,#{isFrameonly}
   			</if>
   			<if test="goodsId != null">
-  				,#{}
+  				,#{goodsId}
   			</if>
   			<if test="minusPrice != null">
-  				,#{}
+  				,#{minusPrice}
   			</if>
   			<if test="privilege != null">
-  				,#{}
+  				,#{privilege}
   			</if>
   			<if test="points != null">
-  				,#{}
+  				,#{points}
   			</if>
   			<if test="bothNum != null">
-  				,#{}
+  				,#{bothNum}
   			</if>
   			<if test="glassId != null">
-  				,#{}
+  				,#{glassId}
   			</if>
   			<if test="catTime != null">
-  				,#{}
+  				,sysdate()
   			</if>
   			<if test="cartStatus != null">
-  				,#{}
+  				,#{cartStatus}
   			</if>
   			<if test="goodsAttrid != null">
-  				,#{}
+  				,#{goodsAttrid}
   			</if>
   			<if test="picId != null">
-  				,#{}
+  				,#{picId}
   			</if>
   			
   		</trim>
   		)
   </insert>
+  <!-- 更改商品数量，而且商品属性一模一样的 -->
+  <update id="update" parameterType="Cart">
+  	update moon_cart set both_num=#{bothNum} where car_id=#{carId}
+  </update>
+  <!-- 删除购物车，其实是更改属性为弃用， cart_status='0'-->
+  <update id="delete" parameterType="Cart">
+  	update moon_cart set cart_status='0' where car_id=#{carId}
+  </update>
+  <!-- 启用购物车，其实是更改属性为启用，cart_status='1'-->
+  <update id="candelect" parameterType="Cart">
+  	update moon_cart set cart_status='1' where car_id=#{carId}
+  </update>
+  
 </mapper>
