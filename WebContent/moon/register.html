@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 默认情况下，UI布局的宽度和移动设备的宽度一致，缩放大小为原始大小 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>手机快速注册</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+
+</head>
+<body>
+    <div class="container navbar-header ">
+            <div class="col-xs-2 qp" style="padding: 25px 15px 10px 15px">
+               <span class="iconfont">&#xe615;</span>
+            </div>
+            <div class="col-xs-8 text-center header qp" style="padding-top: 20px">
+                <h4>手机快速注册</h4>
+            </div>
+        <div class="col-xs-2"></div>
+    </div>
+
+    <div class="container" >
+    <div class="input-group input-group-lg" id="re_z">
+        <span class="input-group-addon" id="sizing-addon1" style="font-size: 15px" data-toggle="dropdown">+86
+            <span class="glyphicon glyphicon-chevron-down" ></span></span>
+            <ul class="dropdown-menu">
+                <li><a href="#">+86</a></li>
+            </ul>
+        <input id="te_ph" type="text" class="form-control" placeholder="请输入手机号" >
+    </div>
+        <div id="inline">
+            <!--<span class="iconfont icon-duigou"></span>-->
+            <img src="icon/check-fill.png" alt="">
+            <span>同意</span>月亮岛用户注册协议、用户隐私政策
+        </div>
+        <div class="container-fluid" id="btn">
+            <div class="row">
+                <button id="btn1" type="button" class="btn btn-default btn-lg btn-block">下一步</button>
+            </div>
+        </div>
+        <div class="container" id="proe">
+            <div class="row">
+                <div class="cl_gray">遇到问题？您可以 <a href="#">联系客服</a>。</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="myModal">
+        <div id="tp" class="container-fluid">
+            <div class="container" style="padding-top: 50px;height: 126px">
+                 <p>我们将发送短信验证码至:</p>
+                 <p id="iphnum"></p>
+             </div>
+         <div class=" " style="padding: 0px;height: 44px" >
+                 <div id="quxiao" class=" col-xs-6 text-center" style="padding: 13px 0 0 0;height: 44px">
+                     取消
+                     <!--<button type="button" class="btn btn-default"></button>-->
+                 </div>
+
+                 <div id="queren" class=" col-xs-6 text-center" style="padding: 13px 0 0 0;height: 44px;background-color: red;border-bottom-right-radius:10px;color: white ">
+                     确认
+                     <!--<button type="button" class="btn btn-primary" style="background-color: red">确认</button>-->
+                 </div>
+             </div>
+        </div>
+
+    </div>
+
+
+
+</body>
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+        var reg = /^1[0-9]{10}$/;
+        $('#btn1').click(function () {
+            /*console.log( reg.test($('#te_ph').val()))*/
+            if(reg.test($('#te_ph').val())){
+                $('#myModal').fadeIn(500);
+                $('#iphnum').html($('#te_ph').val());
+            }else{
+                alert("请输入正确的手机号");
+                $('#te_ph').val("").focus();
+            }
+        })
+        $("#queren").click(function () {
+            location.href='vs.html';
+        })
+        $('#quxiao').click(function () {
+            $('#myModal').css("display",'none');
+            $('#te_ph').val("").focus();
+        })
+</script>
+</html>

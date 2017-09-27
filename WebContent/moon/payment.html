@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>支付页面</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/payment.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+        <div class="container-fluid qp">
+            <!--头部-->
+            <div class="col-xs-12">
+            <div id="head" class="navbar-fixed-top qp">
+                <div class="col-xs-3 qp head_p" style="padding-left: 17px"><span class="iconfont">&#xe615;</span></div>
+                <div class="col-xs-6 text-center qp f_16_wryh head_p">
+                    收银台
+                </div>
+                <div  class="col-xs-3 text-center head_r_p f_16_c_848587 qp">
+                    订单中心
+                </div>
+            </div>
+            <div class="col-xs-12" style="height: 64px"></div>
+            </div>
+
+            <!--支付方式-->
+            <div class="col-xs-12 f_16_c_848587 b_1 back_c_fff" style="padding:12px 50px;">支付方式</div>
+
+            <!--微信支付-->
+            <div id="weixin" class="col-xs-12 qp b_1 back_c_fff">
+                <div class="col-xs-2 qp p_18_17"><img src="icon/weixin.png" class="img-responsive" alt=""></div>
+                <div class="col-xs-8 qp p_t_13"><div class="col-xs-12 f_14_wryh qp">微信支付</div><div class=" col-xs-12 f_10_c_848486 qp">微信安全支付</div></div>
+                <div id="ok1" class="col-xs-2 qp p_20_1" style="display:block"><img src="icon/check-fill.png" class="img-responsive" alt=""></div>
+            </div>
+
+            <!--支付宝支付-->
+            <div id="zhifubao" class="col-xs-12 qp back_c_fff">
+                <div class="col-xs-2 qp p_10_10"><img src="icon/alipay.png" class="img-responsive" alt=""></div>
+                <div class="col-xs-8 qp p_t_20"><div class="col-xs-12 f_16_wryh qp" style="padding-left: 10px">支付宝支付</div></div>
+                <div id="ok2" class="col-xs-2 qp p_20" style="display: none"><img src="icon/check-fill.png" class="img-responsive" alt=""></div>
+            </div>
+
+            <!--底部-->
+            <div id="jiesuan" class="col-xs-12  qf qp navbar-fixed-bottom text-center bottom_s">支付139.00元</div>
+        </div>
+
+
+
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery-1.11.0.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                $('#weixin').click(function () {
+                    $('#ok1').css("display","block")
+                    $('#ok2').css("display","none")
+                })
+                $('#zhifubao').click(function () {
+                    $('#ok2').css("display","block")
+                    $('#ok1').css("display","none")
+                })
+                $('#jiesuan').click(function () {
+                    location.href='myorder.html';
+                })
+            })
+        </script>
+</body>
+</html>

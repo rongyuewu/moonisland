@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--默认情况下，UI布局的宽度和移动设备的宽度一致，缩放大小为原始大小-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>填写订单</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+        body{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background: #f1f1f1;
+            font-family: 微软雅黑;
+        }
+        .center{
+            background: #ffffff;
+        }
+        .top{
+            text-align: center;
+            padding: 1px;
+            height: 63px;
+        }
+        .top div{
+            margin-top: 30px;
+        }
+        .back{
+            margin-top: 50px;
+            height: 30px;
+            background: url("images/order/txdd_03.png") repeat;
+        }
+        .container{
+            padding: 0;
+        }
+        .container .first{
+            height: 101px;
+            background: #ffffff;
+        }
+        .container .first .col-xs-9 p{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+        }
+        .bottom{
+            background: #ffffff;
+        }
+        .price{
+            font-weight: bold;
+        }
+        .price tr{
+            height: 25px;
+        }
+        .foot{
+            border: solid 1px #f4f4f4;
+            line-height: 50px;
+        }
+        .foot .col-xs-8{
+            text-align: right;
+            font-size: 16px;
+            color: #ee312d;
+        }
+        .foot .col-xs-4{
+            color: #ffffff;
+            background: #ff0000;
+            border: solid 1px #ff0000;
+            text-align: center;
+            font-size: 18px;
+            height: 50px;
+        }
+        a{
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <div class="top">
+            <div class="col-xs-2">
+                <a href="#"><img src="icon/arrow-left.png" height="20" width="20"/></a>
+            </div>
+            <div class="col-xs-8" style="font-size: 16px; font-weight: bold">填写订单</div>
+            <div class="col-xs-2"></div>
+        </div>
+        <h5 class="page-header" style="margin:0;padding: 0"></h5>
+        <div class="address" style="margin-top: 10px">
+            <div class="col-xs-1">
+                <a href="#"><img src="icon/coordinates.png" height="18" width="18"/></a>
+            </div>
+            <div class="col-xs-9" style="font-size: 12px; text-align: left">
+                河北石家庄市裕华区城区 槐安东路与谈固东街交叉口美景东方小区8-1-701
+            </div>
+            <div class="col-xs-1">
+                <a href="#"><img src="icon/arrow-right.png" height="15" width="15"/></a>
+            </div>
+        </div>
+        <div class="back"></div>
+    </div>
+    <div class="container">
+        <div class="first">
+            <div class="col-xs-3" style="padding: 0">
+                <img src="images/order/txdd_05_02.png" height="100" width="100"/>
+            </div>
+            <div class="col-xs-9">
+                <p style="font: bold 14px/30px 微软雅黑">帕森（PARZIN）男士太阳镜铝镁偏光太阳镜…</p>
+                <p style="font-size: 12px; color: #8c8c8c">颜色：黑框黑灰片</p>
+                <p style="color: red">￥139.<span style="font-size: 10px">00</span><img src="icon/price.png" height="13" width="13" style="margin-left: 10px"/></p>
+            </div>
+        </div>
+    </div>
+    <div class="bottom navbar-fixed-bottom">
+        <div class="price">
+            <table>
+                <tr>
+                    <td class="col-xs-2" style="text-align: left">商品金额</td>
+                    <td class="col-xs-2" style="text-align: right; color: #ee312d">￥139.00</td>
+                </tr>
+                <tr>
+                    <td class="col-xs-2" style="text-align: left">运费</td>
+                    <td class="col-xs-2" style="text-align: right; color: #ee312d">+￥0.00</td>
+                </tr>
+            </table>
+        </div>
+        <div class="foot">
+            <div class="col-xs-8">实付款：￥139.<span style="font-size: 13px">00</span></div>
+            <a href="#"><div class="col-xs-4">提交订单</div></a>
+        </div>
+    </div>
+</body>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-1.11.0.min.js"></script>
+</html>

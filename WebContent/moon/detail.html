@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>商品详情页</title>
+    <style>
+        @media screen and (max-width: 320px) {html{font-size:14px;}}
+        @media screen and (min-width: 320px) and (max-width:414px) {html{font-size:16px;}}
+        @media screen and (min-width: 414px) {html{font-size:18px;}}
+        .text_button{
+            cursor: pointer;
+        }
+        .swiper-container {
+
+        }
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+    </style>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/detail.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <script src="js/swiper.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div id="wrap" class="container-fluid qp">
+
+    <!--头部切换-->
+    <div>
+        <div id="head" class="navbar-fixed-top">
+            <div class="col-xs-3 qp head_l" style="padding-left: 17px"><span class="iconfont">&#xe615;</span></div>
+            <div class="col-xs-6 text-center qp head_r">
+                <ul class="list-inline font head_r_ul">
+                    <li class="li_b li_qp">商品</li>
+                    <li class="li_qp">详情</li>
+                    <li class="li_qp">评价</li>
+                </ul>
+            </div>
+            <div id="xiangqing1" class="col-xs-3 qp" style="height: 58px;display: none">
+                <div class="col-xs-2 qp"></div>
+                <div class="col-xs-8 qp">
+                    <div class="col-xs-6" style="padding: 25px 4px 0px 4px"><img src="icon/share.png" class="img-responsive" width="32px" height="48px" alt=""></div>
+                    <div class="col-xs-6" style="padding: 24px 4px 0px 4px"><img src="icon/more.png" class="img-responsive" width="32px" height="48px" alt=""><div id="red_dian"></div></div>
+
+                </div>
+                <div class="col-xs-2 qp"></div>
+            </div>
+        </div>
+        <div class="col-xs-12" style="height: 64px"></div>
+    </div>
+
+
+    <!--商品-->
+    <div id="shangpin"  class="col-xs-12 qp qf">
+        <!--中间图片-->
+        <div class="swiper-container col-xs-12 qp">
+            <div class="swiper-wrapper qp">
+                <div class="swiper-slide qp"><img src="images/xxy_02.png" class="img-responsive" alt=""></div>
+                <div class="swiper-slide qp"><img src="images/xxy_02.png" class="img-responsive" alt=""></div>
+                <div class="swiper-slide qp"><img src="images/xxy_02.png" class="img-responsive" alt=""></div>
+                <div class="swiper-slide qp"><img src="images/xxy_02.png" class="img-responsive" alt=""></div>
+                <div class="swiper-slide qp"><img src="images/xxy_02.png" class="img-responsive" alt=""></div>
+            </div>
+        </div>
+        <!--中部文字-->
+
+            <div class="col-xs-12 qp qf">
+                <div class="col-xs-12 p_10_f_16" style="padding-top: 10px">帕森（RAZIN）新款近视镜架男女金属复古光学镜架56027M枪框银边</div>
+                <div class="p_10_f_14_1" style="color: red">心境时髦范，怎么能少了这些？</div>
+                <div class="p_10_f_14" style="color: red">￥<span style="font-size: 18px;font-weight:bold;">179</span>.00</div>
+            </div>
+            <div id="c_b" class="col-xs-12 qp qf">
+                <div class="col-xs-2 qp" style="padding-left: 15px;color: #949398">已选</div>
+                <div class="col-xs-9 qp">枪框银边，1件</div>
+                <div class="col-xs-1 qp" style="padding-top: 7px"><img src="icon/more1.png" class="img-responsive" width="20px" height="20px" alt=""></div>
+            </div>
+        <div class="col-xs-12 qf" style="height: 100px"></div>
+    </div>
+
+
+
+    <!--详情-->
+    <div id="xiangqing" class="col-xs-12 qp qf" style="display: none">
+        <div  class="col-xs-12 qp" id="xq_h">商品介绍</div>
+        <!--中部图片+说明-->
+        <div class="col-xs-12" style="padding-left: 8px;padding-right: 8px">
+            <div style="width: 8px"></div>
+            <div class="col-xs-12 qp" id="xq_c">
+                <div class="col-xs-8 qp"><img src="images/xqy2_03.png" class="img-responsive" alt=""></div>
+                <div class="col-xs-4 qp">
+                    <div class="col-xs-12 qp ss_1">SEPCCATLES FRAME</div>
+                    <div class="col-xs-12 qp ss_2">质感金属边框</div>
+                    <div class="col-xs-12 qp ss_3">—</div>
+                    <div class="col-xs-12 qp ss_4">
+                        <div class="col-xs-5 qp text-center ss_4_1">P A R Z I N</div>
+                    </div>
+                    <div  class="col-xs-12 qp ss_5">RMB <span class="f_8" >199</span>.00</div>
+                    <div  class="col-xs-5 qp ss_6">
+                        <div  class="col-xs-12 qp ss_6_1">立即抢购 ></div>
+                    </div>
+
+                </div>
+            </div>
+            <div style="width: 8px"></div>
+        </div>
+        <!--中部图片展示-->
+        <div class="col-xs-12 qf" style="margin-top: 8px;padding-left: 8px;padding-right: 8px">
+            <div class="col-xs-6"  style="padding: 0px 4px 0px 0px">
+                <img src="images/xqy2_06.png" class="img-responsive" alt="">
+                <div class="col-xs-4"></div>
+                <div class="col-xs-4 qp ss_51">RMB <span class="f_8" >199</span>.00</div>
+                <div class="col-xs-4 qp ss_6 ss_6_1">
+                    立即抢购 >
+                </div>
+            </div>
+            <div class="col-xs-6" style="padding: 0px 0px 0px 4px">
+                <img src="images/xqy2_06.png" class="img-responsive" alt="">
+                <div class="col-xs-4"></div>
+                <div class="col-xs-4 qp ss_51">RMB <span class="f_8" >199</span>.00</div>
+                <div class="col-xs-4 qp ss_6 ss_6_1">
+                    立即抢购 >
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 qf xqy_c">
+            <div class="col-xs-4"  style="padding: 0px 2px 0px 0px">
+                <img src="images/xqy2_09.png" class="img-responsive" alt="">
+
+                <div class="col-xs-6 qp ss_51">RMB <span class="f_8" >199</span>.00</div>
+                <div class="col-xs-6 qp ss_6 ss_6_1">
+                    立即抢购 >
+                </div>
+            </div>
+            <div class="col-xs-4" style="padding: 0px 1px 0px 1px">
+                <img src="images/xqy2_09.png" class="img-responsive" alt="">
+
+                <div class="col-xs-6 qp ss_51">RMB <span class="f_8" >199</span>.00</div>
+                <div class="col-xs-6 qp ss_6 ss_6_1">
+                    立即抢购 >
+                </div>
+            </div>
+            <div class="col-xs-4" style="padding: 0px 0px 0px 2px">
+                <img src="images/xqy2_09.png" class="img-responsive" alt="">
+
+                <div class="col-xs-6 qp  ss_51">RMB <span class="f_8" >199</span>.00</div>
+                <div class="col-xs-6 qp ss_6 ss_6_1">
+                    立即抢购 >
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="col-xs-12 d_b_b" style="margin-top: 28px"></div>
+        </div>
+        <div class="col-xs-12 qp qf" style="padding-left: 10px;font-size: 10px">
+            <div class="col2 col2_s" style="">
+                <div class="col-xs-12 qp text-center">ARRIVAL</div>
+                <div class="col-xs-12 qp b_1"></div>
+                <div class="col-xs-12 qp text-center">时尚新品</div>
+            </div>
+            <div class="col2 col2_s">
+                <div class="col-xs-12 qp text-center">ARRIVAL</div>
+                <div class="col-xs-12 qp b_1"></div>
+                <div class="col-xs-12 qp text-center">时尚新品</div>
+            </div>
+            <div class="col2 col2_s">
+                <div class="col-xs-12 qp text-center">ARRIVAL</div>
+                <div class="col-xs-12 qp b_1"></div>
+                <div class="col-xs-12 qp text-center">时尚新品</div>
+            </div>
+            <div class="col2 col2_s">
+                <div class="col-xs-12 qp text-center">ARRIVAL</div>
+                <div class="col-xs-12 qp b_1"></div>
+                <div class="col-xs-12 qp text-center">时尚新品</div>
+            </div>
+            <div class="col2 col2_s">
+                <div class="col-xs-12 qp text-center">ARRIVAL</div>
+                <div class="col-xs-12 qp b_1"></div>
+                <div class="col-xs-12 qp text-center">时尚新品</div>
+            </div>
+        </div>
+        <div class="col-xs-12 qf" style="height: 100px"></div>
+
+        <!--详情结束-->
+    </div>
+
+
+    <!--客户评价页-->
+    <div id="pingjia" class="col-xs-12 qp qf" style="display: none">
+        <div class="col-xs-12 qp qf" style="height: 40px;border-bottom: 1px solid #dedede">
+            <div class="col-xs-3 qp" style="color: #fa2231;margin-top: 5px;">
+                <div class="col-xs-12 text-center qp" style="font-size: 12px">全部评价</div>
+                <div class="col-xs-12 text-center qp" style="font-size: 10px">8693</div>
+            </div>
+            <div class="col-xs-6"></div>
+            <div class="col-xs-3 text-center qp"  style="color: #fa2231; font-size: 12px;margin-top: 12px">好评度 97%</div>
+        </div>
+        <div class="qp d_b_b row qr" >
+            <div class="col-xs-6 qp m_bottom" style="padding-left: 25px">
+                <div class="qp f_l text-center col-xs-6">
+                    <div class="qp xx_img">
+                        <img src="icon/star.png" alt="">
+                        <img src="icon/star.png" alt="">
+                        <img src="icon/star.png"  alt="">
+                        <img src="icon/star.png"alt="">
+                        <img src="icon/star.png" alt="">
+                    </div>
+                    <div>8956</div>
+                </div>
+                <div class="qp f_l text-center col-xs-6">
+                    <div class="qp xx_img">
+                        <img src="icon/star.png" alt="">
+                        <img src="icon/star.png" alt="">
+                        <img src="icon/star.png" alt="">
+                        <img src="icon/star.png" alt="">
+
+                    </div>
+                    <div>879</div>
+                </div>
+            </div>
+            <div class="col-xs-6 qp m_bottom">
+                <div class="qp f_l text-center col-xs-4">
+                    <div class="qp xx_img">
+                        <img src="icon/star.png" alt="">
+                        <img src="icon/star.png" alt="">
+                        <img src="icon/star.png"  alt="">
+
+                    </div>
+                    <div>235</div>
+                </div>
+                <div class="qp f_l text-center col-xs-4">
+                    <div class="qp xx_img">
+                        <img src="icon/star.png" alt="">
+                        <img src="icon/star.png" alt="">
+
+                    </div>
+                    <div>98</div>
+                </div>
+                <div class="qp f_l text-center col-xs-4">
+                    <div class="qp xx_img">
+                        <img src="icon/star.png" alt="">
+
+                    </div>
+                    <div>21</div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-xs-12 qp" style="padding-top: 12px;">
+            <div class="col-xs-2 qp" style="padding:5px 12px 5px 5px;margin-right: -8px"><img src="icon/user1.png" class="img-responsive"  alt=""></div>
+            <div class="col-xs-10 qp" style="padding-top: 7px">
+                <div class="col-xs-3 qp" style="color: red;margin-top: 2px">
+                    <div class="col-xs-12 qp" style="font-size: 14px">J***z</div>
+                    <div class="col-xs-12 qp" style="font-size: 12px">
+                        <div class="qp xx_img">
+                            <img src="icon/star.png" alt="">
+                            <img src="icon/star.png" alt="">
+                            <img src="icon/star.png"  alt="">
+                            <img src="icon/star.png"alt="">
+                            <img src="icon/star.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6"></div>
+                <div class="col-xs-3 text-center qp"  style="color: #dedede; font-size: 12px;margin-top: 15px">2016-08-10</div>
+                <div class="col-xs-12 qp"  style="font-size: 14px;margin-top: 10px;color: #272729">
+                    包装很不错的辣，眼睛看起来也不错的辣，看晒图就知道这买家秀很有诚意得嘛，免费广告耶你真的真的值得拥有哦！
+                </div>
+                <div class="col-xs-12 qp" style="margin-top: 10px">
+                    <div class="col-xs-4 qp p_r_5"><img src="images/xqe_03.png" class="img-responsive" alt=""></div>
+                    <div class="col-xs-4 qp p_r_5"><img src="images/xqe_05.png" class="img-responsive" alt=""></div>
+                    <div class="col-xs-4 qp p_r_5"><img src="images/xqe_06_03.png" class="img-responsive" alt=""></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-12 qp" style="padding-top: 12px;">
+            <div class="col-xs-2 qp" style="padding:5px 12px 5px 5px;margin-right: -8px"><img src="icon/user1.png" class="img-responsive"  alt=""></div>
+            <div class="col-xs-10 qp" style="padding-top: 7px">
+                <div class="col-xs-3 qp" style="color: red;margin-top: 2px">
+                    <div class="col-xs-12 qp" style="font-size: 14px">J***z</div>
+                    <div class="col-xs-12 qp" style="font-size: 12px">
+                        <div class="qp xx_img">
+                            <img src="icon/star.png" alt="">
+                            <img src="icon/star.png" alt="">
+                            <img src="icon/star.png"  alt="">
+                            <img src="icon/star.png"alt="">
+                            <img src="icon/star.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6"></div>
+                <div class="col-xs-3 text-center qp"  style="color: #dedede; font-size: 12px;margin-top: 15px">2016-08-10</div>
+                <div class="col-xs-12 qp"  style="font-size: 14px;margin-top: 10px;color: #272729">
+                    包装很不错的辣，眼睛看起来也不错的辣，看晒图就知道这买家秀很有诚意得嘛，免费广告耶你真的真的值得拥有哦！
+                </div>
+                <div class="col-xs-12 qp" style="margin-top: 10px">
+                    <div class="col-xs-4 qp p_r_5"><img src="images/xqe_03.png" class="img-responsive" alt=""></div>
+                    <div class="col-xs-4 qp p_r_5"><img src="images/xqe_05.png" class="img-responsive" alt=""></div>
+                    <div class="col-xs-4 qp p_r_5"><img src="images/xqe_06_03.png" class="img-responsive" alt=""></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 qf" style="height: 100px"></div>
+
+    <!--客户评价页结束-->
+    </div>
+
+
+
+    <!--底部菜单栏-->
+    <div id="bottom" class="col-xs-12 qf qp navbar-fixed-bottom" style="">
+        <div class="qp f_l b_l qf">
+
+            <div class="col-xs-4 qp text-center h_50_f_12">
+                <div class="thumbnail b-img"><img src="icon/customer1.png" style="width: 30px;height: 30px" class="img-responsive" alt=""></div>
+                联系卖家
+            </div>
+
+            <div class="col-xs-4 qp text-center h_50_f_12">
+                <div class="thumbnail b-img"><img src="icon/like.png" style="width: 30px;height: 30px;padding: 3px" class="img-responsive" alt=""></div>
+                关注
+            </div>
+
+            <div id="shopcart" class="col-xs-4 qp text-center h_50_f_12">
+                <div class="thumbnail b-img"><img src="icon/car.png" style="width: 30px;height: 30px" class="img-responsive" alt=""></div>
+                购物车
+            </div>
+        </div>
+        <div id="addshop" class="qp f_l f_g text-center b_r">加入购物车</div>
+    </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery-1.11.0.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+    var swiper = new Swiper('.swiper-container');
+    $(function(){
+
+        $("ul li").each(function(){
+            var index=$(this).index();
+            $(this).click(function(){
+                $(this).addClass("li_b").siblings().removeClass("li_b");
+                if($(this).html()=='详情'){
+                    $("#xiangqing").css("display","block");
+                    $("#xiangqing1").css("display","block");
+                    $("#shangpin").css("display","none");
+                    $("#pingjia").css("display","none");
+                }else if($(this).html()=='评价'){
+                    $("#xiangqing").css("display","none");
+                    $("#xiangqing1").css("display","none");
+                    $("#shangpin").css("display","none");
+                    $("#pingjia").css("display","block");
+                }
+                else{
+                    $("#xiangqing").css("display","none");
+                    $("#xiangqing1").css("display","none");
+                    $("#shangpin").css("display","block");
+                    $("#pingjia").css("display","none");
+                }
+            })
+        })
+
+    })
+    $('#shopcart').click(function () {
+        location.href="shopcart.html";
+    })
+    $('#addshop').click(function () {
+        location.href="addshop.html";
+    })
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>手机快速注册</title>
+    <style>
+        @media screen and (max-width: 320px) {html{font-size:14px;}}
+        @media screen and (min-width: 320px) and (max-width:414px) {html{font-size:16px;}}
+        @media screen and (min-width: 414px) {html{font-size:18px;}}
+        .text_button{
+            cursor: pointer;
+        }
+        .swiper-container {
+
+        }
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+    </style>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/vs.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <script src="js/swiper.min.js"></script>
+</head>
+<body>
+<div id="wrap" class="container-fluid qp">
+    <!--头部-->
+    <div>
+        <div id="head" class="navbar-fixed-top">
+            <div class="col-xs-3 qp head_l" style="padding-left: 17px"><span class="iconfont">&#xe615;</span></div>
+            <div class="col-xs-6 text-center qp head_r">
+                手机快速注册
+            </div>
+            <div class="col-xs-3 qp">
+            </div>
+        </div>
+        <div class="col-xs-12" style="height: 64px"></div>
+    </div>
+    <div class="container re_form">
+        <div class="row">
+            <div class="col-xs-12">
+                <p class="cl_red">请输入15632143195收到的短信验证码</p>
+            </div>
+        </div>
+        <div class="row reg_log">
+            <div class="col-xs-7 bg_div">
+                <input type="text" placeholder="请输入验证码" >
+            </div>
+            <div class="col-xs-4 bg_btn text-center" onclick="btok()" id="btn" disabled style="margin-left: 10px">
+                重新发送<span id="sj_yzm"></span>
+            </div>
+        </div>
+        <div class="row btnok">
+            <div class="col-xs-12 st_bg text-center">
+                下一步
+            </div>
+        </div>
+        <div class="row question">
+            <div class="col-xs-12">
+                <span>遇到问题？你可以</span>
+                <a href="" style="color: #858585;text-decoration:underline">联系客服</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    function btok(){
+        var ti=120;
+        $('#btn').attr("disabled","");
+        var timer=setInterval(function(){
+            ti--;
+            $("#sj_yzm").html("("+ti+")");
+            if(ti==0){
+                $('#btn').removeAttr("disabled");
+                $("#sj_yzm").html("");
+                clearInterval(timer);
+            }
+        }, 1000);
+    }
+    btok();
+    myInput.oninput = function () {
+        if (this.value.length > 6) {
+            this.value = this.value.slice(0,6);
+        }
+
+
+
+    }
+    $('#xyb').click(function () {
+        location.href="Password.html";
+    })
+</script>
+</body>
+</html>

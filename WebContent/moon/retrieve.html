@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>找回密码验证</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        @media screen and (max-width: 320px) {html{font-size:14px;}}
+        @media screen and (min-width: 320px) and (max-width:414px) {html{font-size:16px;}}
+        @media screen and (min-width: 414px) {html{font-size:18px;}}
+        body {
+            font-size: 1.0rem;
+            font-family:"微软雅黑";
+            background-color: rgb(241,241,241);
+        }
+        .check_icon img{
+            width: 1.1rem;
+        }
+        .header{
+            height: 64px;
+            background-color: rgb(255,255,255);
+            padding-top: 32px;
+        }
+        .re_form {
+            font-size: 0.9rem;
+            margin-top: 64px;
+            padding-top: 38px;
+        }
+        .cl_red{
+            color: rgb( 242,60,60);
+        }
+        .userid{
+            margin-top: 20px;
+        }
+        .bg_div{
+            border: 1px solid rgb(212,212,212);
+            border-radius: 1px;
+            background-color: rgb(255,255,255);
+            height:44px;
+            padding-top: 8px;
+        }
+        .bg_div input{
+            border: 0;
+            display: inline-block;
+            width:80%;
+            outline: none;
+        }
+        .bg_btn{
+            border: 1px solid rgb( 242,60,60);
+            background-color: rgb(255,255,255);
+            width:37.33%;
+            padding-left: 0px;
+            padding-right:0px;
+            color:rgb( 242,60,60);
+            border-radius: 1px;
+            height:44px;
+            line-height: 40px;
+        }
+        .reg_log{
+            margin-top:12px ;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        .btnok{
+            margin-top: 40px;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        .st_bg{
+            padding-top: 12px;
+            padding-bottom: 12px;
+            background-color: rgb( 242,60,60);
+            border-radius: 1px;
+            color: #eee;
+        }
+        .question{
+            color: rgb(131,131,131);
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+<div class="container header navbar-fixed-top">
+    <div class="row">
+        <div class="col-xs-1 check_icon"><a href="#"><img src="icon/arrow-left.png"></a></div>
+        <div class="col-xs-10 text-center">忘记密码</div>
+        <div class="col-xs-1"></div>
+    </div>
+</div>
+<div class="container re_form">
+    <div class="row">
+        <div class="col-xs-12">
+            <p class="cl_red">请输入15632143195收到的短信验证码</p>
+        </div>
+    </div>
+    <div class="row userid">
+        <div class="col-xs-12">
+            <span>用户名:</span>
+            <span>****3bc8c43dc</span>
+        </div>
+    </div>
+    <div class="row reg_log">
+        <div class="col-xs-7 bg_div">
+            <input type="text" value="284493">
+        </div>
+        <div class="col-xs-4 bg_btn text-center" style="margin-left: 10px">
+            重新发送103(s)
+        </div>
+    </div>
+    <div class="row btnok">
+        <div class="col-xs-12 st_bg text-center">
+            下一步
+        </div>
+    </div>
+    <div class="row question">
+        <div class="col-xs-12">
+            <span>遇到问题？请</span>
+            <a href="">联系客服</a>
+        </div>
+    </div>
+</div>
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

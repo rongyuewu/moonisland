@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>登录</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        @media screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) {
+            .imgss{
+                margin-top:50px;
+            }
+        }
+        html,body{
+            height: 100%;
+        }
+        .header{
+            width:100%;
+            height:23px;
+            padding-top: 20px;
+        }
+        .top {
+            float: left;
+            font-size: 20px;
+        }
+        #topleft img{
+            width:19px;
+            height:19px;
+            margin-left:19px;
+        }
+        .topright{
+            width: 80%;
+            height:22px;
+            text-align:center;
+            font-weight:600;
+        }
+        .input-a{
+            width:90%;
+            margin:2% auto;
+            border-bottom: 1px solid #e8e8e8;
+            margin-right: auto;
+        }
+        .text-b:-webkit-autofill{
+            -webkit-box-shadow: 0 0 0px 1000px white  inset !important;
+        }
+        #text-input,#text-input2{
+            outline: none;
+            border: none;
+            border-style: none;
+            text-shadow: 0 0 0 rgba(0,0,0,0);
+            -webkit-appearance: none;
+            -webkit-user-select: text;
+            /*   outline-color: transparent;*/
+            box-shadow: 0 0 0 rgba(0,0,0,0);
+            font-size: 17px;
+            padding:25px 12px;
+        }
+        .btndiv1,.divreg{
+            width:90%;
+            margin:20px auto;
+            background-color: #eeeeee;
+
+        }
+        .btn1{
+            width:100%;
+            height:44px;
+            background-color:#eeeeee;
+            font-size: 20px ;
+            color:#d1d1d1;
+            border-color:#eeeeee;
+            box-shadow: none;
+        }
+        #btn{
+            box-shadow: none;
+            text-shadow: none;
+            outline: none;
+            border: none;
+        }
+
+
+        .pull-left {
+            float: left !important;
+        }
+        .pull-right {
+            float: right !important;
+        }
+
+        .span1{
+            background-color:white;
+            border: 0px;
+        }
+        .input-pass{
+            width:88%;
+            height:10%;
+        }
+        .input-username{
+            margin-left:5%;
+            width:89.8%;
+        }
+        #img1,#img2{
+            padding: 14px;
+
+        }
+        .show{
+            display: block;
+        }
+        .hid{
+            display: none;
+        }
+        .imgss{
+            margin-top:120px;
+        }
+        .imgss img{
+            width:49px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="">
+    <form action=""  class="form-inline">
+
+        <!--header-->
+        <div class="header">
+            <span class="top" id="topleft">
+                <img src="icon/close.png" alt="" id="close"  style="width: 17px" height="17px">
+            </span>
+            <span class="top topright" style="font-size: 16px;font-family: 微软雅黑;font-weight: bold">登录</span>
+        </div>
+        <!--input-->
+        <div class="main-main" style="padding-top: 75px">
+            <div class="input-a input-username">
+                <div class="input-group input-pass">
+                    <span class="input-group-addon span1" style="font-size: 16px;font-family: 微软雅黑;font-weight: bold">账号</span>
+                    <input type="text" class="form-control text-b" id="text-input" aria-label="Amount (to the nearest dollar)"
+                           placeholder="用户名/手机号">
+                </div>
+            </div>
+
+    <div class="input-a">
+
+        <div class="input-group input-pass">
+            <span class="input-group-addon span1 " style="font-size: 16px;font-family: 微软雅黑;font-weight: bold">密码</span>
+
+            <input type="text" class="form-control text-b" aria-label="Amount (to the nearest dollar)"
+                   placeholder="请输入密码" id="text-input2">
+
+            <span class="input-group-addon span1  show" id="img1" >
+                        <!--yan-->
+                        <span class="glyphicon glyphicon-eye-close span2">
+                        </span>
+                    </span>
+            <span class="input-group-addon span1 span1 hid" id="img2" >
+                        <!--yan-->
+                        <span class="glyphicon glyphicon-eye-open span2">
+
+                        </span>
+                    </span>
+        </div>
+    </div>
+    <div class="btndiv1">
+        <button  type="button" class="btn1 btn btn-default" id="btn">登录</button>
+    </div>
+        </div>
+    
+        <div class="div1 col-xs-12" style="margin-top:5px;color:#6c6c6c;font: 15px 微软雅黑">
+            <p class="p1 col-xs-6" style="float: left;padding-left: 0">手机快速注册</p>
+            <p class="p2 col-xs-6 text-right" style="float: left;padding-left: 0;padding-right: 0">忘记密码</p>
+        </div>
+        <div class="imgss col-xs-12" >
+            <div class="col-xs-6 text-center">
+                <img src="icon/wecat01.png" >
+                <div>微信登录</div>
+            </div>
+            <div class="col-xs-6 text-center">
+                <img src="icon/qq.png">
+                <div>QQ登录</div>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-1.11.0.min.js"></script>
+<script>
+
+    $(function(){
+
+        $('#text-input2').bind('input propertychange', function() {
+            var con=$('#text-input2').val();
+            if(con==""){
+                $('#btn').attr('disabled','disabled');
+                $('#btn').css('backgroundColor','#eee');
+            }
+            else{
+
+                $('#btn').attr('disabled',false);
+                $('#btn').css('backgroundColor','#dd443a');
+            }
+        });
+    })
+    var img1=document.getElementById('img1');
+    var img2=document.getElementById('img2');
+    img1.onclick=function () {
+
+        img1.className="input-group-addon span1 hid";
+
+        img2.className="input-group-addon span1 show";
+        $('#text-input2').attr('type','text');
+    }
+    img2.onclick=function () {
+        img1.className="input-group-addon span1 show";
+        img2.className="input-group-addon span1 hid";
+        $('#text-input2').attr('type','password');
+    }
+    $("#register").click(function () {
+        location.href="register.html";
+    })
+    $('#forgetpwd').click(function () {
+        location.href="forget.html";
+    })
+    $('#btn').click(function () {
+        location.href='myindex.html';
+    })
+
+</script>
+
+</html>

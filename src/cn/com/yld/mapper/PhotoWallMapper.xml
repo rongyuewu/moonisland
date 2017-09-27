@@ -7,7 +7,36 @@
   	<result column="photo_word" property="photoWord"/>
   	<result column="photo_time" property="photoTime"/>
   </resultMap>
-  <select id="find" parameterType="photoWall">
-  	
+  <!-- 查询 -->
+  <select id="find" resultMap="photoWall">
+  	select * from moon_photo_wall
   </select>
+  <!-- 插入 -->
+  <insert id="insert" parameterType="photoWall">
+  	insert into moon_photo_wall(
+	<trim prefixOverrides=",">
+		<if test="photoUrl != null">
+			#{photo_url}
+		</if>
+		<if test="photoWord != null">
+			,#{photo_word}
+		</if>
+		<if test="photoTime != null">
+			,#{photo_time}
+		</if>
+	</trim>
+	)values(
+	<trim prefixOverrides=",">
+		<if test="photoUrl != null">
+			photo_url=#{photoUrl}
+		</if>
+		<if test="photoWord != null">
+			,photo_word=#{photoWord}
+		</if>
+		<if test="photoTime != null">
+			,photo_time=#{photoTime}
+		</if>
+	</trim>
+	)
+  </insert>
 </mapper>

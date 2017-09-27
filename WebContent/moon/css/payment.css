@@ -1,0 +1,87 @@
+
+@font-face {font-family: "iconfont";
+    src: url('../fonts/iconfont.eot?t=1503111841226'); /* IE9*/
+    src: url('../fonts/iconfont.eot?t=1503111841226#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/iconfont.woff?t=1503111841226') format('woff'), /* chrome, firefox */
+    url('../fonts/iconfont.ttf?t=1503111841226') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+    url('../fonts/iconfont.svg?t=1503111841226#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+    font-family:"iconfont" !important;
+    font-size:16px;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-gengduo:before { content: "\e788"; }
+.icon-fanhui:before { content: "\e624"; }
+
+body{
+    background-color: #F1F2F6;
+}
+
+.qf{/*清除浮动*/
+    overflow: auto;
+}
+.qp{/*清除默认padding*/
+    padding-left: 0;
+    padding-right: 0;
+}
+.f_16_wryh{
+    font-size: 16px;
+    font-family: '微软雅黑';
+}
+.f_14_wryh{
+    font-size: 14px;
+    font-family: '微软雅黑';
+}
+.f_16_c_848587{
+    font-size: 14px;
+    color: #848587;
+}
+.f_10_c_848486{
+    font-size: 10px;
+    color: #848486;
+}
+#head{/*头部div*/
+    overflow: auto;
+    border-bottom: 2px solid #F1F2F6;
+    background-color: #ffffff;
+}
+.head_p{/*头部padding*/
+     padding: 30px 20px 12px 20px;
+ }
+.head_r_p{/*头部右侧padding*/
+    padding: 30px 10px 12px 10px;
+}
+
+.bottom_s{
+    background-color: rgb(222,68,58);height: 45px;color: #ffffff;line-height: 45px;font-size: 14px;border-radius: 3px;
+}
+.b_1{
+    border-bottom: 1px solid #F1F2F6;
+}
+.p_20{
+    padding: 20px;
+}
+.p_20_1{
+    padding:19px 20px 20px 20px;
+}
+.p_t_20{
+    padding-top: 20px;
+}
+.p_t_13{
+    padding-top: 13px;
+}
+.p_18_17{
+    padding: 18px 17px;
+}
+.p_10_10{
+    padding: 10px 10px;
+}
+.back_c_fff{
+    background-color: #ffffff;
+}
+

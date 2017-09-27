@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.yld.mapper.ReturnorderMapper">
+	<resultMap type="Returnorder" id="returnorder">
+		<id column="return_id" property="returnId"/>
+		<result column="order_id" property="orderId"/>
+		<result column="user_id" property="userId"/>
+		<result column="goods_id" property="goodsId"/>
+		<result column="reason" property="reason"/>
+		<result column="return_status" property="returnStatus"/>
+		<result column="return_time" property="returnTime"/>
+		<!-- 多对一 -->
+		<association property="user" javaType="User">
+			<result column="user_id" property="userId"/>
+			<result column="nick_name" property="nickName"/>
+		</association>
+		<association property="order" javaType="Order">
+			<result column="order_id" property="orderId"/>
+		</association>
+	</resultMap>
+	<!-- 查询 -->
+	<select id="findall" resultMap="returnorder">
+		select u.nick_name from moon_returnorder r, moon_user u where r.user_id=u.user_id
+	</select>
+</mapper>

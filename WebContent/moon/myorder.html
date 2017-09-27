@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>我的订单</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        @media screen and (max-width: 320px) {html{font-size:14px;}}
+        @media screen and (min-width: 320px) and (max-width:414px) {html{font-size:16px;}}
+        @media screen and (min-width: 414px) {html{font-size:18px;}}
+        body {
+            font-size: 1rem;
+            font-family:"微软雅黑";
+            background-color: rgb(241,241,241);
+        }
+        .col-xs-1,.col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7,.col-xs-8,.col-xs-9,.col-xs-10,.col-xs-11,.col-xs-12{
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+        .col-xs-2{
+            width: 20%;
+            float: left;
+        }
+        .check_icon img{
+            width: 1.1rem;
+        }
+        .cl_red{
+            color: rgb( 242,60,60);
+        }
+        .header{
+            height: 64px;
+            background-color: rgb(255,255,255);
+            padding-top: 32px;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        .nav_top {
+            line-height: 42px;
+            background-color: rgb(255, 255, 255);
+            border-top: 1px solid rgb(241,241,241);
+            font-size: 0.875rem;
+            color: rgb(105,105,105);
+        }
+        .select_nav{
+            color: rgb( 242,60,60);
+            border-bottom: 1px solid rgb( 242,60,60);
+            display: inline-block;
+        }
+        .list{
+            margin-top: 108px;
+        }
+        .list .list_m{
+            margin-bottom: 12px;
+        }
+        .list .shop_top{
+            padding-left: 15px;
+            padding-right: 15px;
+            background-color: rgb(255, 255, 255);
+            line-height: 40px;
+            font-size: 0.875rem;
+        }
+        .list .shop_cont{
+            padding-left: 20px;
+            padding-top: 20px;
+            background-color: rgb(241,241,241);
+            height:89px;
+            font-size: 0.81rem;
+        }
+        .col-xs-5{
+            width: 14.66%;
+            float: left;
+            margin-right: 15px;
+        }
+        .list .shop_foot{
+            padding-left: 25px;
+            padding-right: 25px;
+            line-height: 40px;
+            background-color: rgb(255, 255, 255);
+        }
+        .list .shop_bt{
+            padding-left: 15px;
+            padding-right: 15px;
+            line-height: 40px;
+            background-color: rgb(255, 255, 255);
+            border-top: 1px solid rgb(241,241,241);
+        }
+        .list .shop_bt .pay{
+            border: 1px solid rgb( 242,60,60);
+            border-radius: 2px;
+            font-size: 0.81rem;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="container navbar-fixed-top">
+    <div class="row header">
+        <div class="col-xs-1 check_icon"><a href="#"><img src="icon/arrow-left.png"></a></div>
+        <div class="col-xs-10 text-center">我的订单</div>
+        <div class="col-xs-1"></div>
+    </div>
+    <div class="row nav_top text-center">
+        <div class="col-xs-2"><span class="select_nav">全部</span></div>
+        <div class="col-xs-2"><span>代付款</span></div>
+        <div class="col-xs-2"><span>待收货</span></div>
+        <div class="col-xs-2"><span>已完成</span></div>
+        <div class="col-xs-2"><span>已取消</span></div>
+    </div>
+</div>
+<div>
+    <!--tab切换-->
+    <div class="list" id="list_0" style="display: block">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12">
+                <img class="img-responsive" src="images/wddd_01.png">
+            </div>
+        </div>
+    </div>
+    <!--商品列表-->
+    <div class="list_m list_1">
+        <div class="container-fluid">
+            <div class="row shop_top">
+                <div class="col-xs-1 check_icon" style="padding-top: 10px">
+                    <img class="img-responsive" src="icon/shop.png">
+                </div>
+                <div class="col-xs-4">
+                    <span>威古氏眼睛</span>
+                </div>
+                <div class="col-xs-7 text-right">
+                    <span class="cl_red">等待付款</span>
+                </div>
+            </div>
+            <div class="row shop_cont">
+                <div class="col-xs-5">
+                    <img class="img-responsive" src="images/wddd_02.png">
+                </div>
+                <div class="col-xs-5">
+                    <img class="img-responsive" src="images/wddd_03.png">
+                </div>
+                <div class="col-xs-5">
+                    <img class="img-responsive" src="images/wddd_04.png">
+                </div>
+            </div>
+            <div class="row shop_foot">
+                <div class="row">
+                    <div class="col-xs-12 text-right">
+                        <span style="font-size: 0.875rem">共3件商品 须付款：<strong>￥198.</strong><span style="font-size: 0.625rem">00</span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row shop_bt">
+                <div class="col-xs-12 cl_red text-right">
+                    <div class="pay btn btn-xs">&nbsp;去支付&nbsp;</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--商品列表-->
+    <div class="list_m list_2">
+        <div class="container-fluid">
+            <div class="row shop_top">
+                <div class="col-xs-1 check_icon" style="padding-top: 10px">
+                    <img class="img-responsive" src="icon/shop.png">
+                </div>
+                <div class="col-xs-4">
+                    <span>威古氏眼睛</span>
+                </div>
+                <div class="col-xs-7 text-right">
+                    <span class="cl_red">等待付款</span>
+                </div>
+            </div>
+            <div class="row shop_cont">
+                <div class="col-xs-5">
+                    <img class="img-responsive" src="images/wddd_05.png">
+                </div>
+                <div class="col-xs-9">
+                    <span>
+                        帕森(PARZIN)男士太阳镜镁铝偏光太阳镜男款眼睛驾驶墨镜8003黑款黑灰片
+                    </span>
+                </div>
+            </div>
+            <div class="row shop_foot">
+                <div class="row">
+                    <div class="col-xs-12 text-right">
+                        <span style="font-size: 0.875rem">共3件商品 须付款：<strong>￥198.</strong><span style="font-size: 0.625rem">00</span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row shop_bt">
+                <div class="col-xs-12 cl_red text-right">
+                    <div class="pay btn btn-xs">&nbsp;去支付&nbsp;</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="list" id="list_1" style="display: none">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <img class="img-responsive" src="images/wddd_01.png">
+                </div>
+            </div>
+        </div>
+        <!--商品列表-->
+        <div class="list_m list_1">
+            <div class="container-fluid">
+                <div class="row shop_top">
+                    <div class="col-xs-1 check_icon" style="padding-top: 10px">
+                        <img class="img-responsive" src="icon/shop.png">
+                    </div>
+                    <div class="col-xs-4">
+                        <span>威古氏眼睛</span>
+                    </div>
+                    <div class="col-xs-7 text-right">
+                        <span class="cl_red">等待付款</span>
+                    </div>
+                </div>
+                <div class="row shop_cont">
+                    <div class="col-xs-5">
+                        <img class="img-responsive" src="images/wddd_02.png">
+                    </div>
+                    <div class="col-xs-5">
+                        <img class="img-responsive" src="images/wddd_03.png">
+                    </div>
+                    <div class="col-xs-5">
+                        <img class="img-responsive" src="images/wddd_04.png">
+                    </div>
+                </div>
+                <div class="row shop_foot">
+                    <div class="row">
+                        <div class="col-xs-12 text-right">
+                            <span style="font-size: 0.875rem">共3件商品 须付款：<strong>￥198.</strong><span style="font-size: 0.625rem">00</span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row shop_bt">
+                    <div class="col-xs-12 cl_red text-right">
+                        <span class="check_icon" style="margin-right: 65%"><img src="icon/delete.png"></span>
+                        <div class="pay btn btn-xs">&nbsp;去支付&nbsp;</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--商品列表-->
+        <div class="list_m list_2">
+            <div class="container-fluid">
+                <div class="row shop_top">
+                    <div class="col-xs-1 check_icon" style="padding-top: 10px">
+                        <img class="img-responsive" src="icon/shop.png">
+                    </div>
+                    <div class="col-xs-4">
+                        <span>威古氏眼睛</span>
+                    </div>
+                    <div class="col-xs-7 text-right">
+                        <span class="cl_red">等待付款</span>
+                    </div>
+                </div>
+                <div class="row shop_cont">
+                    <div class="col-xs-5">
+                        <img class="img-responsive" src="images/wddd_05.png">
+                    </div>
+                    <div class="col-xs-9">
+                    <span>
+                        帕森(PARZIN)男士太阳镜镁铝偏光太阳镜男款眼睛驾驶墨镜8003黑款黑灰片
+                    </span>
+                    </div>
+                </div>
+                <div class="row shop_foot">
+                    <div class="row">
+                        <div class="col-xs-12 text-right">
+                            <span style="font-size: 0.875rem">共3件商品 须付款：<strong>￥198.</strong><span style="font-size: 0.625rem">00</span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row shop_bt">
+                    <div class="col-xs-12 cl_red text-right">
+                        <span class="check_icon" style="margin-right: 65%"><img src="icon/delete.png"></span>
+                        <div class="pay btn btn-xs">&nbsp;去支付&nbsp;</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="list" id="list_2" style="display: none">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <img class="img-responsive" src="images/wddd_01.png">
+                </div>
+            </div>
+        </div>
+        <!--商品列表-->
+        <div class="list_m list_1">
+            <div class="container-fluid">
+                <div class="row shop_top">
+                    <div class="col-xs-1 check_icon" style="padding-top: 10px">
+                        <img class="img-responsive" src="icon/shop.png">
+                    </div>
+                    <div class="col-xs-4">
+                        <span>威古氏眼睛</span>
+                    </div>
+                    <div class="col-xs-7 text-right">
+                        <span class="cl_red">等待付款</span>
+                    </div>
+                </div>
+                <div class="row shop_cont">
+                    <div class="col-xs-5">
+                        <img class="img-responsive" src="images/wddd_02.png">
+                    </div>
+                    <div class="col-xs-5">
+                        <img class="img-responsive" src="images/wddd_03.png">
+                    </div>
+                    <div class="col-xs-5">
+                        <img class="img-responsive" src="images/wddd_04.png">
+                    </div>
+                </div>
+                <div class="row shop_foot">
+                    <div class="row">
+                        <div class="col-xs-12 text-right">
+                            <span style="font-size: 0.875rem">共3件商品 须付款：<strong>￥198.</strong><span style="font-size: 0.625rem">00</span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row shop_bt">
+                    <div class="col-xs-12 cl_red text-right">
+                        <div class="pay btn btn-xs">&nbsp;去支付&nbsp;</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--商品列表-->
+        <div class="list_m list_2">
+            <div class="container-fluid">
+                <div class="row shop_top">
+                    <div class="col-xs-1 check_icon" style="padding-top: 10px">
+                        <img class="img-responsive" src="icon/shop.png">
+                    </div>
+                    <div class="col-xs-4">
+                        <span>威古氏眼睛</span>
+                    </div>
+                    <div class="col-xs-7 text-right">
+                        <span class="cl_red">等待付款</span>
+                    </div>
+                </div>
+                <div class="row shop_cont">
+                    <div class="col-xs-5">
+                        <img class="img-responsive" src="images/wddd_05.png">
+                    </div>
+                    <div class="col-xs-9">
+                    <span>
+                        帕森(PARZIN)男士太阳镜镁铝偏光太阳镜男款眼睛驾驶墨镜8003黑款黑灰片
+                    </span>
+                    </div>
+                </div>
+                <div class="row shop_foot">
+                    <div class="row">
+                        <div class="col-xs-12 text-right">
+                            <span style="font-size: 0.875rem">共3件商品 须付款：<strong>￥198.</strong><span style="font-size: 0.625rem">00</span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row shop_bt">
+                    <div class="col-xs-12 cl_red text-right">
+                        <div class="pay btn btn-xs">&nbsp;去支付&nbsp;</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="list" id="list_3" style="display: none">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <img class="img-responsive" src="images/wddd_01.png">
+                </div>
+            </div>
+        </div>
+        <!--商品列表-->
+        <div class="list_m list_1">
+            <div class="container-fluid">
+                <div class="row shop_top">
+                    <div class="col-xs-1 check_icon" style="padding-top: 10px">
+                        <img class="img-responsive" src="icon/shop.png">
+                    </div>
+                    <div class="col-xs-4">
+                        <span>威古氏眼睛</span>
+                    </div>
+                    <div class="col-xs-7 text-right">
+                        <span class="cl_red">等待付款</span>
+                    </div>
+                </div>
+                <div class="row shop_cont">
+                    <div class="col-xs-5">
+                        <img class="img-responsive" src="images/wddd_02.png">
+                    </div>
+                    <div class="col-xs-5">
+                        <img class="img-responsive" src="images/wddd_03.png">
+                    </div>
+                    <div class="col-xs-5">
+                        <img class="img-responsive" src="images/wddd_04.png">
+                    </div>
+                </div>
+                <div class="row shop_foot">
+                    <div class="row">
+                        <div class="col-xs-12 text-right">
+                            <span style="font-size: 0.875rem">共3件商品 须付款：<strong>￥198.</strong><span style="font-size: 0.625rem">00</span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row shop_bt">
+                    <div class="col-xs-12 cl_red text-right">
+                        <div class="pay btn btn-xs">&nbsp;去支付&nbsp;</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--商品列表-->
+        <div class="list_m list_2">
+            <div class="container-fluid">
+                <div class="row shop_top">
+                    <div class="col-xs-1 check_icon" style="padding-top: 10px">
+                        <img class="img-responsive" src="icon/shop.png">
+                    </div>
+                    <div class="col-xs-4">
+                        <span>威古氏眼睛</span>
+                    </div>
+                    <div class="col-xs-7 text-right">
+                        <span class="cl_red">等待付款</span>
+                    </div>
+                </div>
+                <div class="row shop_cont">
+                    <div class="col-xs-5">
+                        <img class="img-responsive" src="images/wddd_05.png">
+                    </div>
+                    <div class="col-xs-9">
+                    <span>
+                        帕森(PARZIN)男士太阳镜镁铝偏光太阳镜男款眼睛驾驶墨镜8003黑款黑灰片
+                    </span>
+                    </div>
+                </div>
+                <div class="row shop_foot">
+                    <div class="row">
+                        <div class="col-xs-12 text-right">
+                            <span style="font-size: 0.875rem">共3件商品 须付款：<strong>￥198.</strong><span style="font-size: 0.625rem">00</span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row shop_bt">
+                    <div class="col-xs-12 cl_red text-right">
+                        <div class="pay btn btn-xs">&nbsp;去支付&nbsp;</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="list" id="list_4" style="display: none">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <img class="img-responsive" src="images/wddd_01.png">
+                </div>
+            </div>
+        </div>
+        <!--商品列表-->
+        <div class="list_m list_1">
+            <div class="container-fluid">
+                <div class="row shop_top">
+                    <div class="col-xs-1 check_icon" style="padding-top: 10px">
+                        <img class="img-responsive" src="icon/shop.png">
+                    </div>
+                    <div class="col-xs-4">
+                        <span>威古氏眼睛</span>
+                    </div>
+                    <div class="col-xs-7 text-right">
+                        <span class="cl_red">等待付款</span>
+                    </div>
+                </div>
+                <div class="row shop_cont">
+                    <div class="col-xs-5">
+                        <img class="img-responsive" src="images/wddd_02.png">
+                    </div>
+                    <div class="col-xs-5">
+                        <img class="img-responsive" src="images/wddd_03.png">
+                    </div>
+                    <div class="col-xs-5">
+                        <img class="img-responsive" src="images/wddd_04.png">
+                    </div>
+                </div>
+                <div class="row shop_foot">
+                    <div class="row">
+                        <div class="col-xs-12 text-right">
+                            <span style="font-size: 0.875rem">共3件商品 须付款：<strong>￥198.</strong><span style="font-size: 0.625rem">00</span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row shop_bt">
+                    <div class="col-xs-12 cl_red text-right">
+                        <div class="pay btn btn-xs">&nbsp;去支付&nbsp;</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--商品列表-->
+        <div class="list_m list_2">
+            <div class="container-fluid">
+                <div class="row shop_top">
+                    <div class="col-xs-1 check_icon" style="padding-top: 10px">
+                        <img class="img-responsive" src="icon/shop.png">
+                    </div>
+                    <div class="col-xs-4">
+                        <span>威古氏眼睛</span>
+                    </div>
+                    <div class="col-xs-7 text-right">
+                        <span class="cl_red">等待付款</span>
+                    </div>
+                </div>
+                <div class="row shop_cont">
+                    <div class="col-xs-5">
+                        <img class="img-responsive" src="images/wddd_05.png">
+                    </div>
+                    <div class="col-xs-9">
+                    <span>
+                        帕森(PARZIN)男士太阳镜镁铝偏光太阳镜男款眼睛驾驶墨镜8003黑款黑灰片
+                    </span>
+                    </div>
+                </div>
+                <div class="row shop_foot">
+                    <div class="row">
+                        <div class="col-xs-12 text-right">
+                            <span style="font-size: 0.875rem">共3件商品 须付款：<strong>￥198.</strong><span style="font-size: 0.625rem">00</span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row shop_bt">
+                    <div class="col-xs-12 cl_red text-right">
+                        <div class="pay btn btn-xs">&nbsp;去支付&nbsp;</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/bootstrap.min.js">
+</script><script type="text/javascript">
+    $(".nav_top span").each(function(index,obj){
+        $(obj).click(function(){
+            $(obj).parent().siblings().find("span").removeClass("select_nav");
+            $(obj).addClass("select_nav");
+        });
+    })
+    $(".nav_top div").click(function(){
+    var index=$(this).index();
+        $("#list_"+index).attr("style","display:block");
+        $("#list_"+index).siblings().attr("style","display:none");
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>加入购物车</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+   <!-- <link rel="stylesheet" href="css/icon-kefu/iconfont.css">-->
+   <!-- <link rel="stylesheet" href="css/icon-jiantou/iconfont.css">-->
+    <!--<link rel="stylesheet" href="css/icon-Wrong/iconfont.css">-->
+    <link rel="stylesheet" href="css/iconfont.css">
+    <style>
+        div div.row div.col-xs-4,div div.row div.col-xs-6,div div.row div.col-xs-2{
+            padding-left: 4px;
+            padding-right: 4px;
+        }
+        .container-fluid{
+            margin-top: 5px;
+        }
+        #middle{
+            margin-top: 18%;
+        }
+        #right{
+            margin-top: 8%;
+            padding-right: 2%;
+        }
+        .line{
+            margin-top: -10%;
+        }
+        #points div{
+            margin-top: 5px;
+            border-radius: 5px;
+        }
+
+        @font-face {font-family: "iconfont";
+            src: url('fonts/iconfont.eot?t=1503455396999'); /* IE9*/
+            src: url('fonts/iconfont.eot?t=1503455396999#iefix') format('embedded-opentype'), /* IE6-IE8 */
+            url('fonts/iconfont.woff?t=1503455396999') format('woff'), /* chrome, firefox */
+            url('fonts/iconfont.ttf?t=1503455396999') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+            url('fonts/iconfont.svg?t=1503455396999#iconfont') format('svg'); /* iOS 4.1- */
+        }
+
+        .iconfont {
+            font-family:"iconfont" !important;
+            font-size:16px;
+            font-style:normal;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .icon-pingjia:before { content: "\e613"; }
+
+        .icon-kefu:before { content: "\e741"; }
+
+        .icon-tuikuanshouhou:before { content: "\e6d5"; }
+
+        .icon-wodedingdan:before { content: "\e64d"; }
+
+        .icon-huiyuanzhongxindaifukuan:before { content: "\e62d"; }
+
+        .icon-daishouhuo:before { content: "\e619"; }
+
+        .icon-fanhui:before { content: "\e615"; }
+
+        .icon-guanbi:before { content: "\e624"; }
+
+        .icon-jiantouxia:before { content: "\e62e";}
+        #point div{
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        .container ul li div{
+            border: 1px solid #CCCCCC;
+            font-size: 12px;
+            font-weight: bold;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        .container ul li div i{
+            float: right;
+        }
+
+        #mengban{
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            background:rgba(0,0,0,0.5);
+            text-align: center;
+        }
+        .table-1 div table{
+
+            padding: 0 0 0 0;
+        }
+        .table-1 div table tr td{
+            width: 50px;
+            height: 25px;
+            background-color: #ccc;
+            border: 2px solid #fff;
+            padding-right: 20px;
+        }
+    </style>
+
+
+</head>
+<body>
+<!--头部-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-4"><img src="images/gwucxz_03.png"class="text-right img-responsive img-rounded" alt=""/></div>
+        <div id="middle" class="col-xs-6">
+            <div style="color: red;font-weight:bold">￥139.00</div>
+            <div style="color: #c3c3c5">商品编号:1470409046</div>
+        </div>
+        <div id="right" class="col-xs-2 ">
+            <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+    </div>
+</div>
+<div class="container-fluid" style="padding:  0 0 0 0">
+    <div class="line">
+        <h5 class="page-header"></h5>
+    </div>
+</div>
+<!--颜色-->
+<div class="container">
+    <div class="text" style="color: #717171;margin-top: -2%">颜色</div>
+</div>
+<div  class="container-fluid" style="padding: 0 0 0 0;float: left" id="points">
+    <div class="col-xs-4 text-center">
+        <div   style="border: 1px solid #ccc;font-size: 12px; line-height: 28px;height:28px;width: 86px;font-family: 微软雅黑;font-weight: bold" >金框芭比粉紫</div>
+    </div>
+    <div class="col-xs-4 text-center">
+        <div style="border:1px solid #ccc;font-size: 12px; line-height: 28px; height:28px;width: 86px;font-family: 微软雅黑;font-weight: bold">银框水银镜面</div>
+    </div>
+    <div class="col-xs-4 text-center">
+        <div style="border: 1px solid #ccc;font-size: 12px;line-height: 28px; height:28px;width: 86px;font-family: 微软雅黑;font-weight: bold">银框蓝色镜面</div>
+    </div>
+    <div class="col-xs-4 text-center">
+        <div style="border: 1px solid #ccc;font-size: 12px;line-height: 28px; height:28px;width: 86px;font-family: 微软雅黑;font-weight: bold" >金框梦幻紫</div>
+    </div>
+    <div class="col-xs-4 text-center">
+        <div style="border: 1px solid #ccc;font-size: 12px;line-height: 28px; height:28px;width: 86px;font-family: 微软雅黑;font-weight: bold">金框玫瑰紫</div>
+    </div>
+</div>
+<!--数量-->
+<div class="container"style="padding: 0 0 0 0" >
+    <div class="col-xs-3 " style="color: #717171;margin-top:5%">数量</div>
+    <div class="col-xs-5"></div>
+    <div class="col-xs-4 btn-group" style="padding: 0 0 0 30px;margin-top: 18px">
+        <button id="btn-minus" type="button" class="col-xs-3 btn btn-default btn-xs">-</button>
+        <input type="text" id="btn-input" value="1" class="col-xs-6 btn btn-default btn-xs" style="width: 30px">
+        <button id="btn-add" type="button" class="col-xs-3 btn btn-default btn-xs">+</button>
+    </div>
+</div>
+<!--选择镜框和镜片-->
+<div id="qaz">
+    <div class="container-fluid" style="padding: 0 0 0 0;" id="point">
+        <div class="col-xs-2">
+        </div>
+        <div class="col-xs-4">
+            <div style="border: 1px solid #ccc;font-size: 12px;text-align:center;line-height:26px;height: 26px;width: 100px;font-family: 微软雅黑;font-weight: bold">只选择镜框</div>
+        </div>
+        <div class="col-xs-4">
+            <div style="border: 1px solid #CCC;font-size: 12px;text-align:center;line-height:26px;height:26px;width:100px;font-family: 微软雅黑;font-weight: bold"  id="zxcv">镜框和镜片</div>
+        </div>
+        <div class="col-xs-2">
+        </div>
+    </div>
+</div>
+<!--底部-->
+<div>
+<div class="container" id="dibu">
+    <div class="navbar-fixed-bottom">
+        <div class="col-xs-6 text-center" style="background-color: #89CFC4">
+            <div ><i class="iconfont icon-kefu" style="color: white"></i></div>
+            <div style="color:white">客服</div>
+        </div>
+        <div id="shopcart"  class="col-xs-6 text-center"style="background-color: red;font-size:16px;text-align:center;color:white;height: 42px;line-height:41px">确定</div>
+    </div>
+</div>
+<div id="df2l" class="container"  style="display: none">
+    <div class="navbar-fixed-bottom">
+        <div class="col-xs-6 text-center" style="background-color: #89CFC4">
+            <div ><i class="iconfont icon-guanbi" style="color: white"></i></div>
+            <div style="color:white" id="guanbi">关闭镜片</div>
+        </div>
+        <div class="col-xs-6 text-center"style="background-color: red;font-size:16px;text-align:center;color:white;height: 42px;line-height:41px">确定</div>
+    </div>
+</div>
+</div>
+<!--光度   镜片系列-->
+<div class="container" style="display: none;"id="asdf" >
+    <div class="container-fluid" style="padding:  0 0 0 0">
+        <div class="line">
+            <h5 class="page-header"></h5>
+        </div>
+    <div class="container"  >
+        <div class="col-xs-3">光度</div>
+        <div class="col-xs-4"></div>
+        <div id="hide" class="col-xs-5"><img src="icon/instr.png" height="20" width="20" />选择说明</div>
+    </div>
+    <div class="luminosity"style="margin-top: 7px">
+        <div class="container" style="padding: 0 0 0 0">
+            <ul class="check-Lens-style list-unstyled">
+                <li class="btn-group col-xs-6">
+                    <div class="dropdown-toggle luminosity-select" data-toggle="dropdown" aria-expanded="false" style="line-height: 18px;padding-top: 5px;padding-left: 5px">
+                        左眼光度
+                        <i  class="iconfont icon-jiantouxia"></i>
+                    </div>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">a</a></li>
+                        <li><a href="#">b</a></li>
+                        <li><a href="#">c</a></li>
+                        <li><a href="#">d</a></li>
+                    </ul>
+                </li>
+                <li class="btn-group col-xs-6">
+                    <div class="dropdown-toggle luminosity-select" data-toggle="dropdown" aria-expanded="false" style="line-height: 18px;padding-left: 5px">
+                        右眼光度
+                        <i class="iconfont icon-jiantouxia"></i>
+                    </div>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">a</a></li>
+                        <li><a href="#">b</a></li>
+                        <li><a href="#">c</a></li>
+                        <li><a href="#">d</a></li>
+                    </ul>
+                </li>
+                <li class="btn-group col-xs-6"style="margin-top: 6px">
+                    <div class="dropdown-toggle luminosity-select" data-toggle="dropdown" aria-expanded="false" style="line-height: 18px;padding-left: 5px">
+                        左眼光度(默认无)
+                        <i class="iconfont icon-jiantouxia"></i>
+                    </div>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">a</a></li>
+                        <li><a href="#">b</a></li>
+                        <li><a href="#">c</a></li>
+                        <li><a href="#">d</a></li>
+                    </ul>
+                </li>
+                <li class="btn-group col-xs-6"style="margin-top: 6px">
+                    <div class="dropdown-toggle luminosity-select" data-toggle="dropdown" aria-expanded="false" style="line-height: 18px;padding-left: 5px">
+                        右眼光度(默认无)
+                        <i class="iconfont icon-jiantouxia"></i>
+                    </div>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">a</a></li>
+                        <li><a href="#">b</a></li>
+                        <li><a href="#">c</a></li>
+                        <li><a href="#">d</a></li>
+                    </ul>
+                </li>
+                <li class="btn-group col-xs-6"style="margin-top: 6px">
+                    <div class="dropdown-toggle luminosity-select" data-toggle="dropdown" aria-expanded="false" style="line-height: 18px;padding-left:5px">
+                        左眼轴位(默认无)
+                        <i class="iconfont icon-jiantouxia"></i>
+                    </div>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">a</a></li>
+                        <li><a href="#">b</a></li>
+                        <li><a href="#">c</a></li>
+                        <li><a href="#">d</a></li>
+                    </ul>
+                </li>
+                <li class="btn-group col-xs-6" style="margin-top: 6px">
+                    <div class="dropdown-toggle luminosity-select" data-toggle="dropdown" aria-expanded="false" style="line-height:18px;padding-left: 5px">
+                        左眼轴位(默认无)
+                        <i class="iconfont icon-jiantouxia"></i>
+                    </div>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">a</a></li>
+                        <li><a href="#">b</a></li>
+                        <li><a href="#">c</a></li>
+                        <li><a href="#">d</a></li>
+                    </ul>
+                </li>
+                <li class="btn-group col-xs-12" style="margin-top: 6px" >
+                    <div class="dropdown-toggle luminosity-select" data-toggle="dropdown" aria-expanded="false" style="text-align: center" style="line-height: 18px" >
+                        瞳距
+                        <i class="iconfont icon-jiantouxia"></i>
+                    </div>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">a</a></li>
+                        <li><a href="#">b</a></li>
+                        <li><a href="#">c</a></li>
+                        <li><a href="#">d</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="container-fluid" style="padding: 0 0 0 0">
+        <div class="ro" style="border:5px solid #ccc;font-weight: bold;padding: 0 0 0 0" ></div>
+    </div>
+    <div class="container" style="margin-top: 3px">
+        <div class="col-xs-4">镜片系列</div>
+        <div class="col-xs-3"></div>
+        <div class="col-xs-5" id="hides"><img src="icon/instr.png" height="20" width="20"/>选择说明</div>
+    </div>
+    <div class="luminosity">
+        <div class="container">
+            <ul class="check-Lens-style list-unstyled">
+                <li class="btn-group col-xs-12" style="margin-top: 5px">
+                    <div class="dropdown-toggle luminosity-select" data-toggle="dropdown" aria-expanded="false" style="text-align: center" style="line-height: 18px">
+                        1.61系列
+                        <i class="iconfont icon-jiantouxia"></i>
+                    </div>
+                    <ul class="dropdown-menu"style="margin-bottom: 60px" style="line-height: 18px">
+                        <li><a href="#">a</a></li>
+                        <li><a href="#">b</a></li>
+                        <li><a href="#">c</a></li>
+                        <li><a href="#">d</a></li>
+                    </ul>
+                </li>
+                <li class="btn-group col-xs-12"style="margin-top: 5px">
+                    <div class="dropdown-toggle luminosity-select" data-toggle="dropdown" aria-expanded="false" style="text-align: center" style="line-height: 18px">
+                        1.67系列
+                        <i class="iconfont icon-jiantouxia"></i>
+                    </div>
+                    <ul class="dropdown-menu"style="margin-bottom: 60px">
+                        <li><a href="#">a</a></li>
+                        <li><a href="#">b</a></li>
+                        <li><a href="#">c</a></li>
+                        <li><a href="#">d</a></li>
+                    </ul>
+                </li>
+                <li class="btn-group col-xs-12"style="margin-top: 5px">
+                    <div class="dropdown-toggle luminosity-select" data-toggle="dropdown" aria-expanded="false" style="text-align: center" style="line-height: 18px">
+                        1.70系列
+                        <i class="iconfont icon-jiantouxia"></i>
+                    </div>
+                    <ul class="dropdown-menu" style="margin-bottom: 60px">
+                        <li><a href="#">a</a></li>
+                        <li><a href="#">b</a></li>
+                        <li><a href="#">c</a></li>
+                        <li><a href="#">d</a></li>
+                    </ul>
+                </li>
+                <li class="btn-group col-xs-12"style="margin-top: 5px" style="line-height: 18px">
+                    <div class="dropdown-toggle luminosity-select" data-toggle="dropdown" aria-expanded="false" style="text-align: center" >
+                        1.71系列
+                        <i class="iconfont icon-jiantouxia"></i>
+                    </div>
+                    <ul class="dropdown-menu"style="margin-bottom: 60px">
+                        <li><a href="#">a</a></li>
+                        <li><a href="#">b</a></li>
+                        <li><a href="#">c</a></li>
+                        <li><a href="#">d</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+<!--  选择说明-->
+    <div id="mengban" style="display: none">
+        <div id="qwer" class="col-xs-12" style="height: 100%;background-color: rgba(0,0,0,0.5);">
+        </div>
+        <div id="footer" class="navbar-fixed-bottom" style="background-color: #ffffff">
+            <div style="border-bottom: 1px solid #ccc">
+                <div class="container-fluid">
+                    <div class="check-shouming" style="font-weight:bold">选择说明</div>
+                </div>
+            </div>
+            <div class="table-1">
+                <div class="container" style="padding: 0 0 0 0">
+                    <p style="margin:auto;font-size: 10px">眼光度数、眼睛度数换算</p>
+                    <div class="col-xs-1"></div>
+                    <div class="col-xs-10">
+                        <table>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                        </table>
+                    </div>
+                    <div class="col-xs-1"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+    /*数量*/
+    $('#btn-minus').click(function () {
+        var index =$('#btn-input').val();
+        $('#btn-input').val(parseInt(index)-1);
+        if(index<=1){
+            $('#btn-input').val(1);
+        }
+    });
+    $("#btn-add").click(function () {
+        var index =$('#btn-input').val();
+        $('#btn-input').val(parseInt(index)+1);
+    });
+
+   /* $('#btn-input').click(function(){
+       $('#dibu').css('display','black')
+    });*/
+/*点击说明*/
+    $('#hide').click(function () {
+        $('#mengban').css('display','black');
+    });
+    $('#hides').click(function () {
+        $('#mengban').css('display','black');
+    });
+    /*点击镜框和镜片跳转*/
+    $('#qwer').click(function () {
+        $('#mengban').css('display','none');
+    });
+    $('#zxcv').click(function () {
+        $('#asdf').css('display','black');$('#qaz').css('display','none');$('#df2l').css('display','black');
+    });
+    $('#guanbi').click(function () {
+        $('#asdf').css('display','none');$('#qaz').css('display','black');$('#df2l').css('display','none');
+
+    });
+    /*颜色*/
+    $('#points div div').click(function(){
+        $(this).css('border-color','red');
+        $(this).css('color','red');
+        $(this).parent().siblings().children().css('border-color','#aaa');
+        $(this).parent().siblings().children().css('color','#333');
+    });
+/*镜片 镜框 变颜色*/
+    $('#point div div').click(function () {
+        $(this).css('border-color','red');
+        $(this).css('color','red');
+        $(this).parent().siblings().children().css('border-color','#aaa');
+        $(this).parent().siblings().children().css('color','#333');
+    })
+
+    $('#shopcart').click(function () {
+        location.href='shopcart.html';
+    })
+</script>
+</html>
