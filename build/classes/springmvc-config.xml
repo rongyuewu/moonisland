@@ -94,7 +94,7 @@
 	 		<property name="dao" ref="returnorderdao"></property>
 	 	</bean>
 	 	
-	 	<!--  -->
+	
 	<!-- springMVC======================================================================================================================= -->					
 	<!-- <bean name="/login" class="cn.com.action.UserAction"></bean> -->	
 	<!-- 处理静态资源使用 ,虽然使用了spring框架的核心控制器，但是不做任何处理-->
