@@ -21,7 +21,7 @@ public class ReturnorderTest {
 		ReturnorderDao dao = (ReturnorderDao) this.context.getBean("returnorderDao");
 		List<Returnorder> ls = dao.findall();
 		for (Returnorder returnorder : ls) {
-			System.out.println("======"+returnorder.getUser().getNickName());
+			System.out.println("======"+returnorder.getUserId());
 		}
 	}
 }
