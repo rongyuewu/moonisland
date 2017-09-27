@@ -29,7 +29,7 @@
   	<result column="pic_id" property="picId"/>
   	<!-- 表达多对一关联 -->
 		<association property="goods" javaType="Goods">
-			<result column="goods_id" property="goodsId"/>
+			<id column="goods_id" property="goodsId"/>
 			<result column="brand_id" property="brandId"/>
 		  	<result column="goods_name" property="goodsName"/>
 		  	<result column="category" property="category"/>
@@ -56,7 +56,7 @@
 		  	<result column="add_time" property="addTime"/>
 		</association>
 		<association property="glass" javaType="Glass">
-			<result column="glass_id" property="glassId"/>
+			<id column="glass_id" property="glassId"/>
 			<result column="glass_style" property="glassStyle"/>
 		  	<result column="glass_name" property="glassName"/>
 		  	<result column="glass_price" property="glassPrice"/>
@@ -77,8 +77,7 @@
 		  	<result column="is_active" property="isActive"/>
 		</association>
 		<association property="user" javaType="User">
-			<result column="user_id" property="userId"/>
-			<result column="points" property="points"/>
+			<id column="points" property="points"/>
 		  	<result column="user_level" property="userLevel"/>
 		  	<result column="is_privilege" property="isPrivilege"/>
 		  	<result column="privilege_num" property="privilegeNum"/>
@@ -95,10 +94,10 @@
 		  	<result column="user_status" property="userStatus"/>
 		</association>
 		<association property="optometry" javaType="Optometry">
-			<result column="optometry_id" property="optometryId"/>
+			<id column="optometry_id" property="optometryId"/>
 		</association>
 		<association property="goodsAttr" javaType="GoodsAttr">
-			<result column="attr_id" property="attrId"/>
+			<id column="attr_id" property="attrId"/>
 			<result column="goods_id" property="goodsId"/>
 		  	<result column="material" property="material"/>
 		  	<result column="border" property="border"/>
@@ -109,11 +108,15 @@
 		  	<result column="price" property="price"/>
 		</association>
 		<association property="goodsPic" javaType="GoodsPic">
-			<result column="pic_id" property="picId"/>
+			<id column="pic_id" property="picId"/>
 		</association>
   </resultMap>
   <select id="findorderstatus" resultMap="order">
   	select * from moon_order where order_status=1
+  </select>
+  <!-- 获取所有订单编号 -->
+  <select id="findordernumber" resultType="list">
+  	select o.order_number from moon_order o
   </select>
   <update id="updatederstatus" parameterType="Order">
   	update moon_cart set order_status=2 where order_id=#{orderId}
