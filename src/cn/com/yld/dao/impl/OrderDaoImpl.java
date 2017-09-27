@@ -17,7 +17,7 @@ public class OrderDaoImpl extends SqlSessionDaoSupport implements OrderDao {
 	}
 
 	@Override
-	public List<String> findordernumber() {
+	public List<Order> findordernumber() {
 		OrderMapper mapper=this.getSqlSession().getMapper(OrderMapper.class);
 		return mapper.findordernumber();
 	}
@@ -26,5 +26,11 @@ public class OrderDaoImpl extends SqlSessionDaoSupport implements OrderDao {
 	public void updatederstatus(Order order) {
 		OrderMapper mapper=this.getSqlSession().getMapper(OrderMapper.class);
 		mapper.updatederstatus(order);
+	}
+
+	@Override
+	public List<Order> findorder(Order order) {
+		OrderMapper mapper=this.getSqlSession().getMapper(OrderMapper.class);
+		return mapper.findorder(order);
 	}
 }
