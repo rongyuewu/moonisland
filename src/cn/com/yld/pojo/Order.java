@@ -274,6 +274,19 @@ public class Order implements Serializable{
 	public void setPicId(String picId) {
 		this.picId = picId;
 	}
+
+	@Override
+	public String toString() {
+		return "Order [orderId=" + orderId + ", orderNumber=" + orderNumber + ", goodsId=" + goodsId + ", glassId="
+				+ glassId + ", userId=" + userId + ", optometryId=" + optometryId + ", orderStatus=" + orderStatus
+				+ ", shippingStatus=" + shippingStatus + ", payStatus=" + payStatus + ", consignee=" + consignee
+				+ ", provinceid=" + provinceid + ", cityid=" + cityid + ", districtid=" + districtid + ", address="
+				+ address + ", zipcode=" + zipcode + ", phone=" + phone + ", payNum=" + payNum + ", orderMoney="
+				+ orderMoney + ", postscript=" + postscript + ", shippingId=" + shippingId + ", shippingName="
+				+ shippingName + ", shippingNum=" + shippingNum + ", orderTime=" + orderTime + ", goodsAttrid="
+				+ goodsAttrid + ", picId=" + picId + ", goods=" + goods + ", glass=" + glass + ", user=" + user
+				+ ", optometry=" + optometry + ", goodsAttr=" + goodsAttr + ", goodsPic=" + goodsPic + "]";
+	}
 	
 }
 

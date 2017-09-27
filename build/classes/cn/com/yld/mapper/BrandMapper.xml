@@ -28,7 +28,7 @@
   			<if test="brandCon != null">
   				,brand_con
   			</if>
-  			<if test="brandAddtime != null">
+  			<if test="brandAddtime == null">
   				,brand_addtime
   			</if>
   			<if test="brandStatus != null">
@@ -46,7 +46,7 @@
   			<if test="brandCon != null">
   				,#{brandCon}
   			</if>
-  			<if test="brandAddtime != null">
+  			<if test="brandAddtime == null">
   				,sysdate()
   			</if>
   			<if test="brandStatus != null">
@@ -56,7 +56,7 @@
   		)
   </insert>
   <update id="update" parameterType="brand">
-  	update moon_brand set (
+  	update moon_brand set 
   		<trim prefixOverrides=",">
   			<if test="brandName != null">
   				brand_name = #{brandName}
@@ -69,7 +69,7 @@
   			</if>
   			<if test="brandAddtime != null">
   				,brand_addtime = #{brandAddtime}
-  			</if>
+  			</if> 
   			<if test="brandStatus != null">
   				,brand_status = #{brandStatus}
   			</if>

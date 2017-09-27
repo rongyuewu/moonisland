@@ -47,4 +47,10 @@ public class GlassDaoImpl extends SqlSessionDaoSupport implements GlassDao {
 		return null;
 	}
 
+	@Override
+	public void cleandelete(Glass glass) {
+		GlassMapper mapper = this.getSqlSession().getMapper(GlassMapper.class);
+		mapper.cleandelete(glass);;
+	}
+
 }

@@ -18,6 +18,16 @@ public class GoodsPic implements Serializable{
 	private String pic2Thumb;
 	private String pic3Thumb;
 	private String pic4Thumb;
+	private Goods goods;
+	
+
+	public Goods getGoods() {
+		return goods;
+	}
+
+	public void setGoods(Goods goods) {
+		this.goods = goods;
+	}
 
 	public void setPicId(int picId){
 		this.picId=picId;

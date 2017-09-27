@@ -48,5 +48,10 @@ public class GlassServiceImpl implements GlassService {
 		return null;
 	}
 
+	@Override
+	public void cleandelete(Glass glass) {
+		this.dao.cleandelete(glass);
+	}
+
 	
 }

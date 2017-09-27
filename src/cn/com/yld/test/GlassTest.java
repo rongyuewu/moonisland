@@ -26,6 +26,39 @@ public class GlassTest {
 			System.out.println(glass.getGlassName());
 		}
 	}
+	@Test
+	public void test2(){
+		GlassDao dao = (GlassDao) this.context.getBean("glassDao");
+		Glass glass = new Glass();
+		glass.setGlassName("hehe");
+		glass.setGlassStyle("hehe");
+		glass.setGlassPrice("100");
+		glass.setCylPrice("20");
+		dao.insert(glass);
+	}
+	@Test
+	public void test3(){
+		GlassDao dao = (GlassDao) this.context.getBean("glassDao");
+		Glass glass = new Glass();
+		glass.setGlassId(21);
+		glass.setColor2("hehe");
+		glass.setGlassStyle("haha");
+		dao.update(glass);
+	}
+	@Test
+	public void test4(){
+		GlassDao dao = (GlassDao) this.context.getBean("glassDao");
+		Glass glass = new Glass();
+		glass.setGlassId(22);
+		dao.delete(glass);
+	}
+	@Test
+	public void test5(){
+		GlassDao dao = (GlassDao) this.context.getBean("glassDao");
+		Glass glass = new Glass();
+		glass.setGlassId(22);
+		dao.cleandelete(glass);
+	}
 }
 
 
