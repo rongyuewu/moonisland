@@ -7,4 +7,10 @@
   	<result column="pid" property="pid"/>
   	<result column="sort" property="sort"/>
   </resultMap>
+  <select id="findall" resultMap="arearestltMap">
+  	select * from moon_area
+  </select>
+  <select id="findbyid" resultMap="arearestltMap">
+  	select * from moon_area where area_id=#{areaId}
+  </select>
 </mapper>
