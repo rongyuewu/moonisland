@@ -42,20 +42,21 @@ public class BrandTest {
 		Brand brand = new Brand();
 		brand.setBrandId(10);
 		brand.setBrandName("hehe");
+		brand.setBrandCon("hehe");
 		dao.update(brand);
 	}
 	@Test
 	public void test4(){
 		BrandDao dao = (BrandDao) this.context.getBean("brandDao");
 		Brand brand = new Brand();
-		brand.setBrandId(11);
+		brand.setBrandId(12);
 		dao.delete(brand);
 	}
 	@Test
 	public void test5(){
 		BrandDao dao = (BrandDao) this.context.getBean("brandDao");
 		Brand brand = new Brand();
-		brand.setBrandId(11);
+		brand.setBrandId(12);
 		dao.cleandelete(brand);
 	}
 }

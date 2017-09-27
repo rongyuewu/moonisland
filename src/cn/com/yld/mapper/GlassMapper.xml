@@ -29,6 +29,9 @@
   <select id="findbyid" resultMap="glass">
   	select * from moon_glass where glass_id = #{glassId}
   </select>
+  <select id="findbylike" resultMap="glass">
+  	select * from moon_glass limit #{num1},#{num2}
+  </select>
   <insert id="insert" parameterType="glass">
   	insert into moon_glass (
   			<trim prefixOverrides=",">
@@ -190,7 +193,7 @@
   			</if>
   			<if test="color4 != null">
   				,color4=#{color4}
-  			</if>
+  			</if>66666
   			<if test="color5 != null">
   				,color5=#{color5}
   			</if>

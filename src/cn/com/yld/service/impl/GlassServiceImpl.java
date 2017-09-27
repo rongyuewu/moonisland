@@ -1,6 +1,7 @@
 package cn.com.yld.service.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import cn.com.yld.dao.GlassDao;
 import cn.com.yld.pojo.Glass;
@@ -43,14 +44,13 @@ public class GlassServiceImpl implements GlassService {
 	}
 
 	@Override
-	public List<Glass> findbylike() {
-		// TODO Auto-generated method stub
-		return null;
+	public void cleandelete(Glass glass) {
+		this.dao.cleandelete(glass);
 	}
 
 	@Override
-	public void cleandelete(Glass glass) {
-		this.dao.cleandelete(glass);
+	public List<Glass> findbylike(int page,int num) {
+		return this.dao.findbylike(page, num);
 	}
 
 	

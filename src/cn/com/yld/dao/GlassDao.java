@@ -1,6 +1,7 @@
 package cn.com.yld.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import cn.com.yld.pojo.Glass;
 
@@ -18,5 +19,5 @@ public interface GlassDao {
 	//清除删除
 	public void cleandelete(Glass glass);
 	//分页
-	public List<Glass> findbylike();
+	public List<Glass> findbylike(int page,int num);
 }
