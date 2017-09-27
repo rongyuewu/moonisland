@@ -20,6 +20,6 @@
 	</resultMap>
 	<!-- 查询 -->
 	<select id="findall" resultMap="returnorder">
-		select u.nick_name from moon_returnorder r, moon_user u where r.user_id=u.user_id
+		select * from moon_returnorder 
 	</select>
 </mapper>
