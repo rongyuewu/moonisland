@@ -140,5 +140,17 @@
 	 	<bean id="goodsService" class="cn.com.yld.service.impl.GoodsServiceImpl">
 	 		<property name="goodsDao" ref="goodsDao"></property>
 	 	</bean>
-	 	
+		 	<!-- springMVC-->					
+		<!-- <bean name="/login" class="cn.com.action.UserAction"></bean> -->	
+		<!-- 处理静态资源使用 ,虽然使用了spring框架的核心控制器，但是不做任何处理-->
+		<mvc:default-servlet-handler/>
+		<!-- 指定使用注解需要扫描的包	 -->
+		<context:component-scan base-package="cn.com.yld.action"></context:component-scan>	
+		<!-- spring4.0后使用以下方式驱动注解 -->
+		<mvc:annotation-driven></mvc:annotation-driven>	
+		<!-- 配置视图解析器，帮助设置短名称
+		<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+			<property name="prefix" value="/WEB-INF/jsp/"></property>
+			<property name="suffix" value=".jsp"></property>
+		</bean>  -->
 </beans>
