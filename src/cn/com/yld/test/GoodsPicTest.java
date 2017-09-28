@@ -43,7 +43,7 @@ public class GoodsPicTest {
 		GoodsPic goodsPic=new GoodsPic();
 		Goods goods=new Goods();
 		goods.setGoodsId(66);
-		goodsPic.setPic1("1564");
+		goodsPic.setPic1("666666");
 		goodsPic.setGoods(goods);
 		GoodsPicDao dao=(GoodsPicDao) this.context.getBean("goodsPicDao");
 		dao.insert(goodsPic);
@@ -55,5 +55,11 @@ public class GoodsPicTest {
 		goodsPic.setPic1("xxxxxx");
 		goodsPic.setGoodsId("33");
 		dao.update(goodsPic);
+	}
+	@Test
+	public void test06(){
+		GoodsPicDao dao=(GoodsPicDao) this.context.getBean("goodsPicDao");
+		int ls=dao.pagecount();
+		System.out.println(ls);
 	}
 }

@@ -47,5 +47,12 @@ public class GoodsPicDaoImpl extends SqlSessionDaoSupport implements GoodsPicDao
 		map.put("num2", num);
 		return mapper.findlinmit(map);
 	}
+	//总页数
+	@Override
+	public int pagecount() {
+		GoodsPicMapper mapper=this.getSqlSession().getMapper(GoodsPicMapper.class);
+		int ls=mapper.pagecount();
+		return ls;
+	}
 
 }
