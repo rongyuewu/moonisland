@@ -16,6 +16,8 @@ public interface GoodsMapper {
 	public List<Goods> findlimitpri(Map<String, Integer> map);
 	//id查询
 	public Goods findbyid(Goods goods);
+	//在售数量查询
+	public Integer findcount();
 	//在售查询
 	public List<Goods> findbyAvailable();
 	//更新
