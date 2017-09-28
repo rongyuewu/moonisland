@@ -6,12 +6,18 @@ public interface AddressMapper {
 	// 查询全部
 	public List<Address> findall();
 
-	// 查询全部
-	public List<Address> findbyid();
+	// 根据id查询
+	public List<Address> findbyid(Address address);
 
 	// 插入
 	public void insert(Address address);
 
-	// 更新
+	// 删除
+	public void delect(Address address);
+
+	// 修改状态1
 	public void update(Address address);
+
+	// 修改状态0
+	public void updatezero(Address address);
 }
