@@ -8,39 +8,39 @@ import cn.com.yld.pojo.User;
 import cn.com.yld.service.CartService;
 
 public class CartServiceImpl implements CartService {
-	private CartDao cartDao;
+	private CartDao dao;
 	
-	public CartDao getCartDao() {
-		return cartDao;
+	public CartDao getDao() {
+		return dao;
 	}
 
-	public void setCartDao(CartDao cartDao) {
-		this.cartDao = cartDao;
+	public void setDao(CartDao dao) {
+		this.dao = dao;
 	}
 
 	@Override
 	public List<Cart> findall(User user) {
-		return cartDao.findall(user);
+		return dao.findall(user);
 	}
 
 	@Override
 	public void insert(Cart cart) {
-		cartDao.insert(cart);
+		dao.insert(cart);
 	}
 
 	@Override
 	public void update(Cart cart) {
-		cartDao.update(cart);
+		dao.update(cart);
 	}
 
 	@Override
 	public void delete(Cart cart) {
-		cartDao.delete(cart);
+		dao.delete(cart);
 	}
 
 	@Override
 	public void candelect(Cart cart) {
-		cartDao.candelect(cart);
+		dao.candelect(cart);
 	}
 
 }
