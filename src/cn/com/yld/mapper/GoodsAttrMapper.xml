@@ -47,5 +47,138 @@
 		<result column="brand_addtime" property="brandAddtime"/>
 	</association>
   </resultMap>
- 
+ <insert id="insert" parameterType="GoodsAttr">
+ insert into moon_goods_attr(
+ 	<trim prefixOverrides=",">
+		<if test="attrId != null">
+			attr_id
+		</if>
+		<if test="goods != null">
+			,goods_id
+		</if>
+		<if test="material != null">
+			,material
+		</if>
+		<if test="border != null">
+			,border
+		</if>
+		<if test="size != null">
+			,size
+		</if>
+		<if test="function != null">
+			,function
+		</if>
+		<if test="brand != null">
+			,brand_id
+		</if>
+		<if test="color != null">
+			,color
+		</if>
+		<if test="price != null">
+			,price
+		</if>
+	</trim>
+ 	) values(
+ 	<trim prefixOverrides=",">
+		<if test="attrId != null">
+			#{attrId}
+		</if>
+		<if test="goods != null">
+			,#{goods.goodsId}
+		</if>
+		<if test="material != null">
+			,#{material}
+		</if>
+		<if test="border != null">
+			,#{border}
+		</if>
+		<if test="size != null">
+			,#{size}
+		</if>
+		<if test="function != null">
+			,#{function}
+		</if>
+		<if test="brand != null">
+			,#{brand.brandId}
+		</if>
+		<if test="color != null">
+			,#{color}
+		</if>
+		<if test="price != null">
+			,#{price}
+		</if>
+	</trim>
+ 	);
+ </insert>
+ <update id="update" parameterType="GoodsAttr">
+ UPDATE moon_goods_attr SET 
+ <trim prefixOverrides=",">
+		<if test="goods != null">
+			goods_id=#{goods.goodsId}
+		</if>
+		<if test="material != null">
+			,material=#{material}
+		</if>
+		<if test="border != null">
+			,border=#{border}
+		</if>
+		<if test="size != null">
+			,size=#{size}
+		</if>
+		<if test="function != null">
+			,function=#{function}
+		</if>
+		<if test="brand != null">
+			,brand_id=#{brand.brandId}
+		</if>
+		<if test="color != null">
+			,color=#{color}
+		</if>
+		<if test="price != null">
+			,price=#{price}
+		</if>
+	</trim>
+  WHERE attr_id=#{attrId}; 
+ </update>
+ <select id="findall" resultMap="goodAttr">
+ 	<![CDATA[
+			select * from moon_goods_attr a,moon_goods g,moon_brand b where a.goods_id=g.goods_id and a.brand_id=b.brand_id;
+		]]>
+ </select>
+ <select id="findByAttr" parameterType="GoodsAttr" resultMap="goodAttr">
+			select * from moon_goods_attr a,moon_goods g,moon_brand b where a.goods_id=g.goods_id and a.brand_id=b.brand_id
+			<if test="attrId != null">
+				and a.attr_id=#{attrId}
+			</if>
+			<if test="goods != null">
+				and a.goods_id=#{goods.goodsId}
+			</if>
+			<if test="material != null">
+				and a.material=#{user.userId}
+			</if>
+			<if test="border != null">
+				and a.border=#{order.orderId}
+			</if>
+			<if test="size != null">
+				and a.size=#{commentContentword}
+			</if>
+			<if test="function != null">
+				and a.function=#{commentContentimg}
+			</if>
+			<if test="brandId != null">
+				and a.brand_id=#{guarantee}
+			</if>
+			<if test="color != null">
+				and a.color=#{server}
+			</if>
+			<if test="price != null">
+				and a.price=#{logistics}
+			</if>;
+		
+ </select>
+ <select id="findbylimit" parameterType="map" resultMap="goodAttr">
+ 	<![CDATA[
+ 	select * from moon_goods_attr a,moon_goods g,moon_brand b where a.goods_id=g.goods_id and a.brand_id=b.brand_id limit #{num1},#{num2};
+	]]>	
+ </select>
 </mapper>
