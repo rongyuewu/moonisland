@@ -59,6 +59,20 @@ public class GlassTest {
 		glass.setGlassId(22);
 		dao.cleandelete(glass);
 	}
+	@Test
+	public void test6(){
+		GlassDao dao = (GlassDao) this.context.getBean("glassDao");
+		List<Glass> ls = dao.findbylike(1, 3);
+		for (Glass glass : ls) {
+			System.out.println(glass.getGlassName());
+		}
+	}
+	@Test
+	public void test7(){
+		GlassDao dao = (GlassDao) this.context.getBean("glassDao");
+		int i = Integer.valueOf(dao.findnumber());
+		System.out.println(i);
+	}
 }
 
 

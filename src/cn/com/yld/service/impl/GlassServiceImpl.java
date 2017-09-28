@@ -45,14 +45,18 @@ public class GlassServiceImpl implements GlassService {
 	}
 
 	@Override
-	public List<Glass> findbylike() {
-		// TODO Auto-generated method stub
-		return null;
+	public void cleandelete(Glass glass) {
+		this.glassDao.cleandelete(glass);
 	}
 
 	@Override
-	public void cleandelete(Glass glass) {
-		this.glassDao.cleandelete(glass);
+	public List<Glass> findbylike(int page,int num) {
+		return this.glassDao.findbylike(page, num);
+	}
+
+	@Override
+	public String findnumber() {
+		return this.glassDao.findnumber();
 	}
 
 	

@@ -24,7 +24,7 @@
   	<result column="glass_status" property="glassStatus"/>
   </resultMap>
    <select id="findall" resultMap="glass">
-  		select * from moon_glass
+  		select * from moon_glass where glass_status=1
   </select>
   <select id="findbyid" resultMap="glass">
   	select * from moon_glass where glass_id = #{glassId}
@@ -221,4 +221,10 @@
   <update id="cleandelete" parameterType="glass">
   	update moon_glass set glass_status = "1" where glass_id = #{glassId}
   </update>
+  <select id="findbylike" resultMap="glass">
+  	SELECT * FROM moon_glass LIMIT #{num1},#{num2}
+  </select>
+  <select id="findnumber" resultMap="glass">
+  	SELECT COUNT(0) FROM moon_glass where glass_status = 1
+  </select>
 </mapper>
