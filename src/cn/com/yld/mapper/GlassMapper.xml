@@ -53,7 +53,7 @@
   			<if test="glassImgthumb != null">
   				,glass_imgthumb
   			</if>
-  			<if test="glassTime == null">
+  			<if test="glassTime != null">
   				,glass_time
   			</if>
   			<if test="color1 != null">
@@ -113,8 +113,8 @@
   			<if test="glassImgthumb != null">
   				,#{glassImgthumb}
   			</if>
-  			<if test="glassTime == null">
-  				,sysdate()
+  			<if test="glassTime != null">
+  				,sysdata()
   			</if>
   			<if test="color1 != null">
   				,#{color1}

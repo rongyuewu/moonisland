@@ -23,7 +23,7 @@ public class OrderServiceImpl implements OrderService {
 	}
 
 	@Override
-	public List<Order> findordernumber() {
+	public List<String> findordernumber() {
 		return dao.findordernumber();
 	}
 
@@ -31,11 +31,6 @@ public class OrderServiceImpl implements OrderService {
 	public void updatederstatus(Order order) {
 		dao.updatederstatus(order);
 
-	}
-
-	@Override
-	public List<Order> findorder(Order order) {
-		return dao.findorder(order);
 	}
 
 }
