@@ -18,6 +18,15 @@ public class Optometry implements Serializable{
 	private String lAxis; // 左眼轴线
 	private String pd;// 瞳距
 	private String optometryTime; // 验光单添加时间
+	private User user;
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
 
 	public void setOptometryId(int optometryId){
 		this.optometryId=optometryId;

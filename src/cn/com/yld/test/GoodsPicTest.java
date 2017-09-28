@@ -7,8 +7,10 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import cn.com.yld.dao.GlassDao;
 import cn.com.yld.dao.GoodsDao;
 import cn.com.yld.dao.GoodsPicDao;
+import cn.com.yld.pojo.Glass;
 import cn.com.yld.pojo.Goods;
 import cn.com.yld.pojo.GoodsPic;
 
@@ -48,12 +50,10 @@ public class GoodsPicTest {
 	}
 	@Test
 	public void test05(){
-		GoodsPic goodsPic=new GoodsPic();
-		Goods goods=new Goods();
-		goods.setGoodsId(66);
-		goodsPic.setPic1("1564");
-		goodsPic.setGoods(goods);
 		GoodsPicDao dao=(GoodsPicDao) this.context.getBean("goodsPicDao");
-		dao.insert(goodsPic);
+		GoodsPic goodsPic=new GoodsPic();
+		goodsPic.setPic1("xxxxxx");
+		goodsPic.setGoodsId("33");
+		dao.update(goodsPic);
 	}
 }

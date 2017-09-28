@@ -16,25 +16,33 @@ public class OptometryDaoImpl extends SqlSessionDaoSupport implements OptometryD
 		List<Optometry> ls=mapper.findall();
 		return ls;
 	}
-
 	@Override
-	public List<Optometry> findbyid() {
+	public List<Optometry> findbyid(Optometry optometry) {
 		OptometryMapper mapper=this.getSqlSession().getMapper(OptometryMapper.class);
-		List<Optometry> ls=mapper.findbyid();
+		List<Optometry> ls=mapper.findbyid(optometry);
 		return ls;
 	}
-
 	@Override
 	public void insert(Optometry optometry) {
 		OptometryMapper mapper=this.getSqlSession().getMapper(OptometryMapper.class);
 		mapper.insert(optometry);
 
 	}
-
 	@Override
 	public void update(Optometry optometry) {
 		OptometryMapper mapper=this.getSqlSession().getMapper(OptometryMapper.class);
 		mapper.update(optometry);
+	}
+	@Override
+	public void dalete(Optometry optometry) {
+		OptometryMapper mapper=this.getSqlSession().getMapper(OptometryMapper.class);
+		mapper.dalete(optometry);
+		
+	}
+	@Override
+	public int pagecount() {
+		
+		return 0;
 	}
 
 }

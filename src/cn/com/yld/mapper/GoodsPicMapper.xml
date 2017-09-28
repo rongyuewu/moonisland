@@ -112,7 +112,7 @@
   	</if>
   	</trim>)
   </insert>
-  <update id="">
+  <update id="update" parameterType="goodsPic">
   	update moon_goods_pic set
   	<trim prefixOverrides=",">
   	<if test="goods!=null">
@@ -143,6 +143,6 @@
   		,pic4_thumb=#{pic4Thumb}
   	</if>
   	</trim>
-  	where pic_id=#{picId}
+  	where goods_id=#{goodsId}
   </update>
 </mapper>

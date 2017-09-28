@@ -4,16 +4,135 @@
   <resultMap type="Optometry" id="optometry">
   	<id column="optometry_id" property="optometryId"/>
   	<result column="user_id" property="userId"/>
-  	<result column="R_SPH" property="RSPH"/>
-  	<result column="R_CYL" property="RCYL"/>
-  	<result column="R_AXIS" property="RAXIS"/>
-  	<result column="L_SPH" property="LSPH"/>
-  	<result column="L_CYL" property="LCYL"/>
-  	<result column="L_AXIS" property="LAXIS"/>
-  	<result column="PD" property="PD"/>
+  	<result column="R_SPH" property="rSph"/>
+  	<result column="R_CYL" property="rCyl"/>
+  	<result column="R_AXIS" property="rAxis"/>
+  	<result column="L_SPH" property="lSph"/>
+  	<result column="L_CYL" property="lCyl"/>
+  	<result column="L_AXIS" property="lAxis"/>
+  	<result column="PD" property="pd"/>
   	<result column="optometry_time" property="optometryTime"/>
+  	<!-- 多对一 -->
+  	<association property="user" javaType="User">
+	  	<id column="user_id" property="userId"/>
+	  	<result column="points" property="points"/>
+	  	<result column="user_level" property="userLevel"/>
+	  	<result column="is_privilege" property="isPrivilege"/>
+	  	<result column="privilege_num" property="privilegeNum"/>
+	  	<result column="phone" property="phone"/>
+	  	<result column="nick_name" property="nickName"/>
+	  	<result column="header_pic" property="headerPic"/>
+	  	<result column="password" property="password"/>
+	  	<result column="sex" property="sex"/>
+	  	<result column="birthday" property="birthday"/>
+	  	<result column="zipcode" property="zipcode"/>
+	  	<result column="mobile" property="mobile"/>
+	  	<result column="mail" property="mail"/>
+	  	<result column="user_time" property="userTime"/>
+	  	<result column="user_status" property="userStatus"/>
+  	</association>
   </resultMap>
  	<select id="findall" resultMap="optometry">
- 		select * from moon_optometry;
- 	</select>
+  	select * from moon_optometry o,moon_user u where o.user_id=u.user_id
+  </select>
+  <select id="findbyid" resultMap="optometry" parameterType="optometry">
+  	select * from moon_optometry o,moon_user u where o.user_id=u.user_id and u.user_id=#{userId}
+  </select>
+  <delete id="delete" parameterType="optometry">
+  	delete from moon_optometry where optometry_id=#{optometryId}
+  </delete>
+  <insert id="insert" parameterType="optometry">
+  	insert into moon_optometry(
+  	<trim prefixOverrides=",">
+  	<if test="user!=null">
+  		user_id
+  	</if>
+  	<if test="rSph!=null">
+  		,R_SPH
+  	</if>
+  	<if test="rCyl!=null">
+  		,R_CYL
+  	</if>
+  	<if test="rAxis!=null">
+  		,R_AXIS
+  	</if>
+  	<if test="lSph!=null">
+  		,L_SPH
+  	</if>
+  	<if test="lCyl!=null">
+  		,L_CYL
+  	</if>
+  	<if test="lAxis!=null">
+  		,L_AXIS
+  	</if>
+  	<if test="pd!=null">
+  		,PD
+  	</if>
+  	<if test="optometryTime!=null">
+  		,optometry_time
+  	</if>
+  	</trim>)values(
+  	<trim prefixOverrides=",">
+  	<if test="user!=null">
+  		#{user.userId}
+  	</if>
+  	<if test="rSph!=null">
+  		,#{rSph}
+  	</if>
+  	<if test="rCyl!=null">
+  		,#{rCyl}
+  	</if>
+  	<if test="rAxis!=null">
+  		,#{rAxis}
+  	</if>
+  	<if test="lSph!=null">
+  		,#{lSph}
+  	</if>
+  	<if test="lCyl!=null">
+  		,#{lCyl}
+  	</if>
+  	<if test="lAxis!=null">
+  		,#{lAxis}
+  	</if>
+  	<if test="pd!=null">
+  		,#{pd}
+  	</if>
+  	<if test="optometryTime!=null">
+  		,#{optometryTime}
+  	</if>
+  	</trim>)
+  </insert>
+  <update id="update" parameterType="optometry">
+  	update moon_optometry set
+  	<trim prefixOverrides=",">
+  	<if test="user!=null">
+  		user_id=#{user.userId}
+  	</if>
+  	<if test="rSph!=null">
+  		,R_SPH=#{rSph}
+  	</if>
+  	<if test="rCyl!=null">
+  		,R_CYL=#{rCyl}
+  	</if>
+  	<if test="rAxis!=null">
+  		,R_AXIS=#{rAxis}
+  	</if>
+  	<if test="lSph!=null">
+  		,L_SPH=#{lSph}
+  	</if>
+  	<if test="lCyl!=null">
+  		,L_CYL=#{lCyl}
+  	</if>
+  	<if test="lAxis!=null">
+  		,L_AXIS=#{lAxis}
+  	</if>
+  	<if test="pd!=null">
+  		,PD=#{pd}
+  	</if>
+  	<if test="optometryTime!=null">
+  		,optometry_time=#{optometryTime}
+  	</if>
+  	</trim>
+  	where user_id=#{userId}
+  </update>
 </mapper>

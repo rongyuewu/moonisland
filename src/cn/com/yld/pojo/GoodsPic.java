@@ -19,8 +19,6 @@ public class GoodsPic implements Serializable{
 	private String pic3Thumb;
 	private String pic4Thumb;
 	private Goods goods;
-	
-
 	public Goods getGoods() {
 		return goods;
 	}
