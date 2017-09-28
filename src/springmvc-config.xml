@@ -78,6 +78,9 @@
 	 	<bean id="goodsCommentDao" class="cn.com.yld.dao.impl.GoodsCommentDaoImpl">
 	 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
 	 	</bean>
+	 	<bean id="goodsAttrDao" class="cn.com.yld.dao.impl.GoodsAttrDaoImpl">
+	 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+	 	</bean>
 		<bean id="orderDao" class="cn.com.yld.dao.impl.OrderDaoImpl">
 	 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
 	 	</bean>
@@ -119,6 +122,15 @@
 		<bean id="optometryService" class="cn.com.yld.service.impl.OptometryServiceImpl">
 	 		<property name="dao" ref="optometryDao"></property>
 	 	</bean> -->
+	 	<bean id="goods" class="cn.com.yld.service.impl.GoodsServiceImpl">
+	 		<property name="dao" ref="goodsDao"></property>
+	 	</bean>
+	 	<bean id="goodsAttr" class="cn.com.yld.service.impl.GoodsAttrServiceImpl">
+	 		<property name="dao" ref="goodsAttrDao"></property>
+	 	</bean>
+	 	<bean id="goodsComment" class="cn.com.yld.service.impl.GoodsCommentServiceImpl">
+	 		<property name="dao" ref="goodsCommentDao"></property>
+	 	</bean>
 	 	
 	 	
 	
