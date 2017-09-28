@@ -33,7 +33,10 @@
   	</association>
   </resultMap>
  <select id="findall" resultMap="adsrestltMap">
-  	select * from moon_address a,moon_user u where  u.user_id=a.user_id
+  	select * from moon_address 
+  </select>
+  <select id="findbyid" parameterType="Address" resultMap="adsrestltMap">
+  	select * from moon_address where address_id=#{addressId}
   </select>
   <insert id="insert" parameterType="Address">
   	insert into moon_address(
@@ -99,12 +102,9 @@
   		)
   </insert>
   <update id="update" parameterType="Address">
-  	update moon_address set address_state ='1' where address_id =#{addressId}
-  </update>
-  <update id="updatezero" parameterType="Address">
-  	update moon_address set address_state ='0' where address_id =#{addressId}
+  	update moon_address set address_state =#{addressState} where address_id =#{addressId}
   </update>
   <delete id="delect" parameterType="Address">
-  	delete * from moon_address where address_id=#{addressId}
+  	delete from moon_address where address_id=#{addressId}
   </delete>
 </mapper>
