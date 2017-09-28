@@ -1,6 +1,8 @@
 package cn.com.yld.dao.impl;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 
@@ -42,15 +44,24 @@ public class GlassDaoImpl extends SqlSessionDaoSupport implements GlassDao {
 	}
 
 	@Override
-	public List<Glass> findbylike() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public void cleandelete(Glass glass) {
 		GlassMapper mapper = this.getSqlSession().getMapper(GlassMapper.class);
 		mapper.cleandelete(glass);;
+	}
+
+	@Override
+	public List<Glass> findbylike(int page,int num) {
+		GlassMapper mapper=this.getSqlSession().getMapper(GlassMapper.class);
+		Map<String, Integer> map=new HashMap<>();
+		map.put("num1", (page-1)*num);
+		map.put("num2", num);
+		return mapper.findbylike(map);
+	}
+
+	@Override
+	public String findnumber() {
+		GlassMapper mapper = this.getSqlSession().getMapper(GlassMapper.class);
+		return mapper.findnumber();
 	}
 
 }

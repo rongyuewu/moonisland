@@ -1,6 +1,8 @@
 package cn.com.yld.mapper;
 
 import java.util.List;
+import java.util.Map;
+
 import cn.com.yld.pojo.Glass;
 
 public interface GlassMapper {
@@ -17,5 +19,7 @@ public interface GlassMapper {
 	//清除删除
 	public void cleandelete(Glass glass);
 	//分页
-	public List<Glass> findbylike();
+	public List<Glass> findbylike(Map<String, Integer> map);
+	//查询数量
+	public String findnumber();
 }
