@@ -7,30 +7,29 @@ import cn.com.yld.pojo.Returnorder;
 import cn.com.yld.service.ReturnorderService;
 
 public class ReturnorderServiceImpl implements ReturnorderService {
-	private ReturnorderDao dao;
+	private ReturnorderDao returnorderdao;
 	
-
-	public ReturnorderDao getDao() {
-		return dao;
+	public ReturnorderDao getReturnorderdao() {
+		return returnorderdao;
 	}
 
-	public void setDao(ReturnorderDao dao) {
-		this.dao = dao;
+	public void setReturnorderdao(ReturnorderDao returnorderdao) {
+		this.returnorderdao = returnorderdao;
 	}
 
 	@Override
 	public List<Returnorder> find() {
-		return dao.findall();
+		return returnorderdao.findall();
 	}
 
 	@Override
 	public void insert(Returnorder returnorder) {
-		dao.insert(returnorder);
+		returnorderdao.insert(returnorder);
 	}
 
 	@Override
 	public void update(Returnorder returnorder) {
-		dao.update(returnorder);
+		returnorderdao.update(returnorder);
 	}
 
 }

@@ -7,37 +7,39 @@ import cn.com.yld.pojo.About;
 import cn.com.yld.service.AboutService;
 
 public class AboutServiceImpl implements AboutService {
-	private AboutDao dao;
+	private AboutDao aboutDao;
 	
-	public AboutDao getDao() {
-		return dao;
+
+
+	public AboutDao getAboutDao() {
+		return aboutDao;
 	}
 
-	public void setDao(AboutDao dao) {
-		this.dao = dao;
+	public void setAboutDao(AboutDao aboutDao) {
+		this.aboutDao = aboutDao;
 	}
 
 	@Override
 	public List<About> findall() {
 		
-		return this.dao.findall();
+		return this.aboutDao.findall();
 	}
 
 	@Override
 	public void insert(About about) {
-		this.dao.insert(about);
+		this.aboutDao.insert(about);
 
 	}
 
 	@Override
 	public void update(About about) {
-		this.dao.update(about);
+		this.aboutDao.update(about);
 
 	}
 
 	@Override
 	public void delete(About about) {
-		this.dao.delete(about);
+		this.aboutDao.delete(about);
 
 	}
 

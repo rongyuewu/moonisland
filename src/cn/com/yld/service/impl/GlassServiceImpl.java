@@ -8,38 +8,40 @@ import cn.com.yld.service.GlassService;
 
 public class GlassServiceImpl implements GlassService {
 
-	private GlassDao dao;
-	public GlassDao getDao() {
-		return dao;
+	private GlassDao glassDao;
+	
+
+	public GlassDao getGlassDao() {
+		return glassDao;
 	}
 
-	public void setDao(GlassDao dao) {
-		this.dao = dao;
+	public void setGlassDao(GlassDao glassDao) {
+		this.glassDao = glassDao;
 	}
 
 	@Override
 	public List<Glass> findall() {
-		return this.dao.findall();
+		return this.glassDao.findall();
 	}
 
 	@Override
 	public List<Glass> findbyid() {
-		return this.dao.findbyid();
+		return this.glassDao.findbyid();
 	}
 
 	@Override
 	public void insert(Glass glass) {
-		this.dao.insert(glass);
+		this.glassDao.insert(glass);
 	}
 
 	@Override
 	public void update(Glass glass) {
-		this.dao.update(glass);
+		this.glassDao.update(glass);
 	}
 
 	@Override
 	public void delete(Glass glass) {
-		this.dao.delete(glass);
+		this.glassDao.delete(glass);
 	}
 
 	@Override
@@ -50,7 +52,7 @@ public class GlassServiceImpl implements GlassService {
 
 	@Override
 	public void cleandelete(Glass glass) {
-		this.dao.cleandelete(glass);
+		this.glassDao.cleandelete(glass);
 	}
 
 	

@@ -7,29 +7,30 @@ import cn.com.yld.pojo.Order;
 import cn.com.yld.service.OrderService;
 
 public class OrderServiceImpl implements OrderService {
-	private OrderDao dao;
+	private OrderDao orderDao;
 	
-	public OrderDao getDao() {
-		return dao;
+
+	public OrderDao getOrderDao() {
+		return orderDao;
 	}
 
-	public void setDao(OrderDao dao) {
-		this.dao = dao;
+	public void setOrderDao(OrderDao orderDao) {
+		this.orderDao = orderDao;
 	}
 
 	@Override
 	public List<Order> findorderstatus() {
-		return dao.findorderstatus();
+		return orderDao.findorderstatus();
 	}
 
 	@Override
 	public List<String> findordernumber() {
-		return dao.findordernumber();
+		return orderDao.findordernumber();
 	}
 
 	@Override
 	public void updatederstatus(Order order) {
-		dao.updatederstatus(order);
+		orderDao.updatederstatus(order);
 
 	}
 

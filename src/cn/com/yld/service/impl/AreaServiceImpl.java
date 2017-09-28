@@ -7,24 +7,25 @@ import cn.com.yld.pojo.Area;
 import cn.com.yld.service.AreaService;
 
 public class AreaServiceImpl implements AreaService {
-	private AreaDao dao;
+	private AreaDao areadao;
 	
-	public AreaDao getDao() {
-		return dao;
+
+	public AreaDao getAreadao() {
+		return areadao;
 	}
 
-	public void setDao(AreaDao dao) {
-		this.dao = dao;
+	public void setAreadao(AreaDao areadao) {
+		this.areadao = areadao;
 	}
 
 	@Override
 	public List<Area> findall() {
-		return dao.findall();
+		return areadao.findall();
 	}
 
 	@Override
 	public List<Area> findbyid(Area area) {
-		return dao.findbyid(area);
+		return areadao.findbyid(area);
 	}
 
 }

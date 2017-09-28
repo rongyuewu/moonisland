@@ -8,44 +8,45 @@ import cn.com.yld.service.BrandService;
 
 public class BrandServiceImpl implements BrandService {
 
-	private BrandDao dao;
+	private BrandDao brandDao;
 	
-	public BrandDao getDao() {
-		return dao;
+
+	public BrandDao getBrandDao() {
+		return brandDao;
 	}
 
-	public void setDao(BrandDao dao) {
-		this.dao = dao;
+	public void setBrandDao(BrandDao brandDao) {
+		this.brandDao = brandDao;
 	}
 
 	@Override
 	public List<Brand> findall() {
-		return this.dao.findall();
+		return this.brandDao.findall();
 	}
 
 	@Override
 	public List<Brand> findbyid() {
-		return this.dao.findbyid();
+		return this.brandDao.findbyid();
 	}
 
 	@Override
 	public void insert(Brand brand) {
-		this.dao.insert(brand);
+		this.brandDao.insert(brand);
 	}
 
 	@Override
 	public void update(Brand brand) {
-		this.dao.update(brand);
+		this.brandDao.update(brand);
 	}
 
 	@Override
 	public void delete(Brand brand) {
-		this.dao.delete(brand);
+		this.brandDao.delete(brand);
 	}
 
 	@Override
 	public void cleandelete(Brand brand) {
-		this.dao.cleandelete(brand);
+		this.brandDao.cleandelete(brand);
 	}
 
 }

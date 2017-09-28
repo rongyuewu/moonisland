@@ -84,6 +84,9 @@
 		<bean id="orderDao" class="cn.com.yld.dao.impl.OrderDaoImpl">
 	 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
 	 	</bean>
+	 	<bean id="photoWallDao" class="cn.com.yld.dao.impl.PhotoWallDaoImpl">
+	 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+	 	</bean>
 	 	<bean id="goodsPicDao" class="cn.com.yld.dao.impl.GoodsPicDaoImpl">
 	 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
 	 	</bean>
@@ -100,6 +103,9 @@
 	 	</bean>
 	 	<bean id="brandService" class="cn.com.yld.service.impl.BrandServiceImpl">
 	 		<property name="brandDao" ref="brandDao"></property>
+	 	</bean>
+	 	<bean id="photoWallService" class="cn.com.yld.service.impl.PhotoWallServiceImpl">
+	 		<property name="photoWallDao" ref="photoWallDao"></property>
 	 	</bean>
 	 	<bean id="glassService" class="cn.com.yld.service.impl.GlassServiceImpl">
 	 		<property name="glassDao" ref="glassDao"></property>

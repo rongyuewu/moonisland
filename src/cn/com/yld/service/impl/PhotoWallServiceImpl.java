@@ -7,31 +7,31 @@ import cn.com.yld.pojo.PhotoWall;
 import cn.com.yld.service.PhotoWallService;
 
 public class PhotoWallServiceImpl implements PhotoWallService {
-	private PhotoWallDao dao;
+	private PhotoWallDao photoWallDao;
 
-	public PhotoWallDao getDao() {
-		return dao;
+	public PhotoWallDao getPhotoWallDao() {
+		return photoWallDao;
 	}
 
-	public void setDao(PhotoWallDao dao) {
-		this.dao = dao;
+	public void setPhotoWallDao(PhotoWallDao photoWallDao) {
+		this.photoWallDao = photoWallDao;
 	}
 
 	@Override
 	public List<PhotoWall> find() {
-		return dao.find();
+		return photoWallDao.find();
 		
 	}
 
 	@Override
 	public void insert(PhotoWall photoWall) {
-		dao.insert(photoWall);
+		photoWallDao.insert(photoWall);
 		
 	}
 
 	@Override
 	public void delete(PhotoWall photoWall) {
-		dao.delete(photoWall);
+		photoWallDao.delete(photoWall);
 		
 	}
 

@@ -7,48 +7,48 @@ import cn.com.yld.pojo.User;
 import cn.com.yld.service.UserService;
 
 public class UserServiceImpl implements UserService {
-	private UserDao dao;
+	private UserDao userDao;
 	
-	public UserDao getDao() {
-		return dao;
+	public UserDao getUserDao() {
+		return userDao;
 	}
 
-	public void setDao(UserDao dao) {
-		this.dao = dao;
+	public void setUserDao(UserDao userDao) {
+		this.userDao = userDao;
 	}
 
 	@Override
 	public List<User> findall() {
-		return dao.findall();
+		return userDao.findall();
 	}
 
 	@Override
 	public User finduser(User user) {
-		return dao.finduser(user);
+		return userDao.finduser(user);
 	}
 
 	@Override
 	public void insert(User user) {
-		dao.insert(user);
+		userDao.insert(user);
 	}
 
 	@Override
 	public void update(User user) {
-		dao.update(user);
+		userDao.update(user);
 	}
 	@Override
 	public void delete(User user) {
-		dao.delete(user);
+		userDao.delete(user);
 	}
 
 	@Override
 	public void cleandelete(User user) {
-		dao.cleandelete(user);
+		userDao.cleandelete(user);
 	}
 
 	@Override
 	public User findlogin(User user) {
-		return dao.findlogin(user);
+		return userDao.findlogin(user);
 	}
 
 }
