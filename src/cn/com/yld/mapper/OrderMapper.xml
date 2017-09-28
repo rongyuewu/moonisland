@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.com.yld.mapper.OrderMapper">
-  <resultMap type="Order" id="order">
+  <resultMap type="Order" id="orderresultMap">
   	<id column="order_id" property="orderId"/>
   	<result column="order_number" property="orderNumber"/>
   	<result column="goods_id" property="goodsId"/>
@@ -111,12 +111,15 @@
 			<id column="pic_id" property="picId"/>
 		</association>
   </resultMap>
-  <select id="findorderstatus" resultMap="order">
-  	select * from moon_order where order_status=1
+  <select id="findorderstatus" resultMap="orderresultMap">
+  	select * from moon_order where order_status=4
   </select>
   <!-- 获取所有订单编号 -->
-  <select id="findordernumber" resultType="list">
-  	select o.order_number from moon_order o
+  <select id="findordernumber" resultMap="orderresultMap">
+  	select distinct o.order_number,u.nick_name,o.order_status from moon_order o,moon_user u where u.user_id=o.user_id
+  </select>
+  <select id="findorder" parameterType="Order" resultMap="orderresultMap">
+  	select * from moon_order where order_number=#{orderNumber}
   </select>
   <update id="updatederstatus" parameterType="Order">
   	update moon_cart set order_status=2 where order_id=#{orderId}
