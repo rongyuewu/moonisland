@@ -5,19 +5,21 @@ import cn.com.yld.pojo.Admin;
 import cn.com.yld.service.AdminService;
 
 public class AdminServiceImpl implements AdminService {
-	private AdminDao dao;
-	
-	public AdminDao getDao() {
-		return dao;
+	private AdminDao adminDao;
+
+	public AdminDao getAdminDao() {
+		return adminDao;
 	}
 
-	public void setDao(AdminDao dao) {
-		this.dao = dao;
+	public void setAdminDao(AdminDao adminDao) {
+		this.adminDao = adminDao;
 	}
+
+
 
 	@Override
 	public Admin find(Admin admin) {
-		return dao.find(admin);
+		return adminDao.find(admin);
 	}
 
 }

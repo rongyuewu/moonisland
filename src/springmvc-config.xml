@@ -54,6 +54,9 @@
 	 	<bean id="aboutDao" class="cn.com.yld.dao.impl.AboutDaoImpl">
 	 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
 	 	</bean>
+	 	<bean id="adminDao" class="cn.com.yld.dao.impl.AdminDaoImpl">
+	 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+	 	</bean>
 	 	<bean id="userDao" class="cn.com.yld.dao.impl.UserDaoImpl">
 	 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
 	 	</bean>
@@ -96,10 +99,15 @@
 	 	<bean id="addressDao" class="cn.com.yld.dao.impl.AddressDaoImpl">
 	 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
 	 	</bean>
-	 	
+	 	<bean id="saveDao" class="cn.com.yld.dao.impl.SaveDaoImpl">
+	 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+	 	</bean>
 	 	<!-- 业务层 -->
 	 	<bean id="aboutService" class="cn.com.yld.service.impl.AboutServiceImpl">
 	 		<property name="aboutDao" ref="aboutDao"></property>
+	 	</bean>
+	 	<bean id="adminService" class="cn.com.yld.service.impl.AdminServiceImpl">
+	 		<property name="adminDao" ref="adminDao"></property>
 	 	</bean>
 	 	<bean id="userService" class="cn.com.yld.service.impl.UserServiceImpl">
 	 		<property name="userDao" ref="userDao"></property>
@@ -140,7 +148,14 @@
 	 	<bean id="goodsService" class="cn.com.yld.service.impl.GoodsServiceImpl">
 	 		<property name="goodsDao" ref="goodsDao"></property>
 	 	</bean>
-		 	<!-- springMVC-->					
+	 	<bean id="addressService" class="cn.com.yld.service.impl.AddressServiceImpl">
+	 		<property name="addressDao" ref="addressDao"></property>
+	 	</bean>
+	 	<bean id="saveService" class="cn.com.yld.service.impl.SaveServiceImpl">
+	 		<property name="saveDao" ref="saveDao"></property>
+	 	</bean>
+	 	
+		<!-- springMVC-->					
 		<!-- <bean name="/login" class="cn.com.action.UserAction"></bean> -->	
 		<!-- 处理静态资源使用 ,虽然使用了spring框架的核心控制器，但是不做任何处理-->
 		<mvc:default-servlet-handler/>

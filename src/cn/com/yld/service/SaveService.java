@@ -1,10 +1,10 @@
-package cn.com.yld.mapper;
+package cn.com.yld.service;
 import java.util.List;
 import java.util.Map;
 
 import cn.com.yld.pojo.Save;
 
-public interface SaveMapper {
+public interface SaveService {
 	// 查询全部
 	public List<Save> findall(Save save);
 	// id查询
@@ -16,5 +16,5 @@ public interface SaveMapper {
 	//页数
 	public int pagecount();
 	// 分页
-	public List<Save> findbylike(Map<String, Integer> map);
+	public List<Save> findbylike(int page,int num);
 }
