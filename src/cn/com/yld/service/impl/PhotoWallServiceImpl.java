@@ -30,8 +30,8 @@ public class PhotoWallServiceImpl implements PhotoWallService {
 	}
 
 	@Override
-	public void delete(PhotoWall photoWall) {
-		photoWallDao.delete(photoWall);
+	public void update(PhotoWall photoWall) {
+		photoWallDao.update(photoWall);
 		
 	}
 

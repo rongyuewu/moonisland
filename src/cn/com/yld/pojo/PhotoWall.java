@@ -12,6 +12,7 @@ public class PhotoWall implements Serializable{
 	private String photoUrl; // 照片墙地址
 	private String photoWord; // 照片描述
 	private String photoTime;// 添加时间
+	private String photoStatus;//状态0选中1未选中
 
 	public void setPhotoId(int photoId){
 		this.photoId=photoId;
@@ -21,12 +22,13 @@ public class PhotoWall implements Serializable{
 		return photoId;
 	}
 
-	public void setPhotoUrl(String photoUrl){
-		this.photoUrl=photoUrl;
+
+	public String getPhotoUrl() {
+		return photoUrl;
 	}
 
-	public String getPhotoUrl(){
-		return photoUrl;
+	public void setPhotoUrl(String photoUrl) {
+		this.photoUrl = photoUrl;
 	}
 
 	public void setPhotoWord(String photoWord){
@@ -44,5 +46,14 @@ public class PhotoWall implements Serializable{
 	public String getPhotoTime(){
 		return photoTime;
 	}
+
+	public String getPhotoStatus() {
+		return photoStatus;
+	}
+
+	public void setPhotoStatus(String photoStatus) {
+		this.photoStatus = photoStatus;
+	}
+	
 }
 

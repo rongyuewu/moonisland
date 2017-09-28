@@ -6,6 +6,7 @@
   	<result column="photo_url" property="photoUrl"/>
   	<result column="photo_word" property="photoWord"/>
   	<result column="photo_time" property="photoTime"/>
+  	<result column="photo_status" property="photoStatus"/>
   </resultMap>
   <!-- 查询 -->
   <select id="find" resultMap="photoWall">
@@ -16,27 +17,31 @@
   	insert into moon_photo_wall(
 	<trim prefixOverrides=",">
 		<if test="photoUrl != null">
-			#{photo_url}
+			photo_url
 		</if>
 		<if test="photoWord != null">
-			,#{photo_word}
+			,photo_word
 		</if>
 		<if test="photoTime != null">
-			,#{photo_time}
+			,photo_time
 		</if>
 	</trim>
 	)values(
 	<trim prefixOverrides=",">
 		<if test="photoUrl != null">
-			photo_url=#{photoUrl}
+			#{photoUrl}
 		</if>
 		<if test="photoWord != null">
-			,photo_word=#{photoWord}
+			,#{photoWord}
 		</if>
 		<if test="photoTime != null">
-			,photo_time=#{photoTime}
+			,#{photoTime}
 		</if>
 	</trim>
 	)
   </insert>
+  <!-- 更新 -->
+  <update id="update" parameterType="photoWall">
+  	update moon_photo_wall set photo_status =#{photoStatus} where photo_id =#{photoId}
+  </update>
 </mapper>

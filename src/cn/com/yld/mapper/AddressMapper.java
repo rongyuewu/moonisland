@@ -15,9 +15,7 @@ public interface AddressMapper {
 	// 删除
 	public void delect(Address address);
 
-	// 修改状态1
+	//更新
 	public void update(Address address);
 
-	// 修改状态0
-	public void updatezero(Address address);
 }

@@ -41,10 +41,4 @@ public class AddressDaoImpl extends SqlSessionDaoSupport implements AddressDao {
 
 	}
 
-	@Override
-	public void updatezero(Address address) {
-		AddressMapper mapper = this.getSqlSession().getMapper(AddressMapper.class);
-		mapper.updatezero(address);
-	}
-
 }

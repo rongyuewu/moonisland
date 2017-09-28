@@ -23,10 +23,9 @@ public class PhotoWallDaoImpl extends SqlSessionDaoSupport implements PhotoWallD
 	}
 
 	@Override
-	public void delete(PhotoWall photoWall) {
+	public void update(PhotoWall photoWall) {
 		PhotoWallMapper mapper = this.getSqlSession().getMapper(PhotoWallMapper.class);
-		mapper.delete(photoWall);
-		
+		mapper.update(photoWall);
 	}
 
 }
