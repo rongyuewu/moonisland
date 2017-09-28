@@ -59,5 +59,12 @@ public class GoodsTest {
 		GoodsDao dao=(GoodsDao) this.context.getBean("goodsDao");
 		dao.findlimitpri(1, 4, 0);
 	}
+	//分页排序
+		@Test
+		public void test8(){
+			GoodsDao dao=(GoodsDao) this.context.getBean("goodsDao");
+			
+			System.out.println("+++++++++++++++++++++++"+dao.findcount());
+		}
 }
 
