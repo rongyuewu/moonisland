@@ -12,6 +12,24 @@ public class Save implements Serializable{
 	private String goodsId; // 商品id
 	private String userId; // 用户id
 	private String saveTime; // 收藏时间
+	private User user;
+	private Goods goods;
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Goods getGoods() {
+		return goods;
+	}
+
+	public void setGoods(Goods goods) {
+		this.goods = goods;
+	}
 
 	public void setSaveId(int saveId){
 		this.saveId=saveId;
