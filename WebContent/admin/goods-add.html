@@ -183,7 +183,7 @@
 		</div>
 		<div class="row cl">
 			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
-				<button onClick="submit_form();" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe632;</i> 保存并提交审核</button>
+				<a onClick="submit_form();" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe632;</i> 保存并提交审核</a>
 				<button onClick="layer_close();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
 			</div>
 		</div>
@@ -210,12 +210,17 @@ $.get("../brand/brandlistjs",function(data){
 	}
 	$("#brand").html(str);
 });
-function submit_form(){
+ function submit_form(){
 	var form={"brand.brandId":$("#brand").val(),"goodsName":$("#goodsname").val(),"category":$("#category").val(),"originalPrice":$("#original_price").val(),"salesPrice":$("#sales_price").val(),"goodsColor":$("#goods_color").val(),"goodsContent":$("#goods_content").val(),"browseNum":$("#browse_num").val(),"saveNum":$("#save_num").val(),"isSale":$("#is_sale").val(),"isOnsale":$("#is_sale").val(),"stockNum":$("#stock_num").val(),"minusPrice":$("#minus_price").val(),"privilege":$("#privilege").val(),"points":$("#points").val(),"style":$("#style").val(),"styleA":$("#style_A").val(),"styleB":$("#style_B").val(),"styleC":$("#style_C").val(),"styleD":$("#style_D").val(),"styleE":$("#style_E").val()};
 	$.post("../goods/addgoods",form,function(data){
-		console.log("++++++++++++++++++++++++++++"+data);
+		if(data=="1"){
+			var a=confirm("添加成功是否返回？");
+			if(a){
+				layer_close();
+			}
+		}
 	});
-}
+} 
 </script>
 </body>
 </html>
