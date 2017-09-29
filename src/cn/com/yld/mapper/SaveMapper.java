@@ -16,5 +16,5 @@ public interface SaveMapper {
 	//页数
 	public int pagecount();
 	// 分页
-	public List<Save> findbylimit(Map<String, Integer> map);
+	public List<Save> findbylimit(Map map);
 }

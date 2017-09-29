@@ -69,7 +69,7 @@
   <select id="pagecount" resultType="int">
   	select ceil(count(*)/5) from moon_save
   </select>
-  <select id="findbylimit" resultMap="saveresultMap">
-  	select * from moon_save limit #{num1},#{num2}
+  <select id="findbylimit" parameterType="map" resultMap="saveresultMap">
+  	select * from moon_save where user_id=#{num2} limit #{num1},5
   </select>
 </mapper>

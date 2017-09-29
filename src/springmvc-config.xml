@@ -133,10 +133,10 @@
 	 	<bean id="orderService" class="cn.com.yld.service.impl.OrderServiceImpl">
 	 		<property name="orderDao" ref="orderDao"></property>
 	 	</bean>
-	 	<!-- <bean id="goodsPicService" class="cn.com.yld.service.impl.GoodsPicServiceImpl">
+	 	<bean id="goodsPicService" class="cn.com.yld.service.impl.GoodsPicServiceImpl">
 	 		<property name="goodsPicDao" ref="goodsPicDao"></property>
 	 	</bean>
-		<bean id="optometryService" class="cn.com.yld.service.impl.OptometryServiceImpl">
+		<!-- <bean id="optometryService" class="cn.com.yld.service.impl.OptometryServiceImpl">
 	 		<property name="optometryDao" ref="optometryDao"></property>
 	 	</bean> -->
 	 	<bean id="goodsCommentService" class="cn.com.yld.service.impl.GoodsCommentServiceImpl">

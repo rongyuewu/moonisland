@@ -2,7 +2,9 @@ package cn.com.yld.test;
 
 import static org.junit.Assert.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -54,8 +56,13 @@ public class SaveTest {
 	@Test 
 	public void test5(){
 		SaveDao dao = (SaveDao) this.context.getBean("saveDao");
-		dao.findbylimit(1, 3);
-		System.out.println(dao);
+		Map map=new HashMap();
+		map.put("num1", 1);
+		map.put("num2", "2");
+		List<Save> ls= dao.findbylimit(map);
+		for (Save save : ls) {
+			System.out.println(save.toString());
+		}
 	}
 	@Test 
 	public void test6(){
