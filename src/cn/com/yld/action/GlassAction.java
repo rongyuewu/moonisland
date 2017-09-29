@@ -25,10 +25,17 @@ public class GlassAction {
 		int num=glassService.findnumber();
 		return num;
 	}
+	@RequestMapping(value="/page")
+	@ResponseBody
+	public int page(){
+		double num = glassService.findnumber();
+		int page = (int) Math.ceil(num/5);
+		return page;
+	}
 	@RequestMapping(value="/glasslist")
 	@ResponseBody
 	public List<Glass> f2(){
-		List<Glass> list=glassService.findall();
+		List<Glass> list=glassService.findbylike(1, 5);
 		return list;
 	}
 }

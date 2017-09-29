@@ -76,15 +76,19 @@ $.get("../glass/glasslist",function(date){
 $.get("../glass/number",function(date){
 	$("#number").html(date);
 });
-$('#box').paging({
-    initPageNo: 1, // 初始页码
-    totalPages: 5, //总页数
-    slideSpeed: 600, // 缓动速度。单位毫秒
-    jump: true, //是否支持跳转
-    callback: function(page) { // 回调函数
-        console.log(page);
-    }
-})
+$.get("../glass/page",function(date){
+	$('#box').paging({
+	    initPageNo: 1, // 初始页码
+	    totalPages: date, //总页数
+	    slideSpeed: 600, // 缓动速度。单位毫秒
+	    jump: true, //是否支持跳转
+	    callback: function(page) { // 回调函数
+	        console.log(page);
+	    
+	    }
+	})
+});
+
 </script>
 </body>
 </html>
