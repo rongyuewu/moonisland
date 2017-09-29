@@ -43,6 +43,22 @@ public class Order implements Serializable{
 	private GoodsPic goodsPic;
 	
 
+	public GoodsAttr getGoodsAttr() {
+		return goodsAttr;
+	}
+
+	public void setGoodsAttr(GoodsAttr goodsAttr) {
+		this.goodsAttr = goodsAttr;
+	}
+
+	public GoodsPic getGoodsPic() {
+		return goodsPic;
+	}
+
+	public void setGoodsPic(GoodsPic goodsPic) {
+		this.goodsPic = goodsPic;
+	}
+
 	public Goods getGoods() {
 		return goods;
 	}
@@ -277,16 +293,75 @@ public class Order implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Order [orderId=" + orderId + ", orderNumber=" + orderNumber + ", goodsId=" + goodsId + ", glassId="
-				+ glassId + ", userId=" + userId + ", optometryId=" + optometryId + ", orderStatus=" + orderStatus
-				+ ", shippingStatus=" + shippingStatus + ", payStatus=" + payStatus + ", consignee=" + consignee
-				+ ", provinceid=" + provinceid + ", cityid=" + cityid + ", districtid=" + districtid + ", address="
-				+ address + ", zipcode=" + zipcode + ", phone=" + phone + ", payNum=" + payNum + ", orderMoney="
-				+ orderMoney + ", postscript=" + postscript + ", shippingId=" + shippingId + ", shippingName="
-				+ shippingName + ", shippingNum=" + shippingNum + ", orderTime=" + orderTime + ", goodsAttrid="
-				+ goodsAttrid + ", picId=" + picId + ", goods=" + goods + ", glass=" + glass + ", user=" + user
-				+ ", optometry=" + optometry + ", goodsAttr=" + goodsAttr + ", goodsPic=" + goodsPic + "]";
+		StringBuilder builder = new StringBuilder();
+		builder.append("Order [orderId=");
+		builder.append(orderId);
+		builder.append(", orderNumber=");
+		builder.append(orderNumber);
+		builder.append(", goodsId=");
+		builder.append(goodsId);
+		builder.append(", glassId=");
+		builder.append(glassId);
+		builder.append(", userId=");
+		builder.append(userId);
+		builder.append(", optometryId=");
+		builder.append(optometryId);
+		builder.append(", orderStatus=");
+		builder.append(orderStatus);
+		builder.append(", shippingStatus=");
+		builder.append(shippingStatus);
+		builder.append(", payStatus=");
+		builder.append(payStatus);
+		builder.append(", consignee=");
+		builder.append(consignee);
+		builder.append(", provinceid=");
+		builder.append(provinceid);
+		builder.append(", cityid=");
+		builder.append(cityid);
+		builder.append(", districtid=");
+		builder.append(districtid);
+		builder.append(", address=");
+		builder.append(address);
+		builder.append(", zipcode=");
+		builder.append(zipcode);
+		builder.append(", phone=");
+		builder.append(phone);
+		builder.append(", payNum=");
+		builder.append(payNum);
+		builder.append(", orderMoney=");
+		builder.append(orderMoney);
+		builder.append(", postscript=");
+		builder.append(postscript);
+		builder.append(", shippingId=");
+		builder.append(shippingId);
+		builder.append(", shippingName=");
+		builder.append(shippingName);
+		builder.append(", shippingNum=");
+		builder.append(shippingNum);
+		builder.append(", orderTime=");
+		builder.append(orderTime);
+		builder.append(", goodsAttrid=");
+		builder.append(goodsAttrid);
+		builder.append(", picId=");
+		builder.append(picId);
+		builder.append(", goods=");
+		builder.append(goods);
+		builder.append(", glass=");
+		builder.append(glass);
+		builder.append(", user=");
+		builder.append(user);
+		builder.append(", optometry=");
+		builder.append(optometry);
+		builder.append(", goodsAttr=");
+		builder.append(goodsAttr);
+		builder.append(", goodsPic=");
+		builder.append(goodsPic);
+		builder.append("]");
+		return builder.toString();
 	}
+	
+
+	
 	
 }
 

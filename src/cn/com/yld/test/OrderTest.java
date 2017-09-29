@@ -22,7 +22,9 @@ public class OrderTest {
 	@Test
 	public void test01(){
 		OrderService dao=(OrderService) this.context.getBean("orderService");
-		List<Order> ls=dao.findordernumber();
+		Order order=new Order();
+		order.setOrderNumber("201791947123456");
+		List<Order> ls=dao.findorder(order);
 		for (Order order1 : ls) {
 			System.out.println(order1.toString());
 		}

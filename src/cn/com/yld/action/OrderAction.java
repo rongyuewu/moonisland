@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -33,6 +33,18 @@ public class OrderAction {
 	@ResponseBody
 	public List<Order> list(){
 		List<Order> ls=this.orderService.findordernumber();
+		return ls;
+	}
+	@RequestMapping(value="/xiangxi")
+	@ResponseBody
+	public List<Order> xiangxi(@RequestParam("number") String number){
+		System.out.println(number);
+		Order order=new Order();
+		order.setOrderNumber(number);
+		List<Order> ls=this.orderService.findorder(order);
+		for (Order order2 : ls) {
+			System.out.println(order2.toString());
+		}
 		return ls;
 	}
 }
