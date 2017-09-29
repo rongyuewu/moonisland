@@ -10,7 +10,6 @@ public class AboutServiceImpl implements AboutService {
 	private AboutDao aboutDao;
 	
 
-
 	public AboutDao getAboutDao() {
 		return aboutDao;
 	}

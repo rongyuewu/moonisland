@@ -69,4 +69,16 @@ public class GoodsDaoImpl extends SqlSessionDaoSupport implements GoodsDao{
 		return mapper.findlimitpri(map);
 	}
 
+	@Override
+	public int findcount() {
+		GoodsMapper mapper=this.getSqlSession().getMapper(GoodsMapper.class);
+		return mapper.findcount();
+	}
+
+	@Override
+	public List<Goods> findbyAvailable() {
+		GoodsMapper mapper=this.getSqlSession().getMapper(GoodsMapper.class);
+		return mapper.findbyAvailable();
+	}
+
 }

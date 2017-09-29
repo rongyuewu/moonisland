@@ -7,7 +7,7 @@ public interface PhotoWallService {
 	public List<PhotoWall> find();
 	// 插入
 	public void insert(PhotoWall photoWall);
-	// 删除
-	public void delete(PhotoWall photoWall);
+	//更新
+	public void update(PhotoWall photoWall);
 
 }

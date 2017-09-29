@@ -204,6 +204,11 @@
 			SELECT g.*,b.* FROM moon_goods g,moon_brand b where g.brand_id=b.brand_id && g.is_on_sale=1;
 		]]>
   </select>
+  <select id="findcount"  resultType="int">
+  <![CDATA[
+			SELECT count(*) FROM moon_goods g,moon_brand b where g.brand_id=b.brand_id && g.is_on_sale=1;
+		]]>
+  </select>
 	<select id="findbylike" parameterType="map" resultMap="goodsMap">
   <![CDATA[
 			SELECT g.*,b.* FROM moon_goods g,moon_brand b where g.brand_id=b.brand_id and goods_name like '${str}%';

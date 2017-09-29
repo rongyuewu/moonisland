@@ -28,5 +28,23 @@ public class PhotoWallTest {
 			System.out.println(photoWall.getPhotoWord());
 		}
 	}
-	
+	@Test
+	public void test02(){
+		PhotoWallDao dao = (PhotoWallDao) this.context.getBean("photoWallDao");
+		PhotoWall pw = new PhotoWall();
+		pw.setPhotoUrl("lib/webuploader/0.1.5/server/upload/15035344765.jpg");
+		pw.setPhotoWord("xxx");
+		pw.setPhotoTime("20070928");
+		dao.insert(pw);
+		System.out.println(pw);
+	}
+	@Test
+	public void test03(){
+		PhotoWallDao dao = (PhotoWallDao) this.context.getBean("photoWallDao");
+		PhotoWall pw = new PhotoWall();
+		pw.setPhotoId(4);
+		pw.setPhotoStatus("1");
+		dao.update(pw);
+		System.out.println(pw);
+	}
 }

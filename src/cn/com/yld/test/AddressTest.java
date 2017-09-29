@@ -26,8 +26,45 @@ public class AddressTest {
 		AddressDao dao = (AddressDao) this.context.getBean("addressDao");
 		List<Address> ls = dao.findall();
 		for (Address address : ls) {
-			System.out.println(address.getUserName());
+			System.out.println(address.getProvinceid());
 		}
 	}
+	@Test
+	public void testbyid() {
+		AddressDao dao = (AddressDao) this.context.getBean("addressDao");
+		Address addr = new Address();
+		addr.setAddressId(1);
+		List<Address> ls = dao.findbyid(addr);
+		for (Address address : ls) {
+			System.out.println(address.getProvinceid());
+		}
+	}
+	@Test
+	public void testinsert() {
+		AddressDao dao = (AddressDao) this.context.getBean("addressDao");
+		Address addr = new Address();
+		addr.setAddressId(1);
+		addr.setProvinceid("天津");
+		addr.setCityid("红桥");
+		dao.insert(addr);
+		System.out.println(addr);
+	}
+	@Test
+	public void delect(){
+		AddressDao dao = (AddressDao) this.context.getBean("addressDao");
+		Address address = new Address();
+		address.setAddressId(2);
+		dao.delect(address);
+		System.out.println(dao);
+	}
 
+	@Test
+	public void update(){
+		AddressDao dao = (AddressDao) this.context.getBean("addressDao");
+		Address address = new Address();
+		address.setAddressId(3);
+		address.setAddressState("1");
+		dao.update(address);
+		System.out.println(dao);
+	}
 }

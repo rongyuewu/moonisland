@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.com.yld.mapper.SaveMapper">
-  <resultMap type="Save" id="save">
+  <resultMap type="Save" id="saveresultMap">
   	<id column="save_id" property="saveId"/>
   	<result column="goods_id" property="goodsId"/>
   	<result column="user_id" property="userId"/>
@@ -54,8 +54,22 @@
 		  	<result column="add_time" property="addTime"/>
 		</association>
   </resultMap>
-  
-  <select id="find" parameterType="photoWall">
-  	
+  <select id="findall" parameterType="photoWall">
+  	select * from moon_save 
+  </select>
+  <select id="findbyid" parameterType="photoWall">
+  	 select * from moon_save where user_id=#{userId}
+  </select>
+  <insert id="insert">
+  	insert into moon_save(goods_id,user_id,save_time)values(#{goodId},#{userId},#{saveTime})
+  </insert>
+  <delete id="delete" parameterType="photoWall">
+  	delete from moon_save where save_id=#{saveId}
+  </delete>
+  <select id="pagecount" resultMap="saveresultMap">
+  	select ceil(count(*)/5) from moon_save
+  </select>
+  <select id="findbylike" resultMap="saveresultMap">
+  	select * from moon_save limit #{num1},#{num2}
   </select>
 </mapper>

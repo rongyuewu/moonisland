@@ -20,4 +20,8 @@ public interface GoodsDao {
 	public void delete(Goods goods);
 	//模糊
 	public List<Goods> findbylike(String str);
+	//在售数量查询
+	public int findcount();
+	//在售查询
+	public List<Goods> findbyAvailable();
 }

@@ -1,21 +1,16 @@
-package cn.com.yld.mapper;
+package cn.com.yld.service;
 import java.util.List;
 import cn.com.yld.pojo.Address;
 
-public interface AddressMapper {
+public interface AddressService {
 	// 查询全部
 	public List<Address> findall();
-
 	// 根据id查询
 	public List<Address> findbyid(Address address);
-
 	// 插入
 	public void insert(Address address);
-
 	// 删除
 	public void delect(Address address);
-
-	//更新
+	// 更新
 	public void update(Address address);
-
 }

@@ -8,4 +8,5 @@ public interface AreaDao {
 	public List<Area> findall();
 	//查询id
 	public List<Area> findbyid(Area area);
+	
 }
