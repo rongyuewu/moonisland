@@ -40,4 +40,9 @@ public class GoodsAction {
 		List<Goods> list=goodsService.findlike(like);
 		return list;
 	}
+	@RequestMapping(value="/addgoods")
+	@ResponseBody
+	public int f4(Goods goods){
+		return goodsService.addgoods(goods);
+	}
 }
