@@ -42,9 +42,14 @@ public class OrderAction {
 		Order order=new Order();
 		order.setOrderNumber(number);
 		List<Order> ls=this.orderService.findorder(order);
-		for (Order order2 : ls) {
-			System.out.println(order2.toString());
-		}
 		return ls;
+	}
+	@RequestMapping(value="/xiugai")
+	@ResponseBody
+	public void xiugai(@RequestParam("number") String number){
+		System.out.println(number);
+		Order order=new Order();
+		order.setOrderNumber(number);
+		this.orderService.updatederstatus(order);
 	}
 }
