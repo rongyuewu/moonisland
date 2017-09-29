@@ -42,13 +42,13 @@
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">商品名称：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="" placeholder="" id="" name="">
+				<input type="text" class="input-text" value="" placeholder="" id="goodsname" name="">
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>分类：</label>
 			<div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
-				<select name="" class="select">
+				<select name="" id="category" class="select">
 					<option value="1">太阳眼镜</option>
 					<option value="2">男士</option>
 					<option value="3">女士</option>
@@ -60,19 +60,19 @@
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">原始价格：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="0" placeholder="" id="" name="">
+				<input type="text" class="input-text" value="0" placeholder="" id="original_price" name="">
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">销售价格：</label>
 			<div class="formControls col-xs-8 col-sm-9 skin-minimal">
-				<input type="text" class="input-text" value="0" placeholder="" id="" name="">
+				<input type="text" class="input-text" value="0" placeholder="" id="sales_price" name="">
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">颜色：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-			<select name="" class="select">
+			<select name="" class="select" id="goods_color">
 					<option value="1">什么色</option>
 					<option value="2">什么色</option>
 					<option value="3">什么色</option>
@@ -84,7 +84,7 @@
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">图片：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-			<input type="file">
+			<input type="file" id="goods_content">
 			</div>
 		</div>
 		<div class="row cl">
@@ -96,19 +96,19 @@
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">浏览次数：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" name="" id="" placeholder="" value="" class="input-text">
+				<input type="text" name="" id="browse_num" placeholder="" value="" class="input-text">
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">收藏次数：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" name="" id="" placeholder="" value="" class="input-text">
+				<input type="text" name="" id="save_num" placeholder="" value="" class="input-text">
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">是否促销：</label>
 			<div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
-				<select class="select">
+				<select class="select" id="is_sale">
 					<option>请选择</option>
 					<option value="1">上线促销</option>
 					<option value="2">非促销</option>
@@ -118,31 +118,31 @@
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">库存：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" name="" id="" placeholder="" value="" class="input-text" style="width:90%">
+				<input type="text" name="" id="stock_num" placeholder="" value="" class="input-text" style="width:90%">
 				kg</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">立减价格：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" name="" id="" placeholder="" value="" class="input-text" style="width:90%">
+				<input type="text" name="" id="minus_price" placeholder="" value="" class="input-text" style="width:90%">
 				元</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">特权价格：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" name="" id="" placeholder="" value="" class="input-text" style="width:90%">
+				<input type="text" name="" id="privilege" placeholder="" value="" class="input-text" style="width:90%">
 				元</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">积分：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" name="" id="" placeholder="" value="" class="input-text" style="width:90%">
+				<input type="text" name="" id="points" placeholder="" value="" class="input-text" style="width:90%">
 				分</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">款式 ：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<select>
+				<select id="style">
 					<option value="1">男款</option>
 					<option value="2">女款</option>
 					<option value="3">通用</option>
@@ -152,44 +152,38 @@
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">styleA：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" name="" id="" placeholder="" value="" class="input-text" style="width:90%">
+				<input type="text" name="" id="style_A" placeholder="" value="" class="input-text" style="width:90%">
 				</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">styleB：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" name="" id="" placeholder="" value="" class="input-text" style="width:90%">
+				<input type="text" name="" id="style_B" placeholder="" value="" class="input-text" style="width:90%">
 				</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">styleC：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" name="" id="" placeholder="" value="" class="input-text" style="width:90%">
+				<input type="text" name="" id="style_C" placeholder="" value="" class="input-text" style="width:90%">
 				</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">styleD：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" name="" id="" placeholder="" value="" class="input-text" style="width:90%">
+				<input type="text" name="" id="style_D" placeholder="" value="" class="input-text" style="width:90%">
 				</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">styleE：</label>
 			<div class="formControls col-xs-8 col-sm-9">
 				<div class="uploader-thum-container">
-					<input type="text" name="" id="" placeholder="" value="" class="input-text" style="width:90%">
+					<input type="text" name="" id="style_E" placeholder="" value="" class="input-text" style="width:90%">
 				</div>
 			</div>
 		</div>
 		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">添加时间：</label>
-			<div class="formControls col-xs-8 col-sm-9"> 
-				<input type="text" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'#F{$dp.$D(\'datemin\')}' })" id="datemax" class="input-text Wdate" style="width:180px;">
-			</div>
-		</div>
-		<div class="row cl">
 			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
-				<button onClick="article_save_submit();" class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 保存并提交审核</button>
+				<button onClick="submit_form();" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe632;</i> 保存并提交审核</button>
 				<button onClick="layer_close();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
 			</div>
 		</div>
@@ -207,10 +201,6 @@
 <script type="text/javascript" src="lib/jquery.validation/1.14.0/jquery.validate.js"></script> 
 <script type="text/javascript" src="lib/jquery.validation/1.14.0/validate-methods.js"></script> 
 <script type="text/javascript" src="lib/jquery.validation/1.14.0/messages_zh.js"></script>
-<script type="text/javascript" src="lib/webuploader/0.1.5/webuploader.min.js"></script> 
-<script type="text/javascript" src="lib/ueditor/1.4.3/ueditor.config.js"></script>
-<script type="text/javascript" src="lib/ueditor/1.4.3/ueditor.all.min.js"> </script>
-<script type="text/javascript" src="lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
 <script type="text/javascript">
 $.get("../brand/brandlistjs",function(data){
 	var str="";
@@ -220,6 +210,12 @@ $.get("../brand/brandlistjs",function(data){
 	}
 	$("#brand").html(str);
 });
+function submit_form(){
+	var form={"brand.brandId":$("#brand").val(),"goodsName":$("#goodsname").val(),"category":$("#category").val(),"originalPrice":$("#original_price").val(),"salesPrice":$("#sales_price").val(),"goodsColor":$("#goods_color").val(),"goodsContent":$("#goods_content").val(),"browseNum":$("#browse_num").val(),"saveNum":$("#save_num").val(),"isSale":$("#is_sale").val(),"isOnsale":$("#is_sale").val(),"stockNum":$("#stock_num").val(),"minusPrice":$("#minus_price").val(),"privilege":$("#privilege").val(),"points":$("#points").val(),"style":$("#style").val(),"styleA":$("#style_A").val(),"styleB":$("#style_B").val(),"styleC":$("#style_C").val(),"styleD":$("#style_D").val(),"styleE":$("#style_E").val()};
+	$.post("../goods/addgoods",form,function(data){
+		console.log("++++++++++++++++++++++++++++"+data);
+	});
+}
 </script>
 </body>
 </html>

@@ -37,4 +37,10 @@ public List<Goods> findlimit(int page) {
 public List<Goods> findlike(String like) {
 	return goodsDao.findbylike(like);
 }
+
+@Override
+public int addgoods(Goods goods) {
+	goodsDao.insert(goods);
+	return 1;
+}
 }
