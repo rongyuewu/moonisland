@@ -17,4 +17,6 @@ public interface BrandService {
 	public void delete(Brand brand);
 	//清除删除
 	public void cleandelete(Brand brand);
+	//查询数量
+	public int findnumber();
 }

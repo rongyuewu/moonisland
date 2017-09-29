@@ -55,7 +55,7 @@ public class GlassServiceImpl implements GlassService {
 	}
 
 	@Override
-	public String findnumber() {
+	public int findnumber() {
 		return this.glassDao.findnumber();
 	}
 
