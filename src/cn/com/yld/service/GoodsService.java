@@ -9,4 +9,8 @@ public interface GoodsService {
 public int findcount();
 //查询在售商品
 public List<Goods> findgoods();
+//查询在售商品
+public List<Goods> findlimit(int page);
+//查询在售商品
+public List<Goods> findlike(String like);
 }
