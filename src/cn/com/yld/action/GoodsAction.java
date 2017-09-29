@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import cn.com.yld.pojo.Goods;
@@ -25,6 +26,18 @@ public class GoodsAction {
 	@ResponseBody
 	public List<Goods> f2(){
 		List<Goods> list=goodsService.findgoods();
+		return list;
+	}
+	@RequestMapping(value="/getlimit")
+	@ResponseBody
+	public List<Goods> f3(@RequestParam("page") String page){
+		List<Goods> list=goodsService.findlimit(Integer.valueOf(page));
+		return list;
+	}
+	@RequestMapping(value="/getlike")
+	@ResponseBody
+	public List<Goods> f4(@RequestParam("like") String like){
+		List<Goods> list=goodsService.findlike(like);
 		return list;
 	}
 }

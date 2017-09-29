@@ -16,4 +16,6 @@ public interface GoodsPicDao {
 	public void insert(GoodsPic goodsPic);
 	//更新
 	public void update(GoodsPic goodsPic);
+	//总页数
+	public int pagecount();
 }
