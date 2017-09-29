@@ -8,7 +8,6 @@ import org.mybatis.spring.support.SqlSessionDaoSupport;
 
 import cn.com.yld.dao.GoodsPicDao;
 import cn.com.yld.mapper.GoodsPicMapper;
-import cn.com.yld.pojo.Goods;
 import cn.com.yld.pojo.GoodsPic;
 
 public class GoodsPicDaoImpl extends SqlSessionDaoSupport implements GoodsPicDao {
