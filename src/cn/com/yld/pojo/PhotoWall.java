@@ -54,6 +54,7 @@ public class PhotoWall implements Serializable{
 	public void setPhotoStatus(String photoStatus) {
 		this.photoStatus = photoStatus;
 	}
+
 	
 }
 
