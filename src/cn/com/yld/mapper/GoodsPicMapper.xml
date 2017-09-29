@@ -47,7 +47,9 @@
   <select id="findbyid" resultMap="goodspic" parameterType="goodsPic">
   	select * from moon_goods_pic p,moon_goods g where p.goods_id=g.goods_id and g.goods_id=#{goodsId}
   </select>
-
+	<select id="pagecount" resultMap="goodspic">
+		select ceil(count(*)/5) from moon_goods_pic
+	</select>
   <select id="findlinmit" resultMap="goodspic" >
   	select * from moon_goods_pic limit #{num1},#{num2}
   </select>

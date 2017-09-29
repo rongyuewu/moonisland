@@ -54,22 +54,22 @@
 		  	<result column="add_time" property="addTime"/>
 		</association>
   </resultMap>
-  <select id="findall" parameterType="photoWall">
+  <select id="findall" resultMap="saveresultMap">
   	select * from moon_save 
   </select>
-  <select id="findbyid" parameterType="photoWall">
+  <select id="findbyid" parameterType="Save" resultMap="saveresultMap">
   	 select * from moon_save where user_id=#{userId}
   </select>
   <insert id="insert">
-  	insert into moon_save(goods_id,user_id,save_time)values(#{goodId},#{userId},#{saveTime})
+  	insert into moon_save(goods_id,user_id,save_time)values(#{goodsId},#{userId},#{saveTime})
   </insert>
-  <delete id="delete" parameterType="photoWall">
+  <delete id="delete" parameterType="Save">
   	delete from moon_save where save_id=#{saveId}
   </delete>
-  <select id="pagecount" resultMap="saveresultMap">
+  <select id="pagecount" resultType="int">
   	select ceil(count(*)/5) from moon_save
   </select>
-  <select id="findbylike" resultMap="saveresultMap">
+  <select id="findbylimit" resultMap="saveresultMap">
   	select * from moon_save limit #{num1},#{num2}
   </select>
 </mapper>

@@ -18,13 +18,13 @@ public class SaveServiceImpl implements SaveService {
 	}
 
 	@Override
-	public List<Save> findall(Save save) {
-		return saveDao.findall(save);
+	public List<Save> findall() {
+		return saveDao.findall();
 	}
 
 	@Override
-	public List<Save> findbyid() {
-		return saveDao.findbyid();
+	public List<Save> findbyid(Save save) {
+		return saveDao.findbyid(save);
 	}
 
 	@Override
@@ -45,8 +45,8 @@ public class SaveServiceImpl implements SaveService {
 	}
 
 	@Override
-	public List<Save> findbylike(int page, int num) {
-		return saveDao.findbylike(page, num);
+	public List<Save> findbylimit(int page, int num) {
+		return saveDao.findbylimit(page, num);
 	}
 
 }

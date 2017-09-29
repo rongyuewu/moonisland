@@ -30,8 +30,8 @@
 		<input type="text" onfocus="WdatePicker({ maxDate:'#F{$dp.$D(\'logmax\')||\'%y-%M-%d\'}' })" id="logmin" class="input-text Wdate" style="width:120px;">
 		-
 		<input type="text" onfocus="WdatePicker({ minDate:'#F{$dp.$D(\'logmin\')}',maxDate:'%y-%M-%d' })" id="logmax" class="input-text Wdate" style="width:120px;">
-		<input type="text" name="" id="" placeholder=" 商品名称" style="width:250px" class="input-text">
-		<button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜商品</button>
+		<input type="text" name="" id="Goodsname" placeholder=" 商品名称" style="width:250px" class="input-text">
+		<button name="" id="Btnok" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜商品</button>
 	</div>
 	<div class="mt-20">
 		<table class="table table-striped" id="mytable">
@@ -50,7 +50,13 @@
 			</tr>
 		</table>
 	</div>
-	<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a class="btn btn-primary radius" onclick="picture_add('添加图片','picture-add.html')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加商品</a></span> <span class="r">共有数据：<strong id="goodsnum"></strong> 条</span> </div>
+	<div class="cl pd-5 bg-1 bk-gray mt-20"> 
+		<span class="l">
+		<a href="javascript:;" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a>
+		<a class="btn btn-primary radius" onclick="goodsadd('添加商品','goods-add.html')"><i class="Hui-iconfont">&#xe600;</i> 添加商品</a>
+		</span> 
+		<span class="r">共有数据：<strong id="goodsnum"></strong> 条</span> 
+	</div>
 </div>
 <div class="box" id="box"></div>
 <!--_footer 作为公共模版分离出去-->
@@ -64,7 +70,7 @@
 <script type="text/javascript" src="lib/datatables/1.10.0/jquery.dataTables.min.js"></script> 
 <script type="text/javascript" src="lib/laypage/1.2/laypage.js"></script>
 <script type="text/javascript">
-$.get("../goods/getgoods",function(date){
+/* $.get("../goods/getgoods",function(date){
 	console.log(date[0].goodsKeywords)
 	var str="";
 	for (var i = 0; i < date.length; i++) {
@@ -72,21 +78,54 @@ $.get("../goods/getgoods",function(date){
 		str+="<tr><td>"+good.goodsContent+"</td><td>"+good.brandId+"</td><td>"+good.goodsName+"</td><td>"+good.brand.brandName+"</td><td>"+good.salesNum+"</td><td>"+good.isOnsale+"</td><td>"+good.isSale+"</td><td>"+good.salesPrice+"</td><td>"+good.minusPrice+"</td><td>"+good.stockNum+"</td><td>"+good.points+"</td></tr>";
 	}
 	$("#mytable").append(str);
-});
+}); *///全查
 $.get("../goods/getnum",function(date){
 	$("#goodsnum").html(date);
+	var setTotalCount = date;
+	$('#box').paging({
+	    initPageNo: 1, // 初始页码
+	    totalPages: Math.ceil(date/8), //总页数
+	    totalCount: '合计' + setTotalCount + '条数据', // 条目总数
+	    slideSpeed: 600, // 缓动速度。单位毫秒
+	    jump: true, //是否支持跳转
+	    callback: function(page) { // 回调函数
+	    	limit(page);
+	    }
+	})
 });
-var setTotalCount = 301;
-$('#box').paging({
-    initPageNo: 3, // 初始页码
-    totalPages: 30, //总页数
-    totalCount: '合计' + setTotalCount + '条数据', // 条目总数
-    slideSpeed: 600, // 缓动速度。单位毫秒
-    jump: true, //是否支持跳转
-    callback: function(page) { // 回调函数
-        console.log(page);
-    }
-})
+function limit(page){
+	$.get("../goods/getlimit?page="+page,function(date){
+		var str="<tr class='info'><th>图片</th><th>商品编号</th><th>商品名称</th><th>品牌</th><th>收藏数量</th><th>是否在售</th><th>是否促销</th><th>商品价格</th><th>促销价格</th><th>库存</th><th>积分</th></tr>";
+		for (var i = 0; i < date.length; i++) {
+			var good=date[i];
+			str+="<tr><td>"+good.goodsContent+"</td><td>"+good.brandId+"</td><td>"+good.goodsName+"</td><td>"+good.brand.brandName+"</td><td>"+good.salesNum+"</td><td>"+good.isOnsale+"</td><td>"+good.isSale+"</td><td>"+good.salesPrice+"</td><td>"+good.minusPrice+"</td><td>"+good.stockNum+"</td><td>"+good.points+"</td></tr>";
+		}
+		$("#mytable").html(str);
+	});
+}
+$("#Btnok").click(function(){
+	var likestr=$("#Goodsname").val();
+	like(likestr);
+});
+function like(likestr){
+	$.get("../goods/getlike?like="+likestr,function(date){
+		var str="<tr class='info'><th>图片</th><th>商品编号</th><th>商品名称</th><th>品牌</th><th>收藏数量</th><th>是否在售</th><th>是否促销</th><th>商品价格</th><th>促销价格</th><th>库存</th><th>积分</th></tr>";
+		for (var i = 0; i < date.length; i++) {
+			var good=date[i];
+			str+="<tr><td>"+good.goodsContent+"</td><td>"+good.brandId+"</td><td>"+good.goodsName+"</td><td>"+good.brand.brandName+"</td><td>"+good.salesNum+"</td><td>"+good.isOnsale+"</td><td>"+good.isSale+"</td><td>"+good.salesPrice+"</td><td>"+good.minusPrice+"</td><td>"+good.stockNum+"</td><td>"+good.points+"</td></tr>";
+		}
+		$("#mytable").html(str);
+	});
+	$("#box").html("");
+}
+function goodsadd(title,url){
+	var index = layer.open({
+		type: 2,
+		title: title,
+		content: url
+	});
+	layer.full(index);
+}
 </script>
 </body>
 </html>

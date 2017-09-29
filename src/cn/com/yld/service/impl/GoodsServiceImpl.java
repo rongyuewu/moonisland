@@ -26,4 +26,15 @@ public int findcount() {
 public List<Goods> findgoods() {
 	return goodsDao.findbyAvailable();
 }
+
+@Override
+public List<Goods> findlimit(int page) {
+	//每页八条写死
+	return goodsDao.findbylimit(page, 8);
+}
+
+@Override
+public List<Goods> findlike(String like) {
+	return goodsDao.findbylike(like);
+}
 }

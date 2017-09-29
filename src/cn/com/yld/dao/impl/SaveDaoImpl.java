@@ -13,15 +13,15 @@ import cn.com.yld.pojo.Save;
 public class SaveDaoImpl extends SqlSessionDaoSupport implements SaveDao {
 
 	@Override
-	public List<Save> findall(Save save) {
+	public List<Save> findall() {
 		SaveMapper mapper = this.getSqlSession().getMapper(SaveMapper.class);
-		return mapper.findall(save);
+		return mapper.findall();
 	}
 
 	@Override
-	public List<Save> findbyid() {
+	public List<Save> findbyid(Save save) {
 		SaveMapper mapper = this.getSqlSession().getMapper(SaveMapper.class);
-		return mapper.findbyid();
+		return mapper.findbyid(save);
 	}
 
 	@Override
@@ -44,12 +44,12 @@ public class SaveDaoImpl extends SqlSessionDaoSupport implements SaveDao {
 	}
 
 	@Override
-	public List<Save> findbylike(int page,int num) {
+	public List<Save> findbylimit(int page,int num) {
 		SaveMapper mapper = this.getSqlSession().getMapper(SaveMapper.class);
 		Map<String, Integer> map = new HashMap<>();
 		map.put("num1", (page-1)*num);
 		map.put("num2", num);
-		return mapper.findbylike(map);
+		return mapper.findbylimit(map);
 	}
 
 }
