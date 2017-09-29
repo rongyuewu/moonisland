@@ -59,7 +59,7 @@ public class GlassDaoImpl extends SqlSessionDaoSupport implements GlassDao {
 	}
 
 	@Override
-	public String findnumber() {
+	public int findnumber() {
 		GlassMapper mapper = this.getSqlSession().getMapper(GlassMapper.class);
 		return mapper.findnumber();
 	}

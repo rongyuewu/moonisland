@@ -6,6 +6,7 @@ import org.mybatis.spring.support.SqlSessionDaoSupport;
 
 import cn.com.yld.dao.BrandDao;
 import cn.com.yld.mapper.BrandMapper;
+import cn.com.yld.mapper.GlassMapper;
 import cn.com.yld.pojo.Brand;
 
 public class BrandDaoImpl extends SqlSessionDaoSupport implements BrandDao {
@@ -46,5 +47,10 @@ public class BrandDaoImpl extends SqlSessionDaoSupport implements BrandDao {
 		BrandMapper mapper = this.getSqlSession().getMapper(BrandMapper.class);
 		mapper.cleandelete(brand);
 	}
-
+	
+	@Override
+	public int findnumber() {
+		BrandMapper mapper = this.getSqlSession().getMapper(BrandMapper.class);
+		return mapper.findnumber();
+	}
 }

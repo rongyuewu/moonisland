@@ -20,5 +20,5 @@ public interface GlassDao {
 	//分页
 	public List<Glass> findbylike(int page,int num);
 	//查询数量
-	public String findnumber();
+	public int findnumber();
 }

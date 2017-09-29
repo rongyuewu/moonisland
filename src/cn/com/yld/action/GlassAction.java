@@ -8,32 +8,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import cn.com.yld.pojo.Brand;
+import cn.com.yld.dao.GlassDao;
 import cn.com.yld.pojo.Glass;
-import cn.com.yld.service.BrandService;
+import cn.com.yld.service.GlassService;
 
 @Controller
-@RequestMapping(value="/brand")
-public class BrandAction {
+@RequestMapping(value="/glass")
+public class GlassAction {
+
 	@Autowired
-	BrandService brandService;
+	GlassService glassService;
 	
 	@RequestMapping(value="/number")
 	@ResponseBody
 	public int f1(){
-		int num=brandService.findnumber();
+		int num=glassService.findnumber();
 		return num;
 	}
-	@RequestMapping(value="/brandlist")
+	@RequestMapping(value="/glasslist")
 	@ResponseBody
-	public List<Brand> f2(){
-		List<Brand> list=brandService.findall();
+	public List<Glass> f2(){
+		List<Glass> list=glassService.findall();
 		return list;
-	}
-	
-	@RequestMapping(value="/brandlistjs")
-	@ResponseBody
-	public List<Brand> showListjs(){
-		return this.brandService.findall();
 	}
 }

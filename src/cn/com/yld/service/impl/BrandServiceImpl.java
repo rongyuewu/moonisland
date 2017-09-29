@@ -49,4 +49,8 @@ public class BrandServiceImpl implements BrandService {
 		this.brandDao.cleandelete(brand);
 	}
 
+	@Override
+	public int findnumber() {
+		return this.brandDao.findnumber();
+	}
 }

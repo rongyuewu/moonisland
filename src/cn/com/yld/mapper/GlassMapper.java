@@ -21,5 +21,5 @@ public interface GlassMapper {
 	//分页
 	public List<Glass> findbylike(Map<String, Integer> map);
 	//查询数量
-	public String findnumber();
+	public int findnumber();
 }

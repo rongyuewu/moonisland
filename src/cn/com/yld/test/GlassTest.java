@@ -70,8 +70,7 @@ public class GlassTest {
 	@Test
 	public void test7(){
 		GlassDao dao = (GlassDao) this.context.getBean("glassDao");
-		int i = Integer.valueOf(dao.findnumber());
-		System.out.println(i);
+		System.out.println(dao.findnumber());
 	}
 }
 
