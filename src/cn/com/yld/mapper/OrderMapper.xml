@@ -136,9 +136,12 @@
   <select id="findordernumber" resultMap="orderresultMap">
   	select distinct o.order_number,u.nick_name,o.order_status from moon_order o,moon_user u where u.user_id=o.user_id
   </select>
+  <!-- 根据订单编号获取订单关联信息 -->
   <select id="findorder" parameterType="Order" resultMap="orderresultMap">
   	select * from moon_order o,moon_goods g,moon_glass gl,moon_user u,moon_goods_attr a,moon_goods_pic p,moon_optometry op where o.optometry_id=op.optometry_id and o.pic_id=p.pic_id and o.goods_attr_id=a.attr_id and o.glass_id=gl.glass_id and o.goods_id=g.goods_id and o.user_id=u.user_id and order_number=#{orderNumber}
   </select>
+  <select id="find"></select>
+  <!-- 更改订单状态 -->
   <update id="updatederstatus" parameterType="Order">
   	update moon_order set order_status=2 where order_number=#{orderNumber}
   </update>

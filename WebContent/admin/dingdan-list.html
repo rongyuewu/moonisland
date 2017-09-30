@@ -23,6 +23,9 @@
 #tab li.current {color:#000;background:#ccc;}
 #content {border:1px solid #000;border-top-width:0;}
 #content div {line-height:25px;display:none;	margin:0 30px;padding:10px 0;}
+.highlight {
+        color:red;
+    }
 
 </style>
 <!--[if IE 6]>
@@ -35,10 +38,10 @@
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 订单管理 <span class="c-gray en">&gt;</span> 订单列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="page-container">
 	<div class="text-c"> 搜索订单：
-		<input type="text" name="" id="" placeholder=" 图片名称" style="width:250px" class="input-text">
-		<button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜订单</button>
+		<input type="text" name="" id="dingdanhao" placeholder=" 订单编号" style="width:250px" class="input-text">
+		<button name="" id="soudingdan" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜订单</button>
 	</div>
-	<div class="cl pd-5 bg-1 bk-gray mt-20"><span class="r">共有数据：<strong>54</strong> 条</span> </div>
+	<div class="cl pd-5 bg-1 bk-gray mt-20"><span class="r">共有订单：<strong></strong> 条</span> </div>
 	<div id="tabdiv" class="mt-20">
 		<div id="outer">
 		    <ul id="tab">
@@ -47,13 +50,14 @@
 		        <li>已完成</li>
 		        <li>已取消</li>
 		        <li>已退货</li>
+		        
 		    </ul>
 		    <div  id="content">
 		        <div id="daifukuan">
-		         	 <!--  <table id="201791947123456" class="table table-border table-bordered table-bg  table-sort"><thead>
-		         	 		         	 		         						<th colspan="4">订单号：<span>'+data[i].orderNumber+'</span>&nbsp;&nbsp;&nbsp;&nbsp;收货人姓名:
+		         	  <!-- <table id="201791947123456" class="table table-border table-bordered table-bg  table-sort"><thead>
+		         	 		         	 		         						<th colspan="4">订单号：<span>201791947123456</span>&nbsp;&nbsp;&nbsp;&nbsp;收货人姓名:
 		         	 		         	 		         						<span>'+data[i].user.nickName+'</span>&nbsp;&nbsp;&nbsp;&nbsp;</th>
-		         	 		         	 		         						<th width="160" class="text-c"><span onClick=orderxiangxi() class="label label-success radius">查看详细</span>&nbsp;&nbsp;&nbsp;&nbsp;<span onClick=fahuo('201791947123456',this) class="label label-success radius">发货完成</span></th></thead>
+		         	 		         	 		         						<th width="160" class="text-c"><span onClick=orderxiangxi('201791947123456',this) class="label label-success radius">查看详细</span>&nbsp;&nbsp;&nbsp;&nbsp;<span onClick=fahuo('201791947123456',this) class="label label-success radius">发货完成</span></th></thead>
 		         	 		         	 										<tbody>
 		         	 		         	 										<tr class="text-c">
 		         	 		         	 											<td>商品编号</td>
@@ -61,6 +65,7 @@
 		         	 		         	 											<td class="text-c"><a class="maincolor" href="javascript:;">现代简约 白色 餐厅</a></td>
 		         	 		         	 											<td>商品价格</td>
 		         	 		         	 											<td class="text-c">商品数量</td>
+		         	 		         	 		
 		         	 		         	 											<td class="td-manage"><a style="text-decoration:none" class="ml-5" onClick="picture_edit('图库编辑','picture-add.html','10001')" href="javascript:;" title="评论"><i class="Hui-iconfont">&#xe6df;</i></a></td>
 		         	 		         	 										</tr>
 		         	 		         	 									</tbody>
@@ -69,7 +74,7 @@
 		         	 		         	 		         						<th colspan="4">订单号：<span>'+data[i].ordmber+'</span>&nbsp;&nbsp;&nbsp;&nbsp;收货人姓名:
 		         	 		         	 		         						<span>'+data[i].user.nick'</span>&nbsp;&nbsp;&nbsp;&nbsp;</th>
 		         	 		         	 		         						<th width="80" ><span class="label label-success radius">查看详细</span></th>
-		         	 		         	 		         						</tr></thead></table>   -->
+		         	 		         	 		         						</tr></thead></table>    -->
 		        </div>
 		        <div id="daifahuo" style="display:block;">
 		            
@@ -83,6 +88,7 @@
 		        <div id="yituihuo">
 		         
 		        </div>
+		        
 		    </div>
 		</div>
 
@@ -131,12 +137,18 @@
 <script type="text/javascript" src="lib/laypage/1.2/laypage.js"></script>
 <script type="text/javascript">
 $(function(){
+
+	
+
+
 	var daifukuan=$('#daifukuai')
 	var daifahuo=$('#daifahuo')
 	var yiwancheng=$('#yiwancheng')
 	var yiquxiao=$('#yiquxiao')
 	var yituihuo=$('#yituihuo')	
+	var strong=$('strong')
 	$.get("../order/list",function(data) {
+			strong.html(data.length);
            	console.log(data)
            	for (var i = 0; i < data.length; i++) {
            		console.log(data[i].orderStatus)
@@ -146,14 +158,14 @@ $(function(){
 					h+='<table id="'+data[i].orderNumber+'" class="table table-border table-bordered table-bg  table-sort"><thead>'
 					h+='<th colspan="5">订单号：<span>'+data[i].orderNumber+'</span>&nbsp;&nbsp;&nbsp;&nbsp;收货人姓名:'
 					h+='<span>'+data[i].user.nickName+'</span>&nbsp;&nbsp;&nbsp;&nbsp;</th>'
-					h+='<th width="160" class="text-c"><span onClick=orderxiangxi('+data[i].orderNumber+')  class="label label-success radius">查看详细</span></th>'
+					h+='<th width="160" class="text-c"><span onClick=orderxiangxi('+data[i].orderNumber+',this)  class="label label-success radius">查看详细</span></th>'
 					h+='</thead></table>'
 					daifukuan.append(h)
 				}else if(data[i].orderStatus==1){
 					h+='<table id="'+data[i].orderNumber+'" class="table table-border table-bordered table-bg  table-sort"><thead>'
 					h+='<th colspan="5">订单号：<span>'+data[i].orderNumber+'</span>&nbsp;&nbsp;&nbsp;&nbsp;收货人姓名:'
 					h+='<span>'+data[i].user.nickName+'</span>&nbsp;&nbsp;&nbsp;&nbsp;</th>'
-					h+='<th width="160" class="text-c"><span onClick=orderxiangxi('+data[i].orderNumber+') class="label label-success radius">查看详细</'
+					h+='<th width="160" class="text-c"><span onClick=orderxiangxi('+data[i].orderNumber+',this) class="label label-success radius">查看详细</'
 					h+='span>&nbsp;&nbsp;&nbsp;&nbsp;<span onClick=fahuo('+data[i].orderNumber+',this) class="label label-success radius">发货完成'
 					h+='</span></th></thead></table>'
 					daifahuo.append(h)
@@ -161,7 +173,7 @@ $(function(){
 					h+='<table id="'+data[i].orderNumber+'" class="table table-border table-bordered table-bg  table-sort"><thead>'
 					h+='<th colspan="5">订单号：<span>'+data[i].orderNumber+'</span>&nbsp;&nbsp;&nbsp;&nbsp;收货人姓名:'
 					h+='<span>'+data[i].user.nickName+'</span>&nbsp;&nbsp;&nbsp;&nbsp;</th>'
-					h+='<th width="160" class="text-c"><span onClick=orderxiangxi('+data[i].orderNumber+')  class="label label-success radius">查看详细</span></th>'
+					h+='<th width="160" class="text-c"><span onClick=orderxiangxi('+data[i].orderNumber+',this)  class="label label-success radius">查看详细</span></th>'
 					h+='</thead></table>'
 					yiwancheng.append(h)
 				}else if(data[i].orderStatus==3){
@@ -169,14 +181,14 @@ $(function(){
 					h+='<table id="'+data[i].orderNumber+'" class="table table-border table-bordered table-bg  table-sort"><thead>'
 					h+='<th colspan="5">订单号：<span>'+data[i].orderNumber+'</span>&nbsp;&nbsp;&nbsp;&nbsp;收货人姓名:'
 					h+='<span>'+data[i].user.nickName+'</span>&nbsp;&nbsp;&nbsp;&nbsp;</th>'
-					h+='<th width="160" class="text-c"><span onClick=orderxiangxi('+data[i].orderNumber+')  class="label label-success radius">查看详细</span></th>'
+					h+='<th width="160" class="text-c"><span onClick=orderxiangxi('+data[i].orderNumber+',this)  class="label label-success radius">查看详细</span></th>'
 					h+='</thead></table>'
 					yiquxiao.append(h)
 				}else if(data[i].orderStatus==4){
 					h+='<table id="'+data[i].orderNumber+'" class="table table-border table-bordered table-bg  table-sort"><thead>'
 					h+='<th colspan="5">订单号：<span>'+data[i].orderNumber+'</span>&nbsp;&nbsp;&nbsp;&nbsp;收货人姓名:'
 					h+='<span>'+data[i].user.nickName+'</span>&nbsp;&nbsp;&nbsp;&nbsp;</th>'
-					h+='<th width="160" class="text-c"><span onClick=orderxiangxi('+data[i].orderNumber+')  class="label label-success radius">查看详细</span></th>'
+					h+='<th width="160" class="text-c"><span onClick=orderxiangxi('+data[i].orderNumber+',this)  class="label label-success radius">查看详细</span></th>'
 					h+='</thead></table>'
 					yituihuo.append(h)
 				}
@@ -196,7 +208,8 @@ $(function(){
 			})
 
 })
-function orderxiangxi(ordernumber){
+function orderxiangxi(ordernumber,obj){
+	if($(obj).html()=='查看详细'){
 	var tab=$("#"+ordernumber)
 	var ht='<tbody>';
 	$.get("../order/xiangxi?number="+ordernumber, function(data) {
@@ -212,7 +225,15 @@ function orderxiangxi(ordernumber){
 		};
 		ht+='</tbody>'
 		tab.append(ht)
+		$(obj).html("收起")
 	});
+		
+	}else{
+		$("#"+ordernumber+" tbody").remove() 
+		$(obj).html("查看详细")
+	}
+	
+	
 }
 function fahuo(ordernumber,obj){
 	var yiwancheng=$('#yiwancheng');
