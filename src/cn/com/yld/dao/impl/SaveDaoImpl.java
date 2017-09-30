@@ -44,11 +44,8 @@ public class SaveDaoImpl extends SqlSessionDaoSupport implements SaveDao {
 	}
 
 	@Override
-	public List<Save> findbylimit(int page,int num) {
+	public List<Save> findbylimit(Map map) {
 		SaveMapper mapper = this.getSqlSession().getMapper(SaveMapper.class);
-		Map<String, Integer> map = new HashMap<>();
-		map.put("num1", (page-1)*num);
-		map.put("num2", num);
 		return mapper.findbylimit(map);
 	}
 

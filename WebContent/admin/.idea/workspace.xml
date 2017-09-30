@@ -13,71 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="user-list.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/user-list.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-540">
-              <caret line="37" column="8" lean-forward="true" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admin-list.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/admin-list.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="64" column="136" lean-forward="false" selection-start-line="64" selection-start-column="136" selection-end-line="64" selection-end-column="136" />
-              <folding>
-                <element signature="n#style#0;n#a#0;n#td#8;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1506651809786" expanded="true" signature="6128:6148" ph="..." />
-                <marker date="1506651809786" expanded="true" signature="6174:6182" ph="..." />
-                <marker date="1506651809786" expanded="true" signature="6597:6617" ph="..." />
-                <marker date="1506651809786" expanded="true" signature="6643:6651" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user-add.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/user-add.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="8" column="17" lean-forward="true" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user-show.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/user-show.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="59" column="43" lean-forward="true" selection-start-line="59" selection-start-column="43" selection-end-line="59" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="H-ui.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/h-ui/js/H-ui.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="4344" column="49" lean-forward="true" selection-start-line="4344" selection-start-column="49" selection-end-line="4344" selection-end-column="49" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <marker date="1506496144008" expanded="true" signature="123001:123013" ph="..." />
-                <marker date="1506496144008" expanded="true" signature="125380:125388" ph="..." />
-                <marker date="1506496144008" expanded="true" signature="129510:129624" ph="..." />
-                <marker date="1506496144008" expanded="true" signature="132347:132379" ph="..." />
-                <marker date="1506496144008" expanded="true" signature="132381:132389" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -128,32 +64,6 @@
               <item name="admin" type="b2602c69:ProjectViewProjectNode" />
               <item name="admin" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="h-ui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="h-ui" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="h-ui" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="H-ui.js" type="620a8d5e:NestingTreeNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -187,18 +97,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1506651063847</updated>
-      <workItem from="1506651073058" duration="1232000" />
+      <workItem from="1506651073058" duration="2442000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1232000" />
+    <option name="totallyTimeSpent" value="2442000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1921875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1921875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -254,15 +163,7 @@
     <entry file="file://$PROJECT_DIR$/user-add.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
-          <caret line="8" column="17" lean-forward="true" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-540">
-          <caret line="37" column="8" lean-forward="true" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
+          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -270,7 +171,7 @@
     <entry file="file://$PROJECT_DIR$/user-show.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
-          <caret line="59" column="43" lean-forward="true" selection-start-line="59" selection-start-column="43" selection-end-line="59" selection-end-column="43" />
+          <caret line="59" column="43" lean-forward="false" selection-start-line="59" selection-start-column="43" selection-end-line="59" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -278,7 +179,7 @@
     <entry file="file://$PROJECT_DIR$/static/h-ui/js/H-ui.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
-          <caret line="4344" column="49" lean-forward="true" selection-start-line="4344" selection-start-column="49" selection-end-line="4344" selection-end-column="49" />
+          <caret line="4344" column="49" lean-forward="false" selection-start-line="4344" selection-start-column="49" selection-end-line="4344" selection-end-column="49" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <marker date="1506496144008" expanded="true" signature="123001:123013" ph="..." />
@@ -292,8 +193,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin-list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="64" column="136" lean-forward="false" selection-start-line="64" selection-start-column="136" selection-end-line="64" selection-end-column="136" />
+        <state relative-caret-position="244">
+          <caret line="59" column="36" lean-forward="true" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
           <folding>
             <element signature="n#style#0;n#a#0;n#td#8;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <marker date="1506651809786" expanded="true" signature="6128:6148" ph="..." />
@@ -301,6 +202,14 @@
             <marker date="1506651809786" expanded="true" signature="6597:6617" ph="..." />
             <marker date="1506651809786" expanded="true" signature="6643:6651" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user-list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-540">
+          <caret line="37" column="8" lean-forward="false" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>

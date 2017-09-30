@@ -16,5 +16,5 @@ public interface SaveService {
 	//页数
 	public int pagecount();
 	// 分页
-	public List<Save> findbylimit(int page,int num);
+	public List<Save> findbylimit(Map map);
 }

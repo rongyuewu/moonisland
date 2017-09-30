@@ -6,12 +6,12 @@ import java.util.Map;
 import cn.com.yld.pojo.GoodsPic;
 
 public interface GoodsPicService {
-	//查询全部
+		//查询全部
 		public List<GoodsPic> findall();
 		//id查询
 		public List<GoodsPic> findbyid(GoodsPic goodsPic);
 		//分页查询
-		public List<GoodsPic> findlinmit(Map<String, Integer> map);
+		public List<GoodsPic> findlinmit(int page);
 		//插入
 		public void insert(GoodsPic goodsPic);
 		//更新

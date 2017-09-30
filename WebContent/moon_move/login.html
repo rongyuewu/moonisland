@@ -185,9 +185,7 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery-1.11.0.min.js"></script>
 <script>
-
     $(function(){
-
         $('#text-input2').bind('input propertychange', function() {
             var con=$('#text-input2').val();
             if(con==""){
@@ -195,7 +193,6 @@
                 $('#btn').css('backgroundColor','#eee');
             }
             else{
-
                 $('#btn').attr('disabled',false);
                 $('#btn').css('backgroundColor','#dd443a');
             }

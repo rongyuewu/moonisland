@@ -13,4 +13,6 @@ public List<Goods> findgoods();
 public List<Goods> findlimit(int page);
 //查询在售商品
 public List<Goods> findlike(String like);
+//添加商品
+public int addgoods(Goods goods);
 }

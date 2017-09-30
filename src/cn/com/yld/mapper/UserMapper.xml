@@ -28,9 +28,6 @@
            	<if test="phone != null">
           		phone=#{phone}
            	</if>
-           	<if test="mail != null">
-           		and mail=#{mail}
-           	</if> 	
        </trim>
        and password=#{password}
   </select>

@@ -5,7 +5,7 @@ import java.util.List;
 import cn.com.yld.pojo.User;
 
 public interface UserDao {
-	//查询所有用户
+		//查询所有用户
 		public List<User> findall();
 		//查询单个用户
 		public User finduser(User user);
