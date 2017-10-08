@@ -18,7 +18,17 @@ public class Returnorder implements Serializable{
 	
 	private User user;
 	private Order order;
+	private Goods goods;
 	
+	
+
+	public Goods getGoods() {
+		return goods;
+	}
+
+	public void setGoods(Goods goods) {
+		this.goods = goods;
+	}
 
 	public User getUser() {
 		return user;
