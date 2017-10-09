@@ -92,6 +92,11 @@
 	select * from moon_goods_comment c,moon_user u,moon_goods g,moon_order o where c.goods_id=g.goods_id and c.user_id=u.user_id and c.order_id=o.order_id;
 	]]>
  </select>
+ <select id="findcount" resultType="int">
+	<![CDATA[
+	select count(*) from moon_goods_comment c,moon_user u,moon_goods g,moon_order o where c.goods_id=g.goods_id and c.user_id=u.user_id and c.order_id=o.order_id;
+	]]>
+ </select>
  <select id="findbyid" parameterType="GoodsComment" resultMap="goodsComment">
  	<![CDATA[
  	select * from moon_goods_comment c,moon_user u,moon_goods g,moon_order o where c.goods_id=g.goods_id and c.user_id=u.user_id and c.order_id=o.order_id and c.comment_id=#{commentId};

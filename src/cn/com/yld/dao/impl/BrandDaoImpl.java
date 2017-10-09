@@ -53,4 +53,5 @@ public class BrandDaoImpl extends SqlSessionDaoSupport implements BrandDao {
 		BrandMapper mapper = this.getSqlSession().getMapper(BrandMapper.class);
 		return mapper.findnumber();
 	}
+
 }

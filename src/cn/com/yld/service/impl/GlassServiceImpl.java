@@ -30,8 +30,9 @@ public class GlassServiceImpl implements GlassService {
 	}
 
 	@Override
-	public void insert(Glass glass) {
+	public int insert(Glass glass) {
 		this.glassDao.insert(glass);
+		return 1;
 	}
 
 	@Override
@@ -50,8 +51,8 @@ public class GlassServiceImpl implements GlassService {
 	}
 
 	@Override
-	public List<Glass> findbylike(int page,int num) {
-		return this.glassDao.findbylike(page, num);
+	public List<Glass> findbylike(int page) {
+		return this.glassDao.findbylike(page, 5);
 	}
 
 	@Override

@@ -10,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import cn.com.yld.pojo.Brand;
 import cn.com.yld.pojo.Glass;
+import cn.com.yld.pojo.Goods;
 import cn.com.yld.service.BrandService;
 
 @Controller
@@ -30,10 +31,19 @@ public class BrandAction {
 		List<Brand> list=brandService.findall();
 		return list;
 	}
-	
 	@RequestMapping(value="/brandlistjs")
 	@ResponseBody
 	public List<Brand> showListjs(){
 		return this.brandService.findall();
+	}
+	@RequestMapping(value="/addbrand")
+	@ResponseBody
+	public int f4(Brand brand){
+		return brandService.addbrand(brand);
+	}
+	@RequestMapping(value="/delbrand")
+	@ResponseBody
+	public void f5(Brand brand){
+		brandService.delete(brand);
 	}
 }

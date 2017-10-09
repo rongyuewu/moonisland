@@ -19,5 +19,5 @@ public interface BrandDao {
 	//清除删除
 	public void cleandelete(Brand brand);
 	//查询数量
-		public int findnumber();
+	public int findnumber();
 }

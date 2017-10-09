@@ -30,8 +30,9 @@ public class BrandServiceImpl implements BrandService {
 	}
 
 	@Override
-	public void insert(Brand brand) {
-		this.brandDao.insert(brand);
+	public int addbrand(Brand brand) {
+		brandDao.insert(brand);
+		return 1;
 	}
 
 	@Override
@@ -53,4 +54,5 @@ public class BrandServiceImpl implements BrandService {
 	public int findnumber() {
 		return this.brandDao.findnumber();
 	}
+
 }

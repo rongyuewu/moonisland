@@ -1,5 +1,6 @@
 package cn.com.yld.action;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,5 +45,18 @@ public class GoodsAction {
 	@ResponseBody
 	public int f4(Goods goods){
 		return goodsService.addgoods(goods);
+	}
+	@RequestMapping(value="/delgoods")
+	@ResponseBody
+	public int f5(@RequestParam("data") int[] arr){
+		List<Goods> list=new ArrayList<Goods>();
+		for (int i = 0; i < arr.length; i++) {
+			Goods good=new Goods();
+			good.setGoodsId(arr[i]);
+			list.add(good);	
+		}
+		goodsService.delgoods(list);
+		return 1;
+		
 	}
 }

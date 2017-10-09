@@ -5,6 +5,7 @@ import cn.com.yld.pojo.GoodsComment;
 
 public interface GoodsCommentDao {
 	public List<GoodsComment> findall();
+	public int findcount();
 	public List<GoodsComment> findbyid(GoodsComment goodsComment);
 	public void insert(GoodsComment goodsComment);
 	public List<GoodsComment> findbyattr(GoodsComment goodsComment);

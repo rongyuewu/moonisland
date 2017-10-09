@@ -24,34 +24,16 @@
 <title>镜片列表</title>
 </head>
 <body>
-<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 商品管理 <span class="c-gray en">&gt;</span> 镜片列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 镜片管理 <span class="c-gray en">&gt;</span> 镜片列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="page-container">
 	<div class="mt-20">
 		<table class="table table-striped" id="mytable">
-	  		<tr class="info">
-	  			<th>镜片编号</th>
-				<th>镜片类型</th>
-				<th>镜片名称</th>
-				<th>镜片价格</th>
-				<th>球镜价格</th>
-				<th>柱镜价格</th>
-				<th>镜片图片</th>
-				<th>镜片添加时间</th>
-				<th>颜色1</th>
-				<th>颜色2</th>
-				<th>颜色3</th>
-				<th>颜色4</th>
-				<th>颜色5</th>
-				<th>颜色6</th>
-				<th>颜色7</th>
-				<th>颜色8</th>
-				<th>是否选中</th>
-				<th>更新</th>
-				<th>删除</th>
-			</tr>
 		</table>
 	</div>
-	<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"> <a class="btn btn-primary radius" onclick="picture_add('添加图片','picture-add.html')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加商品</a></span> <span class="r">共有数据：<strong id="number"></strong> 条</span> </div>
+	<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"> 
+	<a href="javascript:;" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a>
+	<a class="btn btn-primary radius" onclick="glassadd('添加镜片','glass-add.html')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加商品</a>
+	</span> <span class="r">共有数据：<strong id="number"></strong> 条</span> </div>
 </div>
 <div class="box" id="box"></div>
 <!--_footer 作为公共模版分离出去-->
@@ -65,30 +47,40 @@
 <script type="text/javascript" src="lib/datatables/1.10.0/jquery.dataTables.min.js"></script> 
 <script type="text/javascript" src="lib/laypage/1.2/laypage.js"></script>
 <script type="text/javascript">
-$.get("../glass/glasslist",function(date){
-	var str="";
-	for (var i = 0; i < date.length; i++) {
-		var glass=date[i];
-		str+="<tr><td>"+glass.glassId+"</td><td>"+glass.glassStyle+"</td><td>"+glass.glassName+"</td><td>"+glass.glassPrice+"</td><td><src>"+glass.sphPrice+"</td><td>"+glass.cylPrice+"</td><td><img src='"+glass.glassImg+"'></td><td>"+glass.glassTime+"</td><td>红色</td><td>橙色</td><td>黄色</td><td>绿色</td><td>黑色</td><td>蓝色</td><td>紫色</td><td>白色</td></td><td><input type='checkbox'></td><td>更新</td><td>删除</td></tr>";
-	}
-	$("#mytable").append(str);
-});
+
 $.get("../glass/number",function(date){
 	$("#number").html(date);
-});
-$.get("../glass/page",function(date){
+	var setTotalCount = date;
 	$('#box').paging({
 	    initPageNo: 1, // 初始页码
-	    totalPages: date, //总页数
+	    totalPages: Math.ceil(date/5), //总页数
+	    totalCount: '合计' + setTotalCount + '条数据', // 条目总数
 	    slideSpeed: 600, // 缓动速度。单位毫秒
 	    jump: true, //是否支持跳转
 	    callback: function(page) { // 回调函数
-	        console.log(page);
-	    
+	    	limit(page);
 	    }
 	})
 });
-
+function limit(page) {
+	$.get("../glass/glasslist?page="+page,function(date){
+		var str="<tr class='info'><th>镜片编号</th><th>镜片类型</th><th>镜片名称</th><th>镜片价格</th><th>球镜价格</th><th>柱镜价格</th><th>镜片图片</th><th>镜片添加时间</th><th>颜色1</th><th>颜色2</th><th>颜色3</th><th>颜色4</th><th>颜色5</th><th>颜色6</th><th>是否选中</th><th>更新</th><th>删除</th></tr>";
+		for (var i = 0; i < date.length; i++) {
+			var glass=date[i];
+			str+="<tr><td>"+glass.glassId+"</td><td>"+glass.glassStyle+"</td><td>"+glass.glassName+"</td><td>"+glass.glassPrice+"</td><td><src>"+glass.sphPrice+"</td><td>"+glass.cylPrice+"</td><td><img src='"+glass.glassImg+"'></td><td>"+glass.glassTime+"</td><td>"+glass.color1+"</td><td>"+glass.color2+"</td><td>"+glass.color3+"</td><td>"+glass.color4+"</td><td>"+glass.color5+"</td><td>"+glass.color6+"</td><td><input type='checkbox'></td><td>更新</td><td>删除</td></tr>";
+		}
+		$("#mytable").html(str);
+		
+	});
+}
+function glassadd(title,url){
+	var index = layer.open({
+		type: 2,
+		title: title,
+		content: url
+	});
+	layer.full(index);
+}
 </script>
 </body>
 </html>

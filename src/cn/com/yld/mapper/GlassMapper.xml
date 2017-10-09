@@ -53,34 +53,34 @@
   			<if test="glassImgthumb != null">
   				,glass_imgthumb
   			</if>
-  			<if test="glassTime != null">
+  			<if test="glassTime == null">
   				,glass_time
   			</if>
-  			<if test="color1 != null">
+  			<if test="color1 == null">
   				,color1
   			</if>
-  			<if test="color2 != null">
+  			<if test="color2 == null">
   				,color2
   			</if>
-  			<if test="color3 != null">
+  			<if test="color3 == null">
   				,color3
   			</if>
-  			<if test="color4 != null">
+  			<if test="color4 == null">
   				,color4
   			</if>
-  			<if test="color5 != null">
+  			<if test="color5 == null">
   				,color5
   			</if>
-  			<if test="color6 != null">
+  			<if test="color6 == null">
   				,color6
   			</if>
-  			<if test="color7 != null">
+  			<if test="color7 == null">
   				,color7
   			</if>
-  			<if test="color8 != null">
+  			<if test="color8 == null">
   				,color8
   			</if>
-  			<if test="color9 != null">
+  			<if test="color9 == null">
   				,color9
   			</if>
   			<if test="isActive != null">
@@ -113,35 +113,35 @@
   			<if test="glassImgthumb != null">
   				,#{glassImgthumb}
   			</if>
-  			<if test="glassTime != null">
-  				,sysdata()
+  			<if test="glassTime == null">
+  				,sysdate()
   			</if>
-  			<if test="color1 != null">
-  				,#{color1}
+  			<if test="color1 == null">
+  				,'红色'
   			</if>
-  			<if test="color2 != null">
-  				,#{color2}
+  			<if test="color2 == null">
+  				,'橙色'
   			</if>
-  			<if test="color3 != null">
-  				,#{color3}
+  			<if test="color3 == null">
+  				,'白色'
   			</if>
-  			<if test="color4 != null">
-  				,#{color4}
+  			<if test="color4 == null">
+  				,'绿色'
   			</if>
-  			<if test="color5 != null">
-  				,#{color5}
+  			<if test="color5 == null">
+  				,'黑色'
   			</if>
-  			<if test="color6 != null">
-  				,#{color6}
+  			<if test="color6 == null">
+  				,'蓝色'
   			</if>
-  			<if test="color7 != null">
-  				,#{color7}
+  			<if test="color7 == null">
+  				,'紫色'
   			</if>
-  			<if test="color8 != null">
-  				,#{color8}
+  			<if test="color8 == null">
+  				,'黄色'
   			</if>
-  			<if test="color9 != null">
-  				,#{color9}
+  			<if test="color9 == null">
+  				,'青色'
   			</if>
   			<if test="isActive != null">
   				,#{isActive}
@@ -222,7 +222,7 @@
   	update moon_glass set glass_status = "1" where glass_id = #{glassId}
   </update>
   <select id="findbylike" resultMap="glass">
-  	SELECT * FROM moon_glass where glass_status = 1 LIMIT #{num1},#{num2} 
+  	SELECT * FROM moon_glass where glass_status = 1 LIMIT #{num1},#{num2};
   </select>
   <select id="findnumber" resultType="int">
   	SELECT COUNT(*) FROM moon_glass where glass_status = 1
