@@ -53,7 +53,7 @@
   			<if test="glassImgthumb != null">
   				,glass_imgthumb
   			</if>
-  			<if test="glassTime != null">
+  			<if test="glassTime == null">
   				,glass_time
   			</if>
   			<if test="color1 != null">
@@ -113,8 +113,8 @@
   			<if test="glassImgthumb != null">
   				,#{glassImgthumb}
   			</if>
-  			<if test="glassTime != null">
-  				,sysdata()
+  			<if test="glassTime == null">
+  				,sysdate()
   			</if>
   			<if test="color1 != null">
   				,#{color1}
@@ -222,7 +222,7 @@
   	update moon_glass set glass_status = "1" where glass_id = #{glassId}
   </update>
   <select id="findbylike" resultMap="glass">
-  	SELECT * FROM moon_glass where glass_status = 1 LIMIT #{num1},#{num2} 
+  	SELECT * FROM moon_glass where glass_status = 1 LIMIT #{num1},#{num2};
   </select>
   <select id="findnumber" resultType="int">
   	SELECT COUNT(*) FROM moon_glass where glass_status = 1

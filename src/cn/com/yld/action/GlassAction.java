@@ -5,11 +5,13 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import cn.com.yld.dao.GlassDao;
 import cn.com.yld.pojo.Glass;
+import cn.com.yld.pojo.Goods;
 import cn.com.yld.service.GlassService;
 
 @Controller
@@ -25,17 +27,15 @@ public class GlassAction {
 		int num=glassService.findnumber();
 		return num;
 	}
-	@RequestMapping(value="/page")
-	@ResponseBody
-	public int page(){
-		double num = glassService.findnumber();
-		int page = (int) Math.ceil(num/5);
-		return page;
-	}
 	@RequestMapping(value="/glasslist")
 	@ResponseBody
-	public List<Glass> f2(){
-		List<Glass> list=glassService.findbylike(1, 5);
+	public List<Glass> f2(@RequestParam("page") String page){
+		List<Glass> list=glassService.findbylike(Integer.valueOf(page));
 		return list;
+	}
+	@RequestMapping(value="/addglass")
+	@ResponseBody
+	public int f4(Glass glass){
+		return glassService.insert(glass);
 	}
 }

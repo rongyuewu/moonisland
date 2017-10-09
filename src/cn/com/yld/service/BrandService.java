@@ -10,7 +10,7 @@ public interface BrandService {
 	//查询id
 	public List<Brand> findbyid();
 	//插入
-	public void insert(Brand brand);
+	public int addbrand(Brand brand);
 	//更新
 	public void update(Brand brand);
 	//删除
