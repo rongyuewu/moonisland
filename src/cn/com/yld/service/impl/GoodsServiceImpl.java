@@ -43,4 +43,13 @@ public int addgoods(Goods goods) {
 	goodsDao.insert(goods);
 	return 1;
 }
+
+@Override
+public int delgoods(List<Goods> goods) {
+	for (Goods good : goods) {
+		goodsDao.delete(good);
+	}
+	return 1;
+}
+
 }

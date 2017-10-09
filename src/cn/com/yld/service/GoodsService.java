@@ -15,4 +15,6 @@ public List<Goods> findlimit(int page);
 public List<Goods> findlike(String like);
 //添加商品
 public int addgoods(Goods goods);
+//批量删除
+public int delgoods(List<Goods> goods);
 }
