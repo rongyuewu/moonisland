@@ -59,4 +59,10 @@ public class GoodsCommentDaoImpl extends SqlSessionDaoSupport implements GoodsCo
 		mapper.delete(goodsComment);
 	}
 
+	@Override
+	public int findcount() {
+		GoodsCommentMapper mapper=this.getSqlSession().getMapper(GoodsCommentMapper.class);
+		return mapper.findcount();
+	}
+
 }

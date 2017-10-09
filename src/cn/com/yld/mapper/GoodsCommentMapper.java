@@ -8,6 +8,8 @@ import cn.com.yld.pojo.GoodsComment;
 public interface GoodsCommentMapper {
 	//查询全部
 	public List<GoodsComment> findall();
+	//查询数量
+	public int findcount();
 	//id查询
 	public List<GoodsComment> findbyid(GoodsComment goodsComment);
 	//属性查询

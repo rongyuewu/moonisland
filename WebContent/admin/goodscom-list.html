@@ -21,17 +21,14 @@
 <script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script>
 <![endif]-->
-<title>商品列表</title>
+<title>商品评论</title>
 </head>
 <body>
-<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 商品管理 <span class="c-gray en">&gt;</span> 商品列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 商品管理 <span class="c-gray en">&gt;</span> 商品评论 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="page-container">
-	<div class="text-c"> 日期范围：
-		<input type="text" onfocus="WdatePicker({ maxDate:'#F{$dp.$D(\'logmax\')||\'%y-%M-%d\'}' })" id="logmin" class="input-text Wdate" style="width:120px;">
-		-
-		<input type="text" onfocus="WdatePicker({ minDate:'#F{$dp.$D(\'logmin\')}',maxDate:'%y-%M-%d' })" id="logmax" class="input-text Wdate" style="width:120px;">
+	<div class="text-c">
 		<input type="text" name="" id="Goodsname" placeholder=" 商品名称" style="width:250px" class="input-text">
-		<button name="" id="Btnok" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜商品</button>
+		<button name="" id="Btnok" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜评论</button>
 	</div>
 	<div class="mt-20">
 		<table class="table table-striped" id="mytable">
@@ -49,7 +46,6 @@
 	<div class="cl pd-5 bg-1 bk-gray mt-20"> 
 		<span class="l">
 		<a onclick="delgoods()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a>
-		<a class="btn btn-primary radius" onclick="goodsadd('添加商品','goods-add.html')"><i class="Hui-iconfont">&#xe600;</i> 添加商品</a>
 		</span> 
 		<span class="r">共有评论：<strong id="goodsnum"></strong> 条</span> 
 	</div>
@@ -66,7 +62,7 @@
 <script type="text/javascript" src="lib/datatables/1.10.0/jquery.dataTables.min.js"></script> 
 <script type="text/javascript" src="lib/laypage/1.2/laypage.js"></script>
 <script type="text/javascript">
-$.get("../goods/getnum",function(date){
+$.get("../goodcomment/getnum",function(date){
 	$("#goodsnum").html(date);
 	var setTotalCount = date;
 	$('#box').paging({
@@ -84,24 +80,26 @@ function delgoods(){
 	var tds=$(".check_hide:checked").parent();
 	var arr=[];
 	tds.each(function(index,obj){
-		arr[index]=$(obj).attr("goodid");
+		arr[index]=$(obj).attr("comment_id");
 	})
-	$.post("../goods/delgoods",{data:arr+""},function(data){
+	$.post("../goodcomment/delcomment",{data:arr+""},function(data){
 		if(data==1){
 			tds.parent().remove();
 		}
 	});
 }
 function limit(page){
-	$.get("../goods/getlimit?page="+page,function(date){
-		var str="<tr class='info'><th>图片</th><th>商品编号</th><th>商品名称</th><th>品牌</th><th>收藏数量</th><th>是否在售</th><th>是否促销</th><th>商品价格</th><th>促销价格</th><th>积分</th><th class='check_hide'>选中</th></tr>";
+	$.get("../goodcomment/getlimit?page="+page,function(date){
+		var str="<tr class='info'><th>商品图片</th><th>商品名</th><th>订单编号</th><th>评论内容</th><th>评论图片</th><th>评星</th><th>添加时间</th><th>选中</th></tr>";
+		console.log(date);
 		for (var i = 0; i < date.length; i++) {
-			var good=date[i];
-			str+="<tr><td>"+good.goodsContent+"</td><td>"+good.brandId+"</td><td>"+good.goodsName+"</td><td>"+good.brand.brandName+"</td><td>"+good.salesNum+"</td><td>"+good.isOnsale+"</td><td>"+good.isSale+"</td><td>"+good.salesPrice+"</td><td>"+good.minusPrice+"</td><td>"+good.points+"</td><td goodid="+good.goodsId+"><input type='radio'  class='check_hide'></td></tr>";
+			var comment=date[i];
+			str+="<tr><td>"+comment.goods.goodsContent+"</td><td>"+comment.goods.goodsName+"</td><td>"+comment.order.orderNumber+"</td><td>"+comment.commentContentword+"</td><td>"+comment.commentContentimg+"</td><td>"+comment.guarantee+"</td><td>"+comment.commentTime+"</td><td comment_id="+comment.commentId+"><input type='radio'  class='check_hide'></td></tr>";
 		}
 		$("#mytable").html(str);
 	});
 }
+/* 
 $("#Btnok").click(function(){
 	var likestr=$("#Goodsname").val();
 	like(likestr);
@@ -116,15 +114,7 @@ function like(likestr){
 		$("#mytable").html(str);
 	});
 	$("#box").html("");
-}
-function goodsadd(title,url){
-	var index = layer.open({
-		type: 2,
-		title: title,
-		content: url
-	});
-	layer.full(index);
-}
+} *///通过商品找评论
 </script>
 </body>
 </html>
