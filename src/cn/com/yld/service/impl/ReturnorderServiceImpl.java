@@ -28,8 +28,8 @@ public class ReturnorderServiceImpl implements ReturnorderService {
 	}
 
 	@Override
-	public void update(Returnorder returnorder) {
-		returnorderdao.update(returnorder);
+	public void updatestatus(Returnorder returnorder) {
+		returnorderdao.updatestatus(returnorder);
 	}
 
 }

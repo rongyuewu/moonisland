@@ -8,6 +8,6 @@ public interface ReturnorderService {
 	//插入
 	public void insert(Returnorder returnorder);
 	//更改
-	public void update(Returnorder returnorder);
+	public void updatestatus(Returnorder returnorder);
 	
 }

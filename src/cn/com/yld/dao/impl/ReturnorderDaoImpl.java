@@ -17,17 +17,18 @@ public class ReturnorderDaoImpl extends SqlSessionDaoSupport implements Returnor
 	}
 
 	@Override
-	public void insert(Returnorder order) {
+	public void insert(Returnorder returnorder) {
 		ReturnorderMapper mapper  = this.getSqlSession().getMapper(ReturnorderMapper.class);
-		mapper.insert(order);
+		mapper.insert(returnorder);
 
 	}
 
 	@Override
-	public void update(Returnorder order) {
+	public void updatestatus(Returnorder returnorder) {
 		ReturnorderMapper mapper  = this.getSqlSession().getMapper(ReturnorderMapper.class);
-		mapper.update(order);
-
+		mapper.updatestatus(returnorder);
 	}
+
+	
 
 }
