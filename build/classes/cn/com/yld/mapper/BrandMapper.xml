@@ -55,7 +55,7 @@
   		</trim>
   		)
   </insert>
-  <update id="update" parameterType="brand">
+  <update id="update" parameterType="Brand">
   	update moon_brand set 
   		<trim prefixOverrides=",">
   			<if test="brandName != null">
@@ -76,10 +76,10 @@
   		</trim>
   		where brand_id = #{brandId}
   </update>
-  <update id="delete" parameterType="brand">
+  <update id="delete" parameterType="Brand">
   	update moon_brand set brand_status = "0" where brand_id = #{brandId}
   </update>
-  <update id="cleandelete" parameterType="brand">
+  <update id="cleandelete" parameterType="Brand">
   	update moon_brand set brand_status = "1" where brand_id = #{brandId}
   </update>
    <select id="findnumber" resultType="int">

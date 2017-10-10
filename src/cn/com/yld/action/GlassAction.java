@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import cn.com.yld.dao.GlassDao;
+import cn.com.yld.pojo.Brand;
 import cn.com.yld.pojo.Glass;
 import cn.com.yld.pojo.Goods;
 import cn.com.yld.service.GlassService;
@@ -37,5 +38,11 @@ public class GlassAction {
 	@ResponseBody
 	public int f4(Glass glass){
 		return glassService.insert(glass);
+	}
+	@RequestMapping(value="/delglass")
+	@ResponseBody
+	public int f5(Glass glass){
+		glassService.delete(glass);
+		return 1;
 	}
 }
