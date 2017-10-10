@@ -45,8 +45,12 @@ public class BrandAction {
 	}
 	@RequestMapping(value="/delbrand")
 	@ResponseBody
-	public int f5(Brand brand){
+	public void f5(Brand brand){
 		brandService.delete(brand);
-		return 1;
+	}
+	@RequestMapping(value="/updatebrand")
+	@ResponseBody
+	public int f6(Brand brand){
+		return brandService.update(brand);
 	}
 }

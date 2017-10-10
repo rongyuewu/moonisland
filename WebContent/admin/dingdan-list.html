@@ -198,7 +198,7 @@ function orderxiangxi(ordernumber,obj){
 		console.log(data)
 		for (var i = 0; i < data.length; i++) {
 			ht+='<tr class="text-c"><td>'+data[i].goods.goodsName+'</td>'
-			ht+='<td><a href="#"><img width="100" class="picture-thumb" src="temp/200x150.jpg"></a></td>'
+			ht+='<td><a href="#"><img width="100" class="picture-thumb" src="'+data[i].goodsPic.pic1Thumb+'"></a></td>'
 			ht+='<td class="text-c"><a class="maincolor" href="javascript:;">'+data[i].goodsAttr.material+'&nbsp;&nbsp;&nbsp;&nbsp;'+data[i].goodsAttr.size+'&nbsp;&nbsp;'
 			ht+='&nbsp;&nbsp;'+data[i].goodsAttr.color+'</a></td>'
 			ht+='<td>$'+data[i].goods.salesPrice+'</td><td class="text-c">'+data[i].payNum+'</td>'

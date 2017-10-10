@@ -36,8 +36,8 @@ public class BrandServiceImpl implements BrandService {
 	}
 
 	@Override
-	public void update(Brand brand) {
-		this.brandDao.update(brand);
+	public int update(Brand brand) {
+		return this.brandDao.update(brand);
 	}
 
 	@Override
