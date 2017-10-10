@@ -25,9 +25,9 @@ public class BrandDaoImpl extends SqlSessionDaoSupport implements BrandDao {
 	}
 
 	@Override
-	public void update(Brand brand) {
+	public int update(Brand brand) {
 		BrandMapper mapper = this.getSqlSession().getMapper(BrandMapper.class);
-		mapper.update(brand);
+		return mapper.update(brand);
 	}
 
 	@Override

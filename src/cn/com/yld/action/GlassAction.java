@@ -41,8 +41,7 @@ public class GlassAction {
 	}
 	@RequestMapping(value="/delglass")
 	@ResponseBody
-	public int f5(Glass glass){
+	public void f5(Glass glass){
 		glassService.delete(glass);
-		return 1;
 	}
 }

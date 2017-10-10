@@ -13,7 +13,7 @@ public interface BrandDao {
 	//插入
 	public void insert(Brand brand);
 	//更新
-	public void update(Brand brand);
+	public int update(Brand brand);
 	//删除
 	public void delete(Brand brand);
 	//清除删除
