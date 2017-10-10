@@ -34,6 +34,7 @@ public class GoodsCommentDaoImpl extends SqlSessionDaoSupport implements GoodsCo
 	@Override
 	public List<GoodsComment> findbyattr(GoodsComment goodsComment) {
 		GoodsCommentMapper mapper=this.getSqlSession().getMapper(GoodsCommentMapper.class);
+		System.out.println(mapper.findbyattr(goodsComment));
 		return mapper.findbyattr(goodsComment);
 	}
 

@@ -31,17 +31,7 @@
 		<button name="" id="Btnok" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜评论</button>
 	</div>
 	<div class="mt-20">
-		<table class="table table-striped" id="mytable">
-	  		<tr class="info">
-	  			<th>商品图片</th>
-				<th>商品名</th>
-				<th>订单编号</th>
-				<th>评论内容</th>
-				<th>评论图片</th>
-				<th>评星</th>
-				<th>添加时间</th>
-			</tr>
-		</table>
+		<table class="table table-striped" id="mytable"></table>
 	</div>
 	<div class="cl pd-5 bg-1 bk-gray mt-20"> 
 		<span class="l">
@@ -99,14 +89,14 @@ function limit(page){
 		$("#mytable").html(str);
 	});
 }
-/* 
 $("#Btnok").click(function(){
-	var likestr=$("#Goodsname").val();
-	like(likestr);
+	var goodsName=$("#Goodsname").val();
+	like(goodsName);
 });
-function like(likestr){
-	$.get("../goods/getlike?like="+likestr,function(date){
+function like(goodsName){
+	$.get("../goodcomment/getlike?goods.goodsName="+goodsName,function(date){
 		var str="<tr class='info'><th>图片</th><th>商品编号</th><th>商品名称</th><th>品牌</th><th>收藏数量</th><th>是否在售</th><th>是否促销</th><th>商品价格</th><th>促销价格</th><th>积分</th><th class='check_hide'>选中</th></tr>";
+		console.log(date)
 		for (var i = 0; i < date.length; i++) {
 			var good=date[i];
 			str+="<tr><td>"+good.goodsContent+"</td><td>"+good.brandId+"</td><td>"+good.goodsName+"</td><td>"+good.brand.brandName+"</td><td>"+good.salesNum+"</td><td>"+good.isOnsale+"</td><td>"+good.isSale+"</td><td>"+good.salesPrice+"</td><td>"+good.minusPrice+"</td><td>"+good.stockNum+"</td><td>"+good.points+"</td><td goodid="+good.goodsId+"><input type='radio'  class='check_hide'></td></tr>";
@@ -114,7 +104,7 @@ function like(likestr){
 		$("#mytable").html(str);
 	});
 	$("#box").html("");
-} *///通过商品找评论
+} //通过商品找评论
 </script>
 </body>
 </html>

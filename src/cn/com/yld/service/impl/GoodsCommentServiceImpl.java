@@ -32,4 +32,10 @@ public void delcomment(GoodsComment goodsComment) {
 	goodsCommentDao.delete(goodsComment);
 }
 
+@Override
+public List<GoodsComment> findattr(GoodsComment goodsComment) {
+	return goodsCommentDao.findbyattr(goodsComment);
+}
+
+
 }

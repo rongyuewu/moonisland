@@ -37,4 +37,10 @@ public class GoodsCommentAction {
 		return 1;
 		
 	}
+	@RequestMapping(value="/getlike")
+	@ResponseBody
+	public List<GoodsComment> f3(GoodsComment goodsComment){
+		return goodsCommentService.findattr(goodsComment);
+		
+	}
 }

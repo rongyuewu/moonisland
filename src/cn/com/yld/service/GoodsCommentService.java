@@ -11,4 +11,6 @@ public List<GoodsComment> findlimit(int page);
 public int findcount();
 //删除评论
 public void delcomment(GoodsComment goodsComment);
+//查询商品评论
+public List<GoodsComment> findattr(GoodsComment goodsComment);
 }
