@@ -16,7 +16,5 @@ public interface UserMapper {
 	public void update(User user);
 	//删除用户
 	public void delete(User user);
-	//取消删除
-	public void cleandelete(User user);
 	
 }

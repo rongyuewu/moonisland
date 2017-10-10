@@ -10,16 +10,15 @@ import cn.com.yld.pojo.PhotoWall;
 public class PhotoWallDaoImpl extends SqlSessionDaoSupport implements PhotoWallDao {
 	
 	@Override
-	public List<PhotoWall> find() {
+	public List<PhotoWall> findall() {
 		PhotoWallMapper mapper = this.getSqlSession().getMapper(PhotoWallMapper.class);
-		return mapper.find();
+		return mapper.findall();
 	}
 
 	@Override
 	public void insert(PhotoWall photoWall) {
 		PhotoWallMapper mapper = this.getSqlSession().getMapper(PhotoWallMapper.class);
 		mapper.insert(photoWall);
-		
 	}
 
 	@Override

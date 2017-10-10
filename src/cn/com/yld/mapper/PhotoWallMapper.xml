@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.com.yld.mapper.PhotoWallMapper">
-  <resultMap type="PhotoWall" id="photoWall">
+  <resultMap type="PhotoWall" id="photoWallresultmap">
   	<id column="photo_id" property="photoId"/>
   	<result column="photo_url" property="photoUrl"/>
   	<result column="photo_word" property="photoWord"/>
@@ -9,7 +9,7 @@
   	<result column="photo_status" property="photoStatus"/>
   </resultMap>
   <!-- 查询 -->
-  <select id="find" resultMap="photoWall">
+  <select id="findall" resultMap="photoWallresultmap">
   	select * from moon_photo_wall
   </select>
   <!-- 插入 -->

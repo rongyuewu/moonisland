@@ -55,6 +55,7 @@ public class PhotoWall implements Serializable{
 		this.photoStatus = photoStatus;
 	}
 
+
 	
 }
 
