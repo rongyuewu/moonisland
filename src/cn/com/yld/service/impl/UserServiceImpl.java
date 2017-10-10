@@ -42,11 +42,6 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void cleandelete(User user) {
-		userDao.cleandelete(user);
-	}
-
-	@Override
 	public User findlogin(User user) {
 		return userDao.findlogin(user);
 	}

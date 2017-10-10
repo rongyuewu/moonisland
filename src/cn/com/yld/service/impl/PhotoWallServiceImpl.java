@@ -18,8 +18,8 @@ public class PhotoWallServiceImpl implements PhotoWallService {
 	}
 
 	@Override
-	public List<PhotoWall> find() {
-		return photoWallDao.find();
+	public List<PhotoWall> findall() {
+		return photoWallDao.findall();
 		
 	}
 

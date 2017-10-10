@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.com.yld.mapper.AdminMapper">
-  <resultMap type="Admin" id="admin">
+  <resultMap type="Admin" id="adminresultMap">
   	<id column="id" property="id"/>
   	<result column="name" property="name"/>
   	<result column="pwd" property="pwd"/>
   	<result column="status" property="status"/>
   	<result column="add_time" property="addTime"/>
   </resultMap>
-  <select id="find" parameterType="Admin">
-  	SELECT * FROM moon_admin WHERE name=#{name} AND pwd=#{ped}
+  <select id="findall" parameterType="Admin" resultMap="adminresultMap">
+  	SELECT * FROM moon_admin WHERE name=#{name} AND pwd=#{pwd}
+  </select>
+  <select id="findlist" parameterType="Admin" resultMap="adminresultMap">
+  	SELECT * FROM moon_admin
   </select>
 </mapper>
