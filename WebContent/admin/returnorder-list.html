@@ -130,7 +130,7 @@ $(function(){
 			var $li = $('#tab li');
 			var $ul = $('#content div');
 						
-			$li.mouseover(function(){
+			$li.click(function(){
 				var $this = $(this);
 				var $t = $this.index();
 				$li.removeClass();
@@ -142,15 +142,32 @@ $(function(){
 })
 
 function renturnorder_update(obj,returnorderid){
-	
-	$.get("../returnorder/updatestatus?returnid="+returnorderid,function(data) {
+	layer.confirm('确认退货完成吗？',function(index){
+        $.ajax({
+            type: 'get',
+            url: '../returnorder/updatestatus?returnid='+returnorderid,
+            success: function(data){
+                $(obj).parent().remove()
+				var yiwancheng=$('#yiwancheng')
+				var h="";
+				h+='<tr id="'+returnorderid+'" class="text-c">'+$('#'+returnorderid).html()+'</tr>'
+				yiwancheng.append(h)
+				$('#'+returnorderid).remove()
+                layer.msg('已退货!',{icon: 6,time:1000});
+            },
+            error:function(data) {
+                layer.msg('退货失败!',{icon: 5,time:1000});
+            },
+        });     
+    });
+	/*$.get("../returnorder/updatestatus?returnid="+returnorderid,function(data) {
 		$(obj).parent().remove()
 		var yiwancheng=$('#yiwancheng')
 		var h="";
 		h+='<tr id="'+returnorderid+'" class="text-c">'+$('#'+returnorderid).html()+'</tr>'
 		yiwancheng.append(h)
 		$('#'+returnorderid).remove()
-	})
+	})*/
 }
 
 </script>
