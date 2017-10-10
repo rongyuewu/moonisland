@@ -23,7 +23,7 @@ public class PhotoWallTest {
 	@Test
 	public void test01(){
 		PhotoWallDao dao = (PhotoWallDao) this.context.getBean("photoWallDao");
-		List<PhotoWall> ls=(List<PhotoWall>) dao.find();
+		List<PhotoWall> ls=(List<PhotoWall>) dao.findall();
 		for (PhotoWall photoWall : ls) {
 			System.out.println(photoWall.getPhotoWord());
 		}
@@ -38,7 +38,7 @@ public class PhotoWallTest {
 		dao.insert(pw);
 		System.out.println(pw);
 	}
-	@Test
+	/*@Test
 	public void test03(){
 		PhotoWallDao dao = (PhotoWallDao) this.context.getBean("photoWallDao");
 		PhotoWall pw = new PhotoWall();
@@ -46,5 +46,5 @@ public class PhotoWallTest {
 		pw.setPhotoStatus("1");
 		dao.update(pw);
 		System.out.println(pw);
-	}
+	}*/
 }
