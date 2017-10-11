@@ -17,6 +17,7 @@
 <link rel="stylesheet" type="text/css" href="static/h-ui.admin/skin/default/skin.css" id="skin" />
 <link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/style.css" />
 <link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/bootstrap.min.css" />
+<style type="text/css">.imgicon{width:50px;height: 50px;}</style>
 <!--[if IE 6]>
 <script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script>
@@ -107,10 +108,10 @@ function delgoods(){
 }
 function limit(page){
 	$.get("../goods/getlimit?page="+page,function(date){
-		var str="<tr class='info'><th>图片</th><th>商品编号</th><th>商品名称</th><th>品牌</th><th>收藏数量</th><th>是否在售</th><th>是否促销</th><th>商品价格</th><th>促销价格</th><th>积分</th><th class='check_hide'>选中</th></tr>";
+		var str="<tr class='info'><th>图片</th><th>商品名称</th><th>品牌</th><th>收藏数量</th><th>是否在售</th><th>是否促销</th><th>商品价格</th><th>促销价格</th><th>积分</th><th class='check_hide'>选中</th></tr>";
 		for (var i = 0; i < date.length; i++) {
 			var good=date[i];
-			str+="<tr><td>"+good.goodsContent+"</td><td>"+good.brandId+"</td><td>"+good.goodsName+"</td><td>"+good.brand.brandName+"</td><td>"+good.salesNum+"</td><td>"+good.isOnsale+"</td><td>"+good.isSale+"</td><td>"+good.salesPrice+"</td><td>"+good.minusPrice+"</td><td>"+good.points+"</td><td goodid="+good.goodsId+"><input type='radio'  class='check_hide'></td></tr>";
+			str+="<tr><td><img class='imgicon' src='../images/goods/"+good.goodsContent+"'></td><td>"+good.goodsName+"</td><td>"+good.brand.brandName+"</td><td>"+good.salesNum+"</td><td>"+good.isOnsale+"</td><td>"+good.isSale+"</td><td>"+good.salesPrice+"</td><td>"+good.minusPrice+"</td><td>"+good.stockNum+"</td><td>"+good.points+"</td><td goodid="+good.goodsId+"><input type='radio'  class='check_hide'></td></tr>";
 		}
 		$("#mytable").html(str);
 	});
@@ -121,10 +122,10 @@ $("#Btnok").click(function(){
 });
 function like(likestr){
 	$.get("../goods/getlike?like="+likestr,function(date){
-		var str="<tr class='info'><th>图片</th><th>商品编号</th><th>商品名称</th><th>品牌</th><th>收藏数量</th><th>是否在售</th><th>是否促销</th><th>商品价格</th><th>促销价格</th><th>积分</th><th class='check_hide'>选中</th></tr>";
+		var str="<tr class='info'><th>图片</th><th>商品名称</th><th>品牌</th><th>收藏数量</th><th>是否在售</th><th>是否促销</th><th>商品价格</th><th>促销价格</th><th>积分</th><th class='check_hide'>选中</th></tr>";
 		for (var i = 0; i < date.length; i++) {
 			var good=date[i];
-			str+="<tr><td>"+good.goodsContent+"</td><td>"+good.brandId+"</td><td>"+good.goodsName+"</td><td>"+good.brand.brandName+"</td><td>"+good.salesNum+"</td><td>"+good.isOnsale+"</td><td>"+good.isSale+"</td><td>"+good.salesPrice+"</td><td>"+good.minusPrice+"</td><td>"+good.stockNum+"</td><td>"+good.points+"</td><td goodid="+good.goodsId+"><input type='radio'  class='check_hide'></td></tr>";
+			str+="<tr><td><img class='imgicon' src='../images/goods/"+good.goodsContent+"'></td><td>"+good.goodsName+"</td><td>"+good.brand.brandName+"</td><td>"+good.salesNum+"</td><td>"+good.isOnsale+"</td><td>"+good.isSale+"</td><td>"+good.salesPrice+"</td><td>"+good.minusPrice+"</td><td>"+good.stockNum+"</td><td>"+good.points+"</td><td goodid="+good.goodsId+"><input type='radio'  class='check_hide'></td></tr>";
 		}
 		$("#mytable").html(str);
 	});
