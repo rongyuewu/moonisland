@@ -1,0 +1,473 @@
+/*-------------------填写地址------------------*/
+#main{
+	width: 990px;
+	margin: 0 auto;
+}
+#main ul{
+	padding: 0;
+	margin: 0;
+}
+#main #process{
+	height: 242px;
+}
+#main #process #img{
+	height: 72px;
+	margin-left: 24px;
+	background: url(../Images/前台/6-填写地址/images/Write_address.png) 0 0 no-repeat;
+	margin-top: -5px;
+}
+#main #process #step{
+	width: 100%;
+	height: 72px;
+	background: url(../Images/前台/6-填写地址/images/process.png) 0 0 no-repeat;
+}
+#main #Receipt_Information{
+	width: 988px;
+	/*height: 285px;*/
+	height: auto;
+	border:1px solid #ebebeb;
+}
+/*----------定义类 用于给nav设置背景色和宽高-----------*/
+#main .receipt_nav{
+	width: 100%;
+	height: 44px;
+	background-color: #252525;
+	color: #fff;
+}
+#main .receipt_nav .address_navs{
+	font: 14px/44px "微软雅黑";
+	margin-left: 20px;
+	margin-right: 20px;
+}
+#main #Receipt_Information #receipts{
+	width: 100%;
+	height: 241px;
+
+}
+#main #Receipt_Information #receipts #add_receipts,
+#main #Receipt_Information #receipts #receipts_01,
+#main #Receipt_Information #receipts #receipts_02{
+	width: 222px;
+	height: 171px;
+	float: left;
+	margin: 30px 10px 40px 10px;
+	position: relative;
+}
+#main #Receipt_Information #receipts #add_receipts #add_content{
+	width: 128px;
+	height: 121px;
+	margin:11px 52px 11px 44px;
+	border:1px solid #ebebeb;
+}
+#main #Receipt_Information #receipts #add_receipts #add_content span{
+	width: 55px;
+	height: 55px;
+	font: 90px/45px "宋体";
+	color: #DCDCDC;
+	display: block;
+	margin: 31px 39px 39px 39px;
+}
+#main #Receipt_Information #receipts #add_receipts span{
+	width: 222px;
+	height: 32px;
+	display: block;
+	text-align: center;
+	font: 14px/32px "宋体";
+	color: #898A8A;
+}
+#main #Receipt_Information #receipts #receipts_02{
+	border:1px solid #ebebeb;
+}
+#main #Receipt_Information #receipts #top_img{
+	width: 221px;
+	height: 8px;
+	float: left;
+	background: url(../Images/前台/6-填写地址/images/addressTip.gif) 0 0 no-repeat;
+}
+#main .border_select{
+	border:1px solid #F8931E;
+	position: relative;
+	font-weight: bolder;
+}
+#main .img_select{
+	width: 23px;
+	height: 23px;
+	background: url(../Images/前台/6-填写地址/images/address_select.png) 0 0 no-repeat;
+	position:absolute;
+	bottom: 0;
+	right: 0;
+}
+#main #Receipt_Information #receipts ul{
+	width: 203px;
+	height: 137px;
+	font-size: 14px;
+	margin: 10px 12px 2px 14px;
+}
+#main #Receipt_Information #receipts li{
+	margin-top: 17px;
+	float: left;
+}
+#main #Receipt_Information #receipts .li_txt{
+	width: 165px;
+	height: 36px;
+}
+#main #Receipt_Information #receipts .color_txt{
+	color: #898A8A;
+}
+#main #Receipt_Information #receipts .set_default{
+	width: 63px;
+	height: 30px;
+	border:1px solid #DCDCDC;
+	background-color: #F7F7F7;
+	margin-right: 53px;
+}
+#main #Receipt_Information #receipts .edit_del{
+	width: 33px;
+	height: 30px;
+	margin-right: 10px;
+	margin-top: 22px;
+}
+/*-------------------填写地址结束------------------*/
+/*-------------------支付方式----------------------*/
+#main #payment{
+	width: 988px;
+	height: 421px;
+	border:1px solid #ebebeb;
+	margin-top: 30px;
+}
+#main #payment #select_pay{
+	height: 143px;
+	border-bottom:1px solid #ebebeb;
+	overflow: hidden;
+}
+#main #payment #select_pay ul{
+	margin: 42px 0 0 40px;
+}
+#main #payment .li_select{
+	width: 189px;
+	height: 33px;
+	font:14px/33px "微软雅黑";
+	color: #737373;
+	text-align: center;
+	margin-top: 10px;
+}
+#main #payment #select_pay #li2{
+	width: 290px;
+	color: #B6B6B6;
+}
+#main #payment #delivery_nav{
+	width: 100%;
+	height: 44px;
+	font: 14px/44px "微软雅黑";
+	margin-left: 20px;
+	margin-right: 20px;
+}
+#main #payment #delivery{
+	width: 100%;
+	height: 196px;
+	border-top: 1px solid #ebebeb;
+}
+#main #payment #delivery ul{
+	margin: 42px 0 0 40px;
+}
+#main #payment #delivery #li2{
+	border:1px solid #ebebeb;
+}
+#main #payment #delivery #li3{
+	width: 455px;
+}
+#main #order_info{
+	width: 990px;
+	height: 624px;
+	margin-top: 30px;
+}
+#main #order_info #order_nav #li2{
+	margin-left: 198px;
+	margin-right: 431px;
+}
+#main #order_info #order_nav #li4{
+	margin-right: 30px;
+}
+#main #order_info #order_01{
+	height: 280px;
+	margin-top: 10px;
+	border:1px solid #ebebeb;
+}
+#main #order_info #order_01 #price{
+	height: 40px;
+	width: 100%;
+	background-color: #F0F2F3;
+}
+#main #order_info #order_01 #price li{
+	height: 40px;
+	line-height: 40px;
+	color: #7E7F7F;
+}
+#main #order_info #order_01 #price li input{
+	width: 80px;
+	height: 25px;
+	border:1px solid #ccc;
+	color: #D2D2D2
+	/*font-size:14px;*/
+}
+#main #order_info #order_01 #price #li1{
+	margin-left: 432px;
+	font-size: 14px;
+}
+#main #order_info #order_01 #price #li2{
+	margin-right: 40px;
+}
+#main #order_info #order_01 #products{
+	height: 204px;
+	padding: 16px 35px 20px 20px;
+}
+#main #order_info #order_01 #products #ul1{
+	height: 96px;
+}
+#main #order_info #order_01 #products #ul1 li{
+	float: left;
+	height: 79px;
+	font:14px/24px "宋体";
+	text-align: center;
+}
+#main #order_info #order_01 #products #ul1 #li1{
+	width: 117px;			
+	border:1px solid #ebebeb;
+	background: url(../Images/前台/6-填写地址/images/product_01.gif) 0 0 no-repeat;
+}
+#main #order_info #order_01 #products #ul1 #li2{
+	width: 111px;
+	height: 59px;
+	color: #ABABAB;
+	margin: 20px 440px 0 10px;
+}
+#main #order_info #order_01 #products #ul1 #li3{
+	line-height: 79px;
+	margin-left: 36px;
+}
+#main #order_info #order_01 #products #ul1 #li4{
+	line-height: 79px;
+	float: right;
+}
+#main #order_info #order_01 #products #ul2{
+	height: 110px;
+}
+#main #order_info #order_01 #products #ul2 li{
+	float: left;
+	height: 103px;
+	font:14px/24px "宋体";
+	text-align: center;
+}
+#main #order_info #order_01 #products #ul2 #li1{
+	width: 117px;
+	background: url(../Images/前台/6-填写地址/images/product_02.jpg) 0 0 no-repeat;
+}
+#main #order_info #order_01 #products #ul2 #li2{
+	width: 204px;
+	background: url(../Images/前台/6-填写地址/images/txt.png) 0 0 no-repeat;
+	margin: 0 348px 0 10px;
+}
+#main #order_info #order_01 #products #ul2 #li3{
+	line-height: 103px;
+	margin-left: 36px;
+}
+#main #order_info #order_01 #products #ul2 #li4{
+	line-height: 103px;
+	float: right;
+}
+#main #cheap{
+	width: 988px;
+	height: 430px;
+	margin-top: 30px;
+	border:1px solid #ebebeb;
+}
+#main #cheap #bill .bill_checkbox{
+	width: 18px;
+	height: 14px;
+	background-color: #fff;
+	margin-left: 30px;
+	margin-right: 9px;
+}
+#main #cheap #bill{
+	width: 988px;
+	height: 52px;
+	font:14px/52px "宋体";
+	color: #888888;
+	border-bottom: 1px solid #EBEBEB;
+}
+#main #cheap #bill span {
+	position: relative;
+	overflow: hidden;
+}
+
+#main #cheap #bill .input_checa {
+	position: absolute;
+	visibility: hidden;
+	float: left;
+}
+#main #cheap #bill .input_checa+label {
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	border: 1px solid black;
+	background: #FFF;
+	border-radius: 100%;
+	margin-top: 17px;
+	margin-left: 30px;
+}
+#main #cheap #bill .input_checa:checked+label:after {
+	content: "";
+	position: absolute;
+	left:32px;
+	bottom: 11px;
+	width: 7px;
+	height: 4px;
+	border: 2px solid #000;
+	border-top-color: transparent;
+	border-right-color: transparent;
+	-ms-transform: rotate(-60deg);
+	-moz-transform: rotate(-60deg);
+	-webkit-transform: rotate(-60deg);
+	transform: rotate(-45deg);
+}
+#main #cheap #bill_select{
+	width: 988px;
+	height: 158px;
+	border-bottom: 1px solid #EBEBEB;
+	overflow: hidden;
+}
+#main #cheap #bill_select #bill_code{
+	width: 800px;
+	height: 52px;
+	line-height: 55px;
+	float: right;
+}
+#main #cheap #bill_select #writeMsg{
+	width: 800px;
+	height: 105px;
+	line-height: 55px;
+	float: right;
+}
+#main #cheap #bill_select #bill_code ul{
+	width: 555px;
+	height: 40px;
+	float: right;
+	margin-top: 22px;
+}
+#main #cheap #bill_select #bill_code li{
+	float: left;
+	height: 29px;
+	font:14px/29px "宋体";
+	color: #242424;
+}
+/*-----定义一个类名，让隐藏----*/
+#main #cheap #bill_select .hidden{
+	visibility: hidden;
+}
+/*-----定义一个类名，让显示----*/
+#main #cheap #bill_select .show{
+	visibility: show;
+}
+#main #cheap #bill_select #writeMsg #text1{
+	width: 579px;
+	height: 77px;
+	border-radius: 5px;
+	border:1px solid #E3E3E3;
+	float: right;
+	margin-top: 10px;
+	margin-right: 30px;
+	box-shadow:0px 2px 0px 0px #ccc inset;
+	padding: 0;
+	font: 13.33px/3 "[MicrosoftYaHeiLight]";
+	color: #b6b6b6
+}
+#main #cheap #bill_select #bill_code #text{
+	margin-right: 10px;
+}
+#main #cheap #bill_select #bill_code .bill_sign{
+	width: 10px;
+	height: 25px;
+	display: inline-block;
+}
+#main #cheap #bill_select #bill_code .bill_input{
+	width: 71px;
+	height: 25px;
+	border:1px solid #999999;
+}
+#main #cheap #bill_select #bill_code .bill_btn{
+	width: 76px;
+	height: 28px;
+	background-color: #E10000;
+	color: #fff;
+	border:1px solid #E10000;
+	margin-left: 30px;
+}
+#main #cheap #bill_select #div1{
+	width: 140px;
+	height: 158px;
+	margin-left: 30px;
+	float: left;
+}
+#main #cheap #bill_select #div1 li{
+	width: 120px;
+	height: 60px;
+	font:14px/60px "宋体";
+	color: #888888;
+	float: left;
+	margin-top: 10px;
+}
+#main #cheap #bill_select #div1 .img{
+	width: 18px;
+	height: 18px;
+	background: url(../Images/前台/6-填写地址/images/list_select.jpg) 0 0 no-repeat;
+	margin-top: 33px;
+}
+#main #cheap #bill_select #div1 .new_img{
+	width: 18px;
+	height: 18px;
+	background: url(../Images/前台/6-填写地址/images/list_stop.jpg) 0 0 no-repeat;
+	margin-top: 33px;
+}
+#main #cheap #count_price{
+	width: 100%;
+	height: 170px;
+}
+#main #cheap #count_price ul{
+	width: 266px;
+	height: 107px;
+	float: right;
+	margin:20px 20px 20px 0;
+	font-size: 14px;
+	color: #888888;
+	font-family: "微软雅黑";
+}
+#main #cheap #count_price li{
+	margin-top: 10px;
+	width: 252px;
+	height: 28px;
+	float: right;
+	text-align: right;
+}
+#main #sub_order{
+	width: 100%;
+	height: 164px;
+	overflow: hidden;
+}
+#main #sub_order #li1{
+	margin: 42px 0 42px 42px;
+	width: 364px;
+	height: 52px;
+	float: right;
+	font:24px/52px "宋体";
+	color: #ff0000;
+	text-align: right;
+}
+#main #sub_order #li1 #sub{
+	width: 148px;
+	height: 52px;
+	background-color: #F8931E;
+	border:1px solid #F8931E;
+	font-size: 25px;
+	color: #fff;
+	font-family: "黑体";
+}

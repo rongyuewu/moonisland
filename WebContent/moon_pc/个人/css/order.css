@@ -1,0 +1,290 @@
+<style type="text/css">
+	body,div,ul,li,dl,dt,dd{
+		padding: 0px;
+		margin: 0px;
+	}
+	/*.menu_unify li*/
+/*	.head{
+		width: 1345px;
+		height: 124px;
+		background-color: yellow;
+
+	}*/
+	.container{
+		width: 1217px;
+		height: 990px;
+		margin: 0 auto;
+	}
+	.content{
+		width: 1217px;
+		height: 929px;
+		/*background-color: blue;*/
+		
+	}
+	.ct_menu{
+		width: 280px;
+		height: 900px;
+		float: left;
+		background-color: #FFFFFF;
+	}
+	
+	#pic1{
+		margin-top: 13px;
+		width: 5px;
+		height: 13px;
+		margin-left: 117px;
+	}
+	.menu_unify li{
+		list-style: none;
+		font: 13.3px "宋体";
+		float: left;
+		margin-right: 8px;
+		margin-top: 12px;
+	}
+	
+
+	.orderinfo{
+		width: 937px;
+		height: 100%;
+		/*background-color: red;*/
+		float: left;
+	}
+	.orderinfo ul{
+		margin: 0;
+		padding: 0;
+	}
+	.bn{
+		width: 75px;
+		height: 21px;
+		font-size: 12px;
+		border-radius: 1px;
+		border: 1px solid #4A4A4A;
+		padding: 0px;
+		margin: 0px;
+		float: right;
+		margin-top: 54px;
+	}
+	#bn1{
+		background-color: #333333;
+		color:#F0F0F0;
+	}
+	#bn2{
+		background-color: #FFFFFF;
+		margin-left: 4px;
+		margin-right: 1px;
+		margin-bottom: 18px;
+	}
+	.order_1{
+		width: 100%;
+		background-color: #F6F6F6;
+		float: left;
+		font-size: 14px;
+	}
+	.order_2{
+		background-color: #FFFFFF;
+		float: left;
+	}
+	.order_1 ul li{
+		list-style: none;
+		margin-left: 12px;
+		font: 13.3px/36px "微软雅黑";
+		color:#393939;
+	}
+	.order_2 ul li{
+		list-style: none;
+		margin-left: 12px;
+		font: 13.3px "微软雅黑";
+		color: #393939;
+	}
+	#order1{
+		height: 85px;
+		margin-bottom: 21px;
+		line-height: 85px;
+	}
+	#order2{
+		height: 36px;
+		line-height: 36px;
+	}
+	#order3{
+		height: 93px;
+	}
+	#order3 ul{
+		margin-top: 15px;
+	}
+	#order4{
+		height: 36px;
+		line-height: 36px;
+	}
+	#order5{
+		height: 48px;
+		line-height: 48px;
+	}
+	#order5 li{
+		line-height: 48px;
+	}
+	#order6{
+		height: 37px;
+		line-height: 37px;
+	}
+	#order7{
+		height: 56px;
+		line-height: 56px;
+	}
+	#order7 li{
+		line-height: 56px;
+	}
+	#order8{
+		width: 937px;
+		height: 36px;
+		background-color: #333333;
+		float: left;
+		margin-bottom: 15px;
+	}
+	#order8 ul li{
+		float: left;
+		list-style: none;
+		font-size: 13px;
+		color: #ffffff;
+		line-height: 36px;
+		font-family: "MicrosoftYaHei";
+	}
+	#order8_1{
+		margin-left: 15px;
+		margin-right: 158px;
+	}
+	#order8_2{
+		margin-right: 426px;
+	}
+	#order8_3{
+		margin-right: 126px;
+	}
+	#order9{
+		width: 100%;
+		height: 252px;
+		border: 1px solid #eaeaea;
+		float: left;
+	}
+	
+	#order_3{
+		width: 100%;
+		height: 103px;
+	}
+	#order_3 dl dt img{
+		border: 1px solid #f1f1f1;
+	}
+	#order_3 dl dt{
+		width: 121px;
+		height: 81px;
+		float: left; 
+		margin-left: 46px;
+	}
+	#order_3 dl dd{
+		width: 121px;
+		height: 62px;
+		float: left;
+		font: 13.3px "微软雅黑";
+		margin-top: 24px;
+		margin-left: 16px;
+	}
+	#order_3 ul li{
+		list-style: none;
+		float: right;
+		margin-right: 0px;
+		margin-top: 0px;
+		font: 13.3px "微软雅黑";
+		line-height: 81px;
+	}
+	#order_4 ul li{
+		list-style: none;
+		float: right;
+		font: 13.3px "微软雅黑";
+		line-height: 81px;
+	}
+	#order_4 dl {
+		margin-top: 0px;
+		margin-bottom: 0px;
+	}
+	#order_4{
+		width: 100%;
+		height: 126px;
+		float: right;
+	}
+	#order_4 dl dt img{
+		border: 1px solid #f1f1f1;
+	}
+	#order_4 dl dt{
+		width: 121px;
+		height: 82px;
+		float: left;
+		margin-left: 46px;
+	}
+	#order_4 dl dd{
+		float: left;
+		margin-left: 14px;
+		width: 370px;
+		font:13.3px "微软雅黑";
+	}
+	#order10{
+		width: 100%;
+		height: 115px;
+		float: left;
+
+	}
+	#order10 ul li{
+		list-style: none;
+	}
+	#box1{
+		font:13.3px "微软雅黑";
+		width: 649px;
+		height: 14px;
+		float: left;
+		margin-top: 22px;
+		margin-left: 16px;
+	}
+	#box2{
+		float: right;
+		font-size: 22px;
+		margin-right: 20px;
+		margin-top: 12px;
+		
+	}
+	.span_red{
+		color:#b20920;
+	}
+	.span_gray{
+		color: #8D8D8D;
+		font-size: 13px;
+	}
+	#fr_1_1{
+		float: right;
+		height: 81px;
+	}
+	#fr_1_2{
+		float: right;
+	}
+	#line_1{
+		line-height: 85px;
+	}
+	a#gai01:link{
+		text-decoration: underline;
+		font-weight: bold;
+		font-family: "宋体";
+		color:#3a3a3a;
+	}
+	dl{
+		margin-top: 19px;
+		margin-bottom: 0px;
+	}
+	#fr_1_1 #fr_1_2_2{
+		margin-right: 125px;
+	}
+	#fr_1_1 #fr_1_2_1{
+		margin-right: 78px;
+	}
+	#fr_1_2 #fr_1_2_3{
+		margin-right: 76px;
+	}
+	#fr_1_2 #fr_1_2_4{
+		margin-right: 123px;
+	}
+	</style>

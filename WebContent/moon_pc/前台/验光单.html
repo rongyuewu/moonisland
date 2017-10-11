@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>验光单</title>
+	<link rel="stylesheet" href="CSS/css.css">
+</head>
+<body>
+	<div id="showFather_1">
+		<!-- =============头部============ -->
+		<div id="top">
+			<div id="helpSubmenuZi2">
+
+			</div>
+			<div id="help">
+				<!-- 帮助部分 -->
+
+				<div id="helpSubmenu">
+					<div id="helpSubmenuZi">
+
+						<ul>
+							<li id="helpSubmenuZi_li0">月亮岛眼镜商城！</li>
+							<li id="helpHandset"><a href="">手机版</a></li>
+							<li id="helpSubmenuZi_li2"><a href="登录.html" target="_blank">会员登录</a>
+							</li>
+							<li id="helpSubmenuZi_li3"><a href="注册.html" target="_blank">注册</a></li>
+							<li onclick="help1()" id="helpSubmenuZi_li5">帮助中心</li>
+						</ul>
+						<ul onclick="geren_zhuye()" id="helpSubmenuZi_li5">
+							个人主页&nbsp;▾
+						</ul>
+						<ul></ul>
+					</div>
+				</div>
+				<!-- 目录部分 -->
+				<div id="catalog">
+					<div id="catalogZi">
+						<div id="catalogContent">
+							<div id="catalogContent-1">
+								<ul class="rootDirectory">
+									<div class="f_l" id="catalogContentUl1" onmouseover="rootDirectoryShow(1)" onmouseout="rootDirectoryShow_2(1)">
+										<a href="1首页.html" target="_blank">
+											<li id="catalogContentUl1Li1"><span id="catalogContentUl1LiS1" class="catalogFont">主页</span><br><span class="catalogFont1">HOME</span></li>
+										</a>
+									</div>
+									<div onmouseover="rootDirectoryShow(2)" onmouseout="rootDirectoryShow_2(2)" id="catalog_Zi_2">
+										<a href="2-男士女士太阳镜.html" target="_blank">
+											<li id="catalogContentUl1Li2"><span id="catalogContentUl1LiS2" class="catalogFont">男士</span><br><span class="catalogFont2">MEN</span></li>
+										</a>
+									</div>
+									<div onmouseover="rootDirectoryShow(3)" onmouseout="rootDirectoryShow_2(3)" id="catalog_Zi_3">
+										<a href="2-男士女士太阳镜.html" target="_blank">
+											<li id="catalogContentUl1Li3"><span id="catalogContentUl1LiS3" class="catalogFont">女士</span><br><span class="catalogFont2">LADIES</span></li>
+										</a>
+									</div>
+									<div onmouseover="rootDirectoryShow(4)" onmouseout="rootDirectoryShow_2(4)">
+										<a href="2-男士女士太阳镜.html" target="_blank">
+											<li id="catalogContentUl1Li4"><span id="catalogContentUl1LiS4" class="catalogFont">太阳镜</span><br><span class="catalogFont2">SUNGLASSES</span></li>
+										</a>
+									</div>
+									<div onmouseover="rootDirectoryShow(5)" onmouseout="rootDirectoryShow_2(5)">
+										<a href="验光单.html" target="_blank">
+											<li id="catalogContentUl1Li5"><span id="catalogContentUl1LiS5" class="catalogFont">光学镜片</span><br><span class="catalogFont2">LENS</span></li>
+										</a>
+									</div>
+								</ul>
+							</div>
+							<ul class="cataLog"></ul>
+							<ul class="catalogSearch">
+								<ul>
+									<input type="text" id="cSinput1">
+								</ul>
+								<ul id="cSinput2"></ul>
+								<a href="../个人/6-收藏列表.html" target="_blank"><ul class="cSinput3" onmouseover="adMapShow_3(5)" onmouseout="addMapShow2()" id="adMap_05"></ul></a>
+								<a href="5-确认信息购物车.html" target="_blank"><ul class="cSinput4" onmouseover="adMapShow_3(6)" onmouseout="addMapShow2()" id="adMap_06"></ul></a><br>
+								<ul id="cSinput5">
+									<li id="ad2Map0Li_13" onmouseover="cSinput5line(13)" onmouseout="cSinput5lineUp(13)">欧美时尚</li>
+									<li id="ad2Map0Li_14" onmouseover="cSinput5line(14)" onmouseout="cSinput5lineUp(14)">男款</li>
+									<li id="ad2Map0Li_15" onmouseover="cSinput5line(15)" onmouseout="cSinput5lineUp(15)">复古女款</li>
+									<li id="ad2Map0Li_16" onmouseover="cSinput5line(16)" onmouseout="cSinput5lineUp(16)">商务眼镜</li>
+									<li id="ad2Map0Li_17" onmouseover="cSinput5line(17)" onmouseout="cSinput5lineUp(17)">太阳镜</li>
+									<ul id="cSinput6"><a href="../个人/6-收藏列表.html" target="_blank"><span id="ad2Map0Li_18" onmouseover="ad2Map0LiUnderline(18)" onmouseout="ad2Map0LiUnderlineUp_B(18)">我的收藏</span></a></ul>
+									<ul id="cSinput7"><a href="5-确认信息购物车.html"><span id="ad2Map0Li_19" onmouseover="ad2Map0LiUnderline(19)" onmouseout="ad2Map0LiUnderlineUp_B(19)">购物车</span></a></ul>
+								</ul>
+								
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<div id="person">
+			<div id="person_1">
+				<div  id="ge_ren">
+					<br>
+					<ul class="ge_ren1">
+						<li class="ge_ren1_li1">注册手机</li>
+						<li class="ge_ren1_li1">177****0863</li>
+						<li class="ge_ren1_1">普通会员</li>
+						<li class="ge_ren1_2">
+							<div class="dutiao"></div>
+							<div class="dutiao_1"></div>
+							<div class="dutiao_2">500/20000</div>
+							<div class="dutiao_3">白金会员</div>
+						</li>
+					</ul>
+					<ul class="ge_ren2">
+						<li>我的订单 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0</li>
+						<li>我的退换货&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</li>
+						<li>我的积分&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: red;">500</span><span style="color: #BCBCBC;">（可抵现￥5.00）</span></li>
+						<li>密码修改&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #BCBCBC;">（账户安全中心）</span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+
+		<div id="Show__help">
+			<ul class="help1">
+				<li class="help1_1"><a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;客户电话</a> <br>400-800-9888 </li>
+				<li class="help1_2"><a>在线聊天</a> <br>&nbsp;&nbsp;&nbsp;<img src="images/commonImages/聊天.jpg" alt=""></li>
+				<li class="help1_3"><a>配镜流程</a> <br>&nbsp;&nbsp;Click</li>
+				<li class="help1_4"><a>关于我们</a></li>
+			</ul>
+			<div id="Show__close" onclick="close1()">
+				<img src="images/commonImages/close.gif" alt="" >
+			</div>
+		</div>
+
+		<!-- ==========商品展示========= -->
+		<div id="showContent">
+			<div class="showConL f_l">
+				<img src="Images/前台/3_商品展示/images/product_01.gif" height="444" alt="" width="666">
+			</div>
+			<div class="showConR f_l">
+				<ul class="showConR1"></ul>
+				<ul class="showConR2"></ul>
+				<ul class="showConR3"></ul>
+				<ul class="showConR4"></ul>
+			</div>
+			<div class="showInformation f_l">
+				<ul class="f_AEAEAE">男士<span class="f_black">&nbsp;&gt;&nbsp;</span>复古近视光学镜架</ul>
+				<ul class="f_12 showInformationUl_2">复古近视光学镜架</ul>
+				<ul><s class="showInformationUl_3">原价&nbsp;￥198.00</s></ul>
+				<ul><span class="fontRed_Span f_l">现价&nbsp;￥98.00</span></ul>
+
+				<!-- ============倒计时============== -->
+				<li id="showCountdown"></li>
+
+
+				<div class="showInfor1">
+					<div class="showInforL1 f_l">
+						<li class="showInfor1_1">活动：</li>
+						<li class="showInfor1_2">颜色：</li>
+						<li class="showInfor1_1">尺码：</li>
+					</div>
+					<div class="showInforL2 f_l">
+						<li class="showInfor1-1">立减</li>
+						<li class="showInfor1-1">特权优惠</li>
+						<li class="showInfor1-1">返积分</li>
+					</div>
+					<div class="showInforL3 f_l">
+						<li class="showInfor3-1">下单立减50元</li>
+						<li class="showInfor3-1">尊享超低价格</li>
+						<li class="showInfor3-1">消费送积分</li>
+					</div>
+					<div class="showInforL4 f_l">
+						<li id="showInfor4_1" class="showInfor4-1" onmouseover="showInfor4Show1_1()" onmouseout="showInfor4Show2_1()" onclick="showInfor4Show3_1()">宝石蓝色</li>
+						<li id="showInfor4_2" class="showInfor4-1" onmouseover="showInfor4Show1_2()" onmouseout="showInfor4Show2_2()" onclick="showInfor4Show3_2()">玫瑰红</li>
+
+
+
+
+						<div id="showInfor4_3">挑选你喜欢的颜色
+							<div id="showInfor4_3_1"></div>
+							<div id="showInfor4_3_3"></div>
+						</div>
+						<div id="showInfor4_4">挑选你喜欢的颜色
+							<div id="showInfor4_3_2"></div>
+							<div id="showInfor4_3_4"></div>
+						</div>
+					</div>
+					<div class="showInforL5 f_l"></div>
+					<div class="showInforL6 f_l">
+						<li>男士<input type="checkbox" disabled="disabled"></li>
+						<li>女士<input type="checkbox" disabled="disabled"></li>
+					</div>
+					<div class="showInforL7 f_l">
+						<li class="showInforL7-1 f_l">数量：</li>
+						<li class="f_l"><input type="text"  class="showInforL7-2" value="1"></li>
+						<li class="showInforL7-3 f_l">-</li>
+						<li class="showInforL7-3 f_l">+</li>
+					</div>
+					<div class="showInforL8 f_l">
+						<li class="showInforL8-1 f_l">累计销量：</li>
+						<li class="showInforL8-2 f_l">108</li>
+					</div>
+				</div>
+			</div>
+			<div id="showShare">
+				<li class="m_t5 f_l">分享：</li>
+				<li class="m_t5"><img src="Images/前台/3_商品展示/images/share_sina.gif" height="23" width="23" alt="">
+					<img src="Images/前台/3_商品展示/images/share_Qzone.gif" height="23" width="23" alt="">&nbsp;<img src="Images/前台/3_商品展示/images/share_wei.png" alt="">
+				</li>
+				<div id="showOrderNow">
+					<div class="showOrderNow-1">立刻订购</div>
+					<div class="showOrderNow-2">收藏商品</div>
+				</div>
+
+
+			</div>
+		</div>
+
+		<!-- ============商品细节=========== -->
+		<div id="showDetails">
+			<div id="showCatalog">
+				<div id="showCataG0" onclick="showCatalogShow(0)" class="showCataG00">商品展示</div>
+				<div id="showCataG1" onclick="showCatalogShow(1)">配镜流程</div>
+				<div id="showCataG2" onclick="showCatalogShow(2)">用户评价</div>
+				<div id="showCataG3" onclick="showCatalogShow(3)">售后服务</div>
+				<div id="showCataG4">返回顶部↑</div>
+			</div>
+			<div id="showDETAILS">商品细节</div>
+			<div id="showImg_1"></div>
+			<div id="showImg_2"></div>
+			<div id="showImg_3"></div>
+			<div id="showCatalog_2">
+				<div id="showCataG5" onclick="showCatalogShow2(5)" class="showCataG00">商品展示</div>
+				<div id="showCataG6" onclick="showCatalogShow2(6)">配镜流程</div>
+				<div id="showCataG7" onclick="showCatalogShow2(7)">用户评价</div>
+				<div id="showCataG8" onclick="showCatalogShow2(8)">售后服务</div>
+				<div id="showCataG4">返回顶部↑</div>
+			</div>
+		</div>
+		<!-- ================商品评介=============== -->
+		<div id="showEvaluate__1">
+			<span class="showEvaluateSpan_1">全部评论(688)</span><span class="f_CCC1">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span class="f_CCC">最新评论</span><span class="f_CCC1">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span class="f_CCC">热闹评论</span>
+			<div id="favourableComment">
+				<div id="showEvaluateL" class="f_l">
+					<div class="favourabComm">0</div>
+					<p class="favourabComm1">(好评指数)</p>
+				</div>
+				<div id="showEvaluate2" class="f_l">
+					<div class="Stars_5 f_l">
+						<li class="p_t39">5&nbsp;Stars</li>
+						<li class="m_t15">4&nbsp;Stars</li>
+						<li class="m_t15">3&nbsp;Stars</li>
+						<li class="m_t15">2&nbsp;Stars</li>
+						<li class="m_t15">1&nbsp;Stars</li>
+					</div>
+					<div class="Stars_5_1 f_l">
+						<li class="StarsStrip1"><li class="StarsStrip-1"></li></li>
+						<li class="StarsStrip"><li class="StarsStrip-2"></li></li>
+						<li class="StarsStrip"></li>
+						<li class="StarsStrip"></li>
+						<li class="StarsStrip"></li>
+					</div>
+					<div class="Stars_5_2 f_l">
+						<li class="p_t39">(40)</li>
+						<li class="m_t15">(1)</li>
+						<li class="m_t15">(0)</li>
+						<li class="m_t15">(1)</li>
+						<li class="m_t15" class="m_t15">(0)</li>
+					</div>
+				</div>
+				<div id="showEvaluate3" class="f_l">
+					<li class="showEvaluate3-1">
+						<li class="showEvaluate3_1 f_l">质量很好+120</li>
+						<li class="showEvaluate3_2 f_l">质量不错+20</li>
+						<li class="showEvaluate3_3 f_l">质量一般+5</li>
+					</li>
+					<li class="showEvaluate3-1">
+						<li class="showEvaluate3_1 f_l">质量很好+120</li>
+						<li class="showEvaluate3_2 f_l">质量不错+20</li>
+						<li class="showEvaluate3_3 f_l">质量一般+5</li>
+					</li>
+					<li class="showEvaluate3-1">
+						<li class="showEvaluate3_1 f_l">质量很好+120</li>
+						<li class="showEvaluate3_2 f_l">质量不错+20</li>
+						<li class="showEvaluate3_3 f_l">质量一般+5</li>
+					</li>
+				</div>
+			</div>
+
+
+			<!-- ==============评论============ -->
+			<!-- =====评论1=== -->
+			<div id="showComment1">
+				<div class="showComment1_1 f_l">
+					<span class="c_CCC">会员</span>
+					<span class="m_l8">177****0863</span>
+					<span class="m_l8"><img src="Images/前台/3_商品展示/images/Star_Rank_03.png" height="14" width="76" alt=""></span>
+					<span class="b_c_y">质量很好</span>
+					<span class="b_c_y">态度不错</span>
+					<span class="b_c_y">物流不错</span><br>
+					<li class="f_s9">夏日的阳光火辣辣的，烘烤着大地，赤着脚踏到地上，感到脚底下都是热辣辣的，若走在被太阳直晒的沙滩上，更是滚烫的，两只脚被烫得走起来一翘一翘的。在这样闷热的夏天里，东河里“哗哗”的流水声就如带着诱惑的鼓动，撩拨着乡村里大人、孩子们的心绪。儿时玩心很重的我更是被搅动起了</li>
+					<li class="showCImg1 f_l"></li>
+					<li class="showCImg2 f_l"></li>
+					<p class="c_l m_t138"><span class="c_a7a7a7">浏览了3215次</span><span class="m_t138_sp2">&nbsp;|&nbsp;</span><span class="c_a6a6a6">了解更多</span></p>
+				</div>
+				<div class="showCTime1 f_r">
+					<p class="c_B5B5B5">评论时间</p>
+					<p class="f_s10">2017-06-19</p>
+				</div>
+			</div>
+
+			<!-- =====评论2=== -->
+			<div id="showComment2">
+				<div class="showComment2_1 f_l">
+					<span class="c_CCC">会员</span>
+					<span class="m_l8">177****0863</span>
+					<span class="m_l8"><img src="Images/前台/3_商品展示/images/Star_Rank_03.png" height="14" width="76" alt=""></span>
+					<span class="b_c_y">质量很好</span>
+					<span class="b_c_y">态度不错</span>
+					<span class="b_c_y">物流不错</span><br>
+					<li class="f_s9">夏日的阳光火辣辣的~</li>
+					<li class="showCImg1 f_l"></li>
+					<li class="showCImg2 f_l"></li>
+					<p class="c_l m_t138"><span class="c_a7a7a7">浏览了3215次</span><span class="m_t138_sp2">&nbsp;|&nbsp;</span><span class="c_a6a6a6">了解更多</span></p>
+				</div>
+				<div class="showCTime1 f_r">
+					<p class="c_B5B5B5">评论时间</p>
+					<p class="f_s10">2017-06-19</p>
+				</div>
+			</div>
+
+			<!-- =====评论3=== -->
+			<div id="showComment3__1">
+				<div class="showCommenNIJUE f_l">
+					<span class="c_CCC">会员</span>
+					<span class="m_l8">177****0863</span>
+					<span class="m_l8"><img src="Images/前台/3_商品展示/images/Star_Rank_03.png" height="14" width="76" alt=""></span>
+					<span class="b_c_y">质量很好</span>
+					<span class="b_c_y">态度不错</span>
+					<span class="b_c_y">物流不错</span><br>
+					<li class="f_s9">夏日的阳光火辣辣的，烘烤着大地，赤着脚踏到地上，感到脚底下都是热辣辣的，若走在被太阳直晒
+						的沙滩上，更是滚烫的，两只脚被烫得走起来一翘一翘的。在这样闷热的夏天里，东河里“哗哗”的
+						流水声就如带着诱惑的鼓动，撩拨着乡村里大人、孩子们的心绪。儿时玩心很重的我更是被搅动起了</li>
+						<li class="showCImg1 f_l"></li>
+						<li class="showCImg2 f_l"></li>
+						<p class="c_l m_t138"><span class="c_a7a7a7">浏览了3215次</span><span class="m_t138_sp2">&nbsp;|&nbsp;</span><span class="c_a6a6a6">收起</span></p><br><br>
+						<p class="f_9">客服回复：感谢您的惠顾！欢迎下次再来。</p>
+					</div>
+					<div class="showCTime1 f_r">
+						<p class="c_B5B5B5">评论时间</p>
+						<p class="f_s10">2017-06-19</p>
+					</div>
+				</div>
+
+				
+			</div>
+			
+		</div>
+
+
+
+
+		<div id="optometryFather">
+
+
+			<!-- =============定制您的镜片============ -->
+			<div id="customizationOpto">
+				<h1 class="h_38"></h1>
+				<h1 class="t_ac">定制您的镜片</h1>
+				<li class="shutOpto">×</li>
+				<div class="priceOpto">
+					<div class="priceOpto_1"></div>
+					<div class="priceOpto_2">
+						TR90 2518 32 C1 <br>
+						<span class="c_9A9A9A">宝石蓝</span>
+					</div>
+					<div id="priceOpto_3">￥199.00</div>
+				</div>
+				<div class="prescription1">
+					<div class="emptydata">
+						<li class="emptydata_1 f_l">1</li>
+						<li class="emptydata_2 f_l">&nbsp;&nbsp;处方
+							<div class="emptydata_2_2 f_r">?</div>
+						</li>
+						<div class="prescription2 f_r">
+							清空数据
+						</div>
+					</div>
+					<!-- =============处方类型============= -->
+					<div class="prescriptionType">
+						<div class="prescriptionType_1">
+							<li class="prescriptionType_1_1">请选择处方类型</li>
+							<select name="" id="prescriptionType_1_2">
+								<option value="">&nbsp;处方类型</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="nextStepOpto">
+					<div class="nextStepOpto_1">下一步</div>
+				</div>
+
+				<div id="writeOptometry">
+					<p class="writeOptometry_P">请务必填写正确的验光单参数（<span class="c_FF8446">+/-</span>注意正负数值）</p>
+					<div class="writeOptometryL f_l">
+						<li  class="writeOptometryL_1 m_t33">右眼&nbsp;&nbsp;R</li>
+						<li  class="writeOptometryL_1">da眼&nbsp;&nbsp;R</li>
+						<li  class="writeOptometryL_1">瞳距&nbsp;&nbsp;PD</li>
+					</div>
+					<div class="writeOptometryR f_l">
+						<!-- ===========1=========== -->
+						<div class="writeOptometryR_1">
+							<li class="writeOptometryR_1_1">
+								<p class="writeOptometryR_1_1_P1">球镜SPH</p>
+								<p class="c_C9C9C9">近视或远视度数</p>
+							</li>
+							<select name="" id="writeOptometryR_1_2">
+								<option value="">+10.25</option>
+							</select>
+						</div>
+						<!-- ===========2=========== -->
+						<div class="writeOptometryR_1">
+							<li class="writeOptometryR_1_1">
+								<p class="writeOptometryR_1_1_P1">柱镜CYL</p>
+								<p class="c_C9C9C9">散光度数</p>
+							</li>
+							<select name="" id="writeOptometryR_1_2">
+								<option value="">+3.25</option>
+							</select>
+						</div>
+						<!-- ===========3=========== -->
+						<div class="writeOptometryR_1">
+							<li class="writeOptometryR_1_1">
+								<p class="writeOptometryR_1_1_P1">轴线AXIS</p>
+								<p class="c_C9C9C9">散光度数的方向</p>
+							</li>
+							<select name="" id="writeOptometryR_1_2">
+								<option value="">5</option>
+							</select>
+						</div>
+						<!-- ===========4=========== -->
+						<div class="writeOptometryR_1" id="m_r0">
+							<li class="writeOptometryR_1_1">
+								<p class="writeOptometryR_1_1_P1">视力</p>
+								<p class="c_C9C9C9">矫正后看清晰</p>
+							</li>
+							<select name="" id="writeOptometryR_1_2">
+								<option value="">0.6</option>
+							</select>
+						</div>
+						<!-- ===========5=========== -->
+						<div class="writeOptometryR_1">
+							<li class="writeOptometryR_1_1">
+								<p class="writeOptometryR_1_1_P1">球镜SPH</p>
+								<p class="c_C9C9C9">近视或远视度数</p>
+							</li>
+							<select name="" id="writeOptometryR_1_2">
+								<option value="">+10.25</option>
+							</select>
+						</div>
+						<!-- ===========6=========== -->
+						<div class="writeOptometryR_1">
+							<li class="writeOptometryR_1_1">
+								<p class="writeOptometryR_1_1_P1">柱镜CYL</p>
+								<p class="c_C9C9C9">散光度数</p>
+							</li>
+							<select name="" id="writeOptometryR_1_2">
+								<option value="">+3.25</option>
+							</select>
+						</div>
+						<!-- ===========7=========== -->
+						<div class="writeOptometryR_1">
+							<li class="writeOptometryR_1_1">
+								<p class="writeOptometryR_1_1_P1">轴线AXIS</p>
+								<p class="c_C9C9C9">散光度数的方向</p>
+							</li>
+							<select name="" id="writeOptometryR_1_2">
+								<option value="">5</option>
+							</select>
+						</div>
+						<!-- ===========8=========== -->
+						<div class="writeOptometryR_1" id="m_r0">
+							<li class="writeOptometryR_1_1">
+								<p class="writeOptometryR_1_1_P1">视力</p>
+								<p class="c_C9C9C9">矫正后看清晰</p>
+							</li>
+							<select name="" id="writeOptometryR_1_2">
+								<option value="">0.6</option>
+							</select>
+						</div>
+						<!-- ===========9=========== -->
+						<div class="writeOptometryR_1">
+							<li class="writeOptometryR_1_1">
+								<p class="writeOptometryR_1_1_P1">瞳距PD</p>
+								<p class="c_C9C9C9">双眼瞳孔中间距离</p>
+							</li>
+							<select name="" id="writeOptometryR_1_2">
+								<option value="">52</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<!-- ================提交处方================= -->
+				<div id="referPrescription">
+					<div class="referPrescription_1 f_l">
+						<input type="checkbox">
+						保存这个处方
+					</div>
+
+					<div class="nextStepOpto_1">提交处方</div>
+				</div>
+
+
+				<div class="emptydata2">
+					<li class="emptydata2_1 f_l">2</li>
+					<li class="emptydata2_2_1 f_l">&nbsp;&nbsp;选择镜片	</li>
+				</div>
+			</div>
+
+
+
+			<!-- =============核对参数============ -->
+			<div id="checkParameterOpto">
+				<div id="checkParameterOpto_1">
+					<p class="checkParameterOpto_1_1">请您再次核对参数，确认提交验光单吗？</p>
+					<p class="checkParameterOpto_1_2">Does this match your prescription？</p>
+				</div>
+				<div id="checkParameterOpto_2">
+					<li class="shutOpto3">×</li>
+					<div class="checkParameterOpto_2_1">
+						<div class="cPO_2_1">
+							<li class="cPO_2_1_1">处方</li>
+							<li class="cPO_2_1_2">普通处方</li>
+						</div>
+						<div class="cPO_2_1">
+							<li class="cPO_2_2_1 m_l244">球镜SPH</li>
+							<li class="cPO_2_2_1">柱镜CYL</li>
+							<li class="cPO_2_2_1">柱线AXIS</li>
+							<li class="cPO_2_2_1">视力</li>
+						</div>
+						<div class="cPO_2_1">
+							<li class="cPO_2_2_1 m_l104">右眼&nbsp;R</li>
+							<li class="cPO_2_2_1 cPO_2_2_F m_l_F15">-4.00</li>
+							<li class="cPO_2_2_1 cPO_2_2_F">-6.00</li>
+							<li class="cPO_2_2_1 cPO_2_2_F">2</li>
+							<li class="cPO_2_2_1 cPO_2_2_F">0.6</li>
+						</div>
+						<div class="cPO_2_1">
+							<li class="cPO_2_2_1 m_l104">左眼&nbsp;L</li>
+							<li class="cPO_2_2_1 cPO_2_2_F m_l_F15">-4.00</li>
+							<li class="cPO_2_2_1 cPO_2_2_F">-6.00</li>
+							<li class="cPO_2_2_1 cPO_2_2_F">2</li>
+							<li class="cPO_2_2_1 cPO_2_2_F">0.6</li>
+						</div>
+						<div class="cPO_2_1 b_b1">
+							<li class="cPO_2_2_2 m_l104">瞳距&nbsp;PD</li>
+							<li class="cPO_2_2_1 m_l10 cPO_2_2_F">58</li>
+						</div>
+					</div>
+				</div>
+				<div id="checkParameterOpto_3">
+					<div class="returnRevise">返回修改</div>
+					<div class="nextStepOpto_1 nextStepOpto_1__1">下一步</div>
+				</div>
+			</div>
+
+
+			<!-- ==============选择镜片============= -->
+			<div id="choiceEyeglassOpto">
+				<h1 class="h_13 m_0"></h1>
+				<h1 class="t_ac">选择镜片</h1>
+				<li class="shutOpto2">×</li>
+				<div class="priceOpto">
+					<div class="priceOpto_1"></div>
+					<div class="priceOpto_2">
+						TR90 2518 32 C1 <br>
+						<span class="c_9A9A9A">宝石蓝</span>
+					</div>
+					<div id="priceOpto_3">￥199.00</div>
+				</div>
+				<div class="checkParameterOpto_2_1">
+					<div class="cPO_2_1">
+						<li class="emptydata_1 f_l">1</li>
+						<li class="cPO_2_1_1 m_l15">处方</li>
+						<li class="cPO_2_1_2">普通处方</li>
+						<li class="cPO_2_1_3">修改</li>
+					</div>
+					<div class="cPO_2_1">
+						<li class="cPO_2_2_1 m_l244">球镜SPH</li>
+						<li class="cPO_2_2_1">柱镜CYL</li>
+						<li class="cPO_2_2_1">柱线AXIS</li>
+						<li class="cPO_2_2_1">视力</li>
+					</div>
+					<div class="cPO_2_1">
+						<li class="cPO_2_2_1 m_l104">右眼&nbsp;R</li>
+						<li class="cPO_2_2_1 cPO_2_2_F m_l_F15">-4.00</li>
+						<li class="cPO_2_2_1 cPO_2_2_F">-6.00</li>
+						<li class="cPO_2_2_1 cPO_2_2_F">2</li>
+						<li class="cPO_2_2_1 cPO_2_2_F">0.6</li>
+					</div>
+					<div class="cPO_2_1">
+						<li class="cPO_2_2_1 m_l104">左眼&nbsp;L</li>
+						<li class="cPO_2_2_1 cPO_2_2_F m_l_F15">-4.00</li>
+						<li class="cPO_2_2_1 cPO_2_2_F">-6.00</li>
+						<li class="cPO_2_2_1 cPO_2_2_F">2</li>
+						<li class="cPO_2_2_1 cPO_2_2_F">0.6</li>
+					</div>
+					<div class="cPO_2_1 b_b1">
+						<li class="cPO_2_2_2 m_l104">瞳距&nbsp;PD</li>
+						<li class="cPO_2_2_1 m_l10 cPO_2_2_F">58</li>
+					</div>
+				</div>
+				<div class="emptydata2_">
+					<li class="emptydata2_2 f_l">2</li>
+					<li class="emptydata2_3 f_l">&nbsp;&nbsp;镜片类型	</li>
+				</div>
+				<!-- ================标准镜片================ -->
+				<div id="standardEyeglassOpto">
+					<div class="standardEyeglassOptoL">
+						<p class="standardEyeglassOptoL1">标准镜片</p>
+						<p class="standardEyeglassOptoL2">蓝光是可见光的重要组成部分，自然界本身没有单独的白光
+							蓝光与绿光、红光混合后呈现出白光。绿光与红光能量较小
+							对眼睛刺激较小，蓝光波短，能量高能够直接穿透晶状体直
+							达眼部黄斑区导致黄斑病变。
+						</p>
+					</div>
+					<div class="standardEyeglassOptoR"></div>
+				</div>
+				<div id="defenceBluelighOpto">
+					<div class="defenceBluelighOpto_1">
+						<li class="f_l defenceBluelighOpto_1_li1">1.56系列抗辐射防蓝光超薄镜片&nbsp;</li>
+						<div class="emptydata_2_2 f_l">?</div>
+						<li class="f_r"><input type="radio">￥169.00&nbsp;&nbsp;&nbsp;</li>
+					</div>
+					<div class="defenceBluelighOpto_1">
+						<li class="f_l">1.61系列抗辐射防蓝光超薄镜片&nbsp;</li>
+						<div class="emptydata_2_2 f_l">?</div>
+						<li class="f_r"><input type="radio">￥169.00&nbsp;&nbsp;&nbsp;</li>
+					</div>
+					<div class="defenceBluelighOpto_1">
+						<li class="f_l">1.67系列抗辐射防蓝光超薄镜片&nbsp;</li>
+						<div class="emptydata_2_2 f_l">?</div>
+						<li class="f_r"><input type="radio">￥169.00&nbsp;&nbsp;&nbsp;</li>
+					</div>
+					<div class="defenceBluelighOpto_1">
+						<li class="f_l">1.74系列抗辐射防蓝光超薄镜片&nbsp;</li>
+						<div class="emptydata_2_2 f_l">?</div>
+						<li class="f_r"><input type="radio">￥169.00&nbsp;&nbsp;&nbsp;</li>
+					</div>
+				</div>
+
+
+				<!-- ================防蓝光镜片================ -->
+				<div id="standardEyeglassOpto_1">
+					<div class="standardEyeglassOptoL">
+						<p class="standardEyeglassOptoL1">防蓝光镜片</p>
+						<p class="standardEyeglassOptoL2">蓝光是可见光的重要组成部分，自然界本身没有单独的白光
+							蓝光与绿光、红光混合后呈现出白光。绿光与红光能量较小
+							对眼睛刺激较小，蓝光波短，能量高能够直接穿透晶状体直
+							达眼部黄斑区导致黄斑病变。
+						</p>
+					</div>
+					<div class="standardEyeglassOptoR"></div>
+				</div>
+				<div id="defenceBluelighOpto">
+					<div class="defenceBluelighOpto_1">
+						<li class="f_l">1.56系列抗辐射防蓝光超薄镜片&nbsp;</li>
+						<div class="emptydata_2_2 f_l">?</div>
+						<li class="f_r"><input type="radio">￥169.00&nbsp;&nbsp;&nbsp;</li>
+					</div>
+					<div class="defenceBluelighOpto_1">
+						<li class="f_l">1.61系列抗辐射防蓝光超薄镜片&nbsp;</li>
+						<div class="emptydata_2_2 f_l">?</div>
+						<li class="f_r"><input type="radio">￥169.00&nbsp;&nbsp;&nbsp;</li>
+					</div>
+					<div class="defenceBluelighOpto_1">
+						<li class="f_l">1.67系列抗辐射防蓝光超薄镜片&nbsp;</li>
+						<div class="emptydata_2_2 f_l">?</div>
+						<li class="f_r"><input type="radio">￥169.00&nbsp;&nbsp;&nbsp;</li>
+					</div>
+					<div class="defenceBluelighOpto_1">
+						<li class="f_l">1.74系列抗辐射防蓝光超薄镜片&nbsp;</li>
+						<div class="emptydata_2_2 f_l">?</div>
+						<li class="f_r"><input type="radio">￥169.00&nbsp;&nbsp;&nbsp;</li>
+					</div>
+				</div>
+
+				<!-- ================偏光太阳镜片================ -->
+				<div id="standardEyeglassOpto_1">
+					<div class="standardEyeglassOptoL">
+						<p class="standardEyeglassOptoL1">偏光太阳镜片</p>
+						<p class="standardEyeglassOptoL2">偏光太阳镜是一种太阳眼镜。偏光可分为三种，即直线偏光
+							椭圆偏光和圆偏光。一般所谓偏光指直线偏光，又称平面偏
+							光。这种光波的振动沿一个特定方向固定不变，在空间的传
+							播路线为正弦曲线，在垂直传播方向平面上的投影为一直线
+						</p>
+					</div>
+					<div class="standardEyeglassOptoR"></div>
+				</div>
+				<div id="defenceBluelighOpto">
+					<div class="defenceBluelighOpto_1">
+						<li class="f_l">1.56系列抗辐射防蓝光超薄镜片&nbsp;</li>
+						<div class="emptydata_2_2 f_l">?</div>
+						<li class="f_r"><input type="radio">￥169.00&nbsp;&nbsp;&nbsp;</li>
+					</div>
+					<div class="defenceBluelighOpto_1">
+						<li class="f_l">1.61系列抗辐射防蓝光超薄镜片&nbsp;</li>
+						<div class="emptydata_2_2 f_l">?</div>
+						<li class="f_r"><input type="radio">￥169.00&nbsp;&nbsp;&nbsp;</li>
+					</div>
+					<div class="defenceBluelighOpto_1">
+						<li class="f_l">1.67系列抗辐射防蓝光超薄镜片&nbsp;</li>
+						<div class="emptydata_2_2 f_l">?</div>
+						<li class="f_r"><input type="radio">￥169.00&nbsp;&nbsp;&nbsp;</li>
+					</div>
+					<div class="defenceBluelighOpto_1">
+						<li class="f_l">1.74系列抗辐射防蓝光超薄镜片&nbsp;</li>
+						<div class="emptydata_2_2 f_l">?</div>
+						<li class="f_r"><input type="radio">￥169.00&nbsp;&nbsp;&nbsp;</li>
+					</div>
+				</div>
+
+
+
+
+				<div id="discolourEyeglass">
+					<div class="discolourEyeglassL">
+						<li class="b_FF0000"></li>
+						<li class="b_DFD700"></li>
+						<li class="b_00C17A"></li>
+						<li class="b_004DA8"></li>
+						<li class="b_9F008F"></li>
+						<li class="b_CB9B68"></li>
+						<li class="b_554640"></li>
+						<li class="b_DCDCDC"></li>
+						<li class="b_DDDDDD">
+							<div class="b_FF4F00"></div>
+						</li>
+					</div>
+					<div class="discolourEyeglassR">
+						￥239.00
+					</div>
+				</div>
+
+
+
+
+				<!-- ================变色镜片================ -->
+				<div id="standardEyeglassOpto_2">
+					<div class="standardEyeglassOptoL">
+						<p class="standardEyeglassOptoL1">变色镜片</p>
+						<p class="standardEyeglassOptoL2">变色镜片，也有人称为“感光镜片”。玻璃镜片添加的是卤
+							化银，但是目前主流是树脂变色镜片，在亚克力树脂镜片上
+							加入吡螺环等化学物质，让原本透明无色的的镜片，遇上强
+							光照射，就会变成有色镜片，来做防护，所以是适合于室内
+							室外同时使用。
+						</p>
+					</div>
+					<div class="standardEyeglassOptoR"></div>
+				</div>
+				<div id="defenceBluelighOpto">
+					<div class="defenceBluelighOpto_1">
+						<li class="f_l">1.56系列抗辐射防蓝光超薄镜片&nbsp;</li>
+						<div class="emptydata_2_2 f_l">?</div>
+						<li class="f_r"><input type="radio">￥169.00&nbsp;&nbsp;&nbsp;</li>
+					</div>
+					<div class="defenceBluelighOpto_1">
+						<li class="f_l">1.61系列抗辐射防蓝光超薄镜片&nbsp;</li>
+						<div class="emptydata_2_2 f_l">?</div>
+						<li class="f_r"><input type="radio">￥169.00&nbsp;&nbsp;&nbsp;</li>
+					</div>
+					<div class="defenceBluelighOpto_1">
+						<li class="f_l">1.67系列抗辐射防蓝光超薄镜片&nbsp;</li>
+						<div class="emptydata_2_2 f_l">?</div>
+						<li class="f_r"><input type="radio">￥169.00&nbsp;&nbsp;&nbsp;</li>
+					</div>
+					<div class="defenceBluelighOpto_1">
+						<li class="f_l">1.74系列抗辐射防蓝光超薄镜片&nbsp;</li>
+						<div class="emptydata_2_2 f_l">?</div>
+						<li class="f_r"><input type="radio">￥169.00&nbsp;&nbsp;&nbsp;</li>
+					</div>
+				</div>
+
+
+
+
+
+			</div>
+
+
+			<div id="confirmReferto">
+				<div class="nextStepOpto_1__2">确认提交</div>
+			</div>
+		</div>
+	</body>
+	</html>
