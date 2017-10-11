@@ -24,6 +24,7 @@
 <title>品牌管理</title>
 </head>
 <body>
+
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 分类管理 <span class="c-gray en">&gt;</span> 品牌管理 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="page-container">
 	<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l">
@@ -46,10 +47,10 @@
 <script type="text/javascript" src="lib/laypage/1.2/laypage.js"></script>
 <script type="text/javascript">
 $.get("../brand/brandlist",function(date){
-	var str="	<tr class='info'><th>品牌编号</th><th>品牌名称</th><th>品牌logo</th><th>品牌描述</th><th>添加时间</th><th>更新</th><th>删除</th></tr>";
+	var str="<tr class='info'><th>品牌编号</th><th>品牌名称</th><th>品牌logo</th><th>品牌描述</th><th>添加时间</th><th>删除</th></tr>";
 	for (var i = 0; i < date.length; i++) {
 		var brand=date[i];
-		str+="<tr><td>"+brand.brandId+"</td><td>"+brand.brandName+"</td><td><img src='../images/brand/"+brand.brandLogo+"'></td><td>"+brand.brandCon+"</td><td>"+brand.brandAddtime+"</td><td><a onclick='updatebrand()'>更新</a></td><td><a onclick='delbrand(this,"+brand.brandId+")'>删除</a></td></tr>";
+		str+="<tr><td>"+brand.brandId+"</td><td>"+brand.brandName+"</td><td><img src='../images/brand/"+brand.brandLogo+"'></td><td>"+brand.brandCon+"</td><td>"+brand.brandAddtime+"</td><td><a onclick='delbrand(this,"+brand.brandId+")'>删除</a></td></tr>";
 	}
 	$("#mytable").html(str);
 });

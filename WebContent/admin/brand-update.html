@@ -72,15 +72,7 @@
 <script type="text/javascript" src="lib/jquery.validation/1.14.0/messages_zh.js"></script>
 <script type="text/javascript">
  function submit_form(){
-	var form={"brandName":$("#brandname").val(),"brandLogo":$("#brandlogo").val(),"brandCon":$("#brandcon").val()};
-	$.post("../brand/addbrand",form,function(data){
-		if(data=="1"){
-			var a=confirm("添加成功是否返回？");
-			if(a){
-				location.href("../admin/product-brand.html")
-			}
-		}
-	});
+	alert("hahahahaha")
 } 
 </script>
 </body>

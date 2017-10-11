@@ -51,6 +51,7 @@ public class BrandAction {
 	@RequestMapping(value="/updatebrand")
 	@ResponseBody
 	public int f6(Brand brand){
+		System.out.println(brand);
 		return brandService.update(brand);
 	}
 }

@@ -63,10 +63,10 @@ $.get("../glass/number",function(date){
 });
 function limit(page) {
 	$.get("../glass/glasslist?page="+page,function(date){
-		var str="<tr class='info'><th>镜片编号</th><th>镜片类型</th><th>镜片名称</th><th>镜片价格</th><th>球镜价格</th><th>柱镜价格</th><th>镜片图片</th><th>镜片添加时间</th><th>颜色1</th><th>颜色2</th><th>颜色3</th><th>颜色4</th><th>颜色5</th><th>颜色6</th><th>更新</th><th>删除</th></tr>";
+		var str="<tr class='info'><th>镜片编号</th><th>镜片类型</th><th>镜片名称</th><th>镜片价格</th><th>球镜价格</th><th>柱镜价格</th><th>镜片图片</th><th>镜片添加时间</th><th>颜色1</th><th>颜色2</th><th>颜色3</th><th>颜色4</th><th>颜色5</th><th>颜色6</th><th>删除</th></tr>";
 		for (var i = 0; i < date.length; i++) {
 			var glass=date[i];
-			str+="<tr><td>"+glass.glassId+"</td><td>"+glass.glassStyle+"</td><td>"+glass.glassName+"</td><td>"+glass.glassPrice+"</td><td><src>"+glass.sphPrice+"</td><td>"+glass.cylPrice+"</td><td><img src='"+glass.glassImg+"'></td><td>"+glass.glassTime+"</td><td>"+glass.color1+"</td><td>"+glass.color2+"</td><td>"+glass.color3+"</td><td>"+glass.color4+"</td><td>"+glass.color5+"</td><td>"+glass.color6+"</td><td>更新</td><td><a onclick='delglass(this,"+glass.glassId+")'>删除</a></td></tr>";
+			str+="<tr><td>"+glass.glassId+"</td><td>"+glass.glassStyle+"</td><td>"+glass.glassName+"</td><td>"+glass.glassPrice+"</td><td><src>"+glass.sphPrice+"</td><td>"+glass.cylPrice+"</td><td><img src='"+glass.glassImg+"'></td><td>"+glass.glassTime+"</td><td>"+glass.color1+"</td><td>"+glass.color2+"</td><td>"+glass.color3+"</td><td>"+glass.color4+"</td><td>"+glass.color5+"</td><td>"+glass.color6+"</td><td><a onclick='delglass(this,"+glass.glassId+")'>删除</a></td></tr>";
 		}
 		$("#mytable").html(str);
 	});
