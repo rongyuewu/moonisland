@@ -56,25 +56,7 @@
   		)
   </insert>
   <update id="update" parameterType="Brand">
-  	update moon_brand set 
-  		<trim prefixOverrides=",">
-  			<if test="brandName != null">
-  				brand_name = #{brandName}
-  			</if>
-  			<if test="brandLogo != null">
-  				,brand_logo = #{brandLogo}
-  			</if>
-  			<if test="brandCon != null">
-  				,brand_con = #{brandCon}
-  			</if>
-  			<if test="brandAddtime != null">
-  				,brand_addtime = #{brandAddtime}
-  			</if> 
-  			<if test="brandStatus != null">
-  				,brand_status = #{brandStatus}
-  			</if>
-  		</trim>
-  		where brand_id = #{brandId}
+  	update moon_brand set brand_con = #{brandCon} where brand_id = #{brandId}
   </update>
   <update id="delete" parameterType="Brand">
   	update moon_brand set brand_status = "0" where brand_id = #{brandId}

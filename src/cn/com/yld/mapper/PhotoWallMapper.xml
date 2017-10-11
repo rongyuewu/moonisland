@@ -25,6 +25,9 @@
 		<if test="photoTime != null">
 			,photo_time
 		</if>
+		<if test="photoStatus != null">
+			,photo_status
+		</if>
 	</trim>
 	)values(
 	<trim prefixOverrides=",">
@@ -35,7 +38,10 @@
 			,#{photoWord}
 		</if>
 		<if test="photoTime != null">
-			,#{photoTime}
+			,sysdate()
+		</if>
+		<if test="photoStatus != null">
+			,#{photo_status}
 		</if>
 	</trim>
 	)

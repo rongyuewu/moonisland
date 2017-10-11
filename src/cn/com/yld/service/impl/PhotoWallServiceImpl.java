@@ -24,9 +24,9 @@ public class PhotoWallServiceImpl implements PhotoWallService {
 	}
 
 	@Override
-	public void insert(PhotoWall photoWall) {
-		photoWallDao.insert(photoWall);
-		
+	public int insert(PhotoWall photoWall) {
+		 photoWallDao.insert(photoWall);
+		 return 1;
 	}
 
 	@Override

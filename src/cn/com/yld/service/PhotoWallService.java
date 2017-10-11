@@ -6,7 +6,7 @@ public interface PhotoWallService {
 	// 查询全部
 	public List<PhotoWall> findall();
 	// 插入
-	public void insert(PhotoWall photoWall);
+	public int insert(PhotoWall photoWall);
 	//更新
 	public void update(PhotoWall photoWall);
 
