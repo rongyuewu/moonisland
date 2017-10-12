@@ -28,8 +28,8 @@ public class AddressServiceImpl implements AddressService {
 	}
 
 	@Override
-	public void insert(Address address) {
-		addressDao.insert(address);
+	public int insert(Address address) {
+		return addressDao.insert(address);
 	}
 
 	@Override

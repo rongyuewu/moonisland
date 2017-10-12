@@ -40,8 +40,5 @@ function address_clearContent(){
 var receipts = $('receipts');
 var receipts_02 = $('receipts_02');
 function add_address(){
-	var oldImg = receipts_02;
-	var newImg = oldImg.cloneNode(true);
-	// receipts.innerHTML += newImg;
-	oldImg.parentNode.appendChild(newImg); // 在父节点插入克隆的节点 
+	alert("heheehehhehehehee")
 }
