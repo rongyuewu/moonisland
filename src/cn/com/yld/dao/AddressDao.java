@@ -8,7 +8,7 @@ public interface AddressDao {
 	// 根据id查询
 	public List<Address> findbyid(Address address);
 	// 插入
-	public void insert(Address address);
+	public int insert(Address address);
 	// 删除
 	public void delect(Address address);
 	// 更新

@@ -23,9 +23,9 @@ public class AddressDaoImpl extends SqlSessionDaoSupport implements AddressDao {
 	}
 
 	@Override
-	public void insert(Address address) {
+	public int insert(Address address) {
 		AddressMapper mapper = this.getSqlSession().getMapper(AddressMapper.class);
-		mapper.insert(address);
+		return mapper.insert(address);
 	}
 
 	@Override
