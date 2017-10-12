@@ -26,7 +26,7 @@ public class GoodsPicServiceImpl implements GoodsPicService {
 
 	@Override
 	public List<GoodsPic> findlinmit(int page) {
-		return this.goodsPicDao.findlinmit(page,8);
+		return this.goodsPicDao.findlinmit(page,5);
 	}
 
 	@Override
@@ -37,6 +37,19 @@ public class GoodsPicServiceImpl implements GoodsPicService {
 	@Override
 	public void update(GoodsPic goodsPic) {
 		this.goodsPicDao.update(goodsPic);
+	}
+	@Override
+	public int addgoodsPic(GoodsPic goodsPic) {
+		goodsPicDao.insert(goodsPic);
+		return 1;
+	}
+	@Override
+	public int pagecount() {
+		return this.goodsPicDao.pagecount();
+	}
+	@Override
+	public List<GoodsPic> findallpage(int page) {
+		return this.goodsPicDao.findallpage(page);
 	}
 
 }

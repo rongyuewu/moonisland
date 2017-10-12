@@ -54,4 +54,10 @@ public class GoodsPicDaoImpl extends SqlSessionDaoSupport implements GoodsPicDao
 		return ls;
 	}
 
+
+	@Override
+	public List<GoodsPic> findallpage(int page) {
+		GoodsPicMapper mapper=this.getSqlSession().getMapper(GoodsPicMapper.class);
+		return mapper.findallpage((page-1)*5);
+	}
 }

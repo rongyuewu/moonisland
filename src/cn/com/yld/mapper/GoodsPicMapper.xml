@@ -16,43 +16,47 @@
 	<!-- 多对一 -->
 	<association property="goods" javaType="Goods">
 		<id column="goods_id" property="goodsId"/>
-	  	<result column="goods_name" property="goodsName"/>
-	  	<result column="category" property="category"/>
-	  	<result column="original_price" property="originalPrice"/>
-	  	<result column="sales_price" property="salesPrice"/>
-	  	<result column="goods_color" property="goodsColor"/>
-	  	<result column="goods_content" property="goodsContent"/>
-	  	<result column="browse_num" property="browseNum"/>
-	  	<result column="save_num" property="saveNum"/>
-	  	<result column="sales_num" property="salesNum"/>
-	  	<result column="is_sale" property="isSale"/>
-	  	<result column="goods_keywords" property="goodsKeywords"/>
-	  	<result column="is_on_sale" property="isOnsale"/>
-	  	<result column="stock_num" property="stockNum"/>
-	  	<result column="minus_price" property="minusPrice"/>
-	  	<result column="privilege" property="privilege"/>
-	  	<result column="points" property="points"/>
-	  	<result column="style" property="style"/>
-	  	<result column="style_A" property="styleA"/>
-	  	<result column="style_B" property="styleB"/>
-	  	<result column="style_C" property="styleC"/>
-	  	<result column="style_D" property="styleD"/>
-	  	<result column="style_E" property="styleE"/>
-	  	<result column="add_time" property="addTime"/>
+  	<result column="brand_id" property="brandId"/>
+  	<result column="goods_name" property="goodsName"/>
+  	<result column="category" property="category"/>
+  	<result column="original_price" property="originalPrice"/>
+  	<result column="sales_price" property="salesPrice"/>
+  	<result column="goods_color" property="goodsColor"/>
+  	<result column="goods_content" property="goodsContent"/>
+  	<result column="browse_num" property="browseNum"/>
+  	<result column="save_num" property="saveNum"/>
+  	<result column="sales_num" property="salesNum"/>
+  	<result column="is_sale" property="isSale"/>
+  	<result column="goods_keywords" property="goodsKeywords"/>
+  	<result column="is_on_sale" property="isOnsale"/>
+  	<result column="stock_num" property="stockNum"/>
+  	<result column="minus_price" property="minusPrice"/>
+  	<result column="privilege" property="privilege"/>
+  	<result column="points" property="points"/>
+  	<result column="style" property="style"/>
+  	<result column="style_A" property="styleA"/>
+  	<result column="style_B" property="styleB"/>
+  	<result column="style_C" property="styleC"/>
+  	<result column="style_D" property="styleD"/>
+  	<result column="style_E" property="styleE"/>
+  	<result column="add_time" property="addTime"/>
 	</association>
   </resultMap>
   <select id="findall" resultMap="goodspic">
   	select * from moon_goods_pic p,moon_goods g where p.goods_id=g.goods_id
   </select>
+  <select id="findallpage" resultMap="goodspic" parameterType="int">
+  	select * from moon_goods_pic p,moon_goods g where p.goods_id=g.goods_id limit #{num1},5
+  </select>
   <select id="findbyid" resultMap="goodspic" parameterType="goodsPic">
   	select * from moon_goods_pic p,moon_goods g where p.goods_id=g.goods_id and g.goods_id=#{goodsId}
   </select>
-	<select id="pagecount" resultMap="goodspic">
-		select ceil(count(*)/5) from moon_goods_pic
+	<select id="pagecount" resultType="int">
+		select ceil(count(*)/5) from moon_goods_pic p,moon_goods g where p.goods_id=g.goods_id
 	</select>
-  <select id="findlinmit" resultMap="goodspic" >
-  	select * from moon_goods_pic limit #{num1},#{num2}
-  </select>
+ <!--  <select id="findlinmit" resultMap="goodspic" >
+  	select * from moon_goods_pic p,moon_goods g where p.goods_id=g.goods_id limit #{num1},#{num2}
+  </select> -->
   <insert id="insert" parameterType="goodsPic">
   	insert into moon_goods_pic(
   	<trim prefixOverrides=",">

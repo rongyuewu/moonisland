@@ -6,6 +6,8 @@ import java.util.Map;
 import cn.com.yld.pojo.GoodsPic;
 
 public interface GoodsPicDao {
+	//分页查询全部
+	public List<GoodsPic> findallpage(int page);
 	//查询全部
 	public List<GoodsPic> findall();
 	//id查询
