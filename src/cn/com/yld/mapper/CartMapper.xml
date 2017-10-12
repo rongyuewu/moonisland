@@ -86,6 +86,15 @@
 		</association>
 		<association property="optometry" javaType="Optometry">
 			<id column="optometry_id" property="optometryId"/>
+		  	<result column="user_id" property="userId"/>
+		  	<result column="R_SPH" property="rSph"/>
+		  	<result column="R_CYL" property="rCyl"/>
+		  	<result column="R_AXIS" property="rAxis"/>
+		  	<result column="L_SPH" property="lSph"/>
+		  	<result column="L_CYL" property="lCyl"/>
+		  	<result column="L_AXIS" property="lAxis"/>
+		  	<result column="PD" property="pd"/>
+		  	<result column="optometry_time" property="optometryTime"/>
 		</association>
 		<association property="goodsAttr" javaType="GoodsAttr">
 			<id column="attr_id" property="attrId"/>
@@ -100,11 +109,20 @@
 		</association>
 		<association property="goodsPic" javaType="GoodsPic">
 			<id column="pic_id" property="picId"/>
+	  	<result column="goods_id" property="goodsId"/>
+	  	<result column="pic1" property="pic1"/>
+	  	<result column="pic2" property="pic2"/>
+	  	<result column="pic3" property="pic3"/>
+	  	<result column="pic4" property="pic4"/>
+	  	<result column="pic1_thumb" property="pic1Thumb"/>
+	  	<result column="pic2_thumb" property="pic2Thumb"/>
+	  	<result column="pic3_thumb" property="pic3Thumb"/>
+	  	<result column="pic4_thumb" property="pic4Thumb"/>
 		</association>
 		
   </resultMap>
   <!-- 根据cart里封装的user对象，查询用户购物车 -->
-  <select id="findall" parameterType="User" resultMap="cart">
+  <select id="findall" parameterType="User" resultMap="Cart">
   	select c.* ,g.goods_id gid ,a.attr_id aid ,p.pic_id pid ,u.user_id uid from moon_cart c,moon_goods g,moon_goods_attr a,moon_goods_pic p,moon_user u where c.goods_id=g.goods_id and c.goods_attr_id=a.attr_id and c.pic_id=p.pic_id and c.user_id=u.user_id and cart_status=1 and c.user_id=#{userId}
   </select>
  <insert id="insert" parameterType="Cart">

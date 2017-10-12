@@ -597,7 +597,7 @@ li{
 	width: 127px;
 	height: 44px;
 	margin-top: 29px;
-	background: url(../Images/前台/5-确认信息/images/shopping_cart.png)no-repeat;
+	background: url(../Images/reception/cart/images/shopping_cart.png)no-repeat;
 }
 .shopping_gjin{
 	width: 537px;
@@ -605,7 +605,7 @@ li{
 	background: #CDCDCD;
 	margin: 0 auto;
 	margin-top: 38px;
-	background: url(../Images/前台/5-确认信息/images/one.png)no-repeat;
+	background: url(../Images/reception/cart/images/one.png)no-repeat;
 }
 #shopping_mu{
 	width: 100%;
@@ -771,7 +771,7 @@ li{
 #shopping_yan{
 	width: 120px;
 	height:81px;
-	background: url(../Images/前台/5-确认信息/images/5hgj.png)no-repeat;
+	background: url(../Images/reception/cart/images/5hgj.png)no-repeat;
 	background-size: 120px 81px;
 	border: 1px solid #f1f1f1;
 	margin-top: 10px; 
@@ -810,7 +810,7 @@ li{
 #shopping_var{
 	width: 120px;
 	height: 82px;
-	background: url(../Images/前台/5-确认信息/images/product_02.jpg) no-repeat;
+	background: url(../Images/reception/cart/images/product_02.jpg) no-repeat;
 	background-size: 120px 82px;
 	margin-top: 20px;
 	position: absolute;
