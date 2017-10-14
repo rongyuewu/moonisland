@@ -30,11 +30,5 @@ public class CartTest {
 			System.out.println(cart.toString());
 		}
 	}
-	@Test
-	public void test02(){
-		CartDao dao=(CartDao) this.context.getBean("cartDao");
-		Cart cart=new Cart("1", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3");
-		dao.insert(cart);
-		
-	}
+	
 }

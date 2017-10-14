@@ -575,15 +575,15 @@ li{
 /*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝头部结束＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
 
 /*======================================中间部分开始＝＝＝＝＝＝＝＝＝＝＝＝*/
-#shopping_content{
+.shopping_content{
 	width: 100%;
-	height: 773px;
+	
 }
 .shopping_main{
-	height: 773px;
 	margin: 0 auto;
+	margin-bottom: 10px;
 }
-#shopping_cart{
+.shopping_cart{
 	width:100%;
 }
 .shopping_main,.shopping_index{
@@ -607,28 +607,28 @@ li{
 	margin-top: 38px;
 	background: url(../Images/reception/cart/images/one.png)no-repeat;
 }
-#shopping_mu{
+.shopping_mu{
 	width: 100%;
 	height: 40px;
 	background: black;
 }
 /*圆型复选框*/
-#containera {
+.containera {
 	margin: 0px auto;
 	float: left;
 }
 
-#containera span {
+.containera span {
 	position: relative;
 	margin-left: 26px;
 	top: 13px;
 
 }
-#containera .input_checa {
+.containera .input_checa {
 	position: absolute;
 	visibility: hidden;
 }
-#containera .input_checa+label {
+.containera .input_checa+label {
 	display: inline-block;
 	width: 16px;
 	height: 16px;
@@ -636,7 +636,7 @@ li{
 	background: #FFF;
 	border-radius: 100%;
 }
-#containera .input_checa:checked+label:after {
+.containera .input_checa:checked+label:after {
 	content: "";
 	position: absolute;
 	left: 3px;
@@ -652,21 +652,21 @@ li{
 	transform: rotate(-45deg);
 }
 /*格式*/
-#shopping_pic{
+.shopping_pic{
 	width: 95%;
 	height: 40px;
 	color: #fff;
 	float: left;
 	margin-bottom: 12px;
 }
-#shopping_pic ul{
+.shopping_pic ul{
 	list-style: none;
 	height: 40px;
 	float: left;
 	padding-left: 0;
 	margin-top: 8px;
 }
-#shopping_pic li{
+.shopping_pic li{
 	float: left;
 	color: #fff;
 	font-weight: lighter;
@@ -699,19 +699,18 @@ li{
 .shopping_ghi4{
 	margin-left: 101px;
 }
-#shopping_cha{
+.shopping_cha{
 	width: 100%;
-	height: 253px;
 	clear: both;
 }
-#shopping_table{
+.shopping_table{
 	width: 100%;
 	height: 253px;
 	margin-top: 0px;
 	text-align: left;
 	border: 1px solid #EDEDED;
 }
-#shopping_td1{
+.shopping_td1{
 	width: 70px;
 	height: 100%;
 	overflow: hidden;
@@ -732,11 +731,11 @@ li{
 #containerw span {
 	position: relative;
 }
-#containerw .input_check {
+.containerw .input_check {
 	position: absolute;
 	visibility: hidden;
 }
-#containerw .input_check+label {
+.containerw .input_check+label {
 	display: inline-block;
 	width: 16px;
 	height: 16px;
@@ -744,7 +743,7 @@ li{
 	background: #484848;
 	border-radius: 100%;
 }
-#containerw .input_check:checked+label:after {
+.containerw .input_check:checked+label:after {
 	content: "";
 	position: absolute;
 	left: 3px;
@@ -759,63 +758,61 @@ li{
 	-webkit-transform: rotate(-60deg);
 	transform: rotate(-45deg);
 }
-#shopping_td2{
+.shopping_td2{
 	width: 350px;
 	height: 100%;
 }
-#shopping_div1{
+.shopping_div1{
 	width: 100%;
 	height: 96px;
 	overflow: hidden;
 }
-#shopping_yan{
+.shopping_yan{
 	width: 120px;
 	height:81px;
-	background: url(../Images/reception/cart/images/5hgj.png)no-repeat;
 	background-size: 120px 81px;
 	border: 1px solid #f1f1f1;
 	margin-top: 10px; 
 	position: absolute;
 }
-#shopping_spang{
-	width: 80px;
+.shopping_spang{
+	width: 204px;
 	height: 37px;
 	position: relative;
 	font-size: 13.33px;
 	font-family: "微软雅黑";
 	float: right;
 	margin-top: 26px;
-	margin-right: 132px;
-	margin-left: 17px;
+	margin-right: 15px;
+	margin-left: 15px;
 	color: #9D9D9D;
 
 }
-#shopping_yu{
+.shopping_yu{
 	font-size: 13.33px;
 	color: #9D9D9D;
 	font-family: "微软雅黑";
 	font-weight: lighter;
 }
-#shopping_yul{
+.shopping_yul{
 	font-size: 13.33px;
 	color: #D4D4D4;
 	font-family: "微软雅黑";
 	font-weight: lighter;
 }
-#shopping_div2{
+.shopping_div2{
 	width: 100%;
 	height: 133px;
 	overflow: hidden; 
 }
-#shopping_var{
+.shopping_var{
 	width: 120px;
 	height: 82px;
-	background: url(../Images/reception/cart/images/product_02.jpg) no-repeat;
 	background-size: 120px 82px;
 	margin-top: 20px;
 	position: absolute;
 }
-#shopping_crt{
+.shopping_crt{
 	width: 211px;
 	height: 95px;
 	float: left;
@@ -823,20 +820,20 @@ li{
 	margin-top: 30px;
 
 }
-#shopping_dan{
+.shopping_dan{
 	font-size: 13.33px;
 	margin: 0px;
 	padding:0px;
 	color: #7D7D7D;
 	font-weight: lighter;
 }
-#shopping_crt #shopping_fen{
+.shopping_crt .shopping_fen{
 	width: 100%;
 	list-style: none;
 	margin: 0px;
 	padding: 0px;
 }
-#shopping_fen li{
+.shopping_fen li{
 	height: 22px;
 	float: left;
 	font-size: 10.67px;
@@ -849,13 +846,13 @@ li{
 .linkc,.linkd,.linke{
 	margin-left: 26px;
 }
-#shopping_men{
+.shopping_men{
 	width: 100%;
 	list-style: none;
 	margin: 0px;
 	padding: 0px;
 }
-#shopping_men li{
+.shopping_men li{
 	height: 22px;
 	float: left;
 	font-size: 10.67px;
@@ -875,13 +872,13 @@ li{
 .mene{
 	margin-left: 38px;
 }
-#shopping_yun{
+.shopping_yun{
 	width: 100%;
 	list-style: none;
 	margin: 0px;
 	padding: 0px;
 }
-#shopping_yun li{
+.shopping_yun li{
 	height: 22px;
 	float: left;
 	font-size: 10.67px;
@@ -901,13 +898,13 @@ li{
 .zuoye{
 	margin-left: 38px;
 }
-#shopping_meng{
+.shopping_meng{
 	width: 100%;
 	list-style: none;
 	margin: 0px;
 	padding: 0px;
 }
-#shopping_meng li{
+.shopping_meng li{
 	height: 22px;
 	float: left;
 	font-size: 10.67px;
@@ -930,17 +927,17 @@ li{
 	text-align: center;
 	line-height: 15px;
 }
-#shopping_td3{
+.shopping_td3{
 	width: 178px;
 	height: 100%;
 }
-#shopping_readonlu{
+.shopping_readonlu{
 	width: 110px;
 	height: 31px;
 	margin-left: 53px;
 	margin-top: 94px;
 }
-#shopping_av{
+.shopping_av{
 	width: 28px;
 	height: 31px;
 	font-size: 24px;
@@ -950,7 +947,7 @@ li{
 	text-align: center;
 
 }
-#shopping_ab{
+.shopping_ab{
 	width: 34px;
 	height: 31px;
 	color: #363636;
@@ -959,7 +956,7 @@ li{
 	float: left;
 	text-align: center;
 }
-#shopping_ac{
+.shopping_ac{
 	width: 28px;
 	height: 31px;
 	font-size: 24px;
@@ -968,79 +965,79 @@ li{
 	float: left;
 	text-align: center;
 }
-#shopping_td4{
+.shopping_td4{
 	width: 105px;
 	height: 100%;
 	overflow: hidden;
 
 }
-#shopping_ji,#shopping_fenr{
+.shopping_ji,.shopping_fenr{
 	width: 105px;
 	height: 96px;
 	overflow: hidden;
 	margin-right: 5px;
 }
-#shopping_ji span{
+.shopping_ji span{
 	margin-top: 48px;
 	display: block;
 	text-align: right;
 	font-family: "微软雅黑";
 
 }
-#shopping_fenr{
+.shopping_fenr{
 	margin-top: 23px;
 }
-#shopping_fenr span{
+.shopping_fenr span{
 	margin-top: 39px;
 	display: block;
 	text-align: right;
 	font-family: "微软雅黑";
 
 }
-#shopping_td5{
+.shopping_td5{
 	width: 128px;
 	height: 100%;
 
 }
-#shopping_jia,#shopping_shu{
+.shopping_jia,.shopping_shu{
 	width: 128px;
 	height: 96px;
 	overflow: hidden;
 	margin-right: 5px;
 }
-#shopping_jia span{
+.shopping_jia span{
 	margin-top: 48px;
 	display: block;
 	text-align: right;
 	font-family: "微软雅黑";
 	color: #FF000A;
 }
-#shopping_shu{
+.shopping_shu{
 	margin-top: 23px;
 }
-#shopping_shu span{
+.shopping_shu span{
 	margin-top: 39px;
 	display: block;
 	text-align: right;
 	font-family: "微软雅黑";
 	color: #FF000A;
 }
-#shopping_td6{
+.shopping_td6{
 	width: 127px;
 	height: 100%;
 }
-#shopping_aifei{
+.shopping_aifei{
 	width: 127px;
 	height: 123px;
 }
-#shopping_aifei a:visited {
+.shopping_aifei a:visited {
 	color: #707070;
 }
-#shopping_aifei a:link {
+.shopping_aifei a:link {
 	color: #707070;
 	text-decoration: none;
 }
-#shopping_aifei ul{
+.shopping_aifei ul{
 	width: 127px;
 	margin: 0px;
 	padding:0px;
@@ -1049,7 +1046,7 @@ li{
 	margin-top: 94px;
 	margin-left: 27px;
 }
-#shopping_aifei li{
+.shopping_aifei li{
 	text-align: center;
 	font-size: 12px;
 }
