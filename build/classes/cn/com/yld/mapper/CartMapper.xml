@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
 <mapper namespace="cn.com.yld.mapper.CartMapper">
+
   <resultMap type="Cart" id="cart">
   	<id column="car_id" property="carId"/>
   	<result column="user_id" property="userId"/>
@@ -109,21 +110,21 @@
 		</association>
 		<association property="goodsPic" javaType="GoodsPic">
 			<id column="pic_id" property="picId"/>
-	  	<result column="goods_id" property="goodsId"/>
-	  	<result column="pic1" property="pic1"/>
-	  	<result column="pic2" property="pic2"/>
-	  	<result column="pic3" property="pic3"/>
-	  	<result column="pic4" property="pic4"/>
-	  	<result column="pic1_thumb" property="pic1Thumb"/>
-	  	<result column="pic2_thumb" property="pic2Thumb"/>
-	  	<result column="pic3_thumb" property="pic3Thumb"/>
-	  	<result column="pic4_thumb" property="pic4Thumb"/>
+		  	<result column="goods_id" property="goodsId"/>
+		  	<result column="pic1" property="pic1"/>
+		  	<result column="pic2" property="pic2"/>
+		  	<result column="pic3" property="pic3"/>
+		  	<result column="pic4" property="pic4"/>
+		  	<result column="pic1_thumb" property="pic1Thumb"/>
+		  	<result column="pic2_thumb" property="pic2Thumb"/>
+		  	<result column="pic3_thumb" property="pic3Thumb"/>
+		  	<result column="pic4_thumb" property="pic4Thumb"/>
 		</association>
 		
   </resultMap>
   <!-- 根据cart里封装的user对象，查询用户购物车 -->
-  <select id="findall" parameterType="User" resultMap="Cart">
-  	select c.* ,g.goods_id gid ,a.attr_id aid ,p.pic_id pid ,u.user_id uid from moon_cart c,moon_goods g,moon_goods_attr a,moon_goods_pic p,moon_user u where c.goods_id=g.goods_id and c.goods_attr_id=a.attr_id and c.pic_id=p.pic_id and c.user_id=u.user_id and cart_status=1 and c.user_id=#{userId}
+  <select id="findall" parameterType="User" resultMap="cart">
+  	select c.* ,g.* ,a.* ,p.* ,u.*,gl.*,o.* from moon_cart c,moon_goods g,moon_goods_attr a,moon_goods_pic p,moon_user u,moon_glass gl,moon_optometry o where c.goods_id=g.goods_id and o.optometry_id=c.optometry_id and c.goods_attr_id=a.attr_id and c.pic_id=p.pic_id and c.glass_id=gl.glass_id and c.user_id=u.user_id and cart_status=1 and c.user_id=#{userId}
   </select>
  <insert id="insert" parameterType="Cart">
   	insert into moon_cart (

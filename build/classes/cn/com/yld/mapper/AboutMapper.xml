@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.com.yld.mapper.AboutMapper">
-  <resultMap type="About" id="about">
+  <resultMap type="About" id="aboutresultMap">
   	<id column="about_id" property="aboutId"/>
   	<result column="about_style" property="aboutStyle"/>
   	<result column="about_content" property="aboutContent"/>
   	<result column="about_time" property="aboutTime"/>
   </resultMap>
-  <select id="findall" resultMap="about">
+  <select id="findall" resultMap="aboutresultMap">
   	SELECT * FROM moon_about
   </select>
   <insert id="insert" parameterType="About">

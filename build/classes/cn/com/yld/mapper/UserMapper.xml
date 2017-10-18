@@ -28,9 +28,6 @@
            	<if test="phone != null">
           		phone=#{phone}
            	</if>
-           	<if test="mail != null">
-           		and mail=#{mail}
-           	</if> 	
        </trim>
        and password=#{password}
   </select>
@@ -188,9 +185,6 @@
   		where user_id=#{userId}
   </update>
   <update id="delete" parameterType="User">
-  		update moon_user set user_status='0' where user_id=#{userid}
-  </update>
-  <update id="cleandelete" parameterType="User">
-  		update moon_user set user_status='1' where user_id=#{userid}
+  		update moon_user set user_status=#{userStatus} where user_id=#{userId}
   </update>
 </mapper>
