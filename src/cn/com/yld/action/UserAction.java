@@ -27,7 +27,6 @@ public class UserAction {
 		user=userService.findlogin(user);
 		return user;
 	}
-	
 	@RequestMapping(value="/list")
 	@ResponseBody
 	public List<User> ulist(){

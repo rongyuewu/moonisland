@@ -196,7 +196,7 @@ li{
 	width: 429px;
 	height: 80px;
 	margin-top: -50px;
-	background: url(../Images/commonImages/logo.gif) 0 -30px no-repeat;
+	background: url(../images/commonImages/logo.gif) 0 -30px no-repeat;
 }
 #cSinput1{
 	width: 208px;
@@ -208,19 +208,19 @@ li{
 	height: 44px;
 	margin-left: 3px !important;
 	margin-right: -8px !important;
-	background: #333333 url(../Images/commonImages/search.png) 18px 15px no-repeat;
+	background: #333333 url(../images/commonImages/search.png) 18px 15px no-repeat;
 }
 .cSinput3{
 	width: 98px;
 	height: 45px;
 	margin-left: 30px;
-	background: url(../Images/commonImages/collect.gif) 30px 0 no-repeat;
+	background: url(../images/commonImages/collect.gif) 30px 0 no-repeat;
 }
 .cSinput4{
 	width: 46px;
 	height: 44px;
 	margin-left: 11px;
-	background: url(../Images/commonImages/shopping.gif) 0 0 no-repeat;
+	background: url(../images/commonImages/shopping.gif) 0 0 no-repeat;
 }
 #cSinput5 li{
 	margin-right: 15px;
@@ -448,19 +448,19 @@ li{
 }
 .lbC1{
 	width: 141px;
-	background: url(../Images/commonImages/good.png) 0 24px no-repeat;
+	background: url(../images/commonImages/good.png) 0 24px no-repeat;
 }
 .lbC2{
 	width: 215px;
-	background: url(../Images/commonImages/seven.png) 0 24px no-repeat;
+	background: url(../images/commonImages/seven.png) 0 24px no-repeat;
 }
 .lbC3{
 	width: 161px;
-	background: url(../Images/commonImages/return.png) 0 24px no-repeat;
+	background: url(../images/commonImages/return.png) 0 24px no-repeat;
 }
 .lbC4{
 	width: 137px;
-	background: url(../Images/commonImages/help.png) 0 24px no-repeat;
+	background: url(../images/commonImages/help.png) 0 24px no-repeat;
 }
 .f_16{
 	font: 19px "黑体";
@@ -597,7 +597,7 @@ li{
 	width: 127px;
 	height: 44px;
 	margin-top: 29px;
-	background: url(../Images/reception/cart/images/shopping_cart.png)no-repeat;
+	background: url(../images/reception/cart/images/shopping_cart.png)no-repeat;
 }
 .shopping_gjin{
 	width: 537px;
@@ -605,7 +605,7 @@ li{
 	background: #CDCDCD;
 	margin: 0 auto;
 	margin-top: 38px;
-	background: url(../Images/reception/cart/images/one.png)no-repeat;
+	background: url(../images/reception/cart/images/one.png)no-repeat;
 }
 .shopping_mu{
 	width: 100%;

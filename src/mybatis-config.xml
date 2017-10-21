@@ -3,7 +3,11 @@
 								"http://mybatis.org/dtd/mybatis-3-config.dtd" >
 <configuration>
 	
-	
+	<settings>
+		<setting name="logImpl" value="LOG4J"/>
+		<!-- 设置启动二级缓存 -->
+		<setting name="cacheEnabled" value="true"/>
+	</settings>
 	<!-- 别名 -->
 	<typeAliases>
 		<package name="cn.com.yld.pojo"/>
