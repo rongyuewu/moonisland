@@ -747,7 +747,7 @@ li{
 	height: 458px;
 	padding: 0;
 	margin-bottom: 0;
-	background: url(../images/reception/1-首页/images/img_01.gif) 0 0 no-repeat;
+	background: url(../images/reception/index/images/img_01.gif) 0 0 no-repeat;
 }
 .adMap2{
 	width: 338px;
@@ -755,7 +755,7 @@ li{
 	float: left;
 	padding: 0;
 	margin-top: -13px;
-	background: url(../images/reception/1-首页/images/img_02.gif) 0 0 no-repeat;
+	background: url(../images/reception/index/images/img_02.gif) 0 0 no-repeat;
 }
 .adMap3{
 	width: 333px;
@@ -763,13 +763,13 @@ li{
 	float: right;
 	margin-top: -246px;
 	padding: 0;
-	background: url(../images/reception/1-首页/images/img_04.gif) 0 0 no-repeat;
+	background: url(../images/reception/index/images/img_04.gif) 0 0 no-repeat;
 }
 .adMap4{
 	width: 336px;
 	height: 230px;
 	padding: 0;
-	background: url(../images/reception/1-首页/images/img_03.gif) 0 0 no-repeat;
+	background: url(../images/reception/index/images/img_03.gif) 0 0 no-repeat;
 }
 /*<!-- =================广告2男士============== -->*/
 #advert2_01,#advert2_02,#advert2_03,#advert5_01,#advert5_02,#advert5_03,#advert3_01,#advert3_02,#advert3_03,#advert4_01,#advert4_02,#advert4_03{
@@ -834,17 +834,17 @@ li{
 	margin-bottom: 0;
 }
 .ad2Map1{
-	background: url(../Images/reception/1-首页/images/MenImg_01.gif) 0 0 no-repeat;
+	background: url(../Images/reception/index/images/MenImg_01.gif) 0 0 no-repeat;
 }
 .ad2Map2{
-	background: url(../Images/reception/1-首页/images/MenImg_02.gif) 0 0 no-repeat;
+	background: url(../Images/reception/index/images/MenImg_02.gif) 0 0 no-repeat;
 }
 .ad2Map3{
-	background: url(../Images/reception/1-首页/images/MenImg_03.gif) 0 0 no-repeat;
+	background: url(../Images/reception/index/images/MenImg_03.gif) 0 0 no-repeat;
 }
 .ad2Map4{
 	/*margin-right: 0;*/
-	background: url(../Images/reception/1-首页/images/MenImg_04.gif) 0 0 no-repeat;
+	background: url(../Images/reception/index/images/MenImg_04.gif) 0 0 no-repeat;
 }
 /*<!-- =================广告3女士============== -->*/
 .ad3Map1,.ad3Map2,.ad3Map3,.ad3Map4{
@@ -855,16 +855,16 @@ li{
 	padding: 0;
 }
 .ad3Map1{
-	background: url(../images/reception/1-首页/images/LadiesImg_01.gif) 0 0 no-repeat;
+	background: url(../images/reception/index/images/LadiesImg_01.gif) 0 0 no-repeat;
 }
 .ad3Map2{
-	background: url(../images/reception/1-首页/images/LadiesImg_02.gif) 0 0 no-repeat;
+	background: url(../images/reception/index/images/LadiesImg_02.gif) 0 0 no-repeat;
 }
 .ad3Map3{
-	background: url(../images/reception/1-首页/images/LadiesImg_03.gif) 0 0 no-repeat;
+	background: url(../images/reception/index/images/LadiesImg_03.gif) 0 0 no-repeat;
 }
 .ad3Map4{
-	background: url(../images/reception/1-首页/images/LadiesImg_04.gif) 0 0 no-repeat;
+	background: url(../images/reception/index/images/LadiesImg_04.gif) 0 0 no-repeat;
 }
 
 #helpSubmenuZi2{
@@ -903,16 +903,16 @@ li{
 	margin-bottom: 0;
 }
 .ad4Map1{
-	background: url(../images/reception/1-首页/images/StudentImg_01.gif) 0 0 no-repeat;
+	background: url(../images/reception/index/images/StudentImg_01.gif) 0 0 no-repeat;
 }
 .ad4Map2{
-	background: url(../images/reception/1-首页/images/StudentImg_02.gif) 0 0 no-repeat;
+	background: url(../images/reception/index/images/StudentImg_02.gif) 0 0 no-repeat;
 }
 .ad4Map3{
-	background: url(../images/reception/1-首页/images/StudentImg_03.gif) 0 0 no-repeat;
+	background: url(../images/reception/index/images/StudentImg_03.gif) 0 0 no-repeat;
 }
 .ad4Map4{
-	background: url(../images/reception/1-首页/images/StudentImg_04.gif) 0 0 no-repeat;
+	background: url(../images/reception/index/images/StudentImg_04.gif) 0 0 no-repeat;
 }
 /*<!-- =================广告5太阳镜============== -->*/
 #w_300{
@@ -941,16 +941,16 @@ li{
 	margin-bottom: 0;
 }
 .ad5Map1{
-	background: url(../images/reception/1-首页/images/SunImg_01.gif) 0 0 no-repeat;
+	background: url(../images/reception/index/images/SunImg_01.gif) 0 0 no-repeat;
 }
 .ad5Map2{
-	background: url(../images/reception/1-首页/images/SunImg_02.jpg) 0 0 no-repeat;
+	background: url(../images/reception/index/images/SunImg_02.jpg) 0 0 no-repeat;
 }
 .ad5Map3{
-	background: url(../images/reception/1-首页/images/SunImg_03.gif) 0 0 no-repeat;
+	background: url(../images/reception/index/images/SunImg_03.gif) 0 0 no-repeat;
 }
 .ad5Map4{
-	background: url(../images/reception/1-首页/images/SunImg_04.gif) 0 0 no-repeat;
+	background: url(../images/reception/index/images/SunImg_04.gif) 0 0 no-repeat;
 }
 /*<!-- =================首页目录============== -->*/
 #indexCatalog{
@@ -1014,20 +1014,20 @@ li{
 	height: 190px;
 	margin: 3px;
 	border: 6px solid #F4E0C9;
-	background: url(../images/reception/1-首页/images/vipClub.gif) 3px 0 no-repeat;
+	background: url(../images/reception/index/images/vipClub.gif) 3px 0 no-repeat;
 }
 .inQRCodeL2{
 	width: 184px;
 	height: 190px;
 	border: 6px solid #EBEBEB;
 	margin: 3px;
-	background: url(../images/reception/1-首页/images/show.gif) 0 0 no-repeat;
+	background: url(../images/reception/index/images/show.gif) 0 0 no-repeat;
 }
 .inQRCodeL3{
 	width: 810px;
 	height: 204px;
 	margin: 3px;
-	background: url(../images/reception/1-首页/images/followUs.jpg) 0 0px no-repeat;
+	background: url(../images/reception/index/images/followUs.jpg) 0 0px no-repeat;
 	background-size: 810px 204px;
 }
 #indexCatalog,#indexQRCode{
@@ -1065,16 +1065,16 @@ li{
 	height: 85px;
 }
 .showConR1{
-	background: url(../images/reception/3_商品展示/images/smallImg_01.gif) -30px 0 no-repeat;
+	background: url(../images/reception/exhibition/images/smallImg_01.gif) -30px 0 no-repeat;
 }
 .showConR2{
-	background: url(../images/reception/3_商品展示/images/smallImg_02.gif) -30px 0 no-repeat;
+	background: url(../images/reception/exhibition/images/smallImg_02.gif) -30px 0 no-repeat;
 }
 .showConR3{
-	background: url(../images/reception/3_商品展示/images/smallImg_03.gif) -30px 0 no-repeat;
+	background: url(../images/reception/exhibition/images/smallImg_03.gif) -30px 0 no-repeat;
 }
 .showConR4{
-	background: url(../images/reception/3_商品展示/images/smallImg_04.gif) -30px 0 no-repeat;
+	background: url(../images/reception/exhibition/images/smallImg_04.gif) -30px 0 no-repeat;
 }
 
 .showInformation{
@@ -1222,7 +1222,7 @@ li{
 .showInforL5{
 	width: 282px;
 	height: 156px;
-	background: url(../Images/前台/3_商品展示/images/size.png) 0 0 no-repeat;
+	background: url(../images/reception/exhibition/images/size.png) 0 0 no-repeat;
 	margin-top: -30px;
 }
 .showInforL6{
@@ -1379,21 +1379,21 @@ li{
 	height: 633px;
 	margin: 0 auto;
 	margin-top: 64px;
-	background: url(../Images/前台/3_商品展示/images/details_01.gif) 0px -3px no-repeat;
+	background: url(../images/reception/exhibition/images/details_01.gif) 0px -3px no-repeat;
 }
 #showImg_2{
 	width: 844px;
 	height: 633px;
 	margin: 0 auto;
 	margin-top: 7px;
-	background: url(../Images/前台/3_商品展示/images/details_02.gif) -3px -3px no-repeat;
+	background: url(../images/reception/exhibition/images/details_02.gif) -3px -3px no-repeat;
 }
 #showImg_3{
 	width: 843px;
 	height: 633px;
 	margin: 0 auto;
 	margin-top: 7px;
-	background: url(../Images/前台/3_商品展示/images/details_03.jpg) -3px -3px no-repeat;
+	background: url(../images/reception/exhibition/images/details_03.jpg) -3px -3px no-repeat;
 }
 #showCatalog_2{
 	margin-top: 150px;
@@ -1582,16 +1582,16 @@ li{
 	height: 281px;
 }
 .firstPage{
-	background: url(../Images/前台/1-首页/images/li2.gif) -2px 0 no-repeat;
+	background: url(../images/reception/index/images/li2.gif) -2px 0 no-repeat;
 }
 .upPage{
-	background: url(../Images/前台/1-首页/images/li1.gif) -2px 0 no-repeat;
+	background: url(../images/reception/index/images/li1.gif) -2px 0 no-repeat;
 }
 .nextPage{
-	background: url(../Images/前台/1-首页/images/li3.gif) -2px 0 no-repeat;
+	background: url(../images/reception/index/images/li3.gif) -2px 0 no-repeat;
 }
 .lastPage{
-	background: url(../Images/前台/1-首页/images/li4.png) -2px 0 no-repeat;
+	background: url(../images/reception/index/images/li4.png) -2px 0 no-repeat;
 }
 .c_CCC{
 	color: #D7D7D7;
@@ -1624,14 +1624,14 @@ li{
 	height: 130px;
 	margin-right: 13px;
 	margin-top: 22px;
-	background: url(../Images/前台/3_商品展示/images/appraiseImg_01.jpg) 0 0 no-repeat;
+	background: url(../images/reception/exhibition/images/appraiseImg_01.jpg) 0 0 no-repeat;
 }
 .showCImg2{
 	width: 130px;
 	height: 130px;
 	margin-right: 13px;
 	margin-top: 22px;
-	background: url(../Images/前台/3_商品展示/images/appraiseImg_02.gif) 0 0 no-repeat;
+	background: url(../images/reception/exhibition/images/appraiseImg_02.gif) 0 0 no-repeat;
 }
 .m_t138{
 	margin-top: 169px;
@@ -1777,7 +1777,7 @@ li{
 .priceOpto_1{
 	width: 130px;
 	height: 77px;
-	background: url(../Images/前台/4_验光单/images/lens.jpg) 0 0 no-repeat;
+	background: url(../images/reception/optometry/images/lens.jpg) 0 0 no-repeat;
 	border: 1px solid #EEEEEE;
 }
 .priceOpto_2{
@@ -2185,7 +2185,7 @@ li{
 	width: 402px;
 	height: 200px;
 	float: right;
-	background: url(../Images/前台/4_验光单/images/Lens_type.jpg) 0px 27px no-repeat;
+	background: url(../images/reception/optometry/images/Lens_type.jpg) 0px 27px no-repeat;
 }
 .m_l10{
 	margin-left: 14px;
